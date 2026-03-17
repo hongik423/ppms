@@ -63,21 +63,21 @@ export default function DashboardPage() {
               subject: '1과목',
               topic: '입찰 절차 및 방법',
               correctRate: 42,
-              href: '/learn/subject1/weak1',
+              href: '/learn/subject1/t1',
             },
             {
               id: '2',
               subject: '2과목',
               topic: '원가 계산 및 예가',
               correctRate: 38,
-              href: '/learn/subject2/weak2',
+              href: '/learn/subject2/t4',
             },
             {
               id: '3',
               subject: '3과목',
               topic: '시장 분석',
               correctRate: 51,
-              href: '/learn/subject3/weak3',
+              href: '/learn/subject3/t7',
             },
           ]}
         />

@@ -10,9 +10,9 @@ export default function BottomNav() {
   const navLinks = [
     { href: '/', label: '홈', icon: Home },
     { href: '/learn', label: '학습', icon: BookOpen },
-    { href: '/questions', label: '문제', icon: PenTool },
-    { href: '/mock-exam', label: '모의고사', icon: Target },
-    { href: '/analytics', label: '분석', icon: BarChart3 },
+    { href: '/practice', label: '문제', icon: PenTool },
+    { href: '/exam', label: '모의고사', icon: Target },
+    { href: '/dashboard', label: '분석', icon: BarChart3 },
   ];
 
   return (
