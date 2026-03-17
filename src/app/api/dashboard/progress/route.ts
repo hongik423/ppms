@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server';
-import { getCurrentPrismaUser } from '@/lib/api-auth';
-import prisma from '@/lib/prisma';
 
 export async function GET() {
   try {
+    const [{ getCurrentPrismaUser }, { default: prisma }] = await Promise.all([
+      import('@/lib/api-auth'),
+      import('@/lib/prisma'),
+    ]);
     const user = await getCurrentPrismaUser();
 
     if (!user) {
