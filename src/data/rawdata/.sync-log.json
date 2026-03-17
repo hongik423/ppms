@@ -1,0 +1,19 @@
+{
+  "lastSyncAt": "2026-03-17T14:24:55.148Z",
+  "syncSource": "local",
+  "filesUpdated": [
+    "subjects.json",
+    "keywords.json"
+  ],
+  "status": "success",
+  "stats": {
+    "subjectCount": 3,
+    "mainTopicCount": 13,
+    "subTopicCount": 35,
+    "detailItemCount": 94,
+    "keywordCount": 20,
+    "avgPredictionScore": 4.1,
+    "highPriorityCount": 70
+  },
+  "driveFolder": "183hOVQYc_GwBunrVSF-wLzvPJY00Bd6f"
+}

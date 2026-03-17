@@ -13,6 +13,7 @@ import type { User } from '@prisma/client';
  */
 export async function getCurrentPrismaUser(): Promise<User | null> {
   const supabase = createServerSupabaseClient();
+  if (!supabase) return null;
   const { data: { user: authUser }, error } = await supabase.auth.getUser();
 
   if (error || !authUser) {

@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useMemo } from 'react';
 import { EBBINGHAUS_INTERVALS } from '@/lib/constants';
 import { ReviewRating } from '@/types/card.types';

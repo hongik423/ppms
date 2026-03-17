@@ -8,7 +8,7 @@ import { ChevronDown, BookOpen, Target, Zap } from 'lucide-react';
 interface SidebarSubject {
   id: string;
   name: string;
-  color: string;
+  colorClass: string;
   topics: Array<{
     id: string;
     name: string;
@@ -21,7 +21,7 @@ const subjects: SidebarSubject[] = [
   {
     id: 'subject1',
     name: '1과목',
-    color: 'violet-600',
+    colorClass: 'bg-violet-600',
     topics: [
       { id: 't1', name: '총론 및 입찰 절차', completed: 12, total: 15 },
       { id: 't2', name: '계약 관리', completed: 8, total: 12 },
@@ -31,7 +31,7 @@ const subjects: SidebarSubject[] = [
   {
     id: 'subject2',
     name: '2과목',
-    color: 'blue-600',
+    colorClass: 'bg-blue-600',
     topics: [
       { id: 't4', name: '예가 기준', completed: 15, total: 20 },
       { id: 't5', name: '원가 계산', completed: 7, total: 15 },
@@ -41,7 +41,7 @@ const subjects: SidebarSubject[] = [
   {
     id: 'subject3',
     name: '3과목',
-    color: 'emerald-600',
+    colorClass: 'bg-emerald-600',
     topics: [
       { id: 't7', name: '경제학 기초', completed: 14, total: 18 },
       { id: 't8', name: '시장 분석', completed: 9, total: 14 },
@@ -139,7 +139,7 @@ export default function Sidebar() {
               className="w-full flex items-center justify-between px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors"
             >
               <div className="flex items-center gap-2">
-                <div className={`w-2 h-6 bg-${subject.color} rounded-full`} />
+                <div className={`w-2 h-6 ${subject.colorClass} rounded-full`} />
                 <span className="font-semibold text-slate-900 dark:text-white">{subject.name}</span>
               </div>
               <ChevronDown
@@ -173,7 +173,7 @@ export default function Sidebar() {
                       <div className="h-1 bg-slate-300 dark:bg-slate-600 rounded-full overflow-hidden">
                         <div
                           className={`h-full transition-all ${
-                            isActive ? 'bg-blue-300' : `bg-${subject.color}`
+                            isActive ? 'bg-blue-300' : subject.colorClass
                           }`}
                           style={{ width: `${topicProgress}%` }}
                         />

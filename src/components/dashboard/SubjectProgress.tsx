@@ -12,6 +12,13 @@ interface SubjectProgressProps {
   progress?: SubjectProgressData[];
 }
 
+// Tailwind 컴파일러가 동적 클래스를 인식하도록 매핑 객체 사용
+const colorClassMap: Record<string, { bg: string; dot: string }> = {
+  'violet-600': { bg: 'bg-violet-600', dot: 'bg-violet-600' },
+  'blue-600': { bg: 'bg-blue-600', dot: 'bg-blue-600' },
+  'emerald-600': { bg: 'bg-emerald-600', dot: 'bg-emerald-600' },
+};
+
 const defaultProgress: SubjectProgressData[] = [
   { name: '1과목 (총론 및 입찰)', color: 'violet-600', percentage: 68, completed: 34, total: 50 },
   { name: '2과목 (예가 및 계약)', color: 'blue-600', percentage: 72, completed: 36, total: 50 },
@@ -37,7 +44,7 @@ export default function SubjectProgress({ progress = defaultProgress }: SubjectP
           <div key={index}>
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
-                <div className={`w-3 h-3 rounded-full bg-${subject.color}`} />
+                <div className={`w-3 h-3 rounded-full ${colorClassMap[subject.color]?.dot ?? 'bg-blue-600'}`} />
                 <span className="text-sm font-semibold text-slate-900 dark:text-white">{subject.name}</span>
               </div>
               <span className="text-sm font-bold text-slate-700 dark:text-slate-300">
@@ -48,7 +55,7 @@ export default function SubjectProgress({ progress = defaultProgress }: SubjectP
             <div className="flex items-center gap-3">
               <div className="flex-1 h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                 <div
-                  className={`h-full bg-${subject.color} rounded-full transition-all`}
+                  className={`h-full ${colorClassMap[subject.color]?.bg ?? 'bg-blue-600'} rounded-full transition-all`}
                   style={{ width: `${subject.percentage}%` }}
                 />
               </div>

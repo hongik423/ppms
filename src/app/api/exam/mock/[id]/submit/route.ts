@@ -114,8 +114,7 @@ export async function POST(
             percentage: Math.round(
               (subjectScores.procurement.score / SUBJECT_MAX.procurement) * 100
             ),
-            passStatus:
-              subjectScores.procurement.score >= PASS_MIN.procurement ? 'PASS' : 'FAIL',
+            passed: subjectScores.procurement.score >= PASS_MIN.procurement,
           },
           {
             subject: 'contract',
@@ -125,8 +124,7 @@ export async function POST(
             percentage: Math.round(
               (subjectScores.contract.score / SUBJECT_MAX.contract) * 100
             ),
-            passStatus:
-              subjectScores.contract.score >= PASS_MIN.contract ? 'PASS' : 'FAIL',
+            passed: subjectScores.contract.score >= PASS_MIN.contract,
           },
           {
             subject: 'finance',
@@ -136,7 +134,7 @@ export async function POST(
             percentage: Math.round(
               (subjectScores.finance.score / SUBJECT_MAX.finance) * 100
             ),
-            passStatus: subjectScores.finance.score >= PASS_MIN.finance ? 'PASS' : 'FAIL',
+            passed: subjectScores.finance.score >= PASS_MIN.finance,
           },
         ],
       });
@@ -184,8 +182,7 @@ export async function POST(
           percentage: Math.round(
             (subjectScores.procurement.score / SUBJECT_MAX.procurement) * 100
           ),
-          passStatus:
-            subjectScores.procurement.score >= PASS_MIN.procurement ? 'PASS' : 'FAIL',
+          passed: subjectScores.procurement.score >= PASS_MIN.procurement,
         },
         {
           subject: 'contract',
@@ -195,8 +192,7 @@ export async function POST(
           percentage: Math.round(
             (subjectScores.contract.score / SUBJECT_MAX.contract) * 100
           ),
-          passStatus:
-            subjectScores.contract.score >= PASS_MIN.contract ? 'PASS' : 'FAIL',
+          passed: subjectScores.contract.score >= PASS_MIN.contract,
         },
         {
           subject: 'finance',
@@ -206,7 +202,7 @@ export async function POST(
           percentage: Math.round(
             (subjectScores.finance.score / SUBJECT_MAX.finance) * 100
           ),
-          passStatus: subjectScores.finance.score >= PASS_MIN.finance ? 'PASS' : 'FAIL',
+          passed: subjectScores.finance.score >= PASS_MIN.finance,
         },
       ],
     });
