@@ -1,0 +1,56 @@
+이 프로젝트는 "공공조달관리사 필승 합격 시스템(PPMS)" — 2026년 최초 시행 국가자격시험 대비 AI 기반 적응형 웹 학습 시스템입니다.
+
+## 기술 스택
+- Next.js 14+ (App Router, TypeScript)
+- Tailwind CSS + Shadcn/UI
+- Supabase (PostgreSQL + Auth)
+- Prisma ORM
+- Zustand (상태관리)
+- Recharts (차트)
+- Framer Motion (애니메이션)
+- Lucide React (아이콘)
+
+## 디자인 시스템
+- Primary: Blue-800 (#1E40AF)
+- 1과목 컬러: Violet-600 (#7C3AED) — 공공조달과 법제도 이해
+- 2과목 컬러: Blue-600 (#2563EB) — 공공조달계획 수립 및 분석
+- 3과목 컬러: Emerald-600 (#059669) — 공공계약관리
+- 실기 컬러: Amber-600 (#D97706) — 공공조달 관리실무
+- 폰트: Pretendard
+- 다크 모드: Tailwind dark: 클래스 기반
+- 반응형: 모바일 우선 (sm → md → lg)
+- 카드: rounded-xl shadow-sm border border-gray-200
+
+## 시험 데이터
+- 필기: 객관식 80문항 (1과목 30 + 2과목 20 + 3과목 30), 2시간
+- 실기: 필답형(서술형), 2시간 30분, 8개 주요항목
+- 합격: 과목별 40점↑ + 전체 평균 60점↑
+- 출제기준 세세항목: ~170개
+- 시험일: 필기 2026.10.03 / 실기 2026.11.14
+
+## 핵심 모듈 (5개)
+1. 출제예측 엔진 (M1) — 세세항목별 출제확률 히트맵
+2. 핵심개념 학습 (M2) — 에빙하우스 반복 개념카드 (1→3→7→14→30일)
+3. 적응형 문제은행 (M3) — 난이도 3단계 (기초/응용/실전)
+4. 모의고사/약점분석 (M4) — 80문항 실전 모의 + 취약점 대시보드
+5. 실기 서술형 코칭 (M5) — STAR-L 프레임워크 + AI 채점
+
+## 코딩 규칙
+- 컴포넌트: PascalCase.tsx, 'use client' 명시
+- 유틸: camelCase.ts
+- 타입: interface 우선, Props suffix
+- 훅: useCamelCase.ts
+- 상수: UPPER_SNAKE
+- Tailwind 순서: 레이아웃 → 크기 → 간격 → 타이포 → 배경 → 효과 → 반응형 → 다크 → 상태
+
+## 데이터 흐름
+- 서버 데이터: Prisma + Supabase
+- 클라이언트 상태: Zustand store
+- 학습 진도: UserProgress 테이블 (에빙하우스 간격 추적)
+- 모의고사: MockExam 테이블 (answers, scores)
+
+## 참조 문서
+- cursor-dev/01_PRD — 기능 요구사항
+- cursor-dev/02_IA — 라우팅, 컴포넌트 구조
+- cursor-dev/03_UseCase — 28개 유스케이스
+- cursor-dev/04_DesignGuide — 디자인 명세

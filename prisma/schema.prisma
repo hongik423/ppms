@@ -1,0 +1,234 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// User model - Study participant (linked to Supabase Auth via authUserId)
+model User {
+  id              String   @id @default(cuid())
+  authUserId      String?  @unique // Supabase Auth user id (auth.users.id)
+  email           String   @unique
+  nickname        String
+  targetExamDate  DateTime @default(dbgenerated("'2026-10-03'::timestamp without time zone"))
+  currentPhase    Int      @default(1) // 1-4
+  studyStartDate  DateTime @default(now())
+  streakDays      Int      @default(0)
+  lastStudyDate   DateTime?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  progress        UserProgress[]
+  mockExams       MockExam[]
+  practicalAnswers PracticalAnswer[]
+  bookmarks       Bookmark[]
+  studyPlans      StudyPlan[]
+}
+
+// Subject model - Main exam subjects (과목)
+model Subject {
+  id              String   @id @default(cuid())
+  name            String   @unique
+  questionCount   Int      // Total questions in exam
+  weightPercent   Float    // Weight in overall exam
+  textbookVolume  Int?     // Textbook volume number
+  order           Int      // Display order
+
+  // Relations
+  mainTopics      MainTopic[]
+  questions       Question[]
+
+  @@index([order])
+}
+
+// MainTopic model - 주요항목
+model MainTopic {
+  id              String   @id @default(cuid())
+  subjectId       String
+  name            String
+  order           Int
+  estimatedWeight Float?
+
+  // Relations
+  subject         Subject  @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  subTopics       SubTopic[]
+
+  @@index([subjectId])
+  @@index([order])
+}
+
+// SubTopic model - 세부항목
+model SubTopic {
+  id              String   @id @default(cuid())
+  mainTopicId     String
+  name            String
+  order           Int
+
+  // Relations
+  mainTopic       MainTopic @relation(fields: [mainTopicId], references: [id], onDelete: Cascade)
+  detailItems     DetailItem[]
+
+  @@index([mainTopicId])
+  @@index([order])
+}
+
+// DetailItem model - 세세항목 (170 items)
+model DetailItem {
+  id              String   @id @default(cuid())
+  subTopicId      String
+  name            String
+  predictionScore Int      @default(3) // 1-5 score
+  crossSubjectLinks String[] // Links to other subjects
+  practicalLinks  String[] // Links to practical scenarios
+
+  // Relations
+  subTopic        SubTopic @relation(fields: [subTopicId], references: [id], onDelete: Cascade)
+  conceptCards    ConceptCard[]
+  questions       Question[]
+  userProgress    UserProgress[]
+
+  @@index([subTopicId])
+  @@index([predictionScore])
+}
+
+// ConceptCard model - Flashcards for learning
+model ConceptCard {
+  id              String   @id @default(cuid())
+  detailItemId    String
+  frontText       String
+  backText        String
+  category        String   @default("concept") // concept, compare, number, law, procedure
+  difficulty      String   @default("basic") // basic, applied, advanced
+  order           Int?
+
+  // Relations
+  detailItem      DetailItem @relation(fields: [detailItemId], references: [id], onDelete: Cascade)
+
+  @@index([detailItemId])
+  @@index([category])
+}
+
+// Question model - Exam questions
+model Question {
+  id              String   @id @default(cuid())
+  detailItemId    String
+  subjectId       String
+  questionText    String
+  options         String[] // 4 options
+  correctAnswer   Int      // 0-3 index
+  difficulty      Int      // 1-3
+  explanation     String?
+  wrongExplanations String[] // Explanations for wrong answers
+  tags            String[]
+
+  // Relations
+  detailItem      DetailItem @relation(fields: [detailItemId], references: [id], onDelete: Cascade)
+  subject         Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@index([detailItemId])
+  @@index([subjectId])
+  @@index([difficulty])
+}
+
+// MockExam model - Practice exams
+model MockExam {
+  id              String   @id @default(cuid())
+  userId          String
+  questionIds     String[] // Question IDs in exam
+  answers         Int[]    // User's answers (0-3 or -1 for unanswered)
+  scoreBySubject  Json?    // Score breakdown by subject
+  totalScore      Int?     // Total score
+  timeSpent       Int?     // Time spent in seconds
+  status          String   @default("in_progress") // in_progress, completed
+  createdAt       DateTime @default(now())
+  completedAt     DateTime?
+
+  // Relations
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([status])
+}
+
+// UserProgress model - Track learning progress for each detail item
+model UserProgress {
+  id              String   @id @default(cuid())
+  userId          String
+  detailItemId    String
+  conceptCardMastered Boolean @default(false)
+  questionCorrectRate Float  @default(0.0)
+  questionAttempts Int      @default(0)
+  reviewCount     Int      @default(0)
+  lastReviewedAt  DateTime?
+  nextReviewAt    DateTime?
+  currentInterval Int      @default(1) // Days
+
+  // Relations
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  detailItem      DetailItem @relation(fields: [detailItemId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, detailItemId])
+  @@index([userId])
+  @@index([detailItemId])
+}
+
+// PracticalAnswer model - For practical exam answers
+model PracticalAnswer {
+  id              String   @id @default(cuid())
+  userId          String
+  scenarioId      String
+  topicId         String
+  answerText      String
+  aiScore         Float?
+  structureScore  Int?
+  legalScore      Int?
+  logicScore      Int?
+  keywordScore    Int?
+  feedbackText    String?
+  modelAnswerDiff String?
+  grade           String?  // A, B, C, D
+  createdAt       DateTime @default(now())
+
+  // Relations
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([grade])
+}
+
+// Bookmark model - Bookmarked questions
+model Bookmark {
+  id              String   @id @default(cuid())
+  userId          String
+  questionId      String
+  createdAt       DateTime @default(now())
+
+  // Relations
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+  @@index([userId])
+}
+
+// StudyPlan model - Personalized study plans
+model StudyPlan {
+  id              String   @id @default(cuid())
+  userId          String
+  phase           Int      // 1-4
+  dailyTarget     Json?    // Daily study targets
+  weeklySchedule  Json?    // Weekly schedule
+  createdAt       DateTime @default(now())
+
+  // Relations
+  user            User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
