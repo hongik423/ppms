@@ -66,13 +66,14 @@ export function ConceptCard({
         transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
         style={{
           transformStyle: 'preserve-3d',
+          WebkitTransformStyle: 'preserve-3d',
           cursor: 'pointer',
         }}
         className="relative w-full aspect-[3/4] md:aspect-auto md:h-96"
       >
         {/* Front */}
         <motion.div
-          style={{ backfaceVisibility: 'hidden' }}
+          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
           className="absolute inset-0 bg-gradient-to-br from-blue-800 to-blue-900 rounded-2xl p-8 flex flex-col justify-between shadow-lg border border-blue-700"
         >
           <div className="flex items-start justify-between">
@@ -110,12 +111,15 @@ export function ConceptCard({
         </motion.div>
 
         {/* Back */}
-        <motion.div
-          initial={{ rotateY: 180 }}
-          animate={{ rotateY: isFlipped ? 0 : 180 }}
-          transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
-          style={{ backfaceVisibility: 'hidden' }}
-          className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 flex flex-col justify-between shadow-lg border border-blue-200"
+        <div
+          style={{
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden',
+            transform: 'rotateY(180deg)',
+            position: 'absolute',
+            inset: 0,
+          }}
+          className="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-8 flex flex-col justify-between shadow-lg border border-blue-200"
         >
           <div className="flex-1 overflow-y-auto">
             <h3 className="text-slate-900 text-xl md:text-2xl font-bold mb-4 leading-relaxed">
@@ -137,7 +141,7 @@ export function ConceptCard({
           <div className="text-center text-slate-500 text-sm font-medium mt-4">
             클릭하여 문제로 돌아가기
           </div>
-        </motion.div>
+        </div>
       </motion.div>
 
       <p className="text-center text-slate-600 text-sm mt-6 dark:text-slate-400">
