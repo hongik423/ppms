@@ -1,10 +1,51 @@
 /**
- * @fileoverview 모의고사 상세 조회 (문항 포함)
+ * @fileoverview 모의고사 상세 조회 (문항 포함) - JSON 데이터 사용
  * @encoding UTF-8
  */
 
 import { NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
+import path from 'path';
+import fs from 'fs';
+
+interface ExamQuestion {
+  id: number;
+  subject: 'procurement' | 'finance' | 'contract';
+  questionText: string;
+  options: string[];
+  correctAnswer: number;
+  difficulty: number;
+  explanation: string;
+  tags: string[];
+  sourceSection: string;
+  questionNum: number;
+}
+
+let cachedQuestionsMap: Map<string, ExamQuestion> | null = null;
+
+function getQuestionsMap(): Map<string, ExamQuestion> {
+  if (cachedQuestionsMap) return cachedQuestionsMap;
+  try {
+    const jsonPath = path.join(process.cwd(), 'src', 'data', 'rawdata', 'exam-questions.json');
+    const raw = fs.readFileSync(jsonPath, 'utf-8');
+    const data = JSON.parse(raw);
+    const map = new Map<string, ExamQuestion>();
+    for (const q of data.questions as ExamQuestion[]) {
+      map.set(String(q.id), q);
+    }
+    cachedQuestionsMap = map;
+    return map;
+  } catch (e) {
+    console.error('Failed to load exam-questions.json:', e);
+    return new Map();
+  }
+}
+
+const diffMap: Record<number, 'easy' | 'normal' | 'hard'> = {
+  1: 'easy',
+  2: 'normal',
+  3: 'hard',
+};
 
 export async function GET(
   _request: Request,
@@ -20,36 +61,24 @@ export async function GET(
       return NextResponse.json({ error: 'Exam not found' }, { status: 404 });
     }
 
-    const questions = await prisma.question.findMany({
-      where: { id: { in: exam.questionIds } },
-    });
-    const qMap = new Map(questions.map((q) => [q.id, q]));
-
-    const subjects = await prisma.subject.findMany({ orderBy: { order: 'asc' } });
-    const subjectKeyMap: Record<string, 'procurement' | 'contract' | 'finance'> = {
-      [subjects[0]?.id ?? '']: 'procurement',
-      [subjects[1]?.id ?? '']: 'contract',
-      [subjects[2]?.id ?? '']: 'finance',
-    };
-    const diffMap: Record<number, 'easy' | 'normal' | 'hard'> = {
-      1: 'easy',
-      2: 'normal',
-      3: 'hard',
-    };
+    const qMap = getQuestionsMap();
 
     const orderedQuestions = exam.questionIds
-      .map((id) => qMap.get(id))
-      .filter(Boolean)
-      .map((q, idx) => ({
-        id: q!.id,
-        number: idx + 1,
-        subject: subjectKeyMap[q!.subjectId] ?? 'procurement',
-        content: q!.questionText,
-        options: q!.options,
-        correctAnswer: q!.correctAnswer,
-        explanation: q!.explanation ?? '',
-        difficulty: diffMap[q!.difficulty] ?? 'normal',
-      }));
+      .map((id, idx) => {
+        const q = qMap.get(id);
+        if (!q) return null;
+        return {
+          id,
+          number: idx + 1,
+          subject: q.subject,
+          content: q.questionText,
+          options: q.options,
+          correctAnswer: q.correctAnswer,
+          explanation: q.explanation ?? '',
+          difficulty: diffMap[q.difficulty] ?? 'normal',
+        };
+      })
+      .filter(Boolean);
 
     return NextResponse.json({
       success: true,
