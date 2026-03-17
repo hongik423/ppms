@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import React from 'react'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
 import {
   BookOpenIcon,
   ListIcon,
@@ -10,15 +10,16 @@ import {
   BookmarkIcon,
   ScaleIcon,
   TargetIcon,
-} from 'lucide-react';
+} from 'lucide-react'
+import subjects from '@/data/rawdata/subjects.json'
 
 interface LearningCard {
-  href: string;
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  count?: number;
-  color: string;
+  href: string
+  icon: React.ReactNode
+  title: string
+  description: string
+  count?: number
+  color: string
 }
 
 const learningCards: LearningCard[] = [
@@ -27,7 +28,7 @@ const learningCards: LearningCard[] = [
     icon: <TargetIcon className="w-8 h-8" />,
     title: '오늘의 복습',
     description: '매일 복습할 카드',
-    count: 5,
+    count: 15,
     color: 'from-blue-500 to-blue-600',
   },
   {
@@ -35,7 +36,7 @@ const learningCards: LearningCard[] = [
     icon: <ScaleIcon className="w-8 h-8" />,
     title: '비교표 학습',
     description: '개념 비교와 구분',
-    count: 8,
+    count: 5,
     color: 'from-purple-500 to-purple-600',
   },
   {
@@ -43,7 +44,7 @@ const learningCards: LearningCard[] = [
     icon: <BarChart3Icon className="w-8 h-8" />,
     title: '숫자 암기',
     description: '중요 숫자와 기준',
-    count: 15,
+    count: 12,
     color: 'from-orange-500 to-orange-600',
   },
   {
@@ -70,13 +71,14 @@ const learningCards: LearningCard[] = [
     count: 3,
     color: 'from-red-500 to-red-600',
   },
-];
+]
 
-const subjects = [
-  { id: '1', name: '1과목: 공공조달 관리', color: 'from-blue-500 to-blue-600' },
-  { id: '2', name: '2과목: 재정관리', color: 'from-purple-500 to-purple-600' },
-  { id: '3', name: '3과목: 법규 및 윤리', color: 'from-orange-500 to-orange-600' },
-];
+const subjectLinks = [
+  { id: '1', name: '1과목: 공공조달과 법제도 이해', href: '/learn/subject1/t1', color: 'from-blue-500 to-blue-600' },
+  { id: '2', name: '2과목: 공공조달계획 수립 및 분석', href: '/learn/subject2/t4', color: 'from-purple-500 to-purple-600' },
+  { id: '3', name: '3과목: 공공계약관리', href: '/learn/subject3/t7', color: 'from-orange-500 to-orange-600' },
+  { id: '4', name: '4과목: 공공조달 관리실무 (실기)', href: '/learn/subject4/t10', color: 'from-green-500 to-green-600' },
+]
 
 export default function LearnPage() {
   return (
@@ -98,21 +100,22 @@ export default function LearnPage() {
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
             과목 선택
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {subjects.map((subject) => (
-              <motion.div
-                key={subject.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className={`bg-gradient-to-br ${subject.color} rounded-2xl p-8 text-white shadow-lg hover:shadow-xl cursor-pointer transition-shadow`}
-              >
-                <h3 className="text-xl font-bold mb-2">{subject.name}</h3>
-                <p className="text-white/80">
-                  클릭하여 해당 과목의 학습자료 보기
-                </p>
-              </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {subjectLinks.map((subject) => (
+              <Link key={subject.id} href={subject.href}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                  className={`bg-gradient-to-br ${subject.color} rounded-2xl p-8 text-white shadow-lg hover:shadow-xl cursor-pointer transition-shadow h-full`}
+                >
+                  <h3 className="text-lg font-bold mb-2">{subject.name}</h3>
+                  <p className="text-white/80 text-sm">
+                    클릭하여 해당 과목의 학습자료 보기
+                  </p>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </section>
@@ -187,5 +190,5 @@ export default function LearnPage() {
         </section>
       </div>
     </div>
-  );
+  )
 }

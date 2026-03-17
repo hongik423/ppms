@@ -21,133 +21,454 @@ interface Question {
   lawReference?: string;
 }
 
-const mockQuestions: Question[] = [
+const allQuestions: Question[] = [
+  // 1과목 (공공조달과 법제도 이해)
   {
     id: '1',
     questionNumber: 1,
-    totalQuestions: 5,
+    totalQuestions: 20,
     subject: '1과목',
-    difficulty: 2,
-    text: '다음 중 일반경쟁입찰에 대한 설명으로 가장 적절하지 않은 것은?',
+    difficulty: 1,
+    text: '공공조달의 정의로서 가장 적절한 것은?',
     options: [
-      '관련 자격을 갖춘 모든 사업자가 참여할 수 있다',
-      '가장 투명하고 공정한 입찰 방식이다',
-      '반드시 적격심사를 거쳐야 한다',
-      '입찰 기간은 최소 5일 이상이어야 한다',
+      '국가·지방자치단체·공공기관이 업무수행에 필요한 물품·용역·공사를 외부로부터 취득하는 행위',
+      '개인이 필요한 물품을 구매하는 행위',
+      '공급업체가 정부에 판매하는 행위',
+      '조달청이 물품을 비축하는 행위'
     ],
-    correctAnswer: 3,
-    explanation:
-      '일반경쟁입찰의 공고기간은 최소 10일 이상이어야 합니다. 따라서 옵션 4번이 정답입니다.',
+    correctAnswer: 0,
+    explanation: '공공조달의 정의는 국가·지방자치단체·공공기관이 업무수행에 필요한 물품·용역·공사를 외부로부터 취득하는 행위입니다.',
     wrongExplanations: [
-      '일반경쟁입찰은 자격 요건을 갖춘 모든 사업자가 참여할 수 있는 맞는 설명입니다.',
-      '공개 입찰로 진행되어 투명성과 공정성이 높은 맞는 설명입니다.',
-      '대부분의 계약이 적격심사를 거쳐야 하는 맞는 설명입니다.',
+      '개인의 물품 구매는 공공조달이 아닙니다.',
+      '공급업체의 판매 행위는 공공조달의 정의에 해당하지 않습니다.',
+      '비축은 공공조달의 범위에 포함되지 않습니다.'
     ],
-    lawReference:
-      '「정부계약법 시행령」 제7조 - 일반경쟁입찰의 공고기간은 10일 이상',
+    lawReference: '조달사업법 제1조'
   },
   {
     id: '2',
     questionNumber: 2,
-    totalQuestions: 5,
+    totalQuestions: 20,
     subject: '1과목',
     difficulty: 1,
-    text: '예정가격의 정의로 가장 적절한 것은?',
+    text: '추정가격과 예정가격의 가장 큰 차이점은?',
     options: [
-      '입찰참여자가 제시한 입찰가격',
-      '가장 낮은 입찰가격',
-      '공사, 용역 등의 적정한 가격을 미리 예정한 것',
-      '입찰 후 낙찰업체가 계약한 가격',
+      '추정가격은 부가가치세 제외, 예정가격은 부가가치세 포함',
+      '추정가격은 부가가치세 포함, 예정가격은 부가가치세 제외',
+      '추정가격은 입찰 후 결정, 예정가격은 입찰 전 결정',
+      '추정가격과 예정가격은 동일한 개념이다'
     ],
-    correctAnswer: 2,
-    explanation:
-      '예정가격은 발주자가 공사나 용역의 적정 가격을 사전에 산정하여 정한 것입니다. 이는 입찰가의 적절성을 판단하는 기준이 됩니다.',
+    correctAnswer: 0,
+    explanation: '추정가격은 계약금액의 적정성을 판단하기 위해 입찰 전에 산정되며 부가가치세를 제외한 가격입니다. 반면 예정가격은 부가가치세를 포함한 가격입니다.',
     wrongExplanations: [
-      '이는 입찰자의 제시 가격이므로 입찰가격입니다.',
-      '가장 낮은 입찰가격은 최저 입찰가입니다.',
-      '낙찰업체의 계약 가격은 낙찰가입니다.',
+      '부가가치세 포함 여부가 반대입니다.',
+      '두 가격 모두 입찰 전에 결정됩니다.',
+      '추정가격과 예정가격은 서로 다른 목적의 가격입니다.'
     ],
-    lawReference:
-      '「정부계약법」 제35조 - 예정가격은 발주자가 공사, 용역, 물품 등을 할 경우의 적정 가격',
+    lawReference: '국가계약법 시행령 제7조, 제9조'
   },
   {
     id: '3',
     questionNumber: 3,
-    totalQuestions: 5,
-    subject: '2과목',
+    totalQuestions: 20,
+    subject: '1과목',
     difficulty: 2,
-    text: '기술용역비 산정에서 기술료의 비율은 다음 중 어떻게 규정되어 있는가?',
+    text: '수의계약이 허용되는 경우로 가장 적절하지 않은 것은?',
     options: [
-      '예정가격의 10% 이상',
-      '예정가격의 12% 이상',
-      '예정가격의 15% 이상',
-      '예정가격의 20% 이상',
+      '천재지변으로 인한 긴급한 복구공사',
+      '특허품이나 전문기술을 가진 특정인과의 계약',
+      '모든 기업이 동등하게 경쟁할 수 있는 일반적인 물품 구매',
+      '추정가격이 소액기준(물품 2천만원) 이하인 경우'
     ],
     correctAnswer: 2,
-    explanation:
-      '정부계약법 시행령에 따르면 기술용역비의 기술료는 예정가격의 15% 이상으로 규정되어 있습니다.',
+    explanation: '수의계약은 경쟁 없이 특정인과 직접 계약하는 방식으로, 일반적이고 모든 기업이 동등하게 경쟁할 수 있는 경우에는 일반경쟁입찰을 해야 합니다.',
     wrongExplanations: [
-      '10%는 기술료 비율의 최소 기준보다 낮습니다.',
-      '12%는 기술료 비율의 최소 기준보다 낮습니다.',
-      '20%는 특수한 경우에 적용되는 비율입니다.',
+      '긴급한 복구공사는 수의계약의 허용 사유입니다.',
+      '특허품이나 전문기술은 수의계약의 허용 사유입니다.',
+      '소액기준 이하는 수의계약의 허용 사유입니다.'
     ],
-    lawReference:
-      '「정부계약법 시행령」 제58조 - 용역계약의 기술료는 예정가격의 15% 이상',
+    lawReference: '국가계약법 시행령 제26조'
   },
   {
     id: '4',
     questionNumber: 4,
-    totalQuestions: 5,
-    subject: '3과목',
-    difficulty: 3,
-    text: '다음 중 공공조달 관련 부정행위에 해당하지 않는 것은?',
+    totalQuestions: 20,
+    subject: '1과목',
+    difficulty: 2,
+    text: '계약보증금에 대한 설명으로 가장 적절한 것은?',
     options: [
-      '담합',
-      '뇌물 수수',
-      '명의자대여',
-      '기술 이전',
+      '계약금액의 10~15%, 발주자 귀속, 계약이행 확보 목적',
+      '계약금액의 20~25%, 계약상대자 귀속, 손해배상 목적',
+      '추정가격의 10%, 계약기간 중 계약상대자가 보관',
+      '낙찰가격의 5%, 입찰 후 반환'
     ],
-    correctAnswer: 3,
-    explanation:
-      '기술 이전은 공공조달 부정행위가 아닙니다. 담합, 뇌물 수수, 명의자대여 등이 부정행위에 해당합니다.',
+    correctAnswer: 0,
+    explanation: '계약보증금은 계약금액의 10~15%로, 계약이행을 확보하기 위한 담보금입니다. 계약이행이 완료되지 않거나 채무불이행이 발생하면 발주자가 귀속합니다.',
     wrongExplanations: [
-      '담합은 대표적인 공공조달 부정행위입니다.',
-      '뇌물 수수는 부정행위에 해당합니다.',
-      '명의자대여는 부정행위에 해당합니다.',
+      '계약보증금의 비율과 귀속이 부정확합니다.',
+      '계약보증금은 발주자를 위한 담보이므로 발주자 귀속입니다.',
+      '이는 입찰보증금에 대한 설명입니다.'
     ],
-    lawReference:
-      '「정부계약법」 제26조 - 공공조달 관련 부정행위의 범위',
+    lawReference: '국가계약법 시행령 제50조'
   },
   {
     id: '5',
     questionNumber: 5,
-    totalQuestions: 5,
+    totalQuestions: 20,
     subject: '1과목',
-    difficulty: 1,
-    text: '개찰이란 무엇인가?',
+    difficulty: 3,
+    text: '부정당업자 제재 절차와 제재기간에 대한 설명으로 가장 적절한 것은?',
     options: [
-      '계약 이행 여부를 확인하는 절차',
-      '입찰서를 개봉하여 입찰가를 공개하는 절차',
-      '낙찰자를 결정하는 절차',
-      '계약금을 지급하는 절차',
+      '통보 → 청문 → 처분 → 관보공고, 제재기간 1개월 이상 2년 이하',
+      '청문 → 통보 → 처분, 제재기간 1년 이상 3년 이하',
+      '즉시 처분 후 청문, 제재기간 6개월 이상 2년 이하',
+      '민간 중재위원회 심의 후 처분, 제재기간 정해지지 않음'
     ],
-    correctAnswer: 1,
-    explanation:
-      '개찰은 입찰에 참여한 사업자들이 제출한 입찰서의 봉투를 열어 입찰가를 공개하는 절차입니다.',
+    correctAnswer: 0,
+    explanation: '부정당업자 제재 절차는 ①통보 ②청문 ③처분 ④관보공고 순서로 진행되며, 제재기간은 1개월 이상 2년 이하입니다.',
     wrongExplanations: [
-      '계약 이행 여부를 확인하는 것은 검사입니다.',
-      '낙찰자를 결정하는 것은 낙찰 결정입니다.',
-      '계약금을 지급하는 것은 대금 지급입니다.',
+      '제재 절차 순서와 기간이 부정확합니다.',
+      '청문은 제재 통보 후에 실시됩니다.',
+      '제재기간은 법으로 정해져 있습니다.'
     ],
-    lawReference:
-      '「정부계약법 시행령」 제33조 - 개찰의 정의 및 절차',
+    lawReference: '국가계약법 제27조, 시행령 제76조'
   },
+  {
+    id: '6',
+    questionNumber: 6,
+    totalQuestions: 20,
+    subject: '2과목',
+    difficulty: 1,
+    text: '공공조달 계획 수립의 기본 원칙으로 가장 적절한 것은?',
+    options: [
+      '투명성, 공정성, 효율성, 경제성',
+      '신속성, 기밀성, 효율성, 판매성',
+      '효율성, 선택성, 공개성, 제한성',
+      '공정성, 독점성, 효율성, 획일성'
+    ],
+    correctAnswer: 0,
+    explanation: '공공조달의 기본 원칙은 투명성, 공정성, 효율성, 경제성입니다. 이는 공공 자원의 효율적 사용과 공정한 경쟁을 보장합니다.',
+    wrongExplanations: [
+      '신속성과 기밀성은 공공조달의 기본 원칙이 아닙니다.',
+      '공공조달은 투명하고 개방적이어야 합니다.',
+      '공공조달은 경쟁을 촉진하고 독점을 배제합니다.'
+    ],
+    lawReference: '조달사업법 제1조의2'
+  },
+  {
+    id: '7',
+    questionNumber: 7,
+    totalQuestions: 20,
+    subject: '2과목',
+    difficulty: 2,
+    text: '적격심사에 대한 설명으로 가장 적절한 것은?',
+    options: [
+      '최저가 입찰자부터 순서대로 계약이행 능력을 심사하는 제도',
+      '모든 입찰자를 동시에 종합적으로 평가하는 제도',
+      '가장 높은 가격을 제시한 자를 자동으로 낙찰자로 결정',
+      '입찰 전에 참가자격을 사전에 심사하는 제도'
+    ],
+    correctAnswer: 0,
+    explanation: '적격심사는 최저가 입찰자부터 순서대로 계약이행 능력(이행실적, 기술능력, 재무상태 등)을 종합 심사하여 낙찰자를 결정하는 제도입니다.',
+    wrongExplanations: [
+      '적격심사는 최저가부터 순차적으로 진행됩니다.',
+      '높은 가격을 자동 선택하지 않습니다.',
+      '입찰참가자격 사전심사(PQ)와는 다른 개념입니다.'
+    ],
+    lawReference: '국가계약법 시행령 제42조'
+  },
+  {
+    id: '8',
+    questionNumber: 8,
+    totalQuestions: 20,
+    subject: '2과목',
+    difficulty: 2,
+    text: '다수공급자계약(MAS)의 특징으로 가장 적절하지 않은 것은?',
+    options: [
+      '2단계 경쟁을 통해 2인 이상의 공급자와 단가계약 체결',
+      '동일한 규격의 물품을 대상으로 적용',
+      '수요기관이 2단계에서 최종 공급자 선택',
+      '1단계에서 모든 공급자를 낙찰자로 확정'
+    ],
+    correctAnswer: 3,
+    explanation: 'MAS는 1단계에서 가격경쟁을 통해 공급자를 선정하고, 2단계에서 수요기관이 가격·비가격 요소를 종합 평가하여 최종 공급자를 선택합니다.',
+    wrongExplanations: [
+      '2단계 경쟁은 MAS의 핵심 절차입니다.',
+      '동일 규격 물품이 MAS의 대상입니다.',
+      '2단계에서 수요기관의 선택이 이루어집니다.'
+    ],
+    lawReference: '조달사업법 제5조의2'
+  },
+  {
+    id: '9',
+    questionNumber: 9,
+    totalQuestions: 20,
+    subject: '3과목',
+    difficulty: 1,
+    text: '계약관리의 주요 단계로 가장 적절한 것은?',
+    options: [
+      '계약 체결, 계약 이행, 계약 종료',
+      '계획 수립, 예정가격 산정, 낙찰자 결정',
+      '입찰공고, 개찰, 이의제기',
+      '보증금 납부, 기성금 청구, 계약이행'
+    ],
+    correctAnswer: 0,
+    explanation: '계약관리는 계약 체결 후 계약 이행 여부를 감독하고, 계약 종료 후 정산하는 일련의 과정입니다.',
+    wrongExplanations: [
+      '계획 수립과 예정가격 산정은 계약관리 전의 과정입니다.',
+      '입찰 관련 절차는 계약 체결 전의 과정입니다.',
+      '보증금과 기성금은 계약 이행의 일부이지만 전체 단계는 아닙니다.'
+    ],
+    lawReference: '국가계약법 제46조'
+  },
+  {
+    id: '10',
+    questionNumber: 10,
+    totalQuestions: 20,
+    subject: '3과목',
+    difficulty: 2,
+    text: '설계변경이 필요한 경우로 가장 적절한 것은?',
+    options: [
+      '발주자의 요구 또는 현장 상황 변화로 설계 내용이 변경되어야 하는 경우',
+      '계약상대자가 단순히 방법을 달리하고자 하는 경우',
+      '계약상대자의 자체 판단에 의한 모든 변경',
+      '기상악화로 인한 일시적 작업 중단'
+    ],
+    correctAnswer: 0,
+    explanation: '설계변경은 발주자의 요구 또는 현장조건 변화(지하수 발생, 지반 상태 변화 등)로 인해 설계 내용 변경이 불가피한 경우에 승인됩니다.',
+    wrongExplanations: [
+      '계약상대자의 개인적 판단은 설계변경 사유가 아닙니다.',
+      '발주자 승인 없이 변경할 수 없습니다.',
+      '일시적 중단은 설계변경이 아닙니다.'
+    ],
+    lawReference: '국가계약법 시행령 제65조'
+  },
+  {
+    id: '11',
+    questionNumber: 11,
+    totalQuestions: 20,
+    subject: '3과목',
+    difficulty: 2,
+    text: '하도급관리에서 하도급지킴이 시스템의 주요 목적은?',
+    options: [
+      '하도급 대금의 적정한 지급을 확보하고 모니터링하는 것',
+      '하도급 업체의 임금을 정부가 직접 지급하는 것',
+      '하도급을 완전히 금지하는 것',
+      '하도급 업체를 선정하는 것'
+    ],
+    correctAnswer: 0,
+    explanation: '하도급지킴이 시스템은 공사의 하도급 대금이 적정하게 지급되고 있는지 모니터링하여 하도급 업체를 보호하기 위한 제도입니다.',
+    wrongExplanations: [
+      '정부가 직접 임금을 지급하지는 않습니다.',
+      '하도급 자체를 금지하지 않으며, 합리적 범위 내에서 허용합니다.',
+      '선정은 시스템의 목적이 아닙니다.'
+    ],
+    lawReference: '건설산업기본법 제29조'
+  },
+  {
+    id: '12',
+    questionNumber: 12,
+    totalQuestions: 20,
+    subject: '3과목',
+    difficulty: 3,
+    text: '계약 해제와 해지의 차이점으로 가장 적절한 것은?',
+    options: [
+      '해제는 소급 효과, 해지는 장래 효과',
+      '해제와 해지는 동일한 개념',
+      '해제는 장래 효과, 해지는 소급 효과',
+      '해제는 채무불이행만 가능, 해지는 모든 사유 가능'
+    ],
+    correctAnswer: 0,
+    explanation: '계약 해제는 계약을 원래 상태로 돌리는 소급 효과를 가지며, 계약 해지는 앞으로의 계약을 종료하는 장래 효과를 가집니다.',
+    wrongExplanations: [
+      '두 개념은 법적 효과가 다릅니다.',
+      '해제와 해지의 효과가 반대입니다.',
+      '계약 해제의 사유가 더 광범위합니다.'
+    ],
+    lawReference: '민법 제543조~제553조, 국가계약법 시행령 제76조'
+  },
+  {
+    id: '13',
+    questionNumber: 13,
+    totalQuestions: 20,
+    subject: '4과목',
+    difficulty: 1,
+    text: '공공조달 관리실무에서 전자조달시스템(나라장터)의 주요 기능은?',
+    options: [
+      '공공 입찰 공고부터 대금결제까지 전 과정을 전자적으로 처리',
+      '물품의 물리적 배송을 담당',
+      '입찰자의 자격 확인만 수행',
+      '민간기업 물품 판매만 처리'
+    ],
+    correctAnswer: 0,
+    explanation: '나라장터는 조달청이 운영하는 국가종합전자조달시스템으로, 공공 입찰 공고에서부터 투찰, 개찰, 낙찰, 계약, 대금결제까지 전 과정을 전자적으로 처리합니다.',
+    wrongExplanations: [
+      '나라장터는 물품 배송을 담당하지 않습니다.',
+      '나라장터는 종합 조달 업무를 수행합니다.',
+      '나라장터는 공공조달을 전문으로 합니다.'
+    ],
+    lawReference: '전자조달법 제2조'
+  },
+  {
+    id: '14',
+    questionNumber: 14,
+    totalQuestions: 20,
+    subject: '4과목',
+    difficulty: 2,
+    text: '나라장터의 주요 서비스로 가장 적절하지 않은 것은?',
+    options: [
+      '소비자 직구매 쇼핑몰',
+      '종합쇼핑몰(MAS 물품 구매)',
+      '혁신장터(혁신제품 전용)',
+      '벤처나라(벤처기업 제품)'
+    ],
+    correctAnswer: 0,
+    explanation: '나라장터는 공공기관의 조달을 위한 시스템이므로, 일반 소비자 직구매 쇼핑몰은 주요 서비스가 아닙니다.',
+    wrongExplanations: [
+      '종합쇼핑몰은 나라장터의 주요 서비스입니다.',
+      '혁신장터는 혁신제품 지원 서비스입니다.',
+      '벤처나라는 벤처기업 지원 서비스입니다.'
+    ],
+    lawReference: '전자조달법 시행령'
+  },
+  {
+    id: '15',
+    questionNumber: 15,
+    totalQuestions: 20,
+    subject: '4과목',
+    difficulty: 2,
+    text: '지체상금에 대한 설명으로 가장 적절한 것은?',
+    options: [
+      '납기 지연 시 부과되는 배상금이며, 물품·용역은 0.25%, 공사는 0.5‰',
+      '모든 경우 필수 부과되며 면제가 불가능',
+      '낙찰자의 입찰가격에 포함되어 있음',
+      '계약보증금으로 전액 환수'
+    ],
+    correctAnswer: 0,
+    explanation: '지체상금은 계약상대자가 계약서에 정한 납기 내에 이행하지 못한 경우 부과되는 배상금으로, 물품·용역은 0.25%, 공사는 0.5‰의 율로 계산됩니다. 단, 불가항력 사유는 면제됩니다.',
+    wrongExplanations: [
+      '불가항력 사유 등으로 면제될 수 있습니다.',
+      '지체상금은 입찰가에 별도로 가산됩니다.',
+      '지체상금은 별도로 청구합니다.'
+    ],
+    lawReference: '국가계약법 시행령 제74조'
+  },
+  {
+    id: '16',
+    questionNumber: 16,
+    totalQuestions: 20,
+    subject: '4과목',
+    difficulty: 3,
+    text: '리스크 관리의 주요 단계로 가장 적절한 것은?',
+    options: [
+      '리스크 식별 → 정성적/정량적 분석 → 대응전략 수립 → 모니터링',
+      '즉시 회피 → 사후 처리 → 종료',
+      '책임자 지정 → 처벌 → 보상',
+      '보험 가입 → 보험사 통지 → 청구'
+    ],
+    correctAnswer: 0,
+    explanation: '공공조달의 리스크 관리는 사전에 리스크를 식별하고, 정성적 및 정량적 분석을 거쳐, 회피·전가·완화·수용의 대응전략을 수립한 후, 지속적으로 모니터링합니다.',
+    wrongExplanations: [
+      '리스크 관리는 사후 처리가 아닌 사전 예방입니다.',
+      '리스크 관리는 징벌이 아닌 관리입니다.',
+      '리스크 관리는 보험 가입만으로 완성되지 않습니다.'
+    ],
+    lawReference: '공공조달 리스크 관리 가이드'
+  },
+  {
+    id: '17',
+    questionNumber: 17,
+    totalQuestions: 20,
+    subject: '1과목',
+    difficulty: 3,
+    text: '혁신제품 지정 제도의 단계로 가장 적절한 것은?',
+    options: [
+      '혁신시제품 지정 → 성능인증 → 혁신제품 지정',
+      '혁신제품 지정 → 성능인증 → 시장 출시',
+      '신청 → 평가 → 구매약정만 필요',
+      '조달청장 자의적 지정'
+    ],
+    correctAnswer: 0,
+    explanation: '혁신제품 지정 절차는 혁신시제품 지정(개발 제품) → 성능인증(신청자 의뢰) → 혁신제품 지정(조달청)의 3단계로 진행됩니다.',
+    wrongExplanations: [
+      '혁신제품 지정은 성능인증을 거쳐야 합니다.',
+      '구매약정만으로는 지정되지 않습니다.',
+      '조달청장도 일정한 기준에 따라 지정합니다.'
+    ],
+    lawReference: '조달사업법 제9조의2, 제9조의3'
+  },
+  {
+    id: '18',
+    questionNumber: 18,
+    totalQuestions: 20,
+    subject: '2과목',
+    difficulty: 3,
+    text: '협상계약(분리입찰)의 절차로 가장 적절한 것은?',
+    options: [
+      '제안요청 → 기술평가 → 기술협상 → 가격협상 → 계약',
+      '가격입찰 → 기술입찰 → 낙찰자 결정',
+      '최저가 선택 → 계약',
+      '일괄 입찰 → 개찰 → 낙찰'
+    ],
+    correctAnswer: 0,
+    explanation: '협상계약은 기술과 가격을 분리하여 입찰하고, 기술평가 → 우선협상대상자 선정 → 기술협상 → 가격협상 → 최종 계약의 순서로 진행됩니다.',
+    wrongExplanations: [
+      '협상계약은 협상 과정이 포함됩니다.',
+      '가격과 기술을 분리하여 진행합니다.',
+      '협상 없이는 진행되지 않습니다.'
+    ],
+    lawReference: '국가계약법 시행령 제43조'
+  },
+  {
+    id: '19',
+    questionNumber: 19,
+    totalQuestions: 20,
+    subject: '3과목',
+    difficulty: 1,
+    text: '기성금 청구의 기본 요건으로 가장 적절한 것은?',
+    options: [
+      '검사합격 + 청구 요청 + 기성 현황표 제출',
+      '낙찰자 선정만으로 자동 지급',
+      '계약체결 후 즉시 지급',
+      '기성금 청구 기한 없음'
+    ],
+    correctAnswer: 0,
+    explanation: '기성금 청구는 공사가 진행되면서 준공부분이 검사에 합격해야 하며, 계약상대자가 청구서와 기성 현황표를 제출해야 합니다.',
+    wrongExplanations: [
+      '낙찰자 선정만으로는 기성금이 지급되지 않습니다.',
+      '계약 체결 후 공사 진행 부분에 대해 청구 가능합니다.',
+      '기성금 청구는 공사 기간 중 가능합니다.'
+    ],
+    lawReference: '국가계약법 시행령 제70조'
+  },
+  {
+    id: '20',
+    questionNumber: 20,
+    totalQuestions: 20,
+    subject: '4과목',
+    difficulty: 3,
+    text: '분쟁조정과 유권해석의 차이점으로 가장 적절한 것은?',
+    options: [
+      '분쟁조정은 분쟁 해결, 유권해석은 법령 해석의 공식 견해',
+      '둘 다 동일하게 법적 구속력이 있음',
+      '분쟁조정은 기획재정부, 유권해석은 법원',
+      '유권해석이 분쟁조정보다 항상 우선'
+    ],
+    correctAnswer: 0,
+    explanation: '분쟁조정은 국가계약분쟁조정위원회 또는 지방계약분쟁조정위원회에서 계약 관련 분쟁을 해결하는 것이며, 유권해석은 기획재정부(국가) 또는 행정안전부(지방)가 법령 해석을 공식 제시하는 것입니다.',
+    wrongExplanations: [
+      '유권해석은 해석일 뿐 분쟁 해결 기구가 아닙니다.',
+      '분쟁조정은 당사자 간 분쟁 해결 절차입니다.',
+      '유권해석은 기획재정부나 행정안전부가 제시합니다.'
+    ],
+    lawReference: '국가계약법 제29조, 지방계약법 제35조'
+  }
 ];
 
 type Step = 'settings' | 'solving' | 'results';
 
 interface Settings {
-  subject: '전과목' | '1과목' | '2과목' | '3과목';
+  subject: '전과목' | '1과목' | '2과목' | '3과목' | '4과목';
   difficulty: 1 | 2 | 3;
   count: 5 | 10 | 15 | 20;
 }
@@ -168,8 +489,26 @@ export default function QuickPracticePage() {
   const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [showExplanation, setShowExplanation] = useState(false);
+  const [mockQuestions, setMockQuestions] = useState<Question[]>([]);
+
+  const getFilteredQuestions = (selectedSettings: Settings) => {
+    let filtered = allQuestions;
+
+    // Filter by subject
+    if (selectedSettings.subject !== '전과목') {
+      filtered = filtered.filter(q => q.subject === selectedSettings.subject);
+    }
+
+    // Filter by difficulty
+    filtered = filtered.filter(q => q.difficulty === selectedSettings.difficulty);
+
+    // Return only the requested count
+    return filtered.slice(0, selectedSettings.count);
+  };
 
   const handleStartQuiz = () => {
+    const questions = getFilteredQuestions(settings);
+    setMockQuestions(questions.map((q, idx) => ({ ...q, questionNumber: idx + 1, totalQuestions: questions.length })));
     setStep('solving');
     setAnswers([]);
     setCurrentQuestionIdx(0);
@@ -242,8 +581,8 @@ export default function QuickPracticePage() {
                     <label className="block text-sm font-bold text-slate-900 dark:text-white mb-3">
                       과목 선택
                     </label>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      {['전과목', '1과목', '2과목', '3과목'].map((subject) => (
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                      {['전과목', '1과목', '2과목', '3과목', '4과목'].map((subject) => (
                         <motion.button
                           key={subject}
                           whileHover={{ scale: 1.05 }}
@@ -347,7 +686,7 @@ export default function QuickPracticePage() {
           )}
 
           {/* Solving step */}
-          {step === 'solving' && (
+          {step === 'solving' && mockQuestions.length > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

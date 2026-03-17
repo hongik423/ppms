@@ -61,23 +61,23 @@ export default function DashboardPage() {
             {
               id: '1',
               subject: '1과목',
-              topic: '입찰 절차 및 방법',
+              topic: '공공조달법률 이해',
               correctRate: 42,
-              href: '/learn/subject1/t1',
+              href: '/learn/subject1/t5',
             },
             {
               id: '2',
               subject: '2과목',
-              topic: '원가 계산 및 예가',
+              topic: '입찰/제안평가 및 계약체결',
               correctRate: 38,
-              href: '/learn/subject2/t4',
+              href: '/learn/subject2/t6',
             },
             {
               id: '3',
               subject: '3과목',
-              topic: '시장 분석',
+              topic: '용역/MAS 계약관리',
               correctRate: 51,
-              href: '/learn/subject3/t7',
+              href: '/learn/subject3/t9',
             },
           ]}
         />

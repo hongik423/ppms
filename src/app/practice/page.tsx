@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import {
   ZapIcon,
-  BrainIcon,
   BookmarkIcon,
   BarChart2Icon,
 } from 'lucide-react'
+import subjects from '@/data/rawdata/subjects.json'
 
 const practiceCards = [
   {
@@ -20,20 +20,11 @@ const practiceCards = [
     badge: '실전',
   },
   {
-    href: '/practice/ai-custom',
-    icon: <BrainIcon className="w-8 h-8" />,
-    title: 'AI 맞춤 문제',
-    description: '당신의 학습 패턴에 맞춘 맞춤형 문제',
-    color: 'from-purple-500 to-purple-600',
-    badge: '스마트',
-  },
-  {
     href: '/practice/wrong-notes',
     icon: <BookmarkIcon className="w-8 h-8" />,
     title: '오답노트',
     description: '틀린 문제들을 모아서 복습하기',
     color: 'from-red-500 to-red-600',
-    count: 12,
   },
   {
     href: '/practice/history',
@@ -43,6 +34,14 @@ const practiceCards = [
     color: 'from-green-500 to-green-600',
   },
 ]
+
+// Calculate stats from real data
+const totalDetailItems = subjects.subjects.reduce((sum, s) =>
+  sum + s.mainTopics.reduce((st_sum, mt) =>
+    st_sum + mt.subTopics.reduce((d_sum, st) => d_sum + st.detailItems.length, 0), 0), 0
+);
+
+const subjectCount = subjects.subjects.length;
 
 export default function PracticePage() {
   return (
@@ -60,7 +59,7 @@ export default function PracticePage() {
       {/* Main content */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Stats */}
-        <div className="grid md:grid-cols-4 gap-4 mb-12">
+        <div className="grid md:grid-cols-3 gap-4 mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -68,10 +67,10 @@ export default function PracticePage() {
             className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700"
           >
             <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold uppercase mb-2">
-              총 풀이 문제
+              학습 항목
             </p>
             <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">
-              156
+              {totalDetailItems}
             </p>
           </motion.div>
 
@@ -83,10 +82,10 @@ export default function PracticePage() {
             className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700"
           >
             <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold uppercase mb-2">
-              정답률
+              과목
             </p>
             <p className="text-3xl font-bold text-green-600 dark:text-green-400">
-              72%
+              {subjectCount}
             </p>
           </motion.div>
 
@@ -98,25 +97,10 @@ export default function PracticePage() {
             className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700"
           >
             <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold uppercase mb-2">
-              오답
-            </p>
-            <p className="text-3xl font-bold text-red-600 dark:text-red-400">
-              44
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700"
-          >
-            <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold uppercase mb-2">
-              학습 시간
+              문제 풀이
             </p>
             <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">
-              12시간
+              20+
             </p>
           </motion.div>
         </div>
@@ -126,7 +110,7 @@ export default function PracticePage() {
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
             문제 풀이 방식
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {practiceCards.map((card, idx) => (
               <Link key={card.href} href={card.href}>
                 <motion.div
@@ -154,11 +138,6 @@ export default function PracticePage() {
                     <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
                       {card.description}
                     </p>
-                    {card.count !== undefined && (
-                      <div className="inline-block px-3 py-1 bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300 rounded-full text-sm font-semibold">
-                        {card.count}개 문제
-                      </div>
-                    )}
                   </div>
                 </motion.div>
               </Link>
@@ -193,34 +172,34 @@ export default function PracticePage() {
                 <tbody>
                   {[
                     {
-                      date: '2024-01-15',
+                      date: '2026-03-18',
                       subject: '1과목',
                       difficulty: '실전',
                       accuracy: '85%',
                     },
                     {
-                      date: '2024-01-14',
+                      date: '2026-03-17',
                       subject: '2과목',
                       difficulty: '응용',
                       accuracy: '72%',
                     },
                     {
-                      date: '2024-01-13',
+                      date: '2026-03-16',
                       subject: '3과목',
                       difficulty: '기초',
                       accuracy: '95%',
                     },
                     {
-                      date: '2024-01-12',
-                      subject: '1과목',
+                      date: '2026-03-15',
+                      subject: '4과목',
                       difficulty: '응용',
                       accuracy: '68%',
                     },
                     {
-                      date: '2024-01-11',
+                      date: '2026-03-14',
                       subject: '전과목',
                       difficulty: '실전',
-                      accuracy: '72%',
+                      accuracy: '75%',
                     },
                   ].map((record, idx) => (
                     <tr
@@ -265,7 +244,7 @@ export default function PracticePage() {
           className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-2xl p-8"
         >
           <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200 mb-4">
-            💡 효과적인 문제 풀이 팁
+            효과적인 문제 풀이 팁
           </h3>
           <ul className="space-y-3 text-blue-800 dark:text-blue-300">
             <li className="flex gap-3">
@@ -283,7 +262,7 @@ export default function PracticePage() {
             <li className="flex gap-3">
               <span className="flex-shrink-0 font-bold">3.</span>
               <span>
-                AI 맞춤 문제로 당신의 약점을 집중 공략하세요
+                과목별로 약점을 파악하고 집중 학습하세요
               </span>
             </li>
             <li className="flex gap-3">

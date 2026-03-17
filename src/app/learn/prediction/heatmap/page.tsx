@@ -3,6 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { PredictionHeatmap } from '@/components/learn/PredictionHeatmap'
+import subjectsData from '@/data/rawdata/subjects.json'
 
 interface DetailItem {
   id: string
@@ -22,116 +23,27 @@ interface Subject {
   mainTopics: MainTopic[]
 }
 
-const heatmapData: Subject[] = [
-  {
-    id: '1',
-    name: '1과목: 공공조달 관리',
-    mainTopics: [
-      {
-        id: 'topic1-1',
-        name: '입찰 및 계약 방식',
-        detailItems: [
-          { id: 'detail1-1-1', name: '일반경쟁입찰', score: 95 },
-          { id: 'detail1-1-2', name: '제한경쟁입찰', score: 85 },
-          { id: 'detail1-1-3', name: '지명경쟁입찰', score: 60 },
-          { id: 'detail1-1-4', name: '협상계약', score: 75 },
-        ],
-      },
-      {
-        id: 'topic1-2',
-        name: '예정가격 및 적격심사',
-        detailItems: [
-          { id: 'detail1-2-1', name: '예정가격 작성기준', score: 90 },
-          { id: 'detail1-2-2', name: '적격심사 기준', score: 88 },
-          { id: 'detail1-2-3', name: '기술점수 산정', score: 65 },
-          { id: 'detail1-2-4', name: '가격점수 산정', score: 70 },
-        ],
-      },
-      {
-        id: 'topic1-3',
-        name: '개찰 및 낙찰',
-        detailItems: [
-          { id: 'detail1-3-1', name: '개찰 절차', score: 80 },
-          { id: 'detail1-3-2', name: '낙찰 결정', score: 75 },
-          { id: 'detail1-3-3', name: '복수예비가격', score: 85 },
-          { id: 'detail1-3-4', name: '입찰보증금', score: 60 },
-        ],
-      },
-    ],
-  },
-  {
-    id: '2',
-    name: '2과목: 재정관리',
-    mainTopics: [
-      {
-        id: 'topic2-1',
-        name: '예산 편성 및 집행',
-        detailItems: [
-          { id: 'detail2-1-1', name: '예산 편성 절차', score: 85 },
-          { id: 'detail2-1-2', name: '예산 배정', score: 75 },
-          { id: 'detail2-1-3', name: '예산 변경', score: 65 },
-          { id: 'detail2-1-4', name: '예산 이월', score: 55 },
-        ],
-      },
-      {
-        id: 'topic2-2',
-        name: '기술용역비 관리',
-        detailItems: [
-          { id: 'detail2-2-1', name: '용역비 기준', score: 80 },
-          { id: 'detail2-2-2', name: '기술료 비율', score: 90 },
-          { id: 'detail2-2-3', name: '경비 구성', score: 70 },
-          { id: 'detail2-2-4', name: '원가 분석', score: 60 },
-        ],
-      },
-      {
-        id: 'topic2-3',
-        name: '기금 운용',
-        detailItems: [
-          { id: 'detail2-3-1', name: '기금 설치', score: 70 },
-          { id: 'detail2-3-2', name: '기금 사용', score: 75 },
-          { id: 'detail2-3-3', name: '기금 평가', score: 50 },
-          { id: 'detail2-3-4', name: '기금 폐지', score: 45 },
-        ],
-      },
-    ],
-  },
-  {
-    id: '3',
-    name: '3과목: 법규 및 윤리',
-    mainTopics: [
-      {
-        id: 'topic3-1',
-        name: '정부계약법',
-        detailItems: [
-          { id: 'detail3-1-1', name: '계약 원칙', score: 88 },
-          { id: 'detail3-1-2', name: '계약 체결', score: 85 },
-          { id: 'detail3-1-3', name: '계약 이행', score: 80 },
-          { id: 'detail3-1-4', name: '계약 종료', score: 70 },
-        ],
-      },
-      {
-        id: 'topic3-2',
-        name: '부정행위 방지',
-        detailItems: [
-          { id: 'detail3-2-1', name: '부정행위 유형', score: 92 },
-          { id: 'detail3-2-2', name: '적발 및 처벌', score: 85 },
-          { id: 'detail3-2-3', name: '신고 절차', score: 75 },
-          { id: 'detail3-2-4', name: '명의자대여', score: 80 },
-        ],
-      },
-      {
-        id: 'topic3-3',
-        name: '윤리 및 청렴',
-        detailItems: [
-          { id: 'detail3-3-1', name: '공직자 윤리법', score: 75 },
-          { id: 'detail3-3-2', name: '이해충돌방지', score: 70 },
-          { id: 'detail3-3-3', name: '부패방지법', score: 80 },
-          { id: 'detail3-3-4', name: '청렴 의무', score: 78 },
-        ],
-      },
-    ],
-  },
-]
+// Transform the raw subjects data into heatmap format
+function transformSubjectsToHeatmapData(): Subject[] {
+  return subjectsData.subjects.map((subject) => ({
+    id: subject.id,
+    name: subject.name,
+    mainTopics: subject.mainTopics.map((mainTopic) => ({
+      id: mainTopic.id,
+      name: mainTopic.name,
+      detailItems: mainTopic.subTopics
+        .flatMap((subTopic) =>
+          subTopic.detailItems.map((item) => ({
+            id: item.id,
+            name: item.name,
+            score: item.predictionScore * 20, // Convert 1-5 to 0-100 percentage
+          }))
+        ),
+    })),
+  }))
+}
+
+const heatmapData = transformSubjectsToHeatmapData()
 
 export default function PredictionHeatmapPage() {
   return (

@@ -1,116 +1,113 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ChevronLeftIcon, ChevronRightIcon, CheckCircleIcon } from 'lucide-react';
-import { ConceptCard } from '@/components/learn/ConceptCard';
-import { CardReviewButtons } from '@/components/learn/CardReviewButtons';
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import Link from 'next/link'
+import { ChevronLeftIcon, ChevronRightIcon, CheckCircleIcon } from 'lucide-react'
+import { ConceptCard } from '@/components/learn/ConceptCard'
+import { CardReviewButtons } from '@/components/learn/CardReviewButtons'
+import textbookContent from '@/data/rawdata/textbook-content.json'
+import keywords from '@/data/rawdata/keywords.json'
 
 interface ConceptCardData {
-  id: string;
-  front: string;
-  back: string;
-  category: 'concept' | 'compare' | 'number' | 'law' | 'procedure';
-  difficulty: 1 | 2 | 3;
-  lawReference?: string;
+  id: string
+  front: string
+  back: string
+  category: 'concept' | 'compare' | 'number' | 'law' | 'procedure'
+  difficulty: 1 | 2 | 3
+  lawReference?: string
 }
 
-const mockCards: ConceptCardData[] = [
-  {
-    id: '1',
-    front: '개찰이란?',
-    back: '개찰(開札)은 입찰에 참여한 사업자들이 제출한 입찰서의 봉투를 열어서 입찰가를 공개하는 절차입니다. 입찰가격의 공정성과 투명성을 보장하기 위해 관계자 입회 하에 진행됩니다.',
-    category: 'concept',
-    difficulty: 1,
-    lawReference: '「정부계약법 시행령」 제33조(개찰)',
-  },
-  {
-    id: '2',
-    front: '적격심사란?',
-    back: '적격심사는 입찰 참여자가 계약을 이행할 능력이 있는지 여부를 심사하는 절차입니다. 기술능력, 신용도, 자본금 등의 요건을 검토합니다.',
-    category: 'concept',
-    difficulty: 2,
-    lawReference: '「정부계약법」 제26조(적격심사)',
-  },
-  {
-    id: '3',
-    front: '일반경쟁 vs 제한경쟁 vs 지명경쟁',
-    back: '일반경쟁은 모든 업체가 입찰 가능하고, 제한경쟁은 필요한 자격요건이 있는 업체만 참여하며, 지명경쟁은 특정한 소수 업체를 지명하여 진행하는 방식입니다.',
-    category: 'compare',
-    difficulty: 2,
-  },
-  {
-    id: '4',
-    front: '복수예비가격의 범위는 ±____%',
-    back: '복수예비가격의 범위는 ±3%입니다. 이는 가격입찰에서 조작을 방지하고 공정성을 보장하기 위한 기준입니다.',
-    category: 'number',
-    difficulty: 1,
-    lawReference: '「정부계약법 시행령」 제50조(복수예비가격)',
-  },
-  {
-    id: '5',
-    front: '국제입찰의 기준금액은?',
-    back: '국제입찰의 기준금액은 2억원 이상입니다. 이 이상의 공사, 용역, 물품 구매 시 국제경쟁입찰을 해야 합니다.',
-    category: 'number',
-    difficulty: 1,
-    lawReference: '「국가를 당사자로 하는 계약에 관한 법률」 제17조',
-  },
-];
+// Generate cards from textbook keyConcepts and keywords
+const generateCardsFromData = (): ConceptCardData[] => {
+  const cards: ConceptCardData[] = []
+
+  // Add textbook concept cards
+  textbookContent.textbooks.forEach((textbook) => {
+    textbook.chapters.forEach((chapter, chIdx) => {
+      chapter.keyConcepts.forEach((concept, conIdx) => {
+        cards.push({
+          id: `${textbook.id}-CH${chapter.chapterId.split('-')[1]}-${conIdx}`,
+          front: concept.split(': ')[0] || concept.substring(0, 50),
+          back: concept + (chapter.keyLaws.length > 0 ? `\n\n법적 근거: ${chapter.keyLaws.slice(0, 2).join(', ')}` : ''),
+          category: 'concept',
+          difficulty: ((conIdx % 3) + 1) as 1 | 2 | 3,
+          lawReference: chapter.keyLaws[0],
+        })
+      })
+    })
+  })
+
+  // Add keyword summary cards
+  keywords.top20Keywords.slice(0, 8).forEach((keyword, idx) => {
+    cards.push({
+      id: `keyword-${idx}`,
+      front: keyword.keyword,
+      back: keyword.summary + (keyword.keyLaws.length > 0 ? `\n\n법적 근거: ${keyword.keyLaws.slice(0, 2).join(', ')}` : ''),
+      category: 'compare',
+      difficulty: ((idx % 3) + 1) as 1 | 2 | 3,
+      lawReference: keyword.keyLaws[0],
+    })
+  })
+
+  return cards.slice(0, 15) // Return first 15 cards
+}
+
+const mockCards = generateCardsFromData()
 
 export default function TodayReviewPage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [showReviewButtons, setShowReviewButtons] = useState(false);
-  const [completedCards, setCompletedCards] = useState<Set<string>>(new Set());
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isFlipped, setIsFlipped] = useState(false)
+  const [showReviewButtons, setShowReviewButtons] = useState(false)
+  const [completedCards, setCompletedCards] = useState<Set<string>>(new Set())
 
-  const currentCard = mockCards[currentIndex];
-  const totalCards = mockCards.length;
-  const completedCount = completedCards.size;
+  const currentCard = mockCards[currentIndex]
+  const totalCards = mockCards.length
+  const completedCount = completedCards.size
 
   const handleNextCard = () => {
     if (currentIndex < mockCards.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-      setIsFlipped(false);
-      setShowReviewButtons(false);
+      setCurrentIndex(currentIndex + 1)
+      setIsFlipped(false)
+      setShowReviewButtons(false)
     }
-  };
+  }
 
   const handlePreviousCard = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-      setIsFlipped(false);
-      setShowReviewButtons(false);
+      setCurrentIndex(currentIndex - 1)
+      setIsFlipped(false)
+      setShowReviewButtons(false)
     }
-  };
+  }
 
   const handleFlip = (flipped: boolean) => {
-    setIsFlipped(flipped);
+    setIsFlipped(flipped)
     if (flipped) {
-      setShowReviewButtons(true);
+      setShowReviewButtons(true)
     }
-  };
+  }
 
   const handleReview = (rating: 'hard' | 'normal' | 'easy') => {
-    setCompletedCards((prev) => new Set(prev).add(currentCard.id));
+    setCompletedCards((prev) => new Set(prev).add(currentCard.id))
 
     const intervals = {
       hard: 1,
       normal: 3,
       easy: 7,
-    };
+    }
 
-    const nextDay = intervals[rating];
+    const nextDay = intervals[rating]
 
     if (currentIndex < mockCards.length - 1) {
-      handleNextCard();
+      handleNextCard()
     } else {
       // Show completion
-      setShowReviewButtons(false);
+      setShowReviewButtons(false)
     }
-  };
+  }
 
-  const isAllComplete = completedCount === totalCards;
+  const isAllComplete = completedCount === totalCards
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
@@ -236,5 +233,5 @@ export default function TodayReviewPage() {
         )}
       </div>
     </div>
-  );
+  )
 }
