@@ -131,6 +131,7 @@ function DetailItemModal({ item, subTopicId, subjectId, onClose }: {
   const [loading, setLoading] = useState(true);
   const [cardIdx, setCardIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
+  const [isFallback, setIsFallback] = useState(false);
   const theme = SUBJECT_THEME[subjectId] || SUBJECT_THEME.S1;
 
   useEffect(() => {
@@ -138,6 +139,7 @@ function DetailItemModal({ item, subTopicId, subjectId, onClose }: {
       .then(r => r.json())
       .then(d => {
         if (d.success && d.cards?.length > 0) {
+          setIsFallback(!!d.fallback);
           // 관련도 순 정렬
           const sorted = [...d.cards].sort((a: ConceptCard, b: ConceptCard) =>
             scoreCard(b.front, b.back, item.name) - scoreCard(a.front, a.back, item.name)
@@ -194,11 +196,18 @@ function DetailItemModal({ item, subTopicId, subjectId, onClose }: {
             </div>
           ) : (
             <div className="px-5 py-5 space-y-4">
+              {/* fallback 안내 */}
+              {isFallback && (
+                <div className="flex items-start gap-2 p-3 bg-amber-50 border border-amber-200 rounded-xl">
+                  <AlertCircle className="w-4 h-4 text-amber-500 mt-0.5 shrink-0"/>
+                  <p className="text-xs text-amber-700">이 세세항목의 전용 카드가 준비 중입니다. 가장 관련도 높은 카드를 먼저 보여드립니다.</p>
+                </div>
+              )}
               {/* 교재 위치 강조 */}
               <div className={`flex items-center gap-3 p-3 rounded-xl border-2 ${theme.border} ${theme.light}`}>
                 <MapPin className={`w-5 h-5 shrink-0 ${theme.text}`}/>
                 <div>
-                  <p className={`text-xs font-bold ${theme.text}`}>교재 위치 ({cards.length}개 관련 카드)</p>
+                  <p className={`text-xs font-bold ${theme.text}`}>교재 위치 ({isFallback ? '관련' : cards.length}개 관련 카드)</p>
                   <p className={`text-sm font-bold ${theme.text}`}>
                     {theme.bookLabel} · 제{card.chapter}장 {card.chapterTitle} · <span className="text-red-600">p.{card.pages}</span>
                   </p>

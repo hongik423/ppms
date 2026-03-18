@@ -67,9 +67,19 @@ export async function GET(req: NextRequest) {
     const allCards = loadCards(subject);
 
     // 필터링
-    let filtered = allCards.filter((c) => c.topicId === topicId);
+    let topicCards = allCards.filter((c) => c.topicId === topicId);
+    let filtered = topicCards;
+    let fallback = false;
+
     if (subTopicId) {
-      filtered = filtered.filter((c) => c.subTopicId === subTopicId);
+      const bySubTopic = topicCards.filter((c) => c.subTopicId === subTopicId);
+      if (bySubTopic.length > 0) {
+        filtered = bySubTopic;
+      } else {
+        // subTopicId에 해당 카드 없음 → 토픽 전체 카드 반환 (관련도 정렬은 프론트에서)
+        filtered = topicCards;
+        fallback = true;
+      }
     }
 
     const sliced = filtered.slice(0, limit);
@@ -87,6 +97,7 @@ export async function GET(req: NextRequest) {
       subject,
       total: filtered.length,
       returned: sliced.length,
+      fallback,
       subTopicStats,
       cards: sliced,
     });
