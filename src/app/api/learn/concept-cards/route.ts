@@ -33,8 +33,9 @@ interface ConceptCardData {
 let cachedS1Cards: ConceptCard[] | null = null;
 let cachedS2Cards: ConceptCard[] | null = null;
 let cachedS3Cards: ConceptCard[] | null = null;
+let cachedS4Cards: ConceptCard[] | null = null;
 
-function loadCards(subject: 'S1' | 'S2' | 'S3'): ConceptCard[] {
+function loadCards(subject: 'S1' | 'S2' | 'S3' | 'S4'): ConceptCard[] {
   if (subject === 'S1') {
     if (!cachedS1Cards) {
       const p = path.join(process.cwd(), 'src', 'data', 'rawdata', 'concept-cards-s1.json');
@@ -49,6 +50,13 @@ function loadCards(subject: 'S1' | 'S2' | 'S3'): ConceptCard[] {
       cachedS2Cards = raw.cards;
     }
     return cachedS2Cards!;
+  } else if (subject === 'S4') {
+    if (!cachedS4Cards) {
+      const p = path.join(process.cwd(), 'src', 'data', 'rawdata', 'concept-cards-s4.json');
+      const raw = JSON.parse(fs.readFileSync(p, 'utf-8')) as ConceptCardData;
+      cachedS4Cards = raw.cards;
+    }
+    return cachedS4Cards!;
   } else {
     if (!cachedS3Cards) {
       const p = path.join(process.cwd(), 'src', 'data', 'rawdata', 'concept-cards-s3.json');
@@ -71,7 +79,7 @@ export async function GET(req: NextRequest) {
     }
 
     // 과목 판별
-    const subject = topicId.startsWith('S3') ? 'S3' : topicId.startsWith('S2') ? 'S2' : 'S1';
+    const subject = topicId.startsWith('S4') ? 'S4' : topicId.startsWith('S3') ? 'S3' : topicId.startsWith('S2') ? 'S2' : 'S1';
     const allCards = loadCards(subject);
 
     // 필터링

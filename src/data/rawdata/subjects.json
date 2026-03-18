@@ -2113,6 +2113,16 @@
                   "id": "S4-MT3-ST1-D3",
                   "name": "발주기관의 제안서 평가기준에 부합되게 제출한 제안서 내용 설명",
                   "predictionScore": 4
+                },
+                {
+                  "id": "S4-MT3-ST1-D4",
+                  "name": "공공조달 원가계산의 구성요소(재료비·노무비·경비·이윤) 이해 및 계산",
+                  "predictionScore": 5
+                },
+                {
+                  "id": "S4-MT3-ST1-D5",
+                  "name": "유형별(제조·용역·공사) 원가계산 방법 적용",
+                  "predictionScore": 5
                 }
               ]
             },
@@ -2328,6 +2338,16 @@
                 {
                   "id": "S4-MT5-ST2-D4",
                   "name": "단가 계약의 특성에 따른 계약이행 절차 관리",
+                  "predictionScore": 4
+                },
+                {
+                  "id": "S4-MT5-ST2-D5",
+                  "name": "나라장터 종합쇼핑몰 MAS 2단계 경쟁 절차(3천만원 초과) 수행",
+                  "predictionScore": 5
+                },
+                {
+                  "id": "S4-MT5-ST2-D6",
+                  "name": "우수조달물품 및 혁신제품 지정 신청 절차와 혜택 활용",
                   "predictionScore": 4
                 }
               ]
