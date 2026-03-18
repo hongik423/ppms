@@ -9,7 +9,7 @@ import {
   FileQuestion, X, AlertCircle, TrendingUp, RotateCcw,
   Brain, Layers, RotateCw, ThumbsUp, ThumbsDown,
   ClipboardList, Shield, BadgeCheck, ChevronLeft, BookText,
-  Hash, MapPin, Sparkles, Search,
+  Hash, MapPin, Sparkles, Search, ExternalLink,
 } from 'lucide-react';
 import subjectsData from '@/data/rawdata/subjects.json';
 
@@ -77,6 +77,57 @@ const SUBJECT_THEME: Record<string, {
     subjectNum: '제3과목', questionCount: 30,
   },
 };
+
+// ─────────────────────────────────────────────────────────────
+// 교재 페이지 연결 설정
+// ─────────────────────────────────────────────────────────────
+const DRIVE_FILE_IDS: Record<string, string> = {
+  S1: '1Aqh1wn7SNF2DS4dm3xDMbVFk0wmaS3qV',
+  S2: '1Kd_wZIcOv3PBJDVYAoN1Tmnsiy8SBZHl',
+  S3: '1RpT71BF6Tz5mONDXW1mIp3DTH7bKi5Sg',
+  S4: '1IOOlxT_LEkb70Ar6voYez409y83Ouq0Z',
+};
+
+const SUBTOPIC_PAGES: Record<string, number> = {
+  'S1-MT1-ST1': 7,   'S1-MT1-ST2': 28,  'S1-MT1-ST3': 42,  'S1-MT1-ST4': 49,
+  'S1-MT2-ST1': 69,  'S1-MT2-ST2': 69,  'S1-MT2-ST3': 97,  'S1-MT2-ST4': 117,
+  'S1-MT2-ST5': 97,  'S1-MT2-ST6': 117,
+  'S1-MT3-ST1': 129, 'S1-MT3-ST2': 156, 'S1-MT3-ST3': 182, 'S1-MT3-ST4': 202,
+  'S1-MT4-ST1': 238, 'S1-MT4-ST2': 246, 'S1-MT4-ST3': 251, 'S1-MT4-ST4': 256,
+  'S1-MT5-ST1': 347, 'S1-MT5-ST2': 323, 'S1-MT5-ST3': 323, 'S1-MT5-ST4': 364,
+  'S1-MT5-ST5': 376, 'S1-MT5-ST6': 384,
+  'S1-MT6-ST1': 413, 'S1-MT6-ST2': 438,
+  'S2-MT1-ST1': 7,   'S2-MT1-ST2': 106, 'S2-MT1-ST3': 115, 'S2-MT1-ST4': 44,
+  'S2-MT2-ST1': 157, 'S2-MT2-ST2': 173, 'S2-MT2-ST3': 179, 'S2-MT2-ST4': 192, 'S2-MT2-ST5': 194,
+  'S2-MT3-ST1': 201, 'S2-MT3-ST2': 206, 'S2-MT3-ST3': 215, 'S2-MT3-ST4': 224, 'S2-MT3-ST5': 234,
+  'S3-MT1-ST1': 15,  'S3-MT1-ST2': 55,  'S3-MT1-ST3': 100, 'S3-MT1-ST4': 120,
+  'S3-MT2-ST1': 175, 'S3-MT2-ST2': 215,
+  'S3-MT3-ST1': 235, 'S3-MT3-ST2': 280,
+  'S3-MT4-ST1': 295, 'S3-MT4-ST2': 320, 'S3-MT4-ST3': 345,
+  'S3-MT5-ST1': 337, 'S3-MT5-ST2': 341, 'S3-MT5-ST3': 348, 'S3-MT5-ST4': 358, 'S3-MT5-ST5': 363,
+  'S3-MT6-ST1': 379, 'S3-MT6-ST2': 386, 'S3-MT6-ST3': 399,
+  'S4-MT1-ST1': 15,  'S4-MT1-ST2': 30,  'S4-MT1-ST3': 45,
+  'S4-MT2-ST1': 55,  'S4-MT2-ST2': 70,  'S4-MT2-ST3': 80,
+  'S4-MT3-ST1': 90,  'S4-MT3-ST2': 105, 'S4-MT3-ST3': 115,
+  'S4-MT4-ST1': 130, 'S4-MT4-ST2': 145, 'S4-MT4-ST3': 160, 'S4-MT4-ST4': 175,
+  'S4-MT5-ST1': 190, 'S4-MT5-ST2': 205, 'S4-MT5-ST3': 220,
+  'S4-MT6-ST1': 235, 'S4-MT6-ST2': 250, 'S4-MT6-ST3': 260, 'S4-MT6-ST4': 270,
+  'S4-MT7-ST1': 280, 'S4-MT7-ST2': 292, 'S4-MT7-ST3': 302,
+  'S4-MT8-ST1': 310, 'S4-MT8-ST2': 322,
+};
+
+/** "p.15~35", "p.337", "7-27", "15" 등에서 시작 페이지 추출 */
+function parseStartPage(pages: string): number {
+  const match = pages.match(/\d+/);
+  return match ? parseInt(match[0], 10) : 1;
+}
+
+/** Google Drive 교재 열기 URL 생성 */
+function getTextbookUrl(subjectId: string, page: number): string {
+  const fileId = DRIVE_FILE_IDS[subjectId];
+  if (!fileId || page < 1) return '#';
+  return `https://drive.google.com/file/d/${fileId}/view#page=${page}`;
+}
 
 // ─────────────────────────────────────────────────────────────
 // 타입
@@ -192,7 +243,18 @@ function DetailItemModal({ item, subTopicId, subjectId, onClose }: {
             <div className="flex flex-col items-center justify-center py-12 px-6 text-center">
               <Search className="w-10 h-10 text-gray-300 mb-3"/>
               <p className="text-gray-500 text-sm mb-2">이 항목의 개념카드가 준비 중입니다</p>
-              <p className="text-gray-400 text-xs">{item.name}</p>
+              <p className="text-gray-400 text-xs mb-5">{item.name}</p>
+              {SUBTOPIC_PAGES[subTopicId] != null && (
+                <a
+                  href={getTextbookUrl(subjectId, SUBTOPIC_PAGES[subTopicId])}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-2 px-5 py-2.5 ${theme.primary} text-white text-sm font-semibold rounded-xl hover:opacity-90 transition-opacity`}
+                >
+                  <ExternalLink className="w-4 h-4"/>
+                  교재 바로 열기 · p.{SUBTOPIC_PAGES[subTopicId]}
+                </a>
+              )}
             </div>
           ) : (
             <div className="px-5 py-5 space-y-4">
@@ -203,21 +265,32 @@ function DetailItemModal({ item, subTopicId, subjectId, onClose }: {
                   <p className="text-xs text-amber-700">이 세세항목의 전용 카드가 준비 중입니다. 가장 관련도 높은 카드를 먼저 보여드립니다.</p>
                 </div>
               )}
-              {/* 교재 위치 강조 */}
+              {/* 교재 위치 강조 + 교재 열기 버튼 */}
               <div className={`flex items-center gap-3 p-3 rounded-xl border-2 ${theme.border} ${theme.light}`}>
                 <MapPin className={`w-5 h-5 shrink-0 ${theme.text}`}/>
-                <div>
+                <div className="flex-1 min-w-0">
                   <p className={`text-xs font-bold ${theme.text}`}>교재 위치 ({isFallback ? '관련' : cards.length}개 관련 카드)</p>
                   <p className={`text-sm font-bold ${theme.text}`}>
                     {theme.bookLabel} · 제{card.chapter}장 {card.chapterTitle} · <span className="text-red-600">p.{card.pages}</span>
                   </p>
                   <p className={`text-xs opacity-70 ${theme.text} mt-0.5`}>{card.section}</p>
                 </div>
-                {cards.length > 1 && (
-                  <span className={`ml-auto text-xs ${theme.badge} px-2 py-0.5 rounded-full font-medium shrink-0`}>
-                    {cardIdx+1}/{cards.length}
-                  </span>
-                )}
+                <div className="flex items-center gap-2 shrink-0">
+                  {cards.length > 1 && (
+                    <span className={`text-xs ${theme.badge} px-2 py-0.5 rounded-full font-medium`}>
+                      {cardIdx+1}/{cards.length}
+                    </span>
+                  )}
+                  <a
+                    href={getTextbookUrl(subjectId, parseStartPage(card.pages))}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={e => e.stopPropagation()}
+                    className={`flex items-center gap-1 px-2.5 py-1.5 ${theme.primary} text-white text-xs font-semibold rounded-lg hover:opacity-90 transition-opacity`}
+                  >
+                    <ExternalLink className="w-3.5 h-3.5"/>열기
+                  </a>
+                </div>
               </div>
 
               {/* 플립 카드 */}
@@ -297,7 +370,18 @@ function DetailItemModal({ item, subTopicId, subjectId, onClose }: {
                 </button>
               </>
             )}
-            <button onClick={onClose} className={`${cards.length > 1 ? '' : 'flex-1'} py-2.5 px-4 bg-gray-200 text-gray-700 rounded-xl text-sm font-semibold hover:bg-gray-300 flex items-center justify-center gap-1`}>
+            {/* 카드가 없을 때 교재 열기 버튼을 하단에도 표시 */}
+            {cards.length === 0 && SUBTOPIC_PAGES[subTopicId] != null && (
+              <a
+                href={getTextbookUrl(subjectId, SUBTOPIC_PAGES[subTopicId])}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex-1 py-2.5 ${theme.primary} text-white rounded-xl text-sm font-semibold hover:opacity-90 flex items-center justify-center gap-2`}
+              >
+                <ExternalLink className="w-4 h-4"/>교재 열기 · p.{SUBTOPIC_PAGES[subTopicId]}
+              </a>
+            )}
+            <button onClick={onClose} className={`${cards.length > 1 || (cards.length === 0 && SUBTOPIC_PAGES[subTopicId] != null) ? '' : 'flex-1'} py-2.5 px-4 bg-gray-200 text-gray-700 rounded-xl text-sm font-semibold hover:bg-gray-300 flex items-center justify-center gap-1`}>
               <X className="w-4 h-4"/>닫기
             </button>
           </div>
@@ -698,7 +782,7 @@ function SubTopicCard({ subTopic, mainTopicId, subjectId }: {
   const [quizOpen, setQuizOpen] = useState(false);
   const [quizStartIdx, setQuizStartIdx] = useState(0);
   const [selectedItem, setSelectedItem] = useState<DetailItem | null>(null);
-  const hasMapping = subjectId === 'S1' || subjectId === 'S2' || subjectId === 'S3';
+  const hasMapping = subjectId === 'S1' || subjectId === 'S2' || subjectId === 'S3' || subjectId === 'S4';
   const theme = SUBJECT_THEME[subjectId] || SUBJECT_THEME.S1;
 
   const fetchQ = useCallback(async () => {
@@ -753,6 +837,11 @@ function SubTopicCard({ subTopic, mainTopicId, subjectId }: {
                       <p className="text-xs text-slate-400 mt-0.5 group-hover:text-amber-500 flex items-center gap-1">
                         <BookText className="w-3 h-3"/>
                         교재 페이지 보기
+                        {SUBTOPIC_PAGES[subTopic.id] != null && (
+                          <span className="text-amber-600 font-semibold group-hover:text-amber-700">
+                            · p.{SUBTOPIC_PAGES[subTopic.id]}
+                          </span>
+                        )}
                       </p>
                     )}
                   </div>
@@ -964,7 +1053,7 @@ export default function TopicDetailPage() {
   const subjectId = resolveSubjectId(params.subjectId as string);
   const subject = useMemo(() => subjectsData.subjects.find(s => s.id === subjectId), [subjectId]);
   const { mainTopic } = useMemo(() => resolveTopicToMainTopic(subjectId, params.topicId as string), [subjectId, params.topicId]);
-  const hasMapping = subjectId === 'S1' || subjectId === 'S2' || subjectId === 'S3';
+  const hasMapping = subjectId === 'S1' || subjectId === 'S2' || subjectId === 'S3' || subjectId === 'S4';
   const theme = SUBJECT_THEME[subjectId] || SUBJECT_THEME.S1;
 
   if (!subject || !mainTopic) {
