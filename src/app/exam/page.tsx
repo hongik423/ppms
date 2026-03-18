@@ -55,17 +55,66 @@ export default function ExamHub() {
           </div>
         </div>
 
-        {/* Main CTA */}
-        <div className="bg-gradient-to-r from-blue-800 to-blue-900 rounded-xl text-white p-8 mb-12">
-          <h2 className="text-2xl font-bold mb-2">실전 모의고사</h2>
+        {/* Main CTA - 필기 모의고사 */}
+        <div className="bg-gradient-to-r from-blue-800 to-blue-900 rounded-xl text-white p-8 mb-6">
+          <h2 className="text-2xl font-bold mb-2">필기 실전 모의고사</h2>
           <p className="text-blue-100 mb-6">80문항 120분 - 실제 시험과 동일한 형식으로 연습하세요</p>
           <Link
             href="/exam/mock/new"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white text-blue-800 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
           >
-            시험 시작
+            필기시험 시작
             <ArrowRight className="w-5 h-5" />
           </Link>
+        </div>
+
+        {/* Study Mode CTA - 학습 모드 */}
+        <div className="bg-gradient-to-r from-violet-600 to-violet-700 rounded-xl text-white p-8 mb-6">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-bold mb-2">학습 모드 (거꾸로 학습)</h2>
+              <p className="text-violet-100 mb-2">문제 → 정답 확인 → 1권 교재 연계 심층 해설</p>
+              <p className="text-violet-200 text-sm mb-6">
+                제1과목 문제에 1권 교재 페이지 번호 연계 · 원리 이해 중심 학습
+              </p>
+              <Link
+                href="/exam/study"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-violet-700 rounded-lg font-semibold hover:bg-violet-50 transition-colors"
+              >
+                학습 모드 시작
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Practical Exam CTA - 실기 */}
+        <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-xl text-white p-8 mb-12">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="px-2 py-0.5 bg-orange-500 rounded text-xs font-bold">NEW</span>
+                <h2 className="text-2xl font-bold">실기 예상문제 (제4과목)</h2>
+              </div>
+              <p className="text-orange-100 mb-2">공공조달 관리실무 서답형 · 사례분석형 197문제</p>
+              <p className="text-orange-200 text-sm mb-6">
+                1권 교재 연계 고도화 해설 · 거꾸로 학습법(Reverse Learning) 적용
+              </p>
+              <div className="flex gap-3 flex-wrap">
+                <Link
+                  href="/exam/practical"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-orange-700 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
+                >
+                  실기 학습 시작
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <div className="flex items-center gap-4 text-orange-200 text-sm">
+                  <span>✍️ 서답형 100문제</span>
+                  <span>📋 사례분석형 97문제</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Subject Mini Tests */}
@@ -94,14 +143,18 @@ export default function ExamHub() {
                 </Link>
               );
             })}
-            <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+            <Link
+              href="/exam/practical"
+              className="bg-orange-50 border border-orange-200 rounded-lg p-6 hover:shadow-md transition-all"
+            >
               <div className="text-3xl mb-3">✍️</div>
               <h4 className="font-semibold text-gray-900 mb-1 text-sm">4과목: 실기</h4>
-              <p className="text-sm text-gray-600 mb-4">필답형 (서술형)</p>
-              <Link href="/practical" className="text-sm text-orange-800 font-medium">
-                실기 코칭 →
-              </Link>
-            </div>
+              <p className="text-sm text-gray-600 mb-1">서답형 · 사례분석형</p>
+              <p className="text-xs text-orange-600 font-medium mb-3">197문제 수록</p>
+              <span className="text-sm text-orange-800 font-medium">
+                실기 학습 시작 →
+              </span>
+            </Link>
           </div>
         </div>
 
