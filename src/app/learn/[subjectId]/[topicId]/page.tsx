@@ -122,11 +122,14 @@ function parseStartPage(pages: string): number {
   return match ? parseInt(match[0], 10) : 1;
 }
 
-/** Google Drive 교재 열기 URL 생성 */
+/**
+ * 교재 PDF URL 생성 — 서버 프록시 경유
+ * /api/textbook?s=S1#page=N 형태로 반환
+ * 브라우저 기본 PDF 뷰어가 #page=N 프래그먼트를 처리하여 해당 페이지로 이동
+ */
 function getTextbookUrl(subjectId: string, page: number): string {
-  const fileId = DRIVE_FILE_IDS[subjectId];
-  if (!fileId || page < 1) return '#';
-  return `https://drive.google.com/file/d/${fileId}/view#page=${page}`;
+  if (!DRIVE_FILE_IDS[subjectId] || page < 1) return '#';
+  return `/api/textbook?s=${subjectId}#page=${page}`;
 }
 
 // ─────────────────────────────────────────────────────────────
