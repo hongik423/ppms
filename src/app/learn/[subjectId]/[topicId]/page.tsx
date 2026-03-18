@@ -8,7 +8,8 @@ import {
   CheckCircle, XCircle, Eye, EyeOff, Lightbulb, BookMarked,
   FileQuestion, X, AlertCircle, TrendingUp, RotateCcw,
   Brain, Layers, RotateCw, ThumbsUp, ThumbsDown,
-  ClipboardList, Shield, BadgeCheck, ChevronLeft,
+  ClipboardList, Shield, BadgeCheck, ChevronLeft, BookText,
+  Hash, MapPin, Sparkles, Search,
 } from 'lucide-react';
 import subjectsData from '@/data/rawdata/subjects.json';
 
@@ -37,6 +38,16 @@ function resolveTopicToMainTopic(subjectId: string, topicParam: string) {
   const direct = subject.mainTopics.find((mt) => mt.id === topicParam);
   if (direct) return { mainTopic: direct, topicIndex: subject.mainTopics.indexOf(direct) };
   return { mainTopic: subject.mainTopics[0] || null, topicIndex: 0 };
+}
+
+/** 키워드 기반 카드 관련도 점수 */
+function scoreCard(cardFront: string, cardBack: string, keyword: string): number {
+  const kw = keyword.toLowerCase();
+  const front = cardFront.toLowerCase();
+  const back = cardBack.toLowerCase();
+  if (front.includes(kw)) return 10;
+  const kwWords = kw.split(/[\s·,()]+/).filter((w) => w.length > 1);
+  return kwWords.reduce((score, w) => score + (front.includes(w) ? 3 : 0) + (back.includes(w) ? 1 : 0), 0);
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -75,20 +86,17 @@ interface Question {
   correctAnswer: number; difficulty: 'easy' | 'normal' | 'hard';
   explanation: string; subject: string; questionNum: number;
 }
-
 interface EnhancedData {
   originalExplanation: string; textbook: string;
   textbookReferences: Array<{ chapter: number; chapterTitle: string; pages: string; section?: string; keyword: string }>;
   enhancedContent: string;
 }
-
 interface ConceptCard {
   id: string; topicId: string; subTopicId: string;
   chapter: number; chapterTitle: string; section: string; pages: string;
   front: string; back: string; keyPoint: string;
   difficulty: 'easy' | 'normal' | 'hard';
 }
-
 interface CriteriaSubTopic { name: string; detailItems: string[] }
 interface CriteriaTopic {
   mainTopicId: string; order: number; name: string; subTopics: CriteriaSubTopic[];
@@ -98,6 +106,7 @@ interface CriteriaData {
   subject: { subjectId: string; subjectName: string; questionCount: number; color: string; book: string };
   meta: { version: string; appliedPeriod: string; totalDetailItems: number };
 }
+type DetailItem = (typeof subjectsData.subjects)[0]['mainTopics'][0]['subTopics'][0]['detailItems'][0];
 
 // ─────────────────────────────────────────────────────────────
 // PredictionStars
@@ -113,13 +122,189 @@ function PredictionStars({ score }: { score: number }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// ExamCriteriaSection: 출제기준 강조 섹션
+// DetailItemModal: 세세항목 클릭 → 교재 페이지 연결 모달
+// ─────────────────────────────────────────────────────────────
+function DetailItemModal({ item, subTopicId, subjectId, onClose }: {
+  item: DetailItem; subTopicId: string; subjectId: string; onClose: () => void;
+}) {
+  const [cards, setCards] = useState<ConceptCard[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [cardIdx, setCardIdx] = useState(0);
+  const [flipped, setFlipped] = useState(false);
+  const theme = SUBJECT_THEME[subjectId] || SUBJECT_THEME.S1;
+
+  useEffect(() => {
+    fetch(`/api/learn/concept-cards?topicId=${subTopicId.replace(/-ST\d+$/, '')}&subTopicId=${subTopicId}&limit=20`)
+      .then(r => r.json())
+      .then(d => {
+        if (d.success && d.cards?.length > 0) {
+          // 관련도 순 정렬
+          const sorted = [...d.cards].sort((a: ConceptCard, b: ConceptCard) =>
+            scoreCard(b.front, b.back, item.name) - scoreCard(a.front, a.back, item.name)
+          );
+          setCards(sorted);
+          setCardIdx(0);
+        }
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [subTopicId, item.id]);
+
+  useEffect(() => { setFlipped(false); }, [cardIdx]);
+
+  const card = cards[cardIdx] || null;
+  const diffColor = card ? (card.difficulty === 'hard' ? 'bg-red-100 text-red-600' : card.difficulty === 'easy' ? 'bg-green-100 text-green-600' : 'bg-gray-100 text-gray-500') : '';
+  const diffLabel = card ? (card.difficulty === 'hard' ? '어려움' : card.difficulty === 'easy' ? '쉬움' : '보통') : '';
+
+  return (
+    <div className="fixed inset-0 z-50 bg-black/60 flex items-end sm:items-center justify-center p-0 sm:p-4">
+      <div className="bg-white w-full sm:max-w-xl sm:rounded-2xl max-h-[92vh] flex flex-col shadow-2xl">
+        {/* 헤더 */}
+        <div className={`flex items-center justify-between px-5 py-4 border-b border-gray-100 shrink-0 ${theme.light}`}>
+          <div className="flex items-center gap-3 flex-1 min-w-0">
+            <div className={`w-9 h-9 rounded-xl ${theme.primary} flex items-center justify-center shrink-0`}>
+              <BookText className="w-5 h-5 text-white"/>
+            </div>
+            <div className="min-w-0">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className={`text-xs font-semibold ${theme.badge.split(' ')[1]} px-2 py-0.5 rounded ${theme.badge.split(' ')[0]}`}>
+                  출제기준 세세항목
+                </span>
+                <span className="text-xs text-amber-600 bg-amber-50 px-2 py-0.5 rounded font-medium">
+                  {theme.bookLabel}
+                </span>
+              </div>
+              <p className="font-bold text-gray-900 text-sm mt-0.5 truncate">{item.name}</p>
+            </div>
+          </div>
+          <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full ml-2 shrink-0"><X className="w-5 h-5 text-gray-500"/></button>
+        </div>
+
+        <div className="flex-1 overflow-y-auto">
+          {loading ? (
+            <div className="flex items-center justify-center py-12">
+              <div className={`w-6 h-6 border-2 border-current border-t-transparent rounded-full animate-spin ${theme.text}`}/>
+            </div>
+          ) : cards.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-12 px-6 text-center">
+              <Search className="w-10 h-10 text-gray-300 mb-3"/>
+              <p className="text-gray-500 text-sm mb-2">이 항목의 개념카드가 준비 중입니다</p>
+              <p className="text-gray-400 text-xs">{item.name}</p>
+            </div>
+          ) : (
+            <div className="px-5 py-5 space-y-4">
+              {/* 교재 위치 강조 */}
+              <div className={`flex items-center gap-3 p-3 rounded-xl border-2 ${theme.border} ${theme.light}`}>
+                <MapPin className={`w-5 h-5 shrink-0 ${theme.text}`}/>
+                <div>
+                  <p className={`text-xs font-bold ${theme.text}`}>교재 위치 ({cards.length}개 관련 카드)</p>
+                  <p className={`text-sm font-bold ${theme.text}`}>
+                    {theme.bookLabel} · 제{card.chapter}장 {card.chapterTitle} · <span className="text-red-600">p.{card.pages}</span>
+                  </p>
+                  <p className={`text-xs opacity-70 ${theme.text} mt-0.5`}>{card.section}</p>
+                </div>
+                {cards.length > 1 && (
+                  <span className={`ml-auto text-xs ${theme.badge} px-2 py-0.5 rounded-full font-medium shrink-0`}>
+                    {cardIdx+1}/{cards.length}
+                  </span>
+                )}
+              </div>
+
+              {/* 플립 카드 */}
+              <div
+                onClick={() => setFlipped(!flipped)}
+                className={`cursor-pointer rounded-2xl border-2 transition-all min-h-[160px] p-5 flex flex-col gap-3 select-none ${flipped ? `${theme.light} ${theme.border}` : 'bg-slate-50 border-slate-200 hover:border-slate-300'}`}
+              >
+                {!flipped ? (
+                  <>
+                    <div className="flex items-center gap-2">
+                      <span className={`text-xs px-2 py-0.5 rounded font-medium ${diffColor}`}>{diffLabel}</span>
+                      <Layers className="w-3.5 h-3.5 text-slate-400 ml-auto"/>
+                      <span className="text-xs text-slate-400">클릭하여 설명 보기</span>
+                    </div>
+                    <p className="text-base font-bold text-slate-900 leading-snug">{card.front}</p>
+                  </>
+                ) : (
+                  <>
+                    <div className="flex items-center gap-2">
+                      <RotateCw className={`w-3.5 h-3.5 ${theme.text}`}/>
+                      <span className={`text-xs font-medium ${theme.text}`}>교재 핵심 내용</span>
+                      <Hash className={`w-3.5 h-3.5 ${theme.text} ml-auto`}/>
+                      <span className={`text-xs ${theme.text} opacity-70`}>p.{card.pages}</span>
+                    </div>
+                    <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-wrap">{card.back}</p>
+                    {card.keyPoint && (
+                      <div className={`p-3 rounded-xl ${theme.light} border ${theme.border} mt-1`}>
+                        <div className="flex items-center gap-1.5 mb-1">
+                          <Sparkles className={`w-3.5 h-3.5 ${theme.text}`}/>
+                          <span className={`text-xs font-bold ${theme.text}`}>출제 핵심 포인트</span>
+                        </div>
+                        <p className={`text-xs ${theme.text} leading-relaxed`}>{card.keyPoint}</p>
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
+
+              <div className="flex items-center justify-center gap-1.5 text-xs text-gray-400">
+                <RotateCcw className="w-3 h-3"/>
+                <span>카드를 클릭하면 교재 핵심 내용이 펼쳐집니다</span>
+              </div>
+
+              {/* 다른 관련 카드 내비게이션 */}
+              {cards.length > 1 && (
+                <div className="space-y-2">
+                  <p className="text-xs font-semibold text-gray-500">이 세부항목의 다른 개념카드 ({cards.length}개)</p>
+                  <div className="flex flex-col gap-1.5">
+                    {cards.map((c, ci) => (
+                      <button
+                        key={c.id}
+                        onClick={() => { setCardIdx(ci); setFlipped(false); }}
+                        className={`w-full text-left px-3 py-2.5 rounded-xl border text-xs transition-all flex items-center gap-2 ${ci === cardIdx ? `${theme.light} ${theme.border} border-2 font-semibold` : 'border-gray-200 bg-gray-50 hover:border-gray-300 text-gray-600'}`}
+                      >
+                        <span className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${ci === cardIdx ? `${theme.primary} text-white` : 'bg-gray-200 text-gray-600'}`}>{ci+1}</span>
+                        <span className="flex-1 truncate">{c.front}</span>
+                        <span className={`text-xs shrink-0 ${ci === cardIdx ? theme.text : 'text-gray-400'}`}>p.{c.pages}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* 하단 */}
+        <div className="px-5 py-4 border-t border-gray-100 bg-gray-50 shrink-0">
+          <div className="flex gap-3">
+            {cards.length > 1 && (
+              <>
+                <button onClick={() => { setCardIdx(i => Math.max(0,i-1)); setFlipped(false); }} disabled={cardIdx===0} className="py-2.5 px-4 border border-gray-300 rounded-xl text-sm text-gray-700 hover:bg-white disabled:opacity-40 flex items-center gap-1">
+                  <ChevronLeft className="w-4 h-4"/>이전
+                </button>
+                <button onClick={() => { setCardIdx(i => Math.min(cards.length-1,i+1)); setFlipped(false); }} disabled={cardIdx===cards.length-1} className={`flex-1 py-2.5 ${theme.primary} text-white rounded-xl text-sm font-semibold hover:opacity-90 disabled:opacity-40 flex items-center justify-center gap-1`}>
+                  다음 카드<ChevronRight className="w-4 h-4"/>
+                </button>
+              </>
+            )}
+            <button onClick={onClose} className={`${cards.length > 1 ? '' : 'flex-1'} py-2.5 px-4 bg-gray-200 text-gray-700 rounded-xl text-sm font-semibold hover:bg-gray-300 flex items-center justify-center gap-1`}>
+              <X className="w-4 h-4"/>닫기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────
+// ExamCriteriaSection
 // ─────────────────────────────────────────────────────────────
 function ExamCriteriaSection({ mainTopicId, subjectId }: { mainTopicId: string; subjectId: string }) {
   const [data, setData] = useState<CriteriaData | null>(null);
   const [loading, setLoading] = useState(true);
   const [expanded, setExpanded] = useState(true);
-
   const theme = SUBJECT_THEME[subjectId] || SUBJECT_THEME.S1;
 
   useEffect(() => {
@@ -136,14 +321,12 @@ function ExamCriteriaSection({ mainTopicId, subjectId }: { mainTopicId: string; 
       <span className="text-amber-700 text-sm">출제기준 불러오는 중...</span>
     </div>
   );
-
   if (!data) return null;
 
   const totalItems = data.criteria.subTopics.reduce((s, st) => s + st.detailItems.length, 0);
 
   return (
     <div className="bg-white rounded-2xl border-2 border-amber-300 overflow-hidden shadow-sm">
-      {/* 헤더 */}
       <button
         onClick={() => setExpanded(!expanded)}
         className="w-full flex items-center justify-between px-5 py-4 bg-gradient-to-r from-amber-50 to-orange-50 hover:from-amber-100 hover:to-orange-100 transition-colors"
@@ -168,14 +351,10 @@ function ExamCriteriaSection({ mainTopicId, subjectId }: { mainTopicId: string; 
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <span className={`text-xs px-2.5 py-1 rounded-lg font-bold ${theme.badge}`}>
-            {data.subject.questionCount}문제 과목
-          </span>
+          <span className={`text-xs px-2.5 py-1 rounded-lg font-bold ${theme.badge}`}>{data.subject.questionCount}문제 과목</span>
           {expanded ? <ChevronUp className="w-5 h-5 text-amber-600"/> : <ChevronDown className="w-5 h-5 text-amber-600"/>}
         </div>
       </button>
-
-      {/* 경고 배너 */}
       {expanded && (
         <div className="px-5 py-3 bg-red-50 border-b border-amber-200 flex items-start gap-2">
           <Shield className="w-4 h-4 text-red-500 shrink-0 mt-0.5"/>
@@ -185,23 +364,19 @@ function ExamCriteriaSection({ mainTopicId, subjectId }: { mainTopicId: string; 
           </p>
         </div>
       )}
-
-      {/* 세부항목 목록 */}
       {expanded && (
         <div className="divide-y divide-amber-100">
           {data.criteria.subTopics.map((st, si) => (
             <div key={si} className="px-5 py-4">
               <div className="flex items-start gap-3 mb-3">
-                <span className="w-6 h-6 rounded-full bg-amber-500 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">
-                  {si + 1}
-                </span>
+                <span className="w-6 h-6 rounded-full bg-amber-500 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">{si+1}</span>
                 <div className="flex-1">
                   <h4 className="font-semibold text-gray-900 text-sm">{st.name}</h4>
                   <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                    {st.detailItems.map((item, ii) => (
+                    {st.detailItems.map((itm, ii) => (
                       <div key={ii} className="flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
                         <BadgeCheck className="w-3.5 h-3.5 text-amber-600 shrink-0"/>
-                        <span className="text-xs text-gray-800 leading-snug">{item}</span>
+                        <span className="text-xs text-gray-800 leading-snug">{itm}</span>
                       </div>
                     ))}
                   </div>
@@ -211,16 +386,12 @@ function ExamCriteriaSection({ mainTopicId, subjectId }: { mainTopicId: string; 
           ))}
         </div>
       )}
-
-      {/* 하단 */}
       {expanded && (
         <div className={`px-5 py-3 ${theme.light} border-t border-amber-200 flex items-center justify-between`}>
           <p className={`text-xs ${theme.text} font-medium`}>
             📚 출처: {data.meta.appliedPeriod} 공공조달관리사 필기 출제기준 공식 고시
           </p>
-          <span className={`text-xs font-bold px-2 py-1 rounded ${theme.badge}`}>
-            {theme.bookLabel}
-          </span>
+          <span className={`text-xs font-bold px-2 py-1 rounded ${theme.badge}`}>{theme.bookLabel}</span>
         </div>
       )}
     </div>
@@ -241,20 +412,10 @@ function ConceptCardFlipModal({ cards, topicName, subjectId, onClose }: {
   const knownCount = Object.values(known).filter(Boolean).length;
   const unknownCount = Object.values(known).filter(v => !v).length;
   const diffColor = card.difficulty === 'hard' ? 'bg-red-100 text-red-600' : card.difficulty === 'easy' ? 'bg-green-100 text-green-600' : 'bg-gray-100 text-gray-500';
-
   useEffect(() => { setFlipped(false); }, [idx]);
-
-  const handleKnow = () => {
-    setKnown(p => ({ ...p, [card.id]: true }));
-    if (idx < cards.length - 1) setIdx(i => i + 1);
-  };
-  const handleUnknow = () => {
-    setKnown(p => ({ ...p, [card.id]: false }));
-    if (idx < cards.length - 1) setIdx(i => i + 1);
-  };
-
+  const handleKnow = () => { setKnown(p => ({ ...p, [card.id]: true })); if (idx < cards.length-1) setIdx(i => i+1); };
+  const handleUnknow = () => { setKnown(p => ({ ...p, [card.id]: false })); if (idx < cards.length-1) setIdx(i => i+1); };
   const cardStatus = known[card.id];
-
   return (
     <div className="fixed inset-0 z-50 bg-black/60 flex items-end sm:items-center justify-center p-0 sm:p-4">
       <div className="bg-white w-full sm:max-w-lg sm:rounded-2xl max-h-[96vh] flex flex-col shadow-2xl">
@@ -325,18 +486,18 @@ function ConceptCardFlipModal({ cards, topicName, subjectId, onClose }: {
         </div>
         <div className="px-5 py-4 border-t border-gray-100 bg-gray-50 shrink-0 space-y-3">
           <div className="flex gap-3">
-            <button onClick={handleUnknow} className="flex-1 py-2.5 border-2 border-red-200 bg-red-50 text-red-600 rounded-xl text-sm font-semibold hover:bg-red-100 transition-colors flex items-center justify-center gap-2">
+            <button onClick={handleUnknow} className="flex-1 py-2.5 border-2 border-red-200 bg-red-50 text-red-600 rounded-xl text-sm font-semibold hover:bg-red-100 flex items-center justify-center gap-2">
               <ThumbsDown className="w-4 h-4"/>복습 필요
             </button>
-            <button onClick={handleKnow} className="flex-1 py-2.5 border-2 border-green-200 bg-green-50 text-green-700 rounded-xl text-sm font-semibold hover:bg-green-100 transition-colors flex items-center justify-center gap-2">
+            <button onClick={handleKnow} className="flex-1 py-2.5 border-2 border-green-200 bg-green-50 text-green-700 rounded-xl text-sm font-semibold hover:bg-green-100 flex items-center justify-center gap-2">
               <ThumbsUp className="w-4 h-4"/>암기 완료
             </button>
           </div>
           <div className="flex gap-3">
-            <button onClick={() => setIdx(i => Math.max(0, i-1))} disabled={idx===0} className="flex-1 py-2 border border-gray-300 rounded-xl text-sm text-gray-700 hover:bg-white disabled:opacity-40 flex items-center justify-center gap-1">
+            <button onClick={() => setIdx(i => Math.max(0,i-1))} disabled={idx===0} className="flex-1 py-2 border border-gray-300 rounded-xl text-sm text-gray-700 hover:bg-white disabled:opacity-40 flex items-center justify-center gap-1">
               <ChevronLeft className="w-4 h-4"/>이전
             </button>
-            {idx < cards.length - 1 ? (
+            {idx < cards.length-1 ? (
               <button onClick={() => setIdx(i => i+1)} className={`flex-1 py-2 ${theme.primary} text-white rounded-xl text-sm font-semibold hover:opacity-90 flex items-center justify-center gap-1`}>
                 다음<ChevronRight className="w-4 h-4"/>
               </button>
@@ -367,26 +528,22 @@ function QuizModal({ questions, startIndex, topicName, subjectId, onClose }: {
   const [scoreHistory, setScoreHistory] = useState<Record<number,boolean>>({});
   const q = questions[idx];
   const theme = SUBJECT_THEME[subjectId] || SUBJECT_THEME.S1;
-
   useEffect(() => { setSelected(null); setShowExplanation(false); setEnhanced(null); setShowEnhanced(false); }, [idx]);
-
   const fetchEnhanced = useCallback(async () => {
-    if (enhanced || loadingEnhanced) return;
+    if (enhanced||loadingEnhanced) return;
     setLoadingEnhanced(true);
     try {
       const res = await fetch(`/api/exam/enhanced-explanation?id=${q.id}`);
-      if (res.ok) { const d = await res.json(); if (d.success) setEnhanced(d); }
+      if (res.ok) { const d=await res.json(); if(d.success) setEnhanced(d); }
     } catch {} finally { setLoadingEnhanced(false); }
   }, [q.id, enhanced, loadingEnhanced]);
-
   const handleSelect = (oi: number) => {
-    if (selected !== null) return;
+    if (selected!==null) return;
     setSelected(oi); setShowExplanation(true);
-    setScoreHistory(p => ({ ...p, [q.id]: oi === q.correctAnswer }));
+    setScoreHistory(p => ({...p,[q.id]:oi===q.correctAnswer}));
     fetchEnhanced();
   };
-
-  const isCorrect = selected !== null && selected === q.correctAnswer;
+  const isCorrect = selected!==null && selected===q.correctAnswer;
   const correctCount = Object.values(scoreHistory).filter(Boolean).length;
   const answeredCount = Object.keys(scoreHistory).length;
   const tbKey = (enhanced?.textbook as '1권'|'2권'|'3권') || '1권';
@@ -395,8 +552,7 @@ function QuizModal({ questions, startIndex, topicName, subjectId, onClose }: {
     '2권':{bg:'bg-blue-50',text:'text-blue-800',border:'border-blue-200'},
     '3권':{bg:'bg-emerald-50',text:'text-emerald-800',border:'border-emerald-200'},
   };
-  const tc = TC[tbKey] || TC['1권'];
-
+  const tc = TC[tbKey]||TC['1권'];
   return (
     <div className="fixed inset-0 z-50 bg-black/60 flex items-end sm:items-center justify-center p-0 sm:p-4">
       <div className="bg-white w-full sm:max-w-2xl sm:rounded-2xl max-h-[92vh] flex flex-col shadow-2xl">
@@ -436,9 +592,7 @@ function QuizModal({ questions, startIndex, topicName, subjectId, onClose }: {
               else cls+='border-gray-100 bg-gray-50 opacity-50';
               return (
                 <button key={oi} onClick={() => handleSelect(oi)} disabled={selected!==null} className={cls}>
-                  <span className={`w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-bold shrink-0 ${selected!==null&&oi===q.correctAnswer?'border-green-500 bg-green-500 text-white':selected===oi&&oi!==q.correctAnswer?'border-red-400 bg-red-400 text-white':'border-gray-300 text-gray-600'}`}>
-                    {String.fromCharCode(65+oi)}
-                  </span>
+                  <span className={`w-6 h-6 rounded-full border-2 flex items-center justify-center text-xs font-bold shrink-0 ${selected!==null&&oi===q.correctAnswer?'border-green-500 bg-green-500 text-white':selected===oi&&oi!==q.correctAnswer?'border-red-400 bg-red-400 text-white':'border-gray-300 text-gray-600'}`}>{String.fromCharCode(65+oi)}</span>
                   <span className="text-gray-800 text-sm leading-relaxed flex-1">{opt}</span>
                   {selected!==null&&oi===q.correctAnswer&&<CheckCircle className="w-4 h-4 text-green-500 shrink-0 mt-0.5"/>}
                   {selected===oi&&oi!==q.correctAnswer&&<XCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5"/>}
@@ -472,10 +626,7 @@ function QuizModal({ questions, startIndex, topicName, subjectId, onClose }: {
               {showEnhanced&&(
                 <div className={`${tc.bg} border ${tc.border} rounded-xl p-4`}>
                   {loadingEnhanced?(
-                    <div className={`flex items-center gap-2 ${tc.text}`}>
-                      <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"/>
-                      <span className="text-xs">로딩 중...</span>
-                    </div>
+                    <div className={`flex items-center gap-2 ${tc.text}`}><div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"/><span className="text-xs">로딩 중...</span></div>
                   ):enhanced?(
                     <>
                       {enhanced.textbookReferences?.length>0&&(
@@ -525,7 +676,7 @@ function QuizModal({ questions, startIndex, topicName, subjectId, onClose }: {
 }
 
 // ─────────────────────────────────────────────────────────────
-// SubTopicCard
+// SubTopicCard — 세세항목 클릭 교재 연결 포함
 // ─────────────────────────────────────────────────────────────
 function SubTopicCard({ subTopic, mainTopicId, subjectId }: {
   subTopic: (typeof subjectsData.subjects)[0]['mainTopics'][0]['subTopics'][0];
@@ -537,6 +688,7 @@ function SubTopicCard({ subTopic, mainTopicId, subjectId }: {
   const [totalCount, setTotalCount] = useState<number|null>(null);
   const [quizOpen, setQuizOpen] = useState(false);
   const [quizStartIdx, setQuizStartIdx] = useState(0);
+  const [selectedItem, setSelectedItem] = useState<DetailItem | null>(null);
   const hasMapping = subjectId === 'S1' || subjectId === 'S2';
   const theme = SUBJECT_THEME[subjectId] || SUBJECT_THEME.S1;
 
@@ -545,7 +697,7 @@ function SubTopicCard({ subTopic, mainTopicId, subjectId }: {
     setLoading(true);
     try {
       const res = await fetch(`/api/exam/topic-questions?topicId=${mainTopicId}&subTopicId=${subTopic.id}&limit=30`);
-      if (res.ok) { const d = await res.json(); if(d.success){setQuestions(d.questions||[]);setTotalCount(d.total??0);} }
+      if (res.ok) { const d=await res.json(); if(d.success){setQuestions(d.questions||[]);setTotalCount(d.total??0);} }
     } catch {} finally { setLoading(false); }
   }, [subTopic.id,mainTopicId,questions.length,loading]);
 
@@ -574,20 +726,36 @@ function SubTopicCard({ subTopic, mainTopicId, subjectId }: {
           </div>
           {open?<ChevronUp className="w-5 h-5 text-slate-400 shrink-0"/>:<ChevronDown className="w-5 h-5 text-slate-400 shrink-0"/>}
         </button>
+
         {open&&(
           <>
+            {/* 세세항목 목록 — 클릭 가능 */}
             <div className="divide-y divide-slate-100">
-              {subTopic.detailItems.map((item)=>(
-                <div key={item.id} className="px-6 py-3 flex items-center gap-4 hover:bg-amber-50 transition-colors">
+              {subTopic.detailItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => hasMapping && setSelectedItem(item)}
+                  className={`w-full text-left px-6 py-3 flex items-center gap-4 transition-colors group ${hasMapping ? 'hover:bg-amber-50 cursor-pointer' : 'cursor-default'}`}
+                >
                   <BadgeCheck className={`w-4 h-4 shrink-0 ${theme.text}`}/>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm text-slate-900 leading-relaxed">{item.name}</p>
-                    <p className="text-xs text-slate-400 mt-0.5">{item.id}</p>
+                    <p className={`text-sm text-slate-900 leading-relaxed ${hasMapping ? 'group-hover:text-amber-700 group-hover:font-medium' : ''}`}>{item.name}</p>
+                    {hasMapping && (
+                      <p className="text-xs text-slate-400 mt-0.5 group-hover:text-amber-500 flex items-center gap-1">
+                        <BookText className="w-3 h-3"/>
+                        교재 페이지 보기
+                      </p>
+                    )}
                   </div>
-                  <PredictionStars score={item.predictionScore}/>
-                </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <PredictionStars score={item.predictionScore}/>
+                    {hasMapping && <ChevronRight className="w-4 h-4 text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity"/>}
+                  </div>
+                </button>
               ))}
             </div>
+
+            {/* 관련 문제 */}
             {hasMapping&&(
               <div className={`border-t border-slate-200 ${theme.light}`}>
                 {loading?(
@@ -613,7 +781,7 @@ function SubTopicCard({ subTopic, mainTopicId, subjectId }: {
                     </div>
                     <div className="space-y-2">
                       {questions.slice(0,5).map((q,qi)=>(
-                        <button key={q.id} onClick={()=>{setQuizStartIdx(qi);setQuizOpen(true);}} className={`w-full text-left bg-white border ${theme.border} hover:${theme.light} rounded-xl px-4 py-3 transition-all group`}>
+                        <button key={q.id} onClick={()=>{setQuizStartIdx(qi);setQuizOpen(true);}} className={`w-full text-left bg-white border ${theme.border} rounded-xl px-4 py-3 transition-all group hover:${theme.light}`}>
                           <div className="flex items-start gap-3">
                             <span className={`w-6 h-6 rounded-full ${theme.light} ${theme.text} text-xs font-bold flex items-center justify-center shrink-0`}>{qi+1}</span>
                             <p className="text-sm text-gray-800 line-clamp-2 flex-1 leading-relaxed">{q.questionText}</p>
@@ -639,13 +807,22 @@ function SubTopicCard({ subTopic, mainTopicId, subjectId }: {
           </>
         )}
       </div>
+
       {quizOpen&&<QuizModal questions={questions} startIndex={quizStartIdx} topicName={subTopic.name} subjectId={subjectId} onClose={()=>setQuizOpen(false)}/>}
+      {selectedItem && hasMapping && (
+        <DetailItemModal
+          item={selectedItem}
+          subTopicId={subTopic.id}
+          subjectId={subjectId}
+          onClose={() => setSelectedItem(null)}
+        />
+      )}
     </>
   );
 }
 
 // ─────────────────────────────────────────────────────────────
-// TopicLearningPanel: 개념카드 + 문제풀이 버튼
+// TopicLearningPanel
 // ─────────────────────────────────────────────────────────────
 function TopicLearningPanel({ mainTopicId, mainTopicName, subjectId }: {
   mainTopicId: string; mainTopicName: string; subjectId: string;
@@ -655,19 +832,35 @@ function TopicLearningPanel({ mainTopicId, mainTopicName, subjectId }: {
   const [loadingCards, setLoadingCards] = useState(false);
   const [loadingQ, setLoadingQ] = useState(false);
   const [totalQ, setTotalQ] = useState<number|null>(null);
+  const [totalCards, setTotalCards] = useState<number|null>(null);
   const [cardsFetched, setCardsFetched] = useState(false);
   const [qFetched, setQFetched] = useState(false);
   const [cardModalOpen, setCardModalOpen] = useState(false);
   const [quizModalOpen, setQuizModalOpen] = useState(false);
-  const hasMapping = subjectId === 'S1' || subjectId === 'S2';
   const theme = SUBJECT_THEME[subjectId] || SUBJECT_THEME.S1;
+
+  // 카드 수 사전 파악
+  useEffect(() => {
+    fetch(`/api/learn/concept-cards?topicId=${mainTopicId}&limit=1`)
+      .then(r => r.json())
+      .then(d => { if (d.success) setTotalCards(d.total ?? 0); })
+      .catch(() => {});
+  }, [mainTopicId]);
+
+  // 문제 수 사전 파악
+  useEffect(() => {
+    fetch(`/api/exam/topic-questions?topicId=${mainTopicId}&limit=1`)
+      .then(r => r.json())
+      .then(d => { if (d.success) setTotalQ(d.total ?? 0); })
+      .catch(() => {});
+  }, [mainTopicId]);
 
   const fetchCards = useCallback(async () => {
     if (cardsFetched||loadingCards) return;
     setLoadingCards(true);
     try {
       const res = await fetch(`/api/learn/concept-cards?topicId=${mainTopicId}&limit=100`);
-      if (res.ok) { const d = await res.json(); if(d.success) setCards(d.cards||[]); }
+      if (res.ok) { const d=await res.json(); if(d.success) setCards(d.cards||[]); }
     } catch {} finally { setLoadingCards(false); setCardsFetched(true); }
   }, [mainTopicId,cardsFetched,loadingCards]);
 
@@ -676,11 +869,9 @@ function TopicLearningPanel({ mainTopicId, mainTopicName, subjectId }: {
     setLoadingQ(true);
     try {
       const res = await fetch(`/api/exam/topic-questions?topicId=${mainTopicId}&limit=50`);
-      if (res.ok) { const d = await res.json(); if(d.success){setQuestions(d.questions||[]);setTotalQ(d.total??0);} }
+      if (res.ok) { const d=await res.json(); if(d.success){setQuestions(d.questions||[]);setTotalQ(d.total??0);} }
     } catch {} finally { setLoadingQ(false); setQFetched(true); }
   }, [mainTopicId,qFetched,loadingQ]);
-
-  if (!hasMapping) return null;
 
   return (
     <>
@@ -705,7 +896,9 @@ function TopicLearningPanel({ mainTopicId, mainTopicName, subjectId }: {
               {loadingCards && <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"/>}
             </div>
             <p className="font-semibold text-sm text-white">개념카드 학습 시작</p>
-            <p className="text-white/70 text-xs mt-0.5">출제기준 핵심개념 플래시카드</p>
+            <p className="text-white/70 text-xs mt-0.5">
+              {totalCards !== null ? `출제기준 핵심 ${totalCards}개 카드` : '출제기준 핵심개념 플래시카드'}
+            </p>
           </button>
           <button
             onClick={async () => { await fetchQuestions(); setQuizModalOpen(true); }}
@@ -809,7 +1002,7 @@ export default function TopicDetailPage() {
         </div>
       </div>
 
-      {/* 토픽 헤더 카드 */}
+      {/* 토픽 헤더 */}
       <div className="bg-white rounded-2xl p-6 border border-slate-200">
         <div className="flex items-start justify-between">
           <div>
@@ -825,6 +1018,11 @@ export default function TopicDetailPage() {
               <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-700">
                 <ClipboardList className="w-3.5 h-3.5"/>출제기준 필수 범위
               </span>
+              {hasMapping && (
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
+                  <BookText className="w-3.5 h-3.5"/>항목 클릭 → 교재 페이지 연결
+                </span>
+              )}
             </div>
           </div>
           <div className="text-right">
@@ -839,7 +1037,7 @@ export default function TopicDetailPage() {
         </div>
       </div>
 
-      {/* 출제기준 상세 섹션 (모든 과목) */}
+      {/* 출제기준 상세 섹션 */}
       {hasMapping && <ExamCriteriaSection mainTopicId={mainTopic.id} subjectId={subjectId}/>}
 
       {/* 학습 시작 패널 (S1, S2만) */}
@@ -851,23 +1049,26 @@ export default function TopicDetailPage() {
       <div className={`${theme.light} border ${theme.border} rounded-xl px-5 py-4 flex items-start gap-3`}>
         <Lightbulb className={`w-5 h-5 shrink-0 mt-0.5 ${theme.text}`}/>
         <div>
-          <p className={`text-sm font-semibold mb-1 ${theme.text}`}>
-            💡 출제기준 근거 완벽 대비 학습법
-          </p>
+          <p className={`text-sm font-semibold mb-1 ${theme.text}`}>💡 출제기준 근거 완벽 대비 3단계 학습법</p>
           <p className={`text-xs leading-relaxed ${theme.text} opacity-80`}>
-            위 <strong>출제기준 세세항목</strong>이 곧 시험에 나오는 내용입니다.
-            <strong> 개념카드</strong>로 출제기준 핵심개념을 먼저 암기하고,
-            <strong> 문제풀이</strong>로 출제기준 연계 예상문제를 풀어보세요.
-            각 세부항목을 클릭하면 <strong>{theme.bookLabel} 교재 연계 해설</strong>까지 확인할 수 있습니다.
+            <strong>① 세세항목 클릭</strong> → 교재 페이지 연결로 핵심 내용 확인 |&nbsp;
+            <strong>② 개념카드</strong>로 출제기준 핵심개념 암기 |&nbsp;
+            <strong>③ 문제풀이</strong>로 출제기준 연계 예상문제 검증.
+            모든 세세항목은 <strong>{theme.bookLabel} 교재 해당 페이지</strong>와 직접 연결됩니다.
           </p>
         </div>
       </div>
 
-      {/* 세부 토픽 카드 목록 */}
+      {/* 세부항목 카드 목록 */}
       <div>
         <div className="flex items-center gap-2 mb-4">
           <h2 className="font-bold text-slate-900">세부항목별 이론 학습</h2>
           <span className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full">{mainTopic.subTopics.length}개</span>
+          {hasMapping && (
+            <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full flex items-center gap-1">
+              <BookText className="w-3 h-3"/>각 항목 클릭 → 교재 연결
+            </span>
+          )}
         </div>
         <div className="space-y-4">
           {mainTopic.subTopics.map((subTopic) => (
