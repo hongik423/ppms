@@ -73,9 +73,9 @@ export default function ExamHub() {
           <div className="flex items-start justify-between gap-4">
             <div>
               <h2 className="text-2xl font-bold mb-2">문제 학습 모드 (거꾸로 학습)</h2>
-              <p className="text-violet-100 mb-2">문제 → 정답 확인 → 1·2권 교재 연계 심층 해설</p>
+              <p className="text-violet-100 mb-2">문제 → 정답 확인 → 1·2·3권 교재 연계 심층 해설</p>
               <p className="text-violet-200 text-sm mb-6">
-                1권(제1과목) · 2권(제2·3과목) 교재 페이지 번호 연계 · 원리 이해 중심 학습 · 985문제 고도화 해설
+                1권(제1과목) · 2권(제2과목) · 3권(제3과목) 교재 페이지 번호 연계 · 원리 이해 중심 학습 · 985문제 고도화 해설
               </p>
               <Link
                 href="/exam/study"

@@ -37,7 +37,7 @@ interface TextbookRef {
 
 interface EnhancedExplanation {
   originalExplanation: string;
-  textbook: '1권' | '2권';
+  textbook: '1권' | '2권' | '3권';
   textbookReferences: TextbookRef[];
   enhancedContent: string;
 }
@@ -54,25 +54,40 @@ const SUBJECT_COLORS: Record<string, string> = {
   contract: 'bg-emerald-100 text-emerald-700 border-emerald-200',
 };
 
-const TEXTBOOK_COLORS: Record<string, { bg: string; text: string; border: string; badge: string }> = {
+const TEXTBOOK_COLORS: Record<string, { bg: string; text: string; border: string; badge: string; bar: string }> = {
   '1권': {
     bg: 'bg-violet-50',
     text: 'text-violet-800',
     border: 'border-violet-200',
     badge: 'bg-violet-100 text-violet-700',
+    bar: '#7c3aed',
   },
   '2권': {
     bg: 'bg-blue-50',
     text: 'text-blue-800',
     border: 'border-blue-200',
     badge: 'bg-blue-100 text-blue-700',
+    bar: '#1d4ed8',
+  },
+  '3권': {
+    bg: 'bg-emerald-50',
+    text: 'text-emerald-800',
+    border: 'border-emerald-200',
+    badge: 'bg-emerald-100 text-emerald-700',
+    bar: '#059669',
   },
 };
 
 const SUBJECT_TEXTBOOK: Record<string, string> = {
   procurement: '1권 공공조달의 이해',
   finance: '2권 공공조달 계획분석',
-  contract: '2권 공공조달 계획분석',
+  contract: '3권 공공계약관리',
+};
+
+const SUBJECT_TEXTBOOK_KEY: Record<string, '1권' | '2권' | '3권'> = {
+  procurement: '1권',
+  finance: '2권',
+  contract: '3권',
 };
 
 function QuestionStudyCard({
@@ -124,8 +139,11 @@ function QuestionStudyCard({
   };
 
   const isCorrect = selectedAnswer !== null && selectedAnswer === question.correctAnswer;
-  const textbookName = SUBJECT_TEXTBOOK[question.subject] || '교재';
-  const tbKey = question.subject === 'procurement' ? '1권' : '2권';
+  // Use enhancedData.textbook if available; otherwise fallback to subject default
+  const tbKey: '1권' | '2권' | '3권' = enhancedData?.textbook || SUBJECT_TEXTBOOK_KEY[question.subject] || '2권';
+  const textbookName = enhancedData?.textbook
+    ? { '1권': '1권 공공조달의 이해', '2권': '2권 공공조달 계획분석', '3권': '3권 공공계약관리' }[enhancedData.textbook]
+    : (SUBJECT_TEXTBOOK[question.subject] || '교재');
   const tbColors = TEXTBOOK_COLORS[tbKey];
 
   return (
@@ -155,7 +173,7 @@ function QuestionStudyCard({
               className="h-1.5 rounded-full transition-all"
               style={{
                 width: `${((index + 1) / total) * 100}%`,
-                backgroundColor: tbKey === '1권' ? '#7c3aed' : '#1d4ed8',
+                backgroundColor: tbColors.bar,
               }}
             />
           </div>
@@ -419,17 +437,17 @@ export default function StudyModePage() {
           </div>
         </div>
 
-        {/* Feature highlight - 2 textbooks */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+        {/* Feature highlight - 3 textbooks */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
           <div className="bg-violet-50 border border-violet-200 rounded-xl p-4">
             <div className="flex items-center gap-2 mb-2">
               <BookMarked className="w-4 h-4 text-violet-600" />
               <span className="font-semibold text-violet-800 text-sm">1권 공공조달의 이해</span>
             </div>
             <ul className="space-y-1 text-xs text-violet-700">
-              <li>✓ 제1과목 공공조달이론 문제 연계</li>
-              <li>✓ 1권 7개 장 페이지 참조 제공</li>
-              <li>✓ 법령·원칙·제도 원리 심층 해설</li>
+              <li>✓ 제1과목 공공조달이론 연계</li>
+              <li>✓ 1권 7개 장 페이지 참조</li>
+              <li>✓ 법령·원칙·제도 원리 해설</li>
             </ul>
           </div>
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
@@ -438,9 +456,20 @@ export default function StudyModePage() {
               <span className="font-semibold text-blue-800 text-sm">2권 공공조달 계획분석</span>
             </div>
             <ul className="space-y-1 text-xs text-blue-700">
-              <li>✓ 제2·3과목 입찰·계획·평가 문제 연계</li>
-              <li>✓ 2권 6개 장 페이지 참조 제공</li>
-              <li>✓ 입찰절차·원가·리스크 원리 심층 해설</li>
+              <li>✓ 제2과목 입찰·계획·평가 연계</li>
+              <li>✓ 2권 6개 장 페이지 참조</li>
+              <li>✓ 입찰절차·원가·리스크 해설</li>
+            </ul>
+          </div>
+          <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <BookMarked className="w-4 h-4 text-emerald-600" />
+              <span className="font-semibold text-emerald-800 text-sm">3권 공공계약관리</span>
+            </div>
+            <ul className="space-y-1 text-xs text-emerald-700">
+              <li>✓ 제3과목 계약관리 전 문제 연계</li>
+              <li>✓ 3권 6개 장 페이지 참조</li>
+              <li>✓ 계약변경·지체·하자·MAS 해설</li>
             </ul>
           </div>
         </div>
@@ -488,7 +517,7 @@ export default function StudyModePage() {
               {
                 value: 'contract',
                 label: '제3과목 계약관리',
-                sub: '30문제 · 2권 연계',
+                sub: '30문제 · 3권 연계',
                 color: 'bg-emerald-700',
               },
             ].map((opt) => (
