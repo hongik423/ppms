@@ -12,7 +12,9 @@ import {
   Filter,
   Lightbulb,
   BookMarked,
+  ArrowLeft,
 } from 'lucide-react';
+import Link from 'next/link';
 
 interface ExamQuestion {
   id: string;
@@ -29,18 +31,20 @@ interface TextbookRef {
   chapter: number;
   chapterTitle: string;
   pages: string;
+  section?: string;
   keyword: string;
 }
 
 interface EnhancedExplanation {
   originalExplanation: string;
+  textbook: '1권' | '2권';
   textbookReferences: TextbookRef[];
   enhancedContent: string;
 }
 
 const SUBJECT_LABELS: Record<string, string> = {
   procurement: '제1과목 공공조달이론',
-  finance: '제2과목 재무회계',
+  finance: '제2과목 공공조달 계획분석',
   contract: '제3과목 계약관리',
 };
 
@@ -48,6 +52,27 @@ const SUBJECT_COLORS: Record<string, string> = {
   procurement: 'bg-violet-100 text-violet-700 border-violet-200',
   finance: 'bg-blue-100 text-blue-700 border-blue-200',
   contract: 'bg-emerald-100 text-emerald-700 border-emerald-200',
+};
+
+const TEXTBOOK_COLORS: Record<string, { bg: string; text: string; border: string; badge: string }> = {
+  '1권': {
+    bg: 'bg-violet-50',
+    text: 'text-violet-800',
+    border: 'border-violet-200',
+    badge: 'bg-violet-100 text-violet-700',
+  },
+  '2권': {
+    bg: 'bg-blue-50',
+    text: 'text-blue-800',
+    border: 'border-blue-200',
+    badge: 'bg-blue-100 text-blue-700',
+  },
+};
+
+const SUBJECT_TEXTBOOK: Record<string, string> = {
+  procurement: '1권 공공조달의 이해',
+  finance: '2권 공공조달 계획분석',
+  contract: '2권 공공조달 계획분석',
 };
 
 function QuestionStudyCard({
@@ -83,10 +108,10 @@ function QuestionStudyCard({
       const res = await fetch(`/api/exam/enhanced-explanation?id=${question.id}`);
       if (res.ok) {
         const data = await res.json();
-        setEnhancedData(data);
+        if (data.success) setEnhancedData(data);
       }
     } catch {
-      // Enhanced explanation not available
+      /* not available */
     } finally {
       setLoadingEnhanced(false);
     }
@@ -95,13 +120,13 @@ function QuestionStudyCard({
   const handleSelectAnswer = (idx: number) => {
     setSelectedAnswer(idx);
     setShowExplanation(true);
-    if (question.subject === 'procurement') {
-      fetchEnhanced();
-    }
+    fetchEnhanced(); // Always prefetch
   };
 
   const isCorrect = selectedAnswer !== null && selectedAnswer === question.correctAnswer;
-  const isWrong = selectedAnswer !== null && selectedAnswer !== question.correctAnswer;
+  const textbookName = SUBJECT_TEXTBOOK[question.subject] || '교재';
+  const tbKey = question.subject === 'procurement' ? '1권' : '2권';
+  const tbColors = TEXTBOOK_COLORS[tbKey];
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
@@ -109,6 +134,9 @@ function QuestionStudyCard({
       <div className="bg-white border-b border-gray-200 px-4 py-3 sticky top-0 z-10">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
+            <Link href="/exam/study" className="p-1 hover:bg-gray-100 rounded">
+              <ArrowLeft className="w-4 h-4 text-gray-500" />
+            </Link>
             <span
               className={`px-2 py-1 rounded text-xs font-semibold border ${
                 SUBJECT_COLORS[question.subject] || 'bg-gray-100 text-gray-600'
@@ -124,8 +152,11 @@ function QuestionStudyCard({
         <div className="max-w-3xl mx-auto mt-2">
           <div className="w-full bg-gray-200 rounded-full h-1.5">
             <div
-              className="bg-violet-500 h-1.5 rounded-full transition-all"
-              style={{ width: `${((index + 1) / total) * 100}%` }}
+              className="h-1.5 rounded-full transition-all"
+              style={{
+                width: `${((index + 1) / total) * 100}%`,
+                backgroundColor: tbKey === '1권' ? '#7c3aed' : '#1d4ed8',
+              }}
             />
           </div>
         </div>
@@ -133,7 +164,7 @@ function QuestionStudyCard({
 
       {/* Content */}
       <div className="flex-1 max-w-3xl mx-auto w-full px-4 py-6">
-        {/* Difficulty */}
+        {/* Textbook badge + difficulty */}
         <div className="flex items-center gap-2 mb-4">
           <span
             className={`text-xs px-2 py-0.5 rounded font-medium ${
@@ -146,42 +177,36 @@ function QuestionStudyCard({
           >
             {question.difficulty === 'hard' ? '어려움' : question.difficulty === 'easy' ? '쉬움' : '보통'}
           </span>
-          {question.subject === 'procurement' && (
-            <span className="text-xs text-violet-600 flex items-center gap-1">
-              <BookMarked className="w-3 h-3" />
-              1권 연계 해설 제공
-            </span>
-          )}
+          <span className={`text-xs px-2 py-0.5 rounded font-medium flex items-center gap-1 ${tbColors.badge}`}>
+            <BookMarked className="w-3 h-3" />
+            {textbookName} 연계 해설
+          </span>
         </div>
 
         {/* Question */}
         <div className="bg-white rounded-xl border border-gray-200 p-6 mb-4">
-          <p className="text-gray-900 leading-relaxed font-medium">
-            {question.content}
-          </p>
+          <p className="text-gray-900 leading-relaxed font-medium">{question.content}</p>
         </div>
 
         {/* Options */}
         <div className="space-y-2 mb-4">
           {question.options.map((opt, idx) => {
-            let buttonClass =
-              'w-full text-left p-4 rounded-xl border-2 transition-all ';
+            let cls = 'w-full text-left p-4 rounded-xl border-2 transition-all ';
             if (selectedAnswer === null) {
-              buttonClass += 'border-gray-200 bg-white hover:border-blue-300 hover:bg-blue-50';
+              cls += 'border-gray-200 bg-white hover:border-blue-300 hover:bg-blue-50';
             } else if (idx === question.correctAnswer) {
-              buttonClass += 'border-green-500 bg-green-50';
-            } else if (idx === selectedAnswer && idx !== question.correctAnswer) {
-              buttonClass += 'border-red-400 bg-red-50';
+              cls += 'border-green-500 bg-green-50';
+            } else if (idx === selectedAnswer) {
+              cls += 'border-red-400 bg-red-50';
             } else {
-              buttonClass += 'border-gray-100 bg-gray-50 opacity-60';
+              cls += 'border-gray-100 bg-gray-50 opacity-60';
             }
-
             return (
               <button
                 key={idx}
                 onClick={() => selectedAnswer === null && handleSelectAnswer(idx)}
                 disabled={selectedAnswer !== null}
-                className={buttonClass}
+                className={cls}
               >
                 <div className="flex items-start gap-3">
                   <span
@@ -212,19 +237,19 @@ function QuestionStudyCard({
         {selectedAnswer !== null && (
           <div
             className={`rounded-xl p-4 mb-4 border ${
-              isCorrect
-                ? 'bg-green-50 border-green-200'
-                : 'bg-red-50 border-red-200'
+              isCorrect ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'
             }`}
           >
             <p className={`font-semibold ${isCorrect ? 'text-green-700' : 'text-red-700'}`}>
-              {isCorrect ? '✅ 정답입니다!' : `❌ 오답입니다. 정답: ${String.fromCharCode(65 + question.correctAnswer)}번`}
+              {isCorrect
+                ? '✅ 정답입니다!'
+                : `❌ 오답입니다. 정답: ${String.fromCharCode(65 + question.correctAnswer)}번`}
             </p>
           </div>
         )}
 
-        {/* Explanation */}
-        {showExplanation && question.explanation && (
+        {/* Explanations */}
+        {showExplanation && (
           <div className="space-y-3 mb-4">
             {/* Basic explanation */}
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
@@ -235,76 +260,76 @@ function QuestionStudyCard({
               <p className="text-gray-700 text-sm leading-relaxed">{question.explanation}</p>
             </div>
 
-            {/* Enhanced explanation (procurement only) */}
-            {question.subject === 'procurement' && (
-              <>
-                <button
-                  onClick={() => {
-                    setShowEnhanced(!showEnhanced);
-                    if (!enhancedData) fetchEnhanced();
-                  }}
-                  className="w-full flex items-center justify-between px-4 py-3 bg-violet-50 border border-violet-200 rounded-xl hover:bg-violet-100 transition-colors"
-                >
-                  <div className="flex items-center gap-2">
-                    <BookMarked className="w-4 h-4 text-violet-600" />
-                    <span className="text-sm font-semibold text-violet-700">
-                      1권 연계 고도화 해설 · 거꾸로 학습
-                    </span>
-                  </div>
-                  {showEnhanced ? (
-                    <EyeOff className="w-4 h-4 text-violet-500" />
-                  ) : (
-                    <Eye className="w-4 h-4 text-violet-500" />
-                  )}
-                </button>
+            {/* Enhanced explanation button */}
+            <button
+              onClick={() => {
+                setShowEnhanced(!showEnhanced);
+                if (!enhancedData) fetchEnhanced();
+              }}
+              className={`w-full flex items-center justify-between px-4 py-3 border rounded-xl transition-colors ${tbColors.bg} ${tbColors.border} hover:opacity-90`}
+            >
+              <div className="flex items-center gap-2">
+                <BookMarked className={`w-4 h-4 ${tbColors.text}`} />
+                <span className={`text-sm font-semibold ${tbColors.text}`}>
+                  {textbookName} 연계 고도화 해설 · 거꾸로 학습
+                </span>
+              </div>
+              {showEnhanced ? (
+                <EyeOff className={`w-4 h-4 ${tbColors.text} opacity-60`} />
+              ) : (
+                <Eye className={`w-4 h-4 ${tbColors.text} opacity-60`} />
+              )}
+            </button>
 
-                {showEnhanced && (
-                  <div className="bg-violet-50 border border-violet-200 rounded-xl p-5">
-                    {loadingEnhanced ? (
-                      <div className="flex items-center gap-2 text-violet-600">
-                        <div className="w-4 h-4 border-2 border-violet-400 border-t-transparent rounded-full animate-spin" />
-                        <span className="text-sm">고도화 해설 로딩 중...</span>
-                      </div>
-                    ) : enhancedData ? (
-                      <>
-                        {/* Textbook references */}
-                        {enhancedData.textbookReferences?.length > 0 && (
-                          <div className="mb-4">
-                            <p className="text-xs font-semibold text-violet-600 uppercase tracking-wide mb-2">
-                              📚 교재 참조 (1권 공공조달의 이해)
-                            </p>
-                            <div className="space-y-1">
-                              {enhancedData.textbookReferences.map((ref, i) => (
-                                <div
-                                  key={i}
-                                  className="flex items-center gap-2 text-sm text-violet-800 bg-white rounded-lg px-3 py-2"
-                                >
-                                  <span className="font-bold text-violet-500">
-                                    제{ref.chapter}장
-                                  </span>
-                                  <span className="text-gray-600">{ref.chapterTitle}</span>
-                                  <span className="ml-auto text-violet-600 font-medium text-xs">
-                                    p.{ref.pages}
-                                  </span>
-                                </div>
-                              ))}
+            {/* Enhanced content */}
+            {showEnhanced && (
+              <div className={`${tbColors.bg} border ${tbColors.border} rounded-xl p-5`}>
+                {loadingEnhanced ? (
+                  <div className={`flex items-center gap-2 ${tbColors.text}`}>
+                    <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                    <span className="text-sm">고도화 해설 로딩 중...</span>
+                  </div>
+                ) : enhancedData ? (
+                  <>
+                    {/* Textbook references */}
+                    {enhancedData.textbookReferences?.length > 0 && (
+                      <div className="mb-4">
+                        <p className={`text-xs font-semibold uppercase tracking-wide mb-2 ${tbColors.text}`}>
+                          📚 교재 참조 ({textbookName})
+                        </p>
+                        <div className="space-y-1">
+                          {enhancedData.textbookReferences.map((ref, i) => (
+                            <div
+                              key={i}
+                              className="flex items-center gap-2 text-sm bg-white rounded-lg px-3 py-2"
+                            >
+                              <span className={`font-bold text-sm ${tbColors.text}`}>
+                                제{ref.chapter}장
+                              </span>
+                              <span className="text-gray-600 text-xs">{ref.chapterTitle}</span>
+                              {ref.section && (
+                                <span className="text-gray-400 text-xs hidden sm:block">
+                                  · {ref.section}
+                                </span>
+                              )}
+                              <span className={`ml-auto font-medium text-xs ${tbColors.text}`}>
+                                p.{ref.pages}
+                              </span>
                             </div>
-                          </div>
-                        )}
-
-                        {/* Enhanced content */}
-                        <div className="text-sm text-gray-700 leading-relaxed whitespace-pre-wrap">
-                          {enhancedData.enhancedContent}
+                          ))}
                         </div>
-                      </>
-                    ) : (
-                      <p className="text-sm text-gray-500">
-                        이 문제에 대한 고도화 해설이 준비 중입니다.
-                      </p>
+                      </div>
                     )}
-                  </div>
+
+                    {/* Full enhanced content */}
+                    <div className={`text-sm leading-relaxed whitespace-pre-wrap ${tbColors.text}`}>
+                      {enhancedData.enhancedContent}
+                    </div>
+                  </>
+                ) : (
+                  <p className="text-sm text-gray-500">이 문제의 고도화 해설이 준비 중입니다.</p>
                 )}
-              </>
+              </div>
             )}
           </div>
         )}
@@ -324,7 +349,7 @@ function QuestionStudyCard({
           <button
             onClick={onNext}
             disabled={index === total - 1}
-            className="flex-1 flex items-center justify-center gap-2 py-3 bg-violet-600 text-white rounded-xl font-semibold hover:bg-violet-700 disabled:opacity-40 disabled:cursor-not-allowed"
+            className="flex-1 flex items-center justify-center gap-2 py-3 bg-blue-700 text-white rounded-xl font-semibold hover:bg-blue-800 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             다음
             <ChevronRight className="w-5 h-5" />
@@ -345,14 +370,13 @@ export default function StudyModePage() {
   useEffect(() => {
     async function loadQuestions() {
       try {
-        // Get a fresh set of 30 procurement questions for study
         const res = await fetch('/api/exam/mock/create', { method: 'POST' });
         const data = await res.json();
         if (data.exam?.questions) {
           setQuestions(data.exam.questions);
         }
       } catch {
-        // fallback
+        /* ignore */
       } finally {
         setLoading(false);
       }
@@ -383,38 +407,61 @@ export default function StudyModePage() {
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <div className="p-2 bg-violet-100 rounded-lg">
-              <BookOpen className="w-6 h-6 text-violet-700" />
+            <div className="p-2 bg-blue-100 rounded-lg">
+              <BookOpen className="w-6 h-6 text-blue-700" />
             </div>
             <div>
               <h1 className="text-2xl font-bold text-gray-900">문제 학습 모드</h1>
               <p className="text-sm text-gray-500">
-                문제를 풀고 고도화 해설로 원리를 이해하는 거꾸로 학습
+                문제 풀이 → 교재 연계 고도화 해설로 원리를 이해하는 거꾸로 학습
               </p>
             </div>
           </div>
         </div>
 
-        {/* Feature highlight */}
-        <div className="bg-violet-50 border border-violet-200 rounded-xl p-5 mb-6">
-          <h3 className="font-semibold text-violet-800 mb-3 flex items-center gap-2">
-            <BookMarked className="w-4 h-4" />
-            1권 연계 고도화 해설이란?
-          </h3>
-          <ul className="space-y-1.5 text-sm text-violet-700">
-            <li className="flex gap-2">
-              <span>✓</span>
-              <span>제1과목 문제에서 <strong>1권 교재의 정확한 페이지 번호</strong>를 제공합니다</span>
-            </li>
-            <li className="flex gap-2">
-              <span>✓</span>
-              <span>단순 암기가 아닌 <strong>원리 이해 중심</strong>의 심층 해설을 제공합니다</span>
-            </li>
-            <li className="flex gap-2">
-              <span>✓</span>
-              <span><strong>거꾸로 학습</strong>: 문제 풀이 → 원리 이해 → 응용력 향상</span>
-            </li>
-          </ul>
+        {/* Feature highlight - 2 textbooks */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
+          <div className="bg-violet-50 border border-violet-200 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <BookMarked className="w-4 h-4 text-violet-600" />
+              <span className="font-semibold text-violet-800 text-sm">1권 공공조달의 이해</span>
+            </div>
+            <ul className="space-y-1 text-xs text-violet-700">
+              <li>✓ 제1과목 공공조달이론 문제 연계</li>
+              <li>✓ 1권 7개 장 페이지 참조 제공</li>
+              <li>✓ 법령·원칙·제도 원리 심층 해설</li>
+            </ul>
+          </div>
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <BookMarked className="w-4 h-4 text-blue-600" />
+              <span className="font-semibold text-blue-800 text-sm">2권 공공조달 계획분석</span>
+            </div>
+            <ul className="space-y-1 text-xs text-blue-700">
+              <li>✓ 제2·3과목 입찰·계획·평가 문제 연계</li>
+              <li>✓ 2권 6개 장 페이지 참조 제공</li>
+              <li>✓ 입찰절차·원가·리스크 원리 심층 해설</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Learning method */}
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
+          <h3 className="font-semibold text-amber-800 mb-3">💡 거꾸로 학습법 (Reverse Learning)</h3>
+          <div className="grid grid-cols-4 gap-2 text-center">
+            {[
+              { step: '1', label: '문제 읽기', icon: '📖' },
+              { step: '2', label: '답 선택', icon: '✏️' },
+              { step: '3', label: '정오 확인', icon: '✅' },
+              { step: '4', label: '교재 원리 이해', icon: '📚' },
+            ].map((s) => (
+              <div key={s.step} className="bg-white rounded-lg p-2">
+                <div className="text-xl mb-1">{s.icon}</div>
+                <div className="text-xs font-bold text-amber-700">{s.step}단계</div>
+                <div className="text-xs text-gray-600">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Filter */}
@@ -423,23 +470,45 @@ export default function StudyModePage() {
             <Filter className="w-4 h-4 text-gray-500" />
             <span className="text-sm font-semibold text-gray-700">과목 선택</span>
           </div>
-          <div className="flex gap-2 flex-wrap">
+          <div className="space-y-2">
             {[
-              { value: 'all', label: '전체 (80문제)' },
-              { value: 'procurement', label: '제1과목 공공조달이론 (30문제) ✦ 1권 연계' },
-              { value: 'finance', label: '제2과목 재무회계 (20문제)' },
-              { value: 'contract', label: '제3과목 계약관리 (30문제)' },
+              { value: 'all', label: '전체', sub: '80문제', color: 'bg-gray-700' },
+              {
+                value: 'procurement',
+                label: '제1과목 공공조달이론',
+                sub: '30문제 · 1권 연계',
+                color: 'bg-violet-700',
+              },
+              {
+                value: 'finance',
+                label: '제2과목 공공조달 계획분석',
+                sub: '20문제 · 2권 연계',
+                color: 'bg-blue-700',
+              },
+              {
+                value: 'contract',
+                label: '제3과목 계약관리',
+                sub: '30문제 · 2권 연계',
+                color: 'bg-emerald-700',
+              },
             ].map((opt) => (
               <button
                 key={opt.value}
                 onClick={() => setFilterSubject(opt.value)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border-2 transition-all ${
                   filterSubject === opt.value
-                    ? 'bg-violet-700 text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? `${opt.color} text-white border-transparent`
+                    : 'bg-white text-gray-700 border-gray-200 hover:border-gray-300'
                 }`}
               >
-                {opt.label}
+                <span className="font-medium text-sm">{opt.label}</span>
+                <span
+                  className={`text-xs ${
+                    filterSubject === opt.value ? 'text-white/80' : 'text-gray-400'
+                  }`}
+                >
+                  {opt.sub}
+                </span>
               </button>
             ))}
           </div>
@@ -447,7 +516,7 @@ export default function StudyModePage() {
 
         {loading ? (
           <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-violet-600 mx-auto mb-3" />
+            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600 mx-auto mb-3" />
             <p className="text-gray-500">문제를 준비하는 중...</p>
           </div>
         ) : (
@@ -456,7 +525,8 @@ export default function StudyModePage() {
               setCurrentIndex(0);
               setStudyMode(true);
             }}
-            className="w-full py-4 bg-violet-600 hover:bg-violet-700 text-white rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-sm"
+            disabled={filteredQuestions.length === 0}
+            className="w-full py-4 bg-blue-700 hover:bg-blue-800 text-white rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all shadow-sm disabled:opacity-40"
           >
             <BookOpen className="w-6 h-6" />
             학습 시작 ({filteredQuestions.length}문제)

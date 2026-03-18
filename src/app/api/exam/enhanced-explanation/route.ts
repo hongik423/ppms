@@ -1,5 +1,5 @@
 /**
- * @fileoverview 문제별 고도화 해설 조회 API (1권 연계)
+ * @fileoverview 문제별 고도화 해설 조회 API (1권·2권 연계)
  * @encoding UTF-8
  */
 
@@ -11,11 +11,13 @@ interface TextbookReference {
   chapter: number;
   chapterTitle: string;
   pages: string;
+  section?: string;
   keyword: string;
 }
 
 interface EnhancedExplanation {
   originalExplanation: string;
+  textbook?: '1권' | '2권';
   textbookReferences: TextbookReference[];
   enhancedContent: string;
 }
@@ -23,6 +25,7 @@ interface EnhancedExplanation {
 interface EnhancedData {
   version: string;
   totalEnhanced: number;
+  sourceTextbooks?: Record<string, string>;
   explanations: Record<string, EnhancedExplanation>;
 }
 
@@ -69,7 +72,10 @@ export async function GET(request: Request) {
     return NextResponse.json({
       success: true,
       questionId,
-      ...explanation,
+      textbook: explanation.textbook || '1권',
+      textbookReferences: explanation.textbookReferences,
+      originalExplanation: explanation.originalExplanation,
+      enhancedContent: explanation.enhancedContent,
     });
   } catch (error) {
     console.error('Enhanced explanation API error:', error);
