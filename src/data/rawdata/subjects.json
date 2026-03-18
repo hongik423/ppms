@@ -675,6 +675,109 @@
               ]
             }
           ]
+        },
+        {
+          "id": "S3-MT5",
+          "name": "공공조달 품질관리",
+          "order": 5,
+          "estimatedWeight": 10,
+          "prediction": 2,
+          "subTopics": [
+            {
+              "id": "S3-MT5-ST1",
+              "name": "공공조달 품질관리 개요 및 단계",
+              "detailItems": [
+                {"id": "S3-MT5-ST1-D1", "name": "공공조달 품질관리의 개념 및 필요성", "predictionScore": 3},
+                {"id": "S3-MT5-ST1-D2", "name": "품질관리 5단계(진입→계약→이행→완료→사후)", "predictionScore": 4},
+                {"id": "S3-MT5-ST1-D3", "name": "품질관리 주요 수단(직접생산확인·품질점검·품질보증)", "predictionScore": 4},
+                {"id": "S3-MT5-ST1-D4", "name": "조달사업법상 품질관리 관련 규정", "predictionScore": 3}
+              ]
+            },
+            {
+              "id": "S3-MT5-ST2",
+              "name": "해외 공공조달 품질관리",
+              "detailItems": [
+                {"id": "S3-MT5-ST2-D1", "name": "미국 공공조달 품질관리(QPL·QML·QBL, CPARS)", "predictionScore": 4},
+                {"id": "S3-MT5-ST2-D2", "name": "영국 공공조달 품질관리(Framework Agreement, BS5750)", "predictionScore": 3},
+                {"id": "S3-MT5-ST2-D3", "name": "캐나다 공공조달 품질관리(PSPC, 보증정책)", "predictionScore": 3},
+                {"id": "S3-MT5-ST2-D4", "name": "해외 품질관리 제도의 국내 시사점", "predictionScore": 3}
+              ]
+            },
+            {
+              "id": "S3-MT5-ST3",
+              "name": "직접생산확인 및 품질점검",
+              "detailItems": [
+                {"id": "S3-MT5-ST3-D1", "name": "직접생산확인 근거(조달사업법 제18조제3항)", "predictionScore": 5},
+                {"id": "S3-MT5-ST3-D2", "name": "직접생산확인 신청 서류(10종)", "predictionScore": 5},
+                {"id": "S3-MT5-ST3-D3", "name": "직접생산 위반 유형 및 제재(4가지)", "predictionScore": 5},
+                {"id": "S3-MT5-ST3-D4", "name": "품질점검 절차(시료채취→이화학시험→결과조치)", "predictionScore": 4}
+              ]
+            },
+            {
+              "id": "S3-MT5-ST4",
+              "name": "안전관리물자 지정제도",
+              "detailItems": [
+                {"id": "S3-MT5-ST4-D1", "name": "안전관리물자 개요(2016년 7월~, 275개 세부품명)", "predictionScore": 4},
+                {"id": "S3-MT5-ST4-D2", "name": "안전관리물자 10개 분야(어린이·보건·도로·소방 등)", "predictionScore": 4},
+                {"id": "S3-MT5-ST4-D3", "name": "1등급(의무인증)·2등급(권고인증) 구분", "predictionScore": 5},
+                {"id": "S3-MT5-ST4-D4", "name": "안전관리물자 지정·해제 절차", "predictionScore": 4}
+              ]
+            },
+            {
+              "id": "S3-MT5-ST5",
+              "name": "품질보증조달물품 지정제도",
+              "detailItems": [
+                {"id": "S3-MT5-ST5-D1", "name": "품질보증조달물품 개요 및 지정 효과", "predictionScore": 4},
+                {"id": "S3-MT5-ST5-D2", "name": "심사 등급별 기준(S/A/B/예비 등급, 1000점 만점)", "predictionScore": 5},
+                {"id": "S3-MT5-ST5-D3", "name": "4대 심사 범주(기술·품질·경영·사회적가치)", "predictionScore": 4},
+                {"id": "S3-MT5-ST5-D4", "name": "지정기간 및 갱신 절차", "predictionScore": 4}
+              ]
+            }
+          ]
+        },
+        {
+          "id": "S3-MT6",
+          "name": "공공조달 기술품질 제품",
+          "order": 6,
+          "estimatedWeight": 10,
+          "prediction": 2,
+          "subTopics": [
+            {
+              "id": "S3-MT6-ST1",
+              "name": "벤처나라(벤처창업혁신조달상품) 등록제도",
+              "detailItems": [
+                {"id": "S3-MT6-ST1-D1", "name": "벤처나라 개요 및 운영 목적", "predictionScore": 3},
+                {"id": "S3-MT6-ST1-D2", "name": "등록 대상(창업 7년 이내/벤처기업) 및 신청 요건", "predictionScore": 4},
+                {"id": "S3-MT6-ST1-D3", "name": "38개 추천기관 및 등록 절차", "predictionScore": 4},
+                {"id": "S3-MT6-ST1-D4", "name": "2천만원 이하 수의계약 및 OEM 허용 규정", "predictionScore": 5},
+                {"id": "S3-MT6-ST1-D5", "name": "벤처나라 지정업체 지원 혜택(신인도 가점 등)", "predictionScore": 4}
+              ]
+            },
+            {
+              "id": "S3-MT6-ST2",
+              "name": "혁신시제품 시범구매제도",
+              "detailItems": [
+                {"id": "S3-MT6-ST2-D1", "name": "혁신시제품 개요 및 시범구매 목적", "predictionScore": 3},
+                {"id": "S3-MT6-ST2-D2", "name": "유형1(중앙행정기관 R&D)·유형2(조달청 지정) 구분", "predictionScore": 5},
+                {"id": "S3-MT6-ST2-D3", "name": "공급자 제안형·수요자 제안형 신청 방식", "predictionScore": 4},
+                {"id": "S3-MT6-ST2-D4", "name": "성공 판정 기준(성능만족도 80점 이상) 및 효과", "predictionScore": 5},
+                {"id": "S3-MT6-ST2-D5", "name": "시범구매예산(530억, 2025년) 및 최대 6년 수의계약", "predictionScore": 4}
+              ]
+            },
+            {
+              "id": "S3-MT6-ST3",
+              "name": "우수조달물품(우수제품) 지정제도",
+              "detailItems": [
+                {"id": "S3-MT6-ST3-D1", "name": "우수제품 개요(1996년~, 915개 업체 531개 품명 4.6조)", "predictionScore": 4},
+                {"id": "S3-MT6-ST3-D2", "name": "신청 자격(중소기업·초기중견기업) 및 신청 대상 제품", "predictionScore": 5},
+                {"id": "S3-MT6-ST3-D3", "name": "9단계 지정 절차(지정계획공고→지정서수여, 약 90일)", "predictionScore": 5},
+                {"id": "S3-MT6-ST3-D4", "name": "1차 심사 기준(70점 이상 통과, 기술·품질·신인도)", "predictionScore": 5},
+                {"id": "S3-MT6-ST3-D5", "name": "지정기간(기본 3년, 최대 6년) 및 연장 사유(7가지)", "predictionScore": 5},
+                {"id": "S3-MT6-ST3-D6", "name": "수의계약·제3자단가계약 체결 방법 및 종합쇼핑몰 등록", "predictionScore": 4},
+                {"id": "S3-MT6-ST3-D7", "name": "지정취소·경고·지정효력정지 등 사후관리 제재", "predictionScore": 4}
+              ]
+            }
+          ]
         }
       ]
     },

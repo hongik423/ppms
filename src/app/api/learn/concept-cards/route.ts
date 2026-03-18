@@ -32,8 +32,9 @@ interface ConceptCardData {
 
 let cachedS1Cards: ConceptCard[] | null = null;
 let cachedS2Cards: ConceptCard[] | null = null;
+let cachedS3Cards: ConceptCard[] | null = null;
 
-function loadCards(subject: 'S1' | 'S2'): ConceptCard[] {
+function loadCards(subject: 'S1' | 'S2' | 'S3'): ConceptCard[] {
   if (subject === 'S1') {
     if (!cachedS1Cards) {
       const p = path.join(process.cwd(), 'src', 'data', 'rawdata', 'concept-cards-s1.json');
@@ -41,13 +42,20 @@ function loadCards(subject: 'S1' | 'S2'): ConceptCard[] {
       cachedS1Cards = raw.cards;
     }
     return cachedS1Cards!;
-  } else {
+  } else if (subject === 'S2') {
     if (!cachedS2Cards) {
       const p = path.join(process.cwd(), 'src', 'data', 'rawdata', 'concept-cards-s2.json');
       const raw = JSON.parse(fs.readFileSync(p, 'utf-8')) as ConceptCardData;
       cachedS2Cards = raw.cards;
     }
     return cachedS2Cards!;
+  } else {
+    if (!cachedS3Cards) {
+      const p = path.join(process.cwd(), 'src', 'data', 'rawdata', 'concept-cards-s3.json');
+      const raw = JSON.parse(fs.readFileSync(p, 'utf-8')) as ConceptCardData;
+      cachedS3Cards = raw.cards;
+    }
+    return cachedS3Cards!;
   }
 }
 
@@ -63,7 +71,7 @@ export async function GET(req: NextRequest) {
     }
 
     // 과목 판별
-    const subject = topicId.startsWith('S2') ? 'S2' : 'S1';
+    const subject = topicId.startsWith('S3') ? 'S3' : topicId.startsWith('S2') ? 'S2' : 'S1';
     const allCards = loadCards(subject);
 
     // 필터링

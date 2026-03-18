@@ -698,7 +698,7 @@ function SubTopicCard({ subTopic, mainTopicId, subjectId }: {
   const [quizOpen, setQuizOpen] = useState(false);
   const [quizStartIdx, setQuizStartIdx] = useState(0);
   const [selectedItem, setSelectedItem] = useState<DetailItem | null>(null);
-  const hasMapping = subjectId === 'S1' || subjectId === 'S2';
+  const hasMapping = subjectId === 'S1' || subjectId === 'S2' || subjectId === 'S3';
   const theme = SUBJECT_THEME[subjectId] || SUBJECT_THEME.S1;
 
   const fetchQ = useCallback(async () => {
@@ -1049,8 +1049,8 @@ export default function TopicDetailPage() {
       {/* 출제기준 상세 섹션 */}
       {hasMapping && <ExamCriteriaSection mainTopicId={mainTopic.id} subjectId={subjectId}/>}
 
-      {/* 학습 시작 패널 (S1, S2만) */}
-      {(subjectId === 'S1' || subjectId === 'S2') && (
+      {/* 학습 시작 패널 (S1, S2, S3) */}
+      {(subjectId === 'S1' || subjectId === 'S2' || subjectId === 'S3') && (
         <TopicLearningPanel mainTopicId={mainTopic.id} mainTopicName={mainTopic.name} subjectId={subjectId}/>
       )}
 
