@@ -237,6 +237,149 @@ const comparisonData: ComparisonData[] = [
       },
     ],
   },
+  {
+    id: 'c1-07',
+    subject: '1과목',
+    title: '중앙집중형 vs 분산형 공공조달 비교 — "중규분신"',
+    description: '조달 조직체계 유형 비교 — 출제기준 항목2-2 (1권 2장)',
+    headers: ['중앙집중형', '분산형'],
+    rows: [
+      {
+        label: '개념',
+        cells: [
+          '조달청(중앙조달기관)이\n통합 관리·구매',
+          '각 수요기관이\n자체적으로 조달·구매',
+        ],
+      },
+      {
+        label: '장점',
+        cells: [
+          '규모의 경제 실현\n전문성·일관성 확보\n중복구매 방지',
+          '신속성·유연성 우수\n현장 수요 즉시 반영\n기관별 특성 고려',
+        ],
+      },
+      {
+        label: '단점',
+        cells: [
+          '절차 복잡·시간 소요\n현장 수요 반영 어려움',
+          '전문성 부족·중복구매\n규모의 경제 미실현',
+        ],
+      },
+      {
+        label: '한국 적용',
+        cells: [
+          '조달청(나라장터) 중심\n중앙집중형 + 위임 병행',
+          '소액수의계약 등\n자체 구매 허용 범위 내',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"중(앙)=규(모의 경제)!"', '"분(산)=신(속성)!"'],
+      },
+    ],
+  },
+  {
+    id: 'c1-08',
+    subject: '1과목',
+    title: '전략적 공공조달 4대 분야 비교 — "중녹혁사"',
+    description: '중소기업·녹색·혁신·사회적가치 지원조달 비교 — 출제기준 항목4 (1권 4~5장)',
+    headers: ['중소기업 지원', '녹색조달', '혁신·기술개발', '사회적가치'],
+    rows: [
+      {
+        label: '목적',
+        cells: [
+          '중소기업 판로 확대\n공정경쟁 기회 보장',
+          '환경적 지속가능성\n탄소중립·환경보호',
+          '기술혁신 촉진\n신기술 제품 확산',
+          '취약계층 지원\nESG 가치 실현',
+        ],
+      },
+      {
+        label: '핵심 제도',
+        cells: [
+          '공공구매(50%↑)\n중소기업자간경쟁\n자재 직접구매',
+          '녹색제품 우선구매\n생애주기비용(LCC)\n환경마크·GR마크',
+          '기술개발제품 우선구매\n우수조달물품 지정\n혁신제품 지정',
+          '장애인기업\n중증장애인생산품\n여성기업·사회적기업',
+        ],
+      },
+      {
+        label: '근거법',
+        cells: [
+          '중소기업제품\n구매촉진법',
+          '녹색제품\n구매촉진법',
+          '조달사업법\n제9조의2',
+          '장애인기업활동\n촉진법 등',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"공중직"', '"환녹생"', '"기우혁"', '"장중여사"'],
+      },
+    ],
+  },
+  {
+    id: 'c1-09',
+    subject: '1과목',
+    title: '공기업 계약사무규칙 vs 국가계약법 비교',
+    description: '공기업·준정부기관 계약사무규칙 특례 vs 국가계약법 일반 — 출제기준 항목5-5',
+    headers: ['국가계약법', '공기업·준정부기관 계약사무규칙'],
+    rows: [
+      {
+        label: '적용 대상',
+        cells: ['중앙관서·기금·정부투자기관', '공기업·준정부기관 (공공기관운영법)'],
+      },
+      {
+        label: '국제입찰',
+        cells: ['WTO 기준에 따른 국제입찰', '별도 국제입찰 대상 범위 규정'],
+      },
+      {
+        label: '중소기업 구매',
+        cells: ['구매촉진법에 따라 의무', '중소기업 구매위탁 의무 예외 가능'],
+      },
+      {
+        label: '수의계약',
+        cells: ['시행령 제26조 각호 한정', '기관별 별도 수의계약 규정 가능'],
+      },
+      {
+        label: '이의신청',
+        cells: ['발주기관 장에게 15일 이내', '규칙에 따른 의견청취·이의신청 절차'],
+      },
+    ],
+  },
+  {
+    id: 'c1-10',
+    subject: '1과목',
+    title: '목록정보시스템 6대 기능 비교 — "법이목분최국"',
+    description: '물품분류·목록화·최신화·국제표준화 기능 비교 — 출제기준 항목3-3 (1권 3장 4절)',
+    headers: ['목록화 절차', '분류·품목 관리', '최신화·국제표준화'],
+    rows: [
+      {
+        label: '개념',
+        cells: [
+          '물품을 표준화된 분류체계에\n등록하는 절차',
+          '품명·품목을 체계적으로\n분류·관리하는 활동',
+          '분류체계를 최신 상태로\n유지·국제표준 연계',
+        ],
+      },
+      {
+        label: '주요 활동',
+        cells: [
+          '물품목록 신청\n→ 심사·등록\n→ 물품번호 부여 (8자리)',
+          '대분류→중분류→소분류\n→세분류 4단계 체계\n품명·규격·단위 표준화',
+          'UNSPSC 국제표준 연계\n신규 품목 반영\n불용 품목 정비',
+        ],
+      },
+      {
+        label: '법적 근거',
+        cells: ['물품관리법, 물품목록법', '물품목록법 시행규칙', '국제표준화 관련 지침'],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"목록화=등록→번호부여"', '"분류=대중소세 4단계"', '"최국=UNSPSC 국제표준"'],
+      },
+    ],
+  },
 
   // ────────── 2과목 ──────────
   {
@@ -1157,7 +1300,7 @@ const comparisonData: ComparisonData[] = [
 
 const subjectTabs: Array<{ id: SubjectFilter; label: string; activeColor: string; inactiveColor: string }> = [
   { id: '전체', label: '전체 (18개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
-  { id: '1과목', label: '1과목 법제도 (6개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
+  { id: '1과목', label: '1과목 법제도 (10개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목', label: '2과목 조달계획 (8개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목', label: '3과목 계약관리 (9개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무', label: '4권 관리실무 (6개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },

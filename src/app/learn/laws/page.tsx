@@ -160,8 +160,59 @@ const lawGroups: LawGroup[] = [
       },
     ],
   },
+  {
+    category: '민법 화해·공기업규칙·혁신조달 (1과목 항목4·5)',
+    subject: '1과목',
+    color: 'bg-violet-50 border-violet-200 dark:bg-violet-900/10 dark:border-violet-700',
+    laws: [
+      {
+        law: '민법 제731조 (화해)',
+        description: '화해계약 — 분쟁을 종결시키는 합의 (출제기준 항목5-1)',
+        keyPoints: [
+          '당사자가 상호 양보하여 분쟁을 종지(終止)하는 계약',
+          '화해로 확정된 사항은 당사자를 구속 (기판력 유사)',
+          '공공계약에서 분쟁조정·중재 합의에 적용',
+          '암기: "화해=상호양보 분쟁종결!"',
+        ],
+        subject: '1과목',
+      },
+      {
+        law: '공기업·준정부기관 계약사무규칙',
+        description: '공기업 계약 특례 — 출제기준 항목5-5',
+        keyPoints: [
+          '국제입찰 대상 범위: 별도 규정 (WTO 기준 연동)',
+          '중소기업 구매위탁 의무 예외 가능',
+          '수의계약: 기관별 자체 규정으로 유연 적용',
+          '의견청취·심의절차·이의신청 규정 포함',
+        ],
+        subject: '1과목',
+      },
+      {
+        law: '조달사업법 제9조의2 (혁신제품 지정)',
+        description: '혁신제품·우수조달물품 지정 — 출제기준 항목4-3',
+        keyPoints: [
+          '혁신성 높은 제품 → 조달청이 "혁신제품"으로 지정',
+          '우수조달물품: 품질·기술력 인정 → 나라장터 등록',
+          '수의계약·가점 부여 등 우대 혜택 제공',
+          '암기: "기우혁" — 기술개발·우수조달·혁신제품!',
+        ],
+        subject: '1과목',
+      },
+      {
+        law: '전자조달법 제10조·제11조',
+        description: '전자공개수의계약·하도급 전자처리·이용제한 — 항목5-4',
+        keyPoints: [
+          '제10조: 전자공개수의계약 — 나라장터에서 공개 방식 수의계약',
+          '제11조: 하도급 관리의 전자적 처리 — 하도급지킴이 연계',
+          '이용제한: 부정사용·시스템 악용 시 나라장터 이용 제한',
+          '암기: "전자조달법 10·11조 = 전자수의+하도급전자!"',
+        ],
+        subject: '1과목',
+      },
+    ],
+  },
 
-  // ────────── 2과목 법조문 (8개) — 의미부여암기법 완전 적용 ──────────
+  // ────────── 2과목 법조문 (12개) — 의미부여암기법 완전 적용 ──────────
   {
     category: '입찰·낙찰 관련 법규 (2권 핵심)',
     subject: '2과목',
@@ -621,7 +672,7 @@ const lawGroups: LawGroup[] = [
 
 const subjectTabs = [
   { id: '전체' as SubjectFilter, label: '전체 (41개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
-  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (13개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
+  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (17개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (12개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (12개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (12개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },

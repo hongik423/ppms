@@ -94,6 +94,63 @@ const procedures: Procedure[] = [
       { step: 5, name: '조정 결과 수용 또는 소송', description: '조정 수용 시 합의 완료 / 불수용 시 법원 소송 제기 가능' },
     ],
   },
+  {
+    id: 'proc-s1-06',
+    title: '목록정보시스템 이용절차 — "법이목분최국"',
+    category: '전자조달',
+    subject: '1과목',
+    keyPoint: '"법이목분최국" — 6대 기능 (물품분류 8자리 코드)',
+    steps: [
+      { step: 1, name: '물품목록법령 확인', description: '물품관리법·물품목록법에 따른 분류 기준 확인 — 법적 근거 파악' },
+      { step: 2, name: '목록정보시스템 접속', description: '나라장터 목록정보시스템에 접속하여 물품 검색·조회 (이용 일반절차)' },
+      { step: 3, name: '목록화 신청·등록', description: '신규 물품 목록화 신청 → 심사 → 물품번호(8자리) 부여·등록' },
+      { step: 4, name: '분류·품명·품목 관리', description: '대분류→중분류→소분류→세분류 4단계 체계로 품명·규격·단위 표준화 관리' },
+      { step: 5, name: '최신화 및 분류 정비', description: '신규 품목 반영·불용 품목 정비·분류체계 업데이트 (정기 최신화)' },
+      { step: 6, name: '국제 표준화 연계', description: 'UNSPSC 등 국제 물품분류 표준과 연계 — 국제 공공조달 호환성 확보' },
+    ],
+  },
+  {
+    id: 'proc-s1-07',
+    title: '중소기업자간 경쟁제도 적용절차 — "공중직"',
+    category: '전략적조달',
+    subject: '1과목',
+    keyPoint: '조달청장이 경쟁제품 지정 → 중소기업만 참가 입찰',
+    steps: [
+      { step: 1, name: '경쟁제품 지정·고시', description: '조달청장이 중소기업자간 경쟁제품으로 지정·고시 (중소기업제품 구매촉진법)' },
+      { step: 2, name: '직접생산 확인', description: '참여 중소기업의 직접생산 확인증명서 발급 (중소벤처기업부 확인)' },
+      { step: 3, name: '입찰공고 (중소기업 전용)', description: '나라장터에 중소기업자간 경쟁입찰 공고 — 중소기업만 참가 가능' },
+      { step: 4, name: '입찰·낙찰자 결정', description: '적격심사 또는 최저가 방식으로 낙찰자 결정 (일반경쟁과 동일 절차)' },
+      { step: 5, name: '계약체결 및 이행', description: '낙찰자와 계약 체결 → 물품 납품 → 검수 → 대금 지급' },
+    ],
+  },
+  {
+    id: 'proc-s1-08',
+    title: '우수조달물품·혁신제품 지정절차 — "기우혁"',
+    category: '전략적조달',
+    subject: '1과목',
+    keyPoint: '"기우혁" — 기술개발제품·우수조달물품·혁신제품 3대 지정절차',
+    steps: [
+      { step: 1, name: '지정 신청', description: '공급업체가 조달청에 우수조달물품 또는 혁신제품 지정 신청서 제출' },
+      { step: 2, name: '서류 심사', description: '기술력·품질·혁신성·특허 등 서류 심사 (1차 스크리닝)' },
+      { step: 3, name: '전문가 평가', description: '기술심사위원회의 현장실사·기술평가·시제품 테스트 등 전문 평가' },
+      { step: 4, name: '지정 결정·공고', description: '조달청장이 지정 결정 → 나라장터에 공고·등록 (종합쇼핑몰 게시)' },
+      { step: 5, name: '우대 혜택 적용', description: '수의계약 허용·가점 부여·종합쇼핑몰 등록 → 판로 확대 지원' },
+    ],
+  },
+  {
+    id: 'proc-s1-09',
+    title: '전자공개수의계약 절차 (나라장터)',
+    category: '전자조달',
+    subject: '1과목',
+    keyPoint: '나라장터에서 공개 방식으로 수의계약 (투명성 확보)',
+    steps: [
+      { step: 1, name: '수의계약 요건 확인', description: '국가계약법 시행령 제26조 각호에 해당하는 수의계약 사유 확인' },
+      { step: 2, name: '나라장터 공개 게시', description: '전자조달법 제10조에 따라 나라장터에 수의계약 정보 공개 게시' },
+      { step: 3, name: '견적서 접수', description: '공개 게시 후 2인 이상 견적서 접수 (투명성 확보 — 밀실수의 방지)' },
+      { step: 4, name: '가격 비교·업체 선정', description: '접수된 견적서 가격 비교 → 최저가 또는 적정 업체 선정' },
+      { step: 5, name: '계약 체결', description: '선정된 업체와 전자계약 체결 → 나라장터에 계약 정보 공개' },
+    ],
+  },
 
   // ────────── 2과목 (2개) ──────────
   {
@@ -484,7 +541,7 @@ const procedures: Procedure[] = [
 
 const subjectTabs = [
   { id: '전체' as SubjectFilter, label: '전체 (27개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
-  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (5개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
+  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (9개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (9개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (9개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (8개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },

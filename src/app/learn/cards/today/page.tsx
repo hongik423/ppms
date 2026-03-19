@@ -19,7 +19,7 @@ interface ConceptCardData {
   subject: '1과목' | '2과목' | '3과목' | '4권실무'
 }
 
-// ── 1과목: 공공조달과 법제도 이해 (9개) — 의미부여암기법 완전 적용 ──────────────
+// ── 1과목: 공공조달과 법제도 이해 (15개) — 의미부여암기법 완전 적용 ─────────────
 const s1Cards: ConceptCardData[] = [
   {
     id: 's1-001',
@@ -102,9 +102,60 @@ const s1Cards: ConceptCardData[] = [
     difficulty: 3,
     lawReference: '민법 제543조 (해제), 제550조 (해지)',
   },
+  {
+    id: 's1-010',
+    subject: '1과목',
+    front: '공공조달의 구성체계 — 조직적·감독·기능적 책임',
+    back: '【공공조달 구성체계 (1장 4절)】\n①조직적 구성체계: 조달청(중앙조달기관)·수요기관·감독기관 역할 분담\n②감독 체계: 감사원·국회 예산심의·조달청 내부감사\n③기능적 책임: 사업부서→발주/계약부서→조달청 연계\n\n【핵심 참여자 — "수공이"】\n수(요자): 정부·지자체·공공기관 (구매자)\n공(급자): 조달기업·공급업체 (판매자)\n이(해관계자): 국민·감독기관·시민단체\n\n【의미부여암기】 "조감기"\n조(직적)·감(독)·기(능적 책임)\n"조직을 감독하는 기능!"',
+    category: 'concept',
+    difficulty: 2,
+  },
+  {
+    id: 's1-011',
+    subject: '1과목',
+    front: '공공조달 유형 — 중앙집중형 vs 분산형',
+    back: '【공공조달 유형 (2장 2절)】\n\n①중앙집중형 공공조달:\n• 조달청이 중앙에서 일괄 관리\n• 규모의 경제 실현, 전문성 확보\n• 한국: 조달청(나라장터) 중심\n\n②분산형 공공조달:\n• 각 수요기관이 자체적으로 조달\n• 신속성·유연성 우수\n• 전문성 부족·중복구매 위험\n\n【의미부여암기】 "중규분신"\n중(앙집중)=규(모의 경제), 분(산형)=신(속성)\n"중규모 분산 신속!" — 중앙은 규모, 분산은 신속!',
+    category: 'compare',
+    difficulty: 2,
+  },
+  {
+    id: 's1-012',
+    subject: '1과목',
+    front: '목록정보시스템 — 물품분류 및 국제표준화',
+    back: '【목록정보시스템 (3장 4절 — 출제기준 항목3)】\n\n물품목록법: 정부 물품의 분류·표준화·관리 근거법\n\n【6대 기능 — "법이목분최국"】\n①물품목록법령 이해\n②이용 일반절차\n③목록화 절차\n④분류 품명·품목 관리\n⑤최신화 및 분류 정비\n⑥국제 표준화 (UNSPSC 등)\n\n【의미부여암기】 "법이목분최국"\n법(령)→이(용)→목(록화)→분(류)→최(신화)→국(제표준)\n"법률로 이용하여 목록을 분류해 최신 국제표준으로!"\n\n물품 8자리 식별번호 체계: 대분류→중분류→소분류→세분류',
+    category: 'concept',
+    difficulty: 2,
+  },
+  {
+    id: 's1-013',
+    subject: '1과목',
+    front: '중소기업지원 조달 3대 제도 — "공중직"',
+    back: '【중소기업지원 조달 (4장 — 출제기준 항목4-1)】\n\n①공공구매제도: 정부기관의 중소기업 제품 우선구매 의무\n  → 총구매액의 50% 이상 중소기업 제품 구매\n②중소기업자간 경쟁제도: 중소기업만 참가하는 전용 입찰\n  → 조달청장이 경쟁제품 지정·고시\n③공사용자재 직접구매제도: 발주기관이 자재를 직접 구매\n  → 하도급 업체 대금 보호 목적\n\n【의미부여암기】 "공중직"\n공(공구매)→중(소기업자간경쟁)→직(접구매)\n"공중에서 직접 구매!" — 중소기업 3대 지원!',
+    category: 'concept',
+    difficulty: 2,
+    lawReference: '중소기업제품 구매촉진 및 판로지원에 관한 법률',
+  },
+  {
+    id: 's1-014',
+    subject: '1과목',
+    front: '녹색조달 — 환경적 지속가능성·LCC·녹색제품',
+    back: '【녹색조달 (4장 — 출제기준 항목4-2)】\n\n①환경적 지속가능성 개요:\n  GPP(Green Public Procurement) — 환경을 고려한 공공구매\n②녹색제품 우선구매:\n  환경마크·GR마크 인증 제품 의무 우선구매\n③생애주기비용(LCC):\n  구매가격 + 운영비 + 유지보수비 + 폐기비 = 총비용\n  → 초기 가격만이 아닌 전체 비용으로 판단!\n\n【의미부여암기】 "환녹생"\n환(경 지속가능성)·녹(색제품 우선)·생(애주기비용)\n"환경을 녹색으로! 생애비용 따져!"\n\n법근거: 녹색제품 구매촉진에 관한 법률',
+    category: 'concept',
+    difficulty: 2,
+    lawReference: '녹색제품 구매촉진에 관한 법률',
+  },
+  {
+    id: 's1-015',
+    subject: '1과목',
+    front: '혁신·기술개발 촉진조달 3대 제도 — "기우혁"',
+    back: '【혁신·기술개발 촉진조달 (4장 — 출제기준 항목4-3)】\n\n①기술개발제품 우선구매제도:\n  중소기업의 기술개발 신제품 공공기관 우선구매 보장\n②우수조달물품 지정제도:\n  조달청이 품질·기술력 우수 물품을 "우수조달물품"으로 지정\n  → 나라장터 종합쇼핑몰에 등록·판매 가능\n③혁신제품 지정제도:\n  혁신성 높은 제품을 조달청이 "혁신제품"으로 지정\n  → 수의계약·가점 부여 등 우대\n\n【의미부여암기】 "기우혁"\n기(술개발 우선구매)·우(수조달물품)·혁(신제품 지정)\n"기술이 우수하면 혁신!" — 3대 촉진조달!',
+    category: 'concept',
+    difficulty: 2,
+    lawReference: '조달사업법 제9조의2',
+  },
 ]
 
-// ── 2과목: 공공조달계획 수립 및 분석 (6개) — 의미부여암기법 완전 적용 ──────────
+// ── 2과목: 공공조달계획 수립 및 분석 (10개) — 의미부여암기법 완전 적용 ──────────
 const s2Cards: ConceptCardData[] = [
   {
     id: 's2-001',
@@ -393,7 +444,7 @@ function getFilteredCards(filter: SubjectFilter): ConceptCardData[] {
 
 const subjectTabs = [
   { id: '전체' as SubjectFilter, label: '전체 (19개)', color: 'bg-slate-800 text-white', inactive: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
-  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (9개)', color: 'bg-violet-700 text-white', inactive: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
+  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (15개)', color: 'bg-violet-700 text-white', inactive: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (10개)', color: 'bg-blue-700 text-white', inactive: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (10개)', color: 'bg-emerald-700 text-white', inactive: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (9개)', color: 'bg-rose-700 text-white', inactive: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },

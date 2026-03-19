@@ -99,8 +99,44 @@ const numberData: NumberData[] = [
     lawReference: '조달사업법 제20조의2 — 불공정조달행위',
     tip: '암기: "허직원사우우 (6가지)"\n①허위서류제출 ②직접생산기준위반 ③원산지거짓표시\n④사전승인없는납품 ⑤MAS우대가격위반 ⑥우수조달공동상표부정사용',
   },
+  {
+    id: 'n1-10',
+    subject: '1과목',
+    question: '중소기업 공공구매 의무비율 — 총 구매액의 몇 % 이상?',
+    answer: '50% 이상',
+    options: ['30% 이상', '40% 이상', '50% 이상', '60% 이상'],
+    lawReference: '중소기업제품 구매촉진법 제4조 — 공공구매 의무비율',
+    tip: '암기: "중소기업 반(50%)은 사줘!"\n정부·지자체·공공기관 총구매액의 50% 이상을 중소기업 제품으로 구매 의무\n중소기업자간 경쟁제품은 조달청장이 별도 지정·고시',
+  },
+  {
+    id: 'n1-11',
+    subject: '1과목',
+    question: 'MAS(다수공급자계약) 2단계경쟁 의무 기준 — 추정가격 몇 만원 이상?',
+    answer: '5천만원 이상',
+    options: ['2천만원 이상', '3천만원 이상', '5천만원 이상', '1억원 이상'],
+    lawReference: '조달사업법 시행령 — MAS 2단계경쟁',
+    tip: '암기: "MAS 5천만원이면 2단계 경쟁!"\n추정가격 5천만원 이상 MAS 구매 시 2단계경쟁 의무\n나라장터 종합쇼핑몰에서 가격·품질 재경쟁 실시',
+  },
+  {
+    id: 'n1-12',
+    subject: '1과목',
+    question: 'OECD 기준 정부 조달지출 비중은 GDP 대비 약 몇 %?',
+    answer: '약 12~15%',
+    options: ['약 3~5%', '약 7~10%', '약 12~15%', '약 20~25%'],
+    lawReference: '1권 1장 — 공공조달의 정의 및 중요성',
+    tip: '암기: "조달=GDP 12~15%!"\nOECD 회원국 정부 총지출 중 조달지출 비중 약 34%\n국가 GDP의 12~15% 수준 → 경제적 영향력 막대',
+  },
+  {
+    id: 'n1-13',
+    subject: '1과목',
+    question: '물품분류 식별번호 체계 — 몇 자리 코드?',
+    answer: '8자리',
+    options: ['4자리', '6자리', '8자리', '10자리'],
+    lawReference: '물품목록법 시행규칙 — 물품분류번호 체계',
+    tip: '암기: "물품번호 8자리 = 대중소세!"\n대분류(2)→중분류(2)→소분류(2)→세분류(2) = 8자리\nUNSPSC 국제표준 연계 → 국제 공공조달 호환',
+  },
 
-  // ────────── 2과목 (6개) — 의미부여암기법 완전 적용 ──────────
+  // ────────── 2과목 (10개) — 의미부여암기법 완전 적용 ──────────
   {
     id: '6',
     subject: '2과목',
@@ -360,7 +396,7 @@ const numberData: NumberData[] = [
 ]
 
 const subjectTabs = [
-  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (9개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
+  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (13개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (10개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (10개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (8개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
