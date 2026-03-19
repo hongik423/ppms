@@ -116,6 +116,116 @@ const comparisonData: ComparisonData[] = [
     ],
   },
 
+  // ────────── 2과목 추가 (2권 공공조달 계획분석 — 의미부여암기법) ──────────
+  {
+    id: 'c2-02',
+    subject: '2과목',
+    title: '계약금액 결정 유형 비교 — FFP·CRC·T&M',
+    description: '공공조달 계약유형 5가지 비교 — 암기: "확원원성시"',
+    headers: ['FFP(확정고정가격)', '원가상환계약(CRC)', 'T&M(시간·자재)'],
+    rows: [
+      {
+        label: '개념',
+        cells: [
+          '계약 전 가격 확정 — 이후 변경 불가',
+          '실제 발생 비용 정산 방식',
+          '투입 시간·자재 단위 단가로 산정',
+        ],
+      },
+      {
+        label: '수요기관 위험',
+        cells: ['낮음 (가격 고정)', '높음 (비용 불확실)', '중간 (단가 고정, 수량 변동)'],
+      },
+      {
+        label: '공급업체 위험',
+        cells: ['높음 (비용 초과 시 손실)', '낮음 (실비 보상)', '중간'],
+      },
+      {
+        label: '적합한 사업',
+        cells: ['표준화된 물품·용역\n가격 예측 가능한 사업', '연구개발·시제품 제작\n불확실성 높은 사업', '유지보수·컨설팅\n범위 불명확한 사업'],
+      },
+      {
+        label: '모니터링 필요도',
+        cells: ['낮음', '높음 (비용 통제 필수)', '중간 (투입량 관리)'],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"확(정)=위험 고정!"', '"원(가)=불확실 위험 공유"', '"T&M=시간 자재 단가"'],
+      },
+    ],
+  },
+  {
+    id: 'c2-03',
+    subject: '2과목',
+    title: '사전규격공개 vs 입찰공고 비교',
+    description: '사전규격공개와 입찰공고의 목적·절차·기간 비교 — 2과목 핵심',
+    headers: ['사전규격공개', '입찰공고'],
+    rows: [
+      {
+        label: '목적',
+        cells: [
+          '경쟁 촉진 및 규격 독점 방지\n잠재적 공급업체 의견 수렴',
+          '입찰 참가기회 공정하게 제공\n투명한 경쟁 보장',
+        ],
+      },
+      {
+        label: '공개기간',
+        cells: [
+          '20일 이상 (의견 수렴 기간)',
+          '물품·용역: 7일 이상\n공사: 15일 이상\n(나라장터 공개일부터 마감일)',
+        ],
+      },
+      {
+        label: '검토 항목',
+        cells: [
+          '과업내용 적정성\n사업예산 적정성\n법규 준수 여부\n개선·보완 의견',
+          '오류·법령위반 검토\n입찰보증금 제출방법\n입찰설명회 일정\n낙찰방법 명시',
+        ],
+      },
+      {
+        label: '의무 여부',
+        cells: ['추정가격 2억원 이상 물품·용역\n(규정에 따라 의무화)', '모든 경쟁입찰 (의무)'],
+      },
+      {
+        label: '암기 포인트',
+        cells: ['"사전규격 20일 의견수렴"', '"공고: 물용7 공사15일"'],
+      },
+    ],
+  },
+  {
+    id: 'c2-04',
+    subject: '2과목',
+    title: '입찰·제안평가 방법 비교 — 적격심사·협상계약·종합심사',
+    description: '3대 낙찰방법의 평가기준·적용범위·합격기준 비교',
+    headers: ['적격심사', '협상계약', '종합심사낙찰제'],
+    rows: [
+      {
+        label: '적용 대상',
+        cells: ['물품·용역 (주로)', '기술복합 용역·R&D', '300억원 이상 공사'],
+      },
+      {
+        label: '평가기준',
+        cells: [
+          '이행실적·기술능력\n재무상태·신용도',
+          '기술제안서+가격 분리평가\n(기술 배점 높음)',
+          '가격(40~60%)+기술+신인도\n사회적 책임 가중치 포함',
+        ],
+      },
+      {
+        label: '합격 기준',
+        cells: ['종합평점 95점 이상', '기술적합자 중 협상 합의', '종합점수 최고득점자'],
+      },
+      {
+        label: '낙찰자 결정',
+        cells: ['최저가→심사→적격자', '우선협상대상자 선정 후 협상', '가중치 계산 최고점자'],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"적격=95점 문턱!"', '"협상=기술+협상 2단계"', '"종심=300억 종합판정!"'],
+      },
+    ],
+  },
+
   // ────────── 3과목 ──────────
   {
     id: '4',
@@ -387,7 +497,7 @@ const comparisonData: ComparisonData[] = [
 const subjectTabs: Array<{ id: SubjectFilter; label: string; activeColor: string; inactiveColor: string }> = [
   { id: '전체', label: '전체 (10개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목', label: '1과목 법제도 (2개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
-  { id: '2과목', label: '2과목 조달계획 (1개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
+  { id: '2과목', label: '2과목 조달계획 (4개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목', label: '3과목 계약관리 (5개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무', label: '4권 관리실무 (2개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]
@@ -406,7 +516,7 @@ export default function CompareCardsPage() {
 
   const filteredData =
     selectedSubject === '전체'
-      ? comparisonData.slice(0, 5) // 전체: 핵심 5개 표시
+      ? comparisonData.slice(0, 7) // 전체: 핵심 7개 표시 (과목별 균형)
       : comparisonData.filter((c) => c.subject === selectedSubject)
 
   const toggleExpand = (id: string) => {

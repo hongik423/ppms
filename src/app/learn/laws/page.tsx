@@ -99,40 +99,98 @@ const lawGroups: LawGroup[] = [
     ],
   },
 
-  // ────────── 2과목 법조문 (5개) ──────────
+  // ────────── 2과목 법조문 (8개) — 의미부여암기법 완전 적용 ──────────
   {
-    category: '입찰·낙찰 관련 법규',
+    category: '입찰·낙찰 관련 법규 (2권 핵심)',
     subject: '2과목',
     color: 'bg-blue-50 border-blue-200 dark:bg-blue-900/10 dark:border-blue-700',
     laws: [
       {
+        law: '국가계약법 시행령 제35조',
+        description: '입찰공고 기간 — 물품·용역 7일, 공사 15일 이상',
+        keyPoints: [
+          '물품·용역: 나라장터 공개일부터 마감일까지 7일 이상',
+          '공사: 15일 이상 (대형공사 등 경우 연장)',
+          '입찰설명회 개최 시: 마감일 최소 10~15일 전',
+          '암기: "물용7 공사15 — 공사가 두 배 이상!"',
+        ],
+        subject: '2과목',
+      },
+      {
+        law: '국가계약법 시행규칙 제35조의2',
+        description: '사전규격공개 — 의견수렴 20일 이상 (의무화)',
+        keyPoints: [
+          '추정가격 2억원 이상 물품·용역 대상 의무 공개',
+          '의견수렴 기간: 20일 이상',
+          '과업내용·예산 적정성·법규 준수 여부 검토',
+          '암기: "사전규격 20일 의견수렴!"',
+        ],
+        subject: '2과목',
+      },
+      {
         law: '국가계약법 시행령 제42조',
         description: '적격심사 — 낙찰자 결정 기준',
-        keyPoints: ['물품·용역 95점 이상 합격', '최저가 입찰자부터 순위별 심사'],
+        keyPoints: [
+          '물품·용역 95점 이상 합격 → 낙찰자 결정',
+          '최저가 입찰자부터 순위별 심사',
+          '부적격 시 차순위자 심사 진행',
+          '암기: "적격=95 문턱!"',
+        ],
         subject: '2과목',
       },
       {
         law: '국가계약법 시행령 제42조의2',
         description: '종합심사낙찰제 — 300억원 이상 공사',
-        keyPoints: ['가격(40~60%)+기술(40~60%)+신인도', '300억원 이상 공사에 의무 적용'],
+        keyPoints: [
+          '300억원 이상 공사에 의무 적용',
+          '가격(40~60%)+기술(40~60%)+신인도·사회적책임 종합',
+          'PQ(입찰참가자격 사전심사)도 동일하게 300억원 이상',
+          '암기: "종심제·PQ는 300억 쌍둥이!"',
+        ],
         subject: '2과목',
       },
       {
         law: '국가계약법 시행령 제43조',
         description: '협상계약 — 기술·가격 분리평가',
-        keyPoints: ['기술평가→기술적합자 선정', '우선협상대상자와 가격협상'],
+        keyPoints: [
+          '기술평가→기술적합자 선정→우선협상대상자와 가격협상',
+          '기술적합자 기준 이상 득점자만 가격협상 참여 가능',
+          '협상 실패 시 차순위자와 협상 진행',
+          '암기: "협상=기술먼저 가격나중!"',
+        ],
         subject: '2과목',
       },
       {
         law: '국가계약법 시행령 제37조',
         description: '입찰보증금 — 추정가격의 5% 이상',
-        keyPoints: ['낙찰 포기 시 몰수', '소액수의계약 면제 가능'],
+        keyPoints: [
+          '입찰보증금: 추정가격의 5% 이상 납부',
+          '낙찰 후 계약 포기 시 몰수 처리',
+          '소액수의계약 등 면제 가능',
+          '암기: "입5 — 입찰보증 5%!"',
+        ],
         subject: '2과목',
       },
       {
         law: '국가계약법 시행령 제50조',
-        description: '예정가격 결정 기준',
-        keyPoints: ['복수예비가격 15개 중 4개 추첨', '산술평균으로 예정가격 결정'],
+        description: '예정가격 결정 — 복수예비가격 15개 → 4개 추첨',
+        keyPoints: [
+          '복수예비가격 15개 작성 (기초금액 ±3% 범위)',
+          '입찰자들이 4개 추첨 → 산술평균 = 예정가격',
+          '예정가격 이하 최저가 입찰자가 낙찰 후보',
+          '암기: "15개 중 4개 추첨 산술평균!"',
+        ],
+        subject: '2과목',
+      },
+      {
+        law: '국가계약법 시행령 제44조',
+        description: '희망수량경쟁입찰 — 수량 분산 경쟁',
+        keyPoints: [
+          '수요기관이 희망 수량을 제시하고 공급자가 단가 경쟁',
+          '동일 물품 다수 업체에서 분산 공급 가능',
+          '단가 경쟁으로 최저단가 업체부터 희망수량 배분',
+          '암기: "희망수량=단가경쟁+분산공급!"',
+        ],
         subject: '2과목',
       },
     ],
@@ -304,7 +362,7 @@ const lawGroups: LawGroup[] = [
 const subjectTabs = [
   { id: '전체' as SubjectFilter, label: '전체 (20개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (8개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
-  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (5개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
+  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (8개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (5개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (6개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ];

@@ -128,6 +128,66 @@ export default function PredictionHeatmapPage() {
             </ul>
           </div>
         </div>
+
+        {/* 2과목 출제 집중 분석 — 의미부여암기법 */}
+        <div className="mt-10 bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-xl p-8">
+          <h3 className="text-xl font-bold text-blue-900 dark:text-blue-200 mb-4">
+            🎯 2과목 출제 집중 분석 — 의미부여암기법으로 고득점 공략
+          </h3>
+          <div className="grid md:grid-cols-3 gap-4 text-sm">
+            <div className="bg-white dark:bg-blue-900/20 rounded-lg p-4 border border-blue-100 dark:border-blue-800">
+              <div className="font-bold text-blue-800 dark:text-blue-300 mb-2">📋 입찰·낙찰 (출제확률 최상)</div>
+              <ul className="text-blue-700 dark:text-blue-400 space-y-1">
+                <li>• 경쟁입찰절차 — "일제지" 암기</li>
+                <li>• 무효입찰 사유 — "보자동초허기"</li>
+                <li>• 적격심사 95점 — "95 문턱!"</li>
+                <li>• 평가위원회·이해충돌 — 5점 항목 집중</li>
+              </ul>
+            </div>
+            <div className="bg-white dark:bg-blue-900/20 rounded-lg p-4 border border-blue-100 dark:border-blue-800">
+              <div className="font-bold text-blue-800 dark:text-blue-300 mb-2">📐 사전규격·계획 (출제확률 상)</div>
+              <ul className="text-blue-700 dark:text-blue-400 space-y-1">
+                <li>• 사전규격공개 20일 — "사전규격 20!"</li>
+                <li>• 조달수명주기 5단계 — "조시입계종"</li>
+                <li>• SMART 구매사양 — "명측달현시"</li>
+                <li>• RFI·RFP·SOW — "정제과"</li>
+              </ul>
+            </div>
+            <div className="bg-white dark:bg-blue-900/20 rounded-lg p-4 border border-blue-100 dark:border-blue-800">
+              <div className="font-bold text-blue-800 dark:text-blue-300 mb-2">📊 계약유형·협상 (출제확률 상)</div>
+              <ul className="text-blue-700 dark:text-blue-400 space-y-1">
+                <li>• 계약금액결정유형 — "확원원성시"</li>
+                <li>• 낙찰방법 비교 — "적협희종"</li>
+                <li>• 협상계약 흐름 — 기술→가격 2단계</li>
+                <li>• 공고기간 — "물용7 공사15"</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* 과목별 출제 비중 안내 */}
+        <div className="mt-6 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-xl p-6">
+          <h3 className="text-lg font-bold text-amber-900 dark:text-amber-200 mb-3">
+            📌 출제기준 문항 배분 안내 (2026~2028 적용)
+          </h3>
+          <div className="grid md:grid-cols-3 gap-3 text-sm">
+            <div className="flex items-center gap-3">
+              <span className="px-2 py-1 bg-violet-100 text-violet-700 rounded font-bold text-xs">1과목</span>
+              <span className="text-amber-800 dark:text-amber-300">공공조달과 법제도 이해 — <strong>30문제</strong></span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded font-bold text-xs">2과목</span>
+              <span className="text-amber-800 dark:text-amber-300">공공조달계획 수립 및 분석 — <strong>20문제</strong></span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded font-bold text-xs">3과목</span>
+              <span className="text-amber-800 dark:text-amber-300">공공계약관리 — <strong>30문제</strong></span>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-amber-700 dark:text-amber-400">
+            ※ 총 80문제 객관식 / 2시간 / 합격기준: 60점 이상 (각 과목 40점 미만 과락)
+          </p>
+        </div>
       </div>
     </div>
   )

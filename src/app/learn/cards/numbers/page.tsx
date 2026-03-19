@@ -63,24 +63,24 @@ const numberData: NumberData[] = [
     lawReference: '국가계약법 시행령 제50조 — 계약보증금 기준',
   },
 
-  // ────────── 2과목 (3개) ──────────
+  // ────────── 2과목 (6개) — 의미부여암기법 완전 적용 ──────────
   {
     id: '6',
     subject: '2과목',
-    question: '복수예비가격의 범위는? (예정가격의 ±몇 %)',
-    answer: '±3%',
-    options: ['±1%', '±2%', '±3%', '±5%'],
-    lawReference: '국가계약법 시행령 제50조 — 복수예비가격 범위',
-    tip: '15개 복수예비가격 중 4개 추첨 → 산술평균 = 예정가격',
+    question: '복수예비가격 — 총 몇 개 작성, 몇 개 추첨?',
+    answer: '15개 작성 → 4개 추첨 → 산술평균 = 예정가격',
+    options: ['10개 작성 → 2개 추첨', '15개 작성 → 4개 추첨', '20개 작성 → 4개 추첨', '15개 작성 → 6개 추첨'],
+    lawReference: '국가계약법 시행령 제50조 — 복수예비가격',
+    tip: '암기: "십오에서 넷 추첨!" 15개 중 4개 뽑아 평균 = 예정가격\n범위: 기초금액 ±3% 이내',
   },
   {
     id: '7',
     subject: '2과목',
-    question: '일반경쟁입찰 최소 공고기간은 며칠 이상?',
-    answer: '10일',
-    options: ['5일', '7일', '10일', '14일'],
-    lawReference: '국가계약법 시행령 — 일반경쟁입찰 공고기간',
-    tip: '공사 공고: 15일 이상 (단, 긴급한 경우 단축 가능)',
+    question: '일반경쟁입찰 최소 공고기간 — 물품·용역 vs 공사',
+    answer: '물품·용역 7일 이상 / 공사 15일 이상',
+    options: ['물품·용역 5일 / 공사 10일', '물품·용역 7일 / 공사 15일', '물품·용역 10일 / 공사 20일', '물품·용역 14일 / 공사 30일'],
+    lawReference: '국가계약법 시행령 제35조 — 입찰공고기간',
+    tip: '암기: "물용7 공사15 (공사는 두 배 이상!)"\n나라장터 공개일부터 입찰마감일까지 산정',
   },
   {
     id: '8',
@@ -89,7 +89,34 @@ const numberData: NumberData[] = [
     answer: '95점',
     options: ['80점', '85점', '90점', '95점'],
     lawReference: '국가계약법 시행령 제42조 — 적격심사 기준',
-    tip: '물품·용역 95점 이상 → 낙찰자 결정',
+    tip: '암기: "적격=95 문턱!"\n물품·용역 95점 이상 → 낙찰자 결정\n부적격 시 → 차순위자 심사 진행',
+  },
+  {
+    id: 'n2-04',
+    subject: '2과목',
+    question: '입찰설명회 개최 기간 — 입찰서 마감일 기준 며칠 전?',
+    answer: '마감일 최소 10~15일 이상 전',
+    options: ['마감일 3~5일 전', '마감일 7일 전', '마감일 10~15일 이상 전', '마감일 30일 전'],
+    lawReference: '공공조달 계획수립 실무 기준',
+    tip: '암기: "설명회 10~15일 여유!"\n대규모 공사·복잡한 사업일수록 설명회 의무 참석 요구\n미참석 시 입찰 참여 제한 가능',
+  },
+  {
+    id: 'n2-05',
+    subject: '2과목',
+    question: '사전규격공개 의견수렴 기간은 며칠 이상?',
+    answer: '20일 이상',
+    options: ['7일 이상', '10일 이상', '15일 이상', '20일 이상'],
+    lawReference: '국가계약법 시행규칙 제35조의2 — 사전규격공개',
+    tip: '암기: "사전규격 20일 의견수렴!"\n추정가격 2억원 이상 물품·용역 의무\n나라장터에 공개 → 공급업체 의견 제출 가능',
+  },
+  {
+    id: 'n2-06',
+    subject: '2과목',
+    question: '협상계약 — 낙찰자 결정 시 계약체결 기한은?',
+    answer: '낙찰 통보 후 10~15일 이내 계약 체결',
+    options: ['낙찰 후 7일 이내', '낙찰 후 10~15일 이내', '낙찰 후 30일 이내', '낙찰 후 60일 이내'],
+    lawReference: '국가계약법 시행령 제43조 — 협상계약',
+    tip: '암기: "낙찰 후 10~15일 계약 완료!"\n기술협상 + 가격협상 완료 후 계약서 작성\n협상 실패 시 → 차순위 우선협상대상자와 협상 진행',
   },
 
   // ────────── 3과목 (6개) — 의미부여암기법 완전 적용 ──────────
@@ -189,7 +216,7 @@ const numberData: NumberData[] = [
 
 const subjectTabs = [
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (5개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
-  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (3개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
+  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (6개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (4개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]

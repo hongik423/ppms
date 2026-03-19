@@ -77,13 +77,13 @@ const s1Cards: ConceptCardData[] = [
   },
 ]
 
-// ── 2과목: 공공조달계획 수립 및 분석 (4개) ───────────────────────────────────
+// ── 2과목: 공공조달계획 수립 및 분석 (6개) — 의미부여암기법 완전 적용 ──────────
 const s2Cards: ConceptCardData[] = [
   {
     id: 's2-001',
     subject: '2과목',
-    front: '수요 분석 및 조달계획 수립 절차',
-    back: '①공급 대상물 수요정보 식별\n②수요정보 평가와 요구사항 분석\n③공급계획 및 일정 수립\n④비상 공급계획 수립\n\n【공급역량 분석 포인트】\n• 공급방법 적정성 분석\n• 조달시장 분석\n• 위험관리 및 비상계획\n\n연계: 2과목 1번 주요항목',
+    front: '공공조달 수명주기 5단계 — 전체 흐름',
+    back: '【공공조달 5단계 수명주기】\n①조달계획 수립 — 수요분석·시장조사·전략수립\n②시장조사 — 공급역량·계약유형·예산 적정성 분석\n③입찰·낙찰 — 공고→설명회→접수→개찰→낙찰자 결정\n④계약관리 — CMP 개발·이행점검·변경관리\n⑤계약완료·종결 — 인수·대금지급·성과평가\n\n【의미부여암기】 "조시입계종"\n조(달계획)→시(장조사)→입(찰낙찰)→계(약관리)→종(결)\n"조씨가 시간에 입계 종례!" 로 기억!',
     category: 'procedure',
     difficulty: 2,
   },
@@ -91,15 +91,15 @@ const s2Cards: ConceptCardData[] = [
     id: 's2-002',
     subject: '2과목',
     front: '사전규격공개와 입찰공고문 분석',
-    back: '【사전규격공개 분석 포인트】\n• 과업내용 적정성 검토\n• 사업예산 적정성 검토\n• 법규 준수 여부 확인\n• 개선·보완 의견 제시\n\n【입찰공고문 분석】\n• 오류·법령위반 검토\n• 입찰보증금 제출방법 확인\n• 입찰설명회 참석 여부',
+    back: '【사전규격공개 분석 체크리스트】\n• 과업내용 적정성 검토\n• 사업예산 적정성 검토\n• 법규 준수 여부 확인\n• 개선·보완 의견 제시 (의견수렴 기간: 20일 이상)\n\n【입찰공고문 분석 포인트】\n• 오류·법령위반 검토\n• 입찰보증금 제출방법 확인\n• 입찰설명회 일정 확인 (마감 최소 10~15일 전)\n\n【의미부여암기】 "규개입설"\n규격(공개)→개선의견→입찰공고→설명회 참석',
     category: 'concept',
     difficulty: 2,
   },
   {
     id: 's2-003',
     subject: '2과목',
-    front: '낙찰자 결정 방법 4가지',
-    back: '①적격심사: 최저가 순위자부터 이행능력 심사 (물품·용역 95점 이상)\n②협상계약: 기술+가격 분리평가, 우선협상대상자와 협상\n③희망수량경쟁입찰: 수량을 달리하여 입찰\n④종합심사낙찰제: 300억원 이상 공사, 가격+기술+신인도 종합평가\n\n【암기】 적협희종',
+    front: '낙찰자 결정 방법 4가지 — 적협희종',
+    back: '①적격심사: 최저가 순위자부터 이행능력 심사 (물품·용역 95점 이상)\n②협상계약: 기술+가격 분리평가, 우선협상대상자와 협상\n③희망수량경쟁입찰: 수요기관이 희망 수량 제시 → 단가 경쟁\n④종합심사낙찰제: 300억원 이상 공사, 가격+기술+신인도 종합평가\n\n【의미부여암기】 "적협희종"\n적(격심사)·협(상계약)·희(망수량)·종(합심사)\n"적합한 협상으로 희망하던 종합 점수!" 로 기억!\n\n법근거: 국가계약법 시행령 제42조~제44조',
     category: 'compare',
     difficulty: 3,
     lawReference: '국가계약법 시행령 제42조',
@@ -108,7 +108,23 @@ const s2Cards: ConceptCardData[] = [
     id: 's2-004',
     subject: '2과목',
     front: '입찰서 제출 및 무효 입찰 사유',
-    back: '【입찰서 제출방법】\n나라장터 전자입찰 (원칙): 전자서명 후 제출\n\n【무효입찰 주요 사유】\n• 입찰보증금 미납\n• 자격 미달 업체\n• 동일인 2개 이상 입찰\n• 입찰가격이 예정가격 초과\n• 허위 서류 제출\n• 기재사항 오류 또는 불명확\n\n개찰 후 즉시 무효 처리',
+    back: '【입찰서 제출방법】\n나라장터 전자입찰 (원칙): 전자서명 후 제출\n마감시간 이후 제출 → 무조건 무효\n\n【무효입찰 주요 6가지 사유】\n①입찰보증금 미납\n②자격 미달 업체\n③동일인 2개 이상 입찰\n④입찰가격이 예정가격 초과\n⑤허위 서류 제출\n⑥기재사항 오류 또는 불명확\n\n【의미부여암기】 "보자동초허기"\n보(증금)·자(격미달)·동(일인중복)·초(과)·허(위)·기(재오류)',
+    category: 'concept',
+    difficulty: 2,
+  },
+  {
+    id: 's2-005',
+    subject: '2과목',
+    front: '계약금액 결정 유형 — FFP vs 원가상환계약',
+    back: '【계약금액 결정 5대 유형】\n①FFP(확정고정가격): 사전에 가격 고정 — 가장 일반적·위험 낮음\n②원가상환계약(CRC): 실발생비용 정산 — 가격 불확실 사업\n③원가기반 인센티브: 목표비용 절감 시 인센티브 지급\n④성과기반 인센티브: 성과목표 달성도에 따라 보너스/페널티\n⑤T&M(시간·자재계약): 단위시간·자재 단가로 계산\n\n【의미부여암기】 "확원원성시"\n확(정고정)→원(가상환)→원(가인센)→성(과인센)→시(간자재)\n\nFFP: 위험도 최저 / CRC: 위험도 최고',
+    category: 'compare',
+    difficulty: 3,
+  },
+  {
+    id: 's2-006',
+    subject: '2과목',
+    front: 'RFI·RFP·SOW — 입찰 핵심 문서 3가지',
+    back: '【입찰 핵심 문서】\n①RFI (정보제공요청서): 시장조사 단계에서 공급업체 능력 파악\n②RFP (제안요청서): 기술·가격 분리 입찰 시 평가기준 포함\n③SOW (과업명세서): 수행해야 할 과업의 구체적 범위·기준\n\n【의미부여암기】 "정제과"\n정(보요청)→제(안요청)→과(업명세)\n"정보를 제안서로 과업 명세하라!"\n\n【SMART 구매사양 5요소】\n명확(Specific)·측정(Measurable)·달성(Achievable)·현실(Realistic)·시간(Time-bounded)\n"명측달현시" — 명확한 조달사양의 5요건!',
     category: 'concept',
     difficulty: 2,
   },
@@ -234,7 +250,7 @@ function getFilteredCards(filter: SubjectFilter): ConceptCardData[] {
     // 전체: 과목별 균형있게 선별하여 15개 (S1:3, S2:3, S3:4, S4:5)
     return [
       ...s1Cards.slice(0, 3),
-      ...s2Cards.slice(0, 3),
+      ...s2Cards.slice(0, 3),  // 6개 중 3개 선별
       ...s3Cards.slice(0, 4),
       ...s4Cards.slice(0, 5),
     ]
@@ -245,7 +261,7 @@ function getFilteredCards(filter: SubjectFilter): ConceptCardData[] {
 const subjectTabs = [
   { id: '전체' as SubjectFilter, label: '전체 (15개)', color: 'bg-slate-800 text-white', inactive: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (6개)', color: 'bg-violet-700 text-white', inactive: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
-  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (4개)', color: 'bg-blue-700 text-white', inactive: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
+  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (6개)', color: 'bg-blue-700 text-white', inactive: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', color: 'bg-emerald-700 text-white', inactive: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (5개)', color: 'bg-rose-700 text-white', inactive: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]
@@ -325,7 +341,7 @@ export default function TodayReviewPage() {
           <div className="flex items-center justify-between mb-3">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">오늘의 복습</h1>
-              <p className="text-blue-200 text-sm mt-1">출제기준 100% 반영 — 3권·4권 의미부여암기법 고몰입 학습</p>
+              <p className="text-blue-200 text-sm mt-1">출제기준 100% 반영 — 2권·3권·4권 의미부여암기법 고몰입 학습</p>
             </div>
             <Link
               href="/learn"
@@ -507,7 +523,7 @@ export default function TodayReviewPage() {
               </div>
               <div className="flex items-start gap-2">
                 <span className="px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded text-xs font-semibold flex-shrink-0">2과목</span>
-                <span className="text-blue-800 dark:text-blue-300">입찰·낙찰 절차와 무효 사유</span>
+                <span className="text-blue-800 dark:text-blue-300">조달수명주기·계약유형·입찰낙찰절차 (의미부여암기)</span>
               </div>
             </div>
             <div className="space-y-1">

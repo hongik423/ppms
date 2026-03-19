@@ -984,7 +984,7 @@
                 {
                   "id": "S2-MT1-ST1-D1",
                   "name": "공급 대상물 수요정보 식별",
-                  "predictionScore": 3,
+                  "predictionScore": 4,
                   "page": 0
                 },
                 {
@@ -1014,7 +1014,7 @@
                 {
                   "id": "S2-MT1-ST2-D1",
                   "name": "공급방법 적정성 분석",
-                  "predictionScore": 4,
+                  "predictionScore": 5,
                   "page": 0
                 },
                 {
@@ -1026,7 +1026,7 @@
                 {
                   "id": "S2-MT1-ST2-D3",
                   "name": "공급 대상물 조달시장 분석",
-                  "predictionScore": 4,
+                  "predictionScore": 5,
                   "page": 0
                 },
                 {
@@ -1044,7 +1044,7 @@
                 {
                   "id": "S2-MT1-ST3-D1",
                   "name": "공급 의사결정을 위한 비용 분석",
-                  "predictionScore": 4,
+                  "predictionScore": 5,
                   "page": 0
                 },
                 {
@@ -1095,7 +1095,7 @@
                 {
                   "id": "S2-MT2-ST1-D1",
                   "name": "경쟁입찰참가자격 등록",
-                  "predictionScore": 4,
+                  "predictionScore": 5,
                   "page": 0
                 },
                 {
@@ -1119,19 +1119,19 @@
                 {
                   "id": "S2-MT2-ST2-D1",
                   "name": "과업내용 적정성 검토",
-                  "predictionScore": 4,
+                  "predictionScore": 5,
                   "page": 0
                 },
                 {
                   "id": "S2-MT2-ST2-D2",
                   "name": "사업예산 적정성 검토",
-                  "predictionScore": 4,
+                  "predictionScore": 5,
                   "page": 0
                 },
                 {
                   "id": "S2-MT2-ST2-D3",
                   "name": "당해 규격공개 관련 법규 준수 및 부합여부 검토",
-                  "predictionScore": 4,
+                  "predictionScore": 5,
                   "page": 0
                 },
                 {
@@ -1173,7 +1173,7 @@
                 {
                   "id": "S2-MT2-ST4-D1",
                   "name": "입찰설명회 참석",
-                  "predictionScore": 3,
+                  "predictionScore": 4,
                   "page": 0
                 },
                 {
@@ -1191,7 +1191,7 @@
                 {
                   "id": "S2-MT2-ST5-D1",
                   "name": "입찰서 제출 방법",
-                  "predictionScore": 4,
+                  "predictionScore": 5,
                   "page": 0
                 },
                 {
@@ -1230,7 +1230,7 @@
                 {
                   "id": "S2-MT3-ST1-D2",
                   "name": "수의계약 절차",
-                  "predictionScore": 4,
+                  "predictionScore": 5,
                   "page": 0
                 }
               ]

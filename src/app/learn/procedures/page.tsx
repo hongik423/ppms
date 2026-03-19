@@ -83,6 +83,52 @@ const procedures: Procedure[] = [
     ],
   },
 
+  // ────────── 2과목 추가 (2권 공공조달 계획분석 — 의미부여암기법) ──────────
+  {
+    id: 'proc-s2-03',
+    title: '공공조달 수명주기 5단계 — 전체 업무 흐름',
+    category: '조달계획',
+    subject: '2과목',
+    keyPoint: '"조시입계종" — 조달계획→시장조사→입찰낙찰→계약관리→종결',
+    steps: [
+      { step: 1, name: '조달계획 수립', description: '수요분석·예산확인·조달방법 결정 — 수요정보 식별 → 요구사항 분석 → 공급계획 수립' },
+      { step: 2, name: '시장조사', description: '공급역량·계약유형·예산 적정성 분석 — RFI 활용, 구매사양(SOW) 개발, SMART 요건 확인' },
+      { step: 3, name: '입찰·낙찰', description: '사전규격공개→입찰공고→설명회→접수→개찰→평가→낙찰자결정 — 11단계 흐름' },
+      { step: 4, name: '계약관리', description: 'CMP(계약관리계획) 개발→착수회의→이행점검→변경관리→분쟁해결' },
+      { step: 5, name: '계약완료·종결', description: '납품인수→검사검수→대금지급→성과평가→기록보존 — "조시입계종" 완성!' },
+    ],
+  },
+  {
+    id: 'proc-s2-04',
+    title: '사전규격공개 절차 — 입찰 전 의견수렴',
+    category: '입찰준비',
+    subject: '2과목',
+    keyPoint: '20일 이상 의견수렴 → 규격 확정 → 입찰공고',
+    steps: [
+      { step: 1, name: '규격 초안 작성', description: '수요기관이 구매사양(과업내용)·예정가격·낙찰방법 등 포함한 규격 초안 작성' },
+      { step: 2, name: '나라장터 사전공개', description: '조달청 나라장터에 사전규격 게시 (추정가격 2억원 이상 의무)' },
+      { step: 3, name: '의견수렴 기간 운영', description: '20일 이상 의견수렴 기간 운영 — 공급업체의 과업내용·예산 적정성 검토 의견 접수' },
+      { step: 4, name: '의견 검토 및 규격 확정', description: '제출된 의견 검토 → 타당한 의견 반영 → 최종 규격 확정' },
+      { step: 5, name: '입찰공고 게시', description: '확정된 규격 기반으로 나라장터에 입찰공고 게시 (물품·용역 7일, 공사 15일 이상)' },
+    ],
+  },
+  {
+    id: 'proc-s2-05',
+    title: '입찰·낙찰 11단계 흐름 (2권 표 11)',
+    category: '입찰낙찰',
+    subject: '2과목',
+    keyPoint: '"입공설질응접개평가대낙계" — 입찰문서작성부터 계약체결까지',
+    steps: [
+      { step: 1, name: '입찰문서 작성', description: '입찰공고문(FB)·제안요청서(RFP)·소액견적서(RFQ) 등 입찰 관련 문서 작성' },
+      { step: 2, name: '입찰공고 실행', description: '나라장터·관보·일간지·홈페이지 병행 공고 — 공고기간 준수 (물용7일·공사15일)' },
+      { step: 3, name: '입찰설명회 개최', description: '복잡한 조달대상물 또는 요구사항 포함 시 잠재적 공급업체 대상 설명회 개최' },
+      { step: 4, name: '질의접수 및 응답공개', description: '입찰참가 질의 접수 → 회신·공개 — 모든 입찰참가자에게 동일하게 공개' },
+      { step: 5, name: '입찰서 접수·개찰', description: '전자입찰서 접수 (마감시간 이후 무효) → 공개 개찰 → 입찰금액·업체명 공개' },
+      { step: 6, name: '평가 및 낙찰자 결정', description: '적격심사·협상계약·종합심사낙찰제 등 방법에 따라 평가 → 낙찰자 결정·발표' },
+      { step: 7, name: '계약 체결', description: '낙찰자와 계약서·부속서류 확인 → 계약보증금 납부 → 계약 체결 (낙찰 후 10~15일 이내)' },
+    ],
+  },
+
   // ────────── 3과목 (3개) ──────────
   {
     id: 'proc-05',
@@ -250,9 +296,9 @@ const procedures: Procedure[] = [
 ];
 
 const subjectTabs = [
-  { id: '전체' as SubjectFilter, label: '전체 (15개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '전체' as SubjectFilter, label: '전체 (18개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (2개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
-  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (2개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
+  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (5개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (5개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ];
