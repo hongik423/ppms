@@ -26,14 +26,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-slate-800 shadow-sm z-50">
-      <div className="h-full px-4 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 h-14 md:h-16 bg-white dark:bg-slate-800 shadow-sm z-50">
+      <div className="h-full px-3 md:px-4 flex items-center justify-between gap-2">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-          <div className="flex items-center gap-2">
-            <Trophy className="w-6 h-6 text-blue-800 dark:text-blue-400" />
-            <span className="font-bold text-lg text-slate-900 dark:text-white">PPMS 필승합격</span>
-          </div>
+        <Link href="/" className="flex items-center gap-1.5 flex-shrink-0">
+          <Trophy className="w-5 h-5 md:w-6 md:h-6 text-blue-800 dark:text-blue-400" />
+          <span className="font-bold text-sm md:text-lg text-slate-900 dark:text-white leading-tight">
+            <span className="hidden xs:inline">PPMS </span>필승합격
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -59,27 +59,27 @@ export default function Header() {
         </nav>
 
         {/* Right section: D-Day + User Menu */}
-        <div className="flex items-center gap-4">
-          {/* D-Day Badge */}
-          <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-blue-800 to-blue-600 rounded-full">
-            <span className="text-white text-sm font-semibold">D-{dDay}</span>
+        <div className="flex items-center gap-2">
+          {/* D-Day Badge - 모바일에서도 표시 */}
+          <div className="flex items-center px-2.5 py-1 md:px-3 md:py-1.5 bg-gradient-to-r from-blue-800 to-blue-600 rounded-full">
+            <span className="text-white text-xs md:text-sm font-bold">D-{dDay}</span>
           </div>
 
           {/* User Avatar Dropdown */}
           <div className="relative">
             <button
               onClick={() => setShowUserMenu(!showUserMenu)}
-              className="flex items-center gap-2 px-2 py-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+              className="flex items-center gap-1.5 p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
             >
-              <div className="w-8 h-8 rounded-full bg-blue-800 flex items-center justify-center">
-                <User className="w-5 h-5 text-white" />
+              <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-blue-800 flex items-center justify-center">
+                <User className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
-              <ChevronDown className="w-4 h-4 text-slate-700 dark:text-slate-300 hidden sm:block" />
+              <ChevronDown className="w-3.5 h-3.5 text-slate-700 dark:text-slate-300 hidden sm:block" />
             </button>
 
             {/* Dropdown Menu */}
             {showUserMenu && (
-              <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-slate-700 rounded-lg shadow-lg border border-slate-200 dark:border-slate-600 z-50">
+              <div className="absolute right-0 mt-2 w-44 md:w-48 bg-white dark:bg-slate-700 rounded-lg shadow-lg border border-slate-200 dark:border-slate-600 z-50">
                 <div className="px-4 py-3 border-b border-slate-200 dark:border-slate-600">
                   <p className="text-sm font-medium text-slate-900 dark:text-white">김수업</p>
                   <p className="text-xs text-slate-500 dark:text-slate-400">user@example.com</p>

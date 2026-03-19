@@ -47,29 +47,29 @@ export default function PracticePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12 px-4">
+      <div className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-7 md:py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">문제 풀이</h1>
-          <p className="text-blue-100 text-lg">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3">문제 풀이</h1>
+          <p className="text-blue-100 text-sm md:text-lg">
             다양한 문제를 풀면서 실력을 다지세요
           </p>
         </div>
       </div>
 
       {/* Main content */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 py-6 md:py-12">
         {/* Stats */}
-        <div className="grid md:grid-cols-3 gap-4 mb-12">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-4 mb-6 md:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700"
+            className="bg-white dark:bg-slate-800 rounded-xl p-4 md:p-6 shadow-md border border-slate-200 dark:border-slate-700"
           >
-            <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold uppercase mb-2">
+            <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 font-semibold uppercase mb-1 md:mb-2">
               학습 항목
             </p>
-            <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">
+            <p className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">
               {totalDetailItems}
             </p>
           </motion.div>
@@ -79,12 +79,12 @@ export default function PracticePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700"
+            className="bg-white dark:bg-slate-800 rounded-xl p-4 md:p-6 shadow-md border border-slate-200 dark:border-slate-700"
           >
-            <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold uppercase mb-2">
+            <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 font-semibold uppercase mb-1 md:mb-2">
               과목
             </p>
-            <p className="text-3xl font-bold text-green-600 dark:text-green-400">
+            <p className="text-2xl md:text-3xl font-bold text-green-600 dark:text-green-400">
               {subjectCount}
             </p>
           </motion.div>
@@ -94,23 +94,23 @@ export default function PracticePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700"
+            className="bg-white dark:bg-slate-800 rounded-xl p-4 md:p-6 shadow-md border border-slate-200 dark:border-slate-700"
           >
-            <p className="text-sm text-slate-600 dark:text-slate-400 font-semibold uppercase mb-2">
+            <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 font-semibold uppercase mb-1 md:mb-2">
               문제 풀이
             </p>
-            <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">
+            <p className="text-2xl md:text-3xl font-bold text-purple-600 dark:text-purple-400">
               20+
             </p>
           </motion.div>
         </div>
 
         {/* Practice cards */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+        <section className="mb-6 md:mb-12">
+          <h2 className="text-xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 md:mb-6">
             문제 풀이 방식
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6">
             {practiceCards.map((card, idx) => (
               <Link key={card.href} href={card.href}>
                 <motion.div
@@ -119,23 +119,25 @@ export default function PracticePage() {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className="h-full bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer border border-slate-200 dark:border-slate-700"
+                  className="h-full bg-white dark:bg-slate-800 rounded-xl md:rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer border border-slate-200 dark:border-slate-700 flex sm:block"
                 >
                   <div
-                    className={`bg-gradient-to-br ${card.color} h-24 flex items-center justify-center text-white relative`}
+                    className={`bg-gradient-to-br ${card.color} w-20 sm:w-auto sm:h-24 flex-shrink-0 flex items-center justify-center text-white relative`}
                   >
-                    {card.icon}
+                    <div className="w-6 h-6 md:w-8 md:h-8">
+                      {card.icon}
+                    </div>
                     {card.badge && (
-                      <span className="absolute top-3 right-3 px-3 py-1 bg-white/20 backdrop-blur rounded-full text-xs font-bold text-white">
+                      <span className="absolute top-2 right-2 px-2 py-0.5 bg-white/20 backdrop-blur rounded-full text-xs font-bold text-white">
                         {card.badge}
                       </span>
                     )}
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                  <div className="p-3 md:p-6 flex-1">
+                    <h3 className="text-sm md:text-lg font-bold text-slate-900 dark:text-white mb-1 md:mb-2">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                    <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400">
                       {card.description}
                     </p>
                   </div>
@@ -146,8 +148,8 @@ export default function PracticePage() {
         </section>
 
         {/* Recent scores */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+        <section className="mb-6 md:mb-12">
+          <h2 className="text-xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 md:mb-6">
             최근 풀이 기록
           </h2>
           <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md border border-slate-200 dark:border-slate-700">

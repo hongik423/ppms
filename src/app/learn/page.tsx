@@ -84,23 +84,23 @@ export default function LearnPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-12 px-4">
+      <div className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-7 md:py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">학습 허브</h1>
-          <p className="text-blue-100 text-lg">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3">학습 허브</h1>
+          <p className="text-blue-100 text-sm md:text-lg">
             공공조달관리사 시험을 위한 맞춤형 학습 모듈
           </p>
         </div>
       </div>
 
       {/* Main content */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 py-6 md:py-12">
         {/* Subject selection */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+        <section className="mb-8 md:mb-16">
+          <h2 className="text-xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 md:mb-6">
             과목 선택
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {subjectLinks.map((subject) => (
               <Link key={subject.id} href={subject.href}>
                 <motion.div
@@ -108,10 +108,10 @@ export default function LearnPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
-                  className={`bg-gradient-to-br ${subject.color} rounded-2xl p-8 text-white shadow-lg hover:shadow-xl cursor-pointer transition-shadow h-full`}
+                  className={`bg-gradient-to-br ${subject.color} rounded-xl md:rounded-2xl p-4 md:p-8 text-white shadow-lg hover:shadow-xl cursor-pointer transition-shadow h-full`}
                 >
-                  <h3 className="text-lg font-bold mb-2">{subject.name}</h3>
-                  <p className="text-white/80 text-sm">
+                  <h3 className="text-sm md:text-lg font-bold mb-1 md:mb-2 leading-snug">{subject.name}</h3>
+                  <p className="text-white/80 text-xs md:text-sm hidden sm:block">
                     클릭하여 해당 과목의 학습자료 보기
                   </p>
                 </motion.div>
@@ -122,10 +122,10 @@ export default function LearnPage() {
 
         {/* Quick access cards */}
         <section>
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+          <h2 className="text-xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4 md:mb-6">
             빠른 접근
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {learningCards.map((card, idx) => (
               <Link key={card.href} href={card.href}>
                 <motion.div
@@ -134,23 +134,25 @@ export default function LearnPage() {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
                   whileHover={{ y: -8 }}
-                  className="h-full bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer border border-slate-200 dark:border-slate-700"
+                  className="h-full bg-white dark:bg-slate-800 rounded-xl md:rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all cursor-pointer border border-slate-200 dark:border-slate-700"
                 >
                   <div
-                    className={`bg-gradient-to-br ${card.color} h-24 flex items-center justify-center text-white`}
+                    className={`bg-gradient-to-br ${card.color} h-16 md:h-24 flex items-center justify-center text-white`}
                   >
-                    {card.icon}
+                    <div className="w-6 h-6 md:w-8 md:h-8">
+                      {card.icon}
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                  <div className="p-3 md:p-6">
+                    <h3 className="text-sm md:text-lg font-bold text-slate-900 dark:text-white mb-1 md:mb-2 leading-tight">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                    <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 mb-2 md:mb-4 hidden sm:block">
                       {card.description}
                     </p>
                     {card.count !== undefined && (
-                      <div className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full text-sm font-semibold">
-                        {card.count}개 항목
+                      <div className="inline-block px-2 py-0.5 md:px-3 md:py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-full text-xs md:text-sm font-semibold">
+                        {card.count}개
                       </div>
                     )}
                   </div>
@@ -161,27 +163,25 @@ export default function LearnPage() {
         </section>
 
         {/* Learning tips */}
-        <section className="mt-16">
-          <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200 mb-4">
+        <section className="mt-8 md:mt-16">
+          <div className="bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 rounded-xl md:rounded-2xl p-5 md:p-8">
+            <h3 className="text-lg md:text-2xl font-bold text-blue-900 dark:text-blue-200 mb-3 md:mb-4">
               💡 효과적인 학습 팁
             </h3>
-            <ul className="space-y-3 text-blue-800 dark:text-blue-300">
-              <li className="flex gap-3">
+            <ul className="space-y-2 md:space-y-3 text-blue-800 dark:text-blue-300">
+              <li className="flex gap-2 md:gap-3 text-sm md:text-base">
                 <span className="flex-shrink-0 font-bold">1.</span>
                 <span>매일 오늘의 복습으로 정복된 개념을 다시 한 번 복습하세요</span>
               </li>
-              <li className="flex gap-3">
+              <li className="flex gap-2 md:gap-3 text-sm md:text-base">
                 <span className="flex-shrink-0 font-bold">2.</span>
                 <span>비교표로 헷갈리는 개념들을 명확히 구분하세요</span>
               </li>
-              <li className="flex gap-3">
+              <li className="flex gap-2 md:gap-3 text-sm md:text-base">
                 <span className="flex-shrink-0 font-bold">3.</span>
-                <span>
-                  히트맵을 확인하여 높은 출제확률의 항목부터 집중 학습하세요
-                </span>
+                <span>히트맵을 확인하여 높은 출제확률의 항목부터 집중 학습하세요</span>
               </li>
-              <li className="flex gap-3">
+              <li className="flex gap-2 md:gap-3 text-sm md:text-base">
                 <span className="flex-shrink-0 font-bold">4.</span>
                 <span>어려운 개념은 관련 법조문으로 정확히 이해하세요</span>
               </li>

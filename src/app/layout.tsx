@@ -27,8 +27,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
         <meta name="theme-color" content="#1e40af" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={`${notoSansKr.variable} font-sans bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white transition-colors`}>
@@ -36,13 +38,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Header />
 
         {/* Sidebar + Main Content */}
-        <div className="flex pt-16">
+        <div className="flex pt-14 md:pt-16">
           {/* Sidebar */}
           <Sidebar />
 
           {/* Main Content */}
           <main className="flex-1 lg:ml-64">
-            <div className="min-h-[calc(100vh-4rem)] pb-20 lg:pb-12">
+            <div className="min-h-[calc(100vh-3.5rem)] md:min-h-[calc(100vh-4rem)] pb-20 lg:pb-12">
               {children}
             </div>
             <Footer />

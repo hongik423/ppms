@@ -421,24 +421,24 @@ export default function StudyModePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-3xl mx-auto px-4 py-8">
+      <div className="max-w-3xl mx-auto px-3 md:px-4 py-5 md:py-8">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-5 md:mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <div className="p-2 bg-blue-100 rounded-lg">
-              <BookOpen className="w-6 h-6 text-blue-700" />
+            <div className="p-2 bg-blue-100 rounded-lg flex-shrink-0">
+              <BookOpen className="w-5 h-5 md:w-6 md:h-6 text-blue-700" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">문제 학습 모드</h1>
-              <p className="text-sm text-gray-500">
-                문제 풀이 → 교재 연계 고도화 해설로 원리를 이해하는 거꾸로 학습
+              <h1 className="text-lg md:text-2xl font-bold text-gray-900">문제 학습 모드</h1>
+              <p className="text-xs md:text-sm text-gray-500">
+                문제풀이 → 교재 연계 해설로 원리를 이해하는 거꾸로 학습
               </p>
             </div>
           </div>
         </div>
 
         {/* Feature highlight - 3 textbooks */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
           <div className="bg-violet-50 border border-violet-200 rounded-xl p-4">
             <div className="flex items-center gap-2 mb-2">
               <BookMarked className="w-4 h-4 text-violet-600" />
@@ -475,19 +475,19 @@ export default function StudyModePage() {
         </div>
 
         {/* Learning method */}
-        <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
-          <h3 className="font-semibold text-amber-800 mb-3">💡 거꾸로 학습법 (Reverse Learning)</h3>
-          <div className="grid grid-cols-4 gap-2 text-center">
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 md:p-5 mb-6">
+          <h3 className="font-semibold text-amber-800 mb-3 text-sm md:text-base">💡 거꾸로 학습법 (Reverse Learning)</h3>
+          <div className="grid grid-cols-4 gap-1.5 md:gap-2 text-center">
             {[
               { step: '1', label: '문제 읽기', icon: '📖' },
               { step: '2', label: '답 선택', icon: '✏️' },
               { step: '3', label: '정오 확인', icon: '✅' },
-              { step: '4', label: '교재 원리 이해', icon: '📚' },
+              { step: '4', label: '원리 이해', icon: '📚' },
             ].map((s) => (
-              <div key={s.step} className="bg-white rounded-lg p-2">
-                <div className="text-xl mb-1">{s.icon}</div>
-                <div className="text-xs font-bold text-amber-700">{s.step}단계</div>
-                <div className="text-xs text-gray-600">{s.label}</div>
+              <div key={s.step} className="bg-white rounded-lg p-1.5 md:p-2">
+                <div className="text-base md:text-xl mb-0.5 md:mb-1">{s.icon}</div>
+                <div className="text-[10px] md:text-xs font-bold text-amber-700">{s.step}단계</div>
+                <div className="text-[10px] md:text-xs text-gray-600 leading-tight">{s.label}</div>
               </div>
             ))}
           </div>

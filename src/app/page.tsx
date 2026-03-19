@@ -36,12 +36,12 @@ export default function DashboardPage() {
   const streakDays = stats ? (stats as { streakDays?: number }).streakDays ?? defaultStreak.streakDays : defaultStreak.streakDays;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-6 md:py-8">
-      <div className="mb-6 md:mb-8">
+    <div className="max-w-7xl mx-auto px-3 md:px-4 py-4 md:py-8">
+      <div className="mb-4 md:mb-8">
         <DdayCounter targetDate="2026-10-03" />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 md:mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-6 mb-4 md:mb-8">
         <DailyPlan dailyPlan={dailyPlan} />
         <StudyStreak
           streakDays={streakDays}
@@ -50,12 +50,12 @@ export default function DashboardPage() {
         />
       </div>
 
-      <div className="mb-6 md:mb-8">
+      <div className="mb-4 md:mb-8">
         <SubjectProgress progress={isLoading ? undefined : progress} />
       </div>
 
       {/* Weakness Alert + Score Summary */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-6">
         <WeaknessAlert
           weakItems={[
             {
