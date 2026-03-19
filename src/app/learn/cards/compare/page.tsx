@@ -172,6 +172,145 @@ const comparisonData: ComparisonData[] = [
     ],
   },
 
+  // ────────── 3과목 추가 (3권 공공계약관리 — 의미부여암기법) ──────────
+  {
+    id: 'c3-03',
+    subject: '3과목',
+    title: '지체상금률 비교 — 물품·공사·용역',
+    description: '계약 유형별 지체상금률 차이 — 암기: "물용0.25, 공사0.5 (공사는 2배!)"',
+    headers: ['물품계약', '공사계약', '용역계약'],
+    rows: [
+      {
+        label: '지체상금률 (1일당)',
+        cells: ['0.25/1000 (0.025%)', '0.5/1000 (0.05%)', '0.25/1000 (0.025%)'],
+      },
+      {
+        label: '공식',
+        cells: [
+          '지체일수 × 계약금액 × 0.25/1000',
+          '지체일수 × 계약금액 × 0.5/1000',
+          '지체일수 × 계약금액 × 0.25/1000',
+        ],
+      },
+      {
+        label: '최고한도',
+        cells: ['계약금액의 30%', '계약금액의 30%', '계약금액의 30%'],
+      },
+      {
+        label: '면제사유',
+        cells: [
+          '천재지변·발주자귀책·불가항력',
+          '천재지변·발주자귀책·불가항력',
+          '천재지변·발주자귀책·불가항력',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: [
+          '"물용0.25" — 가벼운 물건은 0.25',
+          '"공사0.5" — 공사장은 더 크니까 2배!',
+          '"물용0.25" — 용역도 물건과 동일',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c3-04',
+    subject: '3과목',
+    title: '물가변동 조정방법 비교 — 품목조정률 vs 지수조정률',
+    description: '계약금액 조정 2가지 방법 비교 — 조정요건: 90일+3% 동시 충족',
+    headers: ['품목조정률 방법', '지수조정률 방법'],
+    rows: [
+      {
+        label: '개요',
+        cells: [
+          '계약금액 구성 품목/비목의 가격변동을 개별 산출하여 등락률 계산',
+          '계약금액 구성 비목을 비목군으로 분류, 지수변동률 적용',
+        ],
+      },
+      {
+        label: '조정률 산출',
+        cells: [
+          '모든 품목·비목의 등락률을 개별 계산\n(거래실례가격 기준)',
+          '비목군별 한국은행 발표 생산자물가\n기본분류지수·수입물가지수 적용',
+        ],
+      },
+      {
+        label: '적용 대상',
+        cells: [
+          '원가계산에 의한 예정가격 기준 계약\n(단기·소규모 계약)',
+          '원가계산 기준 계약 (장기·대규모·복합공사)',
+        ],
+      },
+      {
+        label: '장점',
+        cells: [
+          '물가변동 실제 반영 가능\n(품목별 등락률 직접 산출)',
+          '산출 간편·신속\n(지수는 공개 자료 활용)',
+        ],
+      },
+      {
+        label: '단점',
+        cells: [
+          '조정 시마다 계산 복잡·시간 소요',
+          '평균 개념이므로 실제 물가변동이 반영\n안 될 가능성',
+        ],
+      },
+      {
+        label: '조정금액 공식',
+        cells: [
+          '물가변동적용대가 × 품목조정률',
+          '물가변동적용대가 × 지수조정률(K)',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c3-05',
+    subject: '3과목',
+    title: '설계변경 계약금액 조정단가 비교',
+    description: '계약상대자 요구·발주기관 요구·신기술공법 적용 시 단가 기준',
+    headers: ['계약상대자 요구', '발주기관 요구', '신기술·신공법'],
+    rows: [
+      {
+        label: '감소물량 단가',
+        cells: ['계약단가', '계약단가', '계약단가'],
+      },
+      {
+        label: '증가물량 단가',
+        cells: [
+          '계약단가\n(계약단가 > 예단가 시 예단가)',
+          '계약단가와 설계변경 당시 단가에\n낙찰률을 곱한 금액 범위 내 협의\n(협의 불가 시 50/100)',
+          '계약단가\n(계약단가 > 예단가 시 예단가)',
+        ],
+      },
+      {
+        label: '신규비목 단가',
+        cells: [
+          '설계변경당시 단가에 낙찰률 곱한 금액',
+          '동일 (협의 적용)',
+          '설계변경당시 단가에 낙찰률 곱한 금액',
+        ],
+      },
+      {
+        label: '조정금액',
+        cells: [
+          '당초 금액 대비 증감금액 그대로',
+          '당초 금액 대비 증감금액 그대로',
+          '절감액의 30%만 감액 조정\n(수급인 이익 70% 귀속)',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: [
+          '"계약상자 요구: 계약단가 기준"',
+          '"발주기관 요구: 협의 후 50/100 안전망"',
+          '"신기술: 절감30% 감액, 70%는 수급인 몫"',
+        ],
+      },
+    ],
+  },
+
   // ────────── 4권실무 ──────────
   {
     id: '6',
@@ -246,10 +385,10 @@ const comparisonData: ComparisonData[] = [
 ]
 
 const subjectTabs: Array<{ id: SubjectFilter; label: string; activeColor: string; inactiveColor: string }> = [
-  { id: '전체', label: '전체 (5개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '전체', label: '전체 (10개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목', label: '1과목 법제도 (2개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목', label: '2과목 조달계획 (1개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
-  { id: '3과목', label: '3과목 계약관리 (2개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
+  { id: '3과목', label: '3과목 계약관리 (5개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무', label: '4권 관리실무 (2개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]
 

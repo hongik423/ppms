@@ -127,6 +127,52 @@ const procedures: Procedure[] = [
     ],
   },
 
+  // ────────── 3과목 추가 (3권 — 의미부여암기법) ──────────
+  {
+    id: 'proc-s3-04',
+    title: '계약변경(설계변경) 절차 — 3권 제1장 핵심',
+    category: '계약변경',
+    subject: '3과목',
+    keyPoint: '불상기발(불분명·상이·기술·발주기관) → 6단계 변경',
+    steps: [
+      { step: 1, name: '설계변경 사유 발생', description: '①설계서 불분명·오류 ②현장상태 상이 ③신기술공법 ④발주기관 요구 — "불상기발"' },
+      { step: 2, name: '합의각서 작성', description: '발주담당자와 계약상대자 간 변경에 대한 합의각서 작성' },
+      { step: 3, name: '변경계약 의뢰', description: '방침서·합의각서·준공기한연기의뢰서(기간변경)·신출내역서(금액변경) 제출' },
+      { step: 4, name: '변경계약서 초안 송신', description: '계약담당자가 나라장터를 통해 변경계약서 초안 송신' },
+      { step: 5, name: '보증서·인지세 제출 및 응답', description: '계약금액·기간 변경 시 보증서·인지세 등 제출 후 초안 응답' },
+      { step: 6, name: '변경계약 체결', description: '변경계약 체결 — dBrain 계약대장 등록 완료' },
+    ],
+  },
+  {
+    id: 'proc-s3-05',
+    title: '납품검사·검수·대금지급 절차 — 계약종결 관리',
+    category: '계약종결',
+    subject: '3과목',
+    keyPoint: '"납검대하" — 납품→검사→대금→하자',
+    steps: [
+      { step: 1, name: '납품(시공) 완료 통보', description: '계약상대자가 납품 또는 공사 완료 후 발주기관에 완료 통보' },
+      { step: 2, name: '검사·검수 실시', description: '수요기관 담당자 또는 전문기관이 품질·수량·규격 검사·검수' },
+      { step: 3, name: '검사결과 통보', description: '합격 시 검수조서 작성 / 불합격 시 재납품·보완 요구' },
+      { step: 4, name: '대금 청구서 제출', description: '계약상대자가 세금계산서·검수조서 등 첨부하여 대금 청구' },
+      { step: 5, name: '대금 지급', description: '청구일로부터 5일 이내 지급 원칙 (지연 시 지연이자 발생)' },
+      { step: 6, name: '하자보증금 반환', description: '하자보수 기간 만료 후 하자보수보증금 반환 (계약금액의 2~5%)' },
+    ],
+  },
+  {
+    id: 'proc-s3-06',
+    title: '하도급계약 승인 절차 — 3권 제4장 공사계약관리',
+    category: '공사계약',
+    subject: '3과목',
+    keyPoint: '하도급 통보: 계약체결 후 30일 이내',
+    steps: [
+      { step: 1, name: '하도급계약 체결', description: '수급인(계약상대자)이 하수급인과 하도급계약 체결 결정' },
+      { step: 2, name: '공사감독자에게 제출', description: '하도급계약서 및 관련 서류를 공사감독자에게 제출' },
+      { step: 3, name: '하도급 적정성 검토', description: '하도급금액 적정성 심사 — 도급금액의 82% 미달 시 심사 강화' },
+      { step: 4, name: '발주청 보고 (7일 이내)', description: '공사감독자가 하도급 내용을 발주청에 7일 이내 보고' },
+      { step: 5, name: '하도급 통보', description: '하도급 계약체결일로부터 30일 이내 발주자에게 통보 (법적 의무)' },
+    ],
+  },
+
   // ────────── 4권실무 (5개) — 신규 추가 ──────────
   {
     id: 'proc-08',
@@ -204,10 +250,10 @@ const procedures: Procedure[] = [
 ];
 
 const subjectTabs = [
-  { id: '전체' as SubjectFilter, label: '전체 (12개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '전체' as SubjectFilter, label: '전체 (15개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (2개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (2개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
-  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (3개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
+  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (5개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ];
 
@@ -249,7 +295,7 @@ export default function ProceduresPage() {
         <div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white">절차도 학습</h1>
           <p className="text-sm text-slate-500">
-            전 과목 핵심 업무절차 흐름도 12개 — 4권 실무 절차 5개 신규 추가
+            전 과목 핵심 업무절차 15개 — 3권 의미부여암기법 고몰입 학습 (설계변경·납검대하·하도급)
           </p>
         </div>
       </div>

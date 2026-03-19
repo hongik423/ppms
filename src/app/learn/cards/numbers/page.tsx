@@ -92,7 +92,7 @@ const numberData: NumberData[] = [
     tip: '물품·용역 95점 이상 → 낙찰자 결정',
   },
 
-  // ────────── 3과목 (3개) ──────────
+  // ────────── 3과목 (6개) — 의미부여암기법 완전 적용 ──────────
   {
     id: '9',
     subject: '3과목',
@@ -100,6 +100,7 @@ const numberData: NumberData[] = [
     answer: '계약금액의 2~5%',
     options: ['계약금액의 1~2%', '계약금액의 2~5%', '계약금액의 5~10%', '계약금액의 10~15%'],
     lawReference: '국가계약법 시행령 제52조 — 하자보수보증금 기준',
+    tip: '암기: "계10 이10~15 하2~5 입5"\n계(약)는 10%, 이(행)는 10~15%, 하(자)는 2~5%, 입(찰)은 5%',
   },
   {
     id: '10',
@@ -108,7 +109,7 @@ const numberData: NumberData[] = [
     answer: '0.25/1000 (0.025%)',
     options: ['0.1/1000', '0.25/1000 (0.025%)', '0.5/1000', '1/1000'],
     lawReference: '국가계약법 시행령 제74조 — 지체상금률',
-    tip: '공사 지체상금률: 0.5/1000 (물품의 2배)',
+    tip: '암기: "물용0.25, 공사0.5 (공사는 2배!)"\n공사(公事)가 더 크니까 2배 벌금!',
   },
   {
     id: '11',
@@ -117,7 +118,34 @@ const numberData: NumberData[] = [
     answer: '300억원 이상',
     options: ['100억원 이상', '200억원 이상', '300억원 이상', '500억원 이상'],
     lawReference: '국가계약법 시행령 제42조의2 — 종합심사낙찰제',
-    tip: 'PQ(입찰참가자격 사전심사)도 300억원 이상 공사에 적용',
+    tip: '암기: "종심제·PQ는 300억 쌍둥이"\nPQ(입찰참가자격 사전심사)도 동일하게 300억원 이상!',
+  },
+  {
+    id: 'n3-04',
+    subject: '3과목',
+    question: '물가변동(E/S) 계약금액 조정 — 기간 요건은?',
+    answer: '계약체결일로부터 90일 이상 경과',
+    options: ['30일 이상 경과', '60일 이상 경과', '90일 이상 경과', '180일 이상 경과'],
+    lawReference: '국가계약법 시행령 제64조 — 물가변동 조정 기간요건',
+    tip: '암기: "구삼(9·3)이 동시에 충족!"\n90일 경과 + 3% 이상 등락 → 2가지 조건 동시 충족 필요!',
+  },
+  {
+    id: 'n3-05',
+    subject: '3과목',
+    question: '계약보증금의 기준은? (계약금액 대비)',
+    answer: '계약금액의 10% 이상',
+    options: ['계약금액의 5% 이상', '계약금액의 10% 이상', '계약금액의 15% 이상', '계약금액의 20% 이상'],
+    lawReference: '국가계약법 시행령 제50조 — 계약보증금 기준',
+    tip: '암기: "계10 이10~15 하2~5"\n계약보증금 10%, 이행보증금 10~15%, 하자보수보증금 2~5%',
+  },
+  {
+    id: 'n3-06',
+    subject: '3과목',
+    question: '용역계약 착수 기한은? (계약체결 후 며칠 이내)',
+    answer: '14일 이내',
+    options: ['7일 이내', '10일 이내', '14일 이내', '30일 이내'],
+    lawReference: '용역계약 일반조건 제13조 — 착수 및 보고',
+    tip: '암기: "용역14 공사10/20"\n용역은 14일, 공사는 10억 미만 10일·10억 이상 20일!',
   },
 
   // ────────── 4권실무 (4개) ──────────
@@ -162,7 +190,7 @@ const numberData: NumberData[] = [
 const subjectTabs = [
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (5개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (3개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
-  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (3개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
+  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (4개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]
 
@@ -194,7 +222,7 @@ export default function NumbersPage() {
           <div className="flex items-center justify-between mb-3">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">숫자 암기 퀴즈</h1>
-              <p className="text-orange-200 text-sm mt-1">4권 실무 숫자 4개 신규 추가 (유효기간·생산실적·MAS기준·물가조정)</p>
+              <p className="text-orange-200 text-sm mt-1">3권 의미부여암기법 신규 반영 — 전 과목 18개 숫자 완전 정복</p>
             </div>
             <Link
               href="/learn"

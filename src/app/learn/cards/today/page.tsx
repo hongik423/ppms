@@ -114,13 +114,13 @@ const s2Cards: ConceptCardData[] = [
   },
 ]
 
-// ── 3과목: 공공계약관리 (3개) ─────────────────────────────────────────────────
+// ── 3과목: 공공계약관리 (6개) — 의미부여암기법 완전 적용 ─────────────────────
 const s3Cards: ConceptCardData[] = [
   {
     id: 's3-001',
     subject: '3과목',
-    front: '계약이행 관리 핵심 — 지체상금',
-    back: '【지체상금률】\n• 물품: 지체일수 × 계약금액 × 0.25/1000\n• 공사: 지체일수 × 계약금액 × 0.5/1000\n• 용역: 지체일수 × 계약금액 × 0.25/1000\n\n【최고한도】 계약금액의 30%\n【면제 사유】 천재지변, 발주자 귀책사유, 불가항력\n\n법근거: 국가계약법 시행령 제74조',
+    front: '지체상금률 — 지연납품·시공 시 부과 기준',
+    back: '【지체상금률 (1일당 계약금액 대비)】\n• 물품: 0.25/1000 (0.025%)\n• 공사: 0.5/1000 (0.05%) ← 물품의 2배!\n• 용역: 0.25/1000 (0.025%)\n\n【의미부여암기】 "물용반, 공사배"\n물품·용역은 0.25, 공사(공공사업)는 0.5로 2배!\n"공사장이 더 늦어지면 2배로 벌금"\n\n【최고한도】 계약금액의 30%\n【면제사유】 ①천재지변 ②발주자 귀책사유 ③불가항력\n\n법근거: 국가계약법 시행령 제74조',
     category: 'number',
     difficulty: 2,
     lawReference: '국가계약법 시행령 제74조',
@@ -128,20 +128,47 @@ const s3Cards: ConceptCardData[] = [
   {
     id: 's3-002',
     subject: '3과목',
-    front: 'MAS(다수공급자계약) 2단계 경쟁',
-    back: '【MAS 2단계경쟁 개념】\n나라장터 종합쇼핑몰에서 동일 품목 MAS 계약 업체들 간 추가 경쟁\n\n【2단계경쟁 적용 기준】\n• 추정가격 5천만원 이상\n• 동일 품목 MAS 업체 2개 이상\n\n【절차】 수요기관 요청 → 2단계경쟁 개시 → 가격·비가격 경쟁 → 최종 공급자 선정 → 납품·검수\n\n법근거: 다수공급자계약 물품 세부기준',
+    front: '3대 보증금 — 계약보증금·이행보증금·하자보수보증금',
+    back: '【3대 보증금 기준】\n①계약보증금: 계약금액의 10% 이상\n②이행보증금: 계약금액의 10~15% (이행보증서 대체가능)\n③하자보수보증금: 계약금액의 2~5%\n④입찰보증금: 추정가격의 5% 이상\n\n【의미부여암기】 "계10 이10~15 하2~5 입5"\n계(계약)는 10, 이(이행)는 10~15, 하(하자)는 2~5, 입(입찰)은 5!\n\n스토리: "계약하면(10) 이행하고(10~15) 하자나면(2~5) 환수!"\n\n법근거: 국가계약법 시행령 제50조·제52조',
+    category: 'number',
+    difficulty: 2,
+    lawReference: '국가계약법 시행령 제50조, 제52조',
+  },
+  {
+    id: 's3-003',
+    subject: '3과목',
+    front: '물가변동(E/S) 계약금액 조정 — 2가지 요건과 방법',
+    back: '【조정요건 — 2가지 동시 충족】\n①계약체결일로부터 90일 이상 경과\n②품목조정률 또는 지수조정률 ±3% 이상 증감\n\n【의미부여암기】 "구삼(9·3)이 동시에 충족!"\n구(90일)가 지나고 삼(3%)이 되면 조정 개시!\n\n【조정방법 2가지】\n①품목조정률: 품목별 가격변동 직접 산출 (단기·소규모)\n②지수조정률: 생산자물가지수·노임단가 지수 적용 (장기·대규모)\n\n【조정금액】= 물가변동적용대가 × 품목·지수조정률\n\n법근거: 국가계약법 시행령 제64조',
+    category: 'procedure',
+    difficulty: 3,
+    lawReference: '국가계약법 시행령 제64조',
+  },
+  {
+    id: 's3-004',
+    subject: '3과목',
+    front: 'MAS(다수공급자계약) 2단계경쟁 — 핵심 기준과 절차',
+    back: '【MAS 2단계경쟁 적용 기준】\n①추정가격 5천만원 이상\n②동일 품목 MAS 업체 2개 이상\n\n【의미부여암기】 "MAS 5천 2개면 경쟁!"\n5천만원 넘고, 2개 업체 있으면 → 반드시 2단계경쟁\n\n【절차 5단계】\n①수요기관 구매요청\n②2단계경쟁 개시 공지\n③가격·비가격 요소 경쟁\n④최종 공급자 선정\n⑤납품→검수→대금지급\n\n나라장터 종합쇼핑몰에서 진행\n법근거: 다수공급자계약 물품 세부기준',
     category: 'procedure',
     difficulty: 3,
     lawReference: '다수공급자계약 물품 세부기준',
   },
   {
-    id: 's3-003',
+    id: 's3-005',
     subject: '3과목',
-    front: '물가변동(E/S)으로 인한 계약금액 조정',
-    back: '【조정요건】\n• 입찰일로부터 90일 경과\n• 물가변동 등락률 ±3% 이상\n\n【조정방법】\n①품목조정률: 계약품목별 가격 변동 적용\n②지수조정률: 생산자물가지수·노임단가 등 지수 적용\n\n【절차】 요건 확인 → 조정금액 산출 → 계약상대자 청구 → 변경계약 체결\n\n법근거: 국가계약법 시행령 제64조',
+    front: '설계변경에 따른 계약금액 조정 — 사유와 절차',
+    back: '【설계변경 4가지 사유】\n①설계서 내용 불분명·오류·모순\n②공사현장 상태가 설계서와 상이 (지질·용수 등)\n③새로운 기술·공법 사용 (공사비 절감·기간 단축)\n④발주기관이 설계변경 필요를 인정한 경우\n\n【의미부여암기】 "불상기발(불상한 기발함)"\n불분명(불) + 상이한 현장(상) + 기술공법(기) + 발주기관요구(발)\n\n【변경계약 절차 6단계】\n①가능 여부 판단 → ②합의각서 작성 → ③변경의뢰 → ④초안 송신 → ⑤보증서·인지세 제출 → ⑥변경계약 체결\n\n법근거: 국가계약법 시행령 제65조',
     category: 'procedure',
     difficulty: 3,
-    lawReference: '국가계약법 시행령 제64조',
+    lawReference: '국가계약법 시행령 제65조',
+  },
+  {
+    id: 's3-006',
+    subject: '3과목',
+    front: '납품검사·검수·대금지급 — 계약종결 절차',
+    back: '【계약종결 관리 순서】\n①납품(시공) 완료 통보\n②검사·검수 실시 (수요기관 또는 전문기관)\n③검사결과 통보 (합격/불합격)\n④대금 청구서 제출\n⑤대금 지급 (검사 완료 후 5일 이내 원칙)\n⑥하자보수보증금 반환 (하자보수기간 만료 후)\n\n【의미부여암기】 "납검대하"\n납(납품) → 검(검사) → 대(대금) → 하(하자보증금)\n"납품하고 검사받고 대금받고 하자기간 끝나면 보증금 돌려받기"\n\n지체상금: 납기 초과 일수 × 계약금액 × 지체상금률\n법근거: 국가계약법 제15조, 시행령 제74조',
+    category: 'procedure',
+    difficulty: 2,
+    lawReference: '국가계약법 제15조, 시행령 제74조',
   },
 ]
 
@@ -204,11 +231,11 @@ const allCards: ConceptCardData[] = [
 
 function getFilteredCards(filter: SubjectFilter): ConceptCardData[] {
   if (filter === '전체') {
-    // 전체: 과목별 균형있게 선별하여 15개
+    // 전체: 과목별 균형있게 선별하여 15개 (S1:3, S2:3, S3:4, S4:5)
     return [
-      ...s1Cards.slice(0, 4),
+      ...s1Cards.slice(0, 3),
       ...s2Cards.slice(0, 3),
-      ...s3Cards.slice(0, 3),
+      ...s3Cards.slice(0, 4),
       ...s4Cards.slice(0, 5),
     ]
   }
@@ -219,8 +246,8 @@ const subjectTabs = [
   { id: '전체' as SubjectFilter, label: '전체 (15개)', color: 'bg-slate-800 text-white', inactive: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (6개)', color: 'bg-violet-700 text-white', inactive: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (4개)', color: 'bg-blue-700 text-white', inactive: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
-  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (3개)', color: 'bg-emerald-700 text-white', inactive: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
-  { id: '4권실무' as SubjectFilter, label: '4권 실무 (5개)', color: 'bg-rose-700 text-white', inactive: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
+  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', color: 'bg-emerald-700 text-white', inactive: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
+  { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (5개)', color: 'bg-rose-700 text-white', inactive: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]
 
 const categoryLabel: Record<string, string> = {
@@ -298,7 +325,7 @@ export default function TodayReviewPage() {
           <div className="flex items-center justify-between mb-3">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">오늘의 복습</h1>
-              <p className="text-blue-200 text-sm mt-1">출제기준 100% 반영 — 4권 실무 포함 완전 학습</p>
+              <p className="text-blue-200 text-sm mt-1">출제기준 100% 반영 — 3권·4권 의미부여암기법 고몰입 학습</p>
             </div>
             <Link
               href="/learn"
@@ -486,7 +513,7 @@ export default function TodayReviewPage() {
             <div className="space-y-1">
               <div className="flex items-start gap-2">
                 <span className="px-1.5 py-0.5 bg-emerald-100 text-emerald-700 rounded text-xs font-semibold flex-shrink-0">3과목</span>
-                <span className="text-blue-800 dark:text-blue-300">지체상금률·MAS·물가변동 기준</span>
+                <span className="text-blue-800 dark:text-blue-300">보증금·설계변경·MAS·물가변동 (의미부여암기)</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="px-1.5 py-0.5 bg-rose-100 text-rose-700 rounded text-xs font-semibold flex-shrink-0">4권실무</span>
