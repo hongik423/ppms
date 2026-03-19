@@ -152,6 +152,8 @@ interface ConceptCard {
   chapter: number; chapterTitle: string; section: string; pages: string;
   front: string; back: string; keyPoint: string;
   difficulty: 'easy' | 'normal' | 'hard';
+  detailItemId?: string;
+  mnemonic?: string; mnemonicFull?: string; meaningLink?: string;
 }
 interface CriteriaSubTopic { name: string; detailItems: string[] }
 interface CriteriaTopic {
@@ -326,6 +328,23 @@ function DetailItemModal({ item, subTopicId, subjectId, onClose }: {
                       <span className={`text-xs ${theme.text} opacity-70`}>p.{card.pages}</span>
                     </div>
                     <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-wrap">{card.back}</p>
+                    {card.mnemonic && (
+                      <div className="p-3 rounded-xl bg-amber-50 border border-amber-200 mt-1">
+                        <div className="flex items-center gap-1.5 mb-1.5">
+                          <span className="text-sm">🧠</span>
+                          <span className="text-xs font-bold text-amber-700">두문자 암기법</span>
+                        </div>
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <span className="text-lg font-black text-amber-600 tracking-wider">{card.mnemonic}</span>
+                          <span className="text-xs text-amber-600">= {card.mnemonicFull}</span>
+                        </div>
+                        {card.meaningLink && (
+                          <p className="text-xs text-amber-800 leading-relaxed bg-amber-100/60 rounded-lg px-2.5 py-1.5">
+                            💡 {card.meaningLink}
+                          </p>
+                        )}
+                      </div>
+                    )}
                     {card.keyPoint && (
                       <div className={`p-3 rounded-xl ${theme.light} border ${theme.border} mt-1`}>
                         <div className="flex items-center gap-1.5 mb-1">
