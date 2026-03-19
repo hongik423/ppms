@@ -213,6 +213,42 @@ const s3Cards: ConceptCardData[] = [
     difficulty: 2,
     lawReference: '국가계약법 제15조, 시행령 제74조',
   },
+  {
+    id: 's3-007',
+    subject: '3과목',
+    front: '계약의 5대 기능 — 효과적 계약관리의 핵심',
+    back: '【계약의 5대 기능 (3권 제1장 핵심)】\n①증거기능: 계약 내용의 문서화·입증 수단\n②관리기능: 이행 점검·품질·일정 관리 기준\n③위험전가기능: 보증금·보험으로 위험 분산\n④지불기능: 대가 지급 조건·시기·방법 명시\n⑤동기부여기능: 인센티브·페널티로 이행 촉진\n\n【의미부여암기】 "증관위지동"\n증(거)·관(리)·위(험전가)·지(불)·동(기부여)\n"증거로 관리하여 위험을 지불하고 동기부여!"\n\n【CMP(계약관리계획)】 5대 기능을 실행하는 종합계획서',
+    category: 'concept',
+    difficulty: 2,
+    lawReference: '국가계약법 제5조 (계약의 원칙)',
+  },
+  {
+    id: 's3-008',
+    subject: '3과목',
+    front: '물품계약 일반절차·낙찰자결정·이행관리 — 3권 제2장',
+    back: '【물품계약 일반절차】\n①입찰참가자격 등록 → ②입찰공고 확인\n→ ③입찰서 제출 → ④적격심사(95점↑)\n→ ⑤낙찰자결정 → ⑥계약체결\n\n【낙찰자결정 방법】\n• 추정 2.1억↑: 적격심사 (최저가 순위)\n• 소액: 수의계약 (물2·공8·용5)\n• 외자구매: 국제경쟁입찰\n\n【의미부여암기】 "등공입적낙계"\n등(록)→공(고)→입(찰)→적(격심사)→낙(찰)→계(약)\n\n【물품계약 이행관리】 공정·품질·안전관리 + 설계변경·금액조정',
+    category: 'procedure',
+    difficulty: 2,
+    lawReference: '국가계약법 시행령 제42조 (적격심사)',
+  },
+  {
+    id: 's3-009',
+    subject: '3과목',
+    front: '공공조달 품질관리 3대 제도 — 3권 제5장',
+    back: '【품질관리 3대 제도 (3권 제5장 핵심)】\n①직접생산확인제도: 중소기업이 핵심부품을 직접 제조하는지 확인\n  - 중소벤처기업부장관 확인, 3년 연속 생산실적\n②안전관리물자 지정제도: 안전 관련 물자를 지정·관리\n  - 조달청장 지정, 품질검사 의무\n③품질보증조달물품 지정제도: 품질 우수 물품을 인증·등록\n  - 조달청장 지정, 나라장터 등록 우대\n\n【의미부여암기】 "직안품"\n직(접생산확인)·안(전관리물자)·품(질보증조달물품)\n"직접 안전한 품질!" — 3대 품질관리의 핵심!',
+    category: 'concept',
+    difficulty: 3,
+    lawReference: '조달사업법, 중소기업제품 구매촉진법',
+  },
+  {
+    id: 's3-010',
+    subject: '3과목',
+    front: '기술형공사 3대 수행방식 — 일괄·대안·기술제안입찰',
+    back: '【기술형공사 3대 방식 (3권 제4장 핵심)】\n①일괄입찰(턴키): 설계+시공 일괄 수행\n  - 대형공사(300억↑), 설계책임 수급인\n②대안입찰: 원안 설계 대신 대안 설계 제출\n  - 기본설계 기반, 시공비 절감 가능\n③기술제안입찰: 시공방법 등 기술제안\n  - 실시설계 완료 후, 시공 중심 제안\n\n【의미부여암기】 "일대기"\n일(괄·턴키)·대(안)·기(술제안)\n"일대기(一代記)!" — 기술형공사의 세 가지 이야기!\n\n【핵심 차이】 일괄=설계+시공, 대안=대안설계, 기술제안=시공방법',
+    category: 'compare',
+    difficulty: 3,
+    lawReference: '국가계약법 시행령 제80조~제97조',
+  },
 ]
 
 // ── 4권실무: 공공조달 관리실무 (9개) — 의미부여암기법 완전 적용 ──────────────
@@ -310,22 +346,22 @@ const allCards: ConceptCardData[] = [
 
 function getFilteredCards(filter: SubjectFilter): ConceptCardData[] {
   if (filter === '전체') {
-    // 전체: 과목별 균형있게 선별하여 15개 (S1:3, S2:3, S3:3, S4:6)
+    // 전체: 과목별 균형있게 선별하여 19개 (S1:4, S2:3, S3:4, S4:8)
     return [
-      ...s1Cards.slice(0, 3),
+      ...s1Cards.slice(0, 4),
       ...s2Cards.slice(0, 3),
-      ...s3Cards.slice(0, 3),
-      ...s4Cards.slice(0, 6),
+      ...s3Cards.slice(0, 4),
+      ...s4Cards.slice(0, 8),
     ]
   }
   return allCards.filter((c) => c.subject === filter)
 }
 
 const subjectTabs = [
-  { id: '전체' as SubjectFilter, label: '전체 (15개)', color: 'bg-slate-800 text-white', inactive: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '전체' as SubjectFilter, label: '전체 (19개)', color: 'bg-slate-800 text-white', inactive: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (9개)', color: 'bg-violet-700 text-white', inactive: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (6개)', color: 'bg-blue-700 text-white', inactive: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
-  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', color: 'bg-emerald-700 text-white', inactive: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
+  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (10개)', color: 'bg-emerald-700 text-white', inactive: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (9개)', color: 'bg-rose-700 text-white', inactive: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]
 
@@ -592,7 +628,7 @@ export default function TodayReviewPage() {
             <div className="space-y-1">
               <div className="flex items-start gap-2">
                 <span className="px-1.5 py-0.5 bg-emerald-100 text-emerald-700 rounded text-xs font-semibold flex-shrink-0">3과목</span>
-                <span className="text-blue-800 dark:text-blue-300">보증금·설계변경·MAS·물가변동 (의미부여암기)</span>
+                <span className="text-blue-800 dark:text-blue-300">증관위지동(5대기능)·등공입적낙계(물품)·직안품(품질)·일대기(기술형공사) 의미부여암기</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="px-1.5 py-0.5 bg-rose-100 text-rose-700 rounded text-xs font-semibold flex-shrink-0">4권실무</span>

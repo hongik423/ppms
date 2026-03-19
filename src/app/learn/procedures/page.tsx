@@ -262,6 +262,51 @@ const procedures: Procedure[] = [
     ],
   },
 
+  // ────────── 3과목 추가 (3권 고도화 — CMP·물품이행·기술형공사) ──────────
+  {
+    id: 'proc-s3-07',
+    title: '계약관리계획(CMP) 수립 절차 — 3권 제1장 핵심',
+    category: '계약관리',
+    subject: '3과목',
+    keyPoint: '"증관위지동" 5대 기능을 실행하는 종합계획서',
+    steps: [
+      { step: 1, name: '계약관리 원칙 확인', description: '신의성실·상호대등·부당특약금지 원칙 확인 (국가계약법 제5조)' },
+      { step: 2, name: '계약관리 요소 파악', description: '5대 기능(증거·관리·위험전가·지불·동기부여) 기반으로 관리 요소 식별' },
+      { step: 3, name: 'CMP 초안 작성', description: '소요자원 투입계획·이행점검 체크리스트·위험관리계획 포함한 초안 작성' },
+      { step: 4, name: '착수협의(킥오프 미팅)', description: '발주기관·계약상대자 간 착수협의 — 과업범위·일정·연락체계 확인' },
+      { step: 5, name: 'CMP 확정 및 실행', description: '착수협의 결과 반영하여 CMP 확정 → 이행 단계별 모니터링 실행' },
+    ],
+  },
+  {
+    id: 'proc-s3-08',
+    title: '물품계약 이행관리 절차 — 3권 제2장',
+    category: '물품계약',
+    subject: '3과목',
+    keyPoint: '공정·품질·안전관리 + 설계변경·금액조정',
+    steps: [
+      { step: 1, name: '계약체결 및 착수', description: '낙찰자와 계약 체결 → 납품계획서 제출 (납품기한·장소 확인)' },
+      { step: 2, name: '공정관리', description: '생산공정 점검·납품일정 모니터링 — 지연 시 독촉·대체조치' },
+      { step: 3, name: '품질·안전관리', description: '품질검사 기준 확인·직접생산확인·안전관리물자 점검' },
+      { step: 4, name: '설계변경·금액조정', description: '규격 변경·물가변동 시 설계변경 절차 → 계약금액 조정 (시행령 제64·65조)' },
+      { step: 5, name: '납품검사·검수', description: '수령 후 10일 이내 검사 → 합격 시 검수조서 작성 → 5일 이내 대금지급' },
+    ],
+  },
+  {
+    id: 'proc-s3-09',
+    title: '기술형공사(일괄/대안/기술제안) 입찰 절차 — 3권 제4장',
+    category: '공사계약',
+    subject: '3과목',
+    keyPoint: '"일대기" — 일괄(설계+시공)·대안(대안설계)·기술제안(시공방법)',
+    steps: [
+      { step: 1, name: '발주방식 결정', description: '일괄입찰(턴키)/대안입찰/기술제안입찰 중 적합한 방식 결정 (300억↑ 대형공사)' },
+      { step: 2, name: '입찰공고·PQ심사', description: '나라장터 입찰공고(15일↑) → PQ(사전심사) 실시 → 적격업체 선정' },
+      { step: 3, name: '설계·기술제안서 제출', description: '일괄: 기본+실시설계 / 대안: 대안설계 / 기술제안: 시공방법 제안서 제출' },
+      { step: 4, name: '설계심의·기술평가', description: '설계심의위원회 또는 기술평가위원회에서 기술·설계 평가 실시' },
+      { step: 5, name: '종합심사 낙찰자결정', description: '가격+기술+신인도 종합평가 → 최고득점자 낙찰 (종합심사낙찰제 적용)' },
+      { step: 6, name: '계약체결·착공', description: '계약 체결 → 착공계 제출(10~20일) → 공정관리·시공관리 착수' },
+    ],
+  },
+
   // ────────── 4권실무 (5개) — 신규 추가 ──────────
   {
     id: 'proc-08',
@@ -383,10 +428,10 @@ const procedures: Procedure[] = [
 ];
 
 const subjectTabs = [
-  { id: '전체' as SubjectFilter, label: '전체 (24개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '전체' as SubjectFilter, label: '전체 (27개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (5개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (5개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
-  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
+  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (9개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (8개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ];
 
@@ -428,7 +473,7 @@ export default function ProceduresPage() {
         <div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white">절차도 학습</h1>
           <p className="text-sm text-slate-500">
-            출제기준 100% 반영 — 전 과목 24개 절차도 의미부여암기법 완전 수록
+            출제기준 100% 반영 — 전 과목 27개 절차도 의미부여암기법 완전 수록
           </p>
         </div>
       </div>
@@ -549,7 +594,7 @@ export default function ProceduresPage() {
         <ul className="space-y-1.5 text-xs text-green-800 dark:text-green-300">
           <li className="flex gap-2"><span className="font-bold flex-shrink-0">1과목</span><span>예정가격"이오사산"(±2%·15개·4개·산술평균) / 부정당제재5단계 / 분쟁조정(이의신청15일·조정50일) 암기</span></li>
           <li className="flex gap-2"><span className="font-bold flex-shrink-0">2과목</span><span>적격심사 95점 기준, 협상계약의 기술·가격 분리평가 흐름 이해</span></li>
-          <li className="flex gap-2"><span className="font-bold flex-shrink-0">3과목</span><span>물가변동 조정요건(90일+3%), MAS 2단계경쟁 기준(5천만원↑) 암기</span></li>
+          <li className="flex gap-2"><span className="font-bold flex-shrink-0">3과목</span><span>증관위지동(CMP) · 물품이행(검10대5) · 일대기(기술형공사) · 물가변동(90일+3%) · MAS(5천만↑) 암기</span></li>
           <li className="flex gap-2"><span className="font-bold flex-shrink-0">4권실무</span><span>가약신서현조승(등록) · 정분선(공급계획) · 낙작보인서(계약체결) · 물적용협공종(유형별입찰) · 신기현지지(우수제품)</span></li>
         </ul>
       </div>

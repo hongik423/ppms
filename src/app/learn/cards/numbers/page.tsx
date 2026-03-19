@@ -211,6 +211,42 @@ const numberData: NumberData[] = [
     lawReference: '용역계약 일반조건 제13조 — 착수 및 보고',
     tip: '암기: "용역14 공사10/20"\n용역은 14일, 공사는 10억 미만 10일·10억 이상 20일!',
   },
+  {
+    id: 'n3-07',
+    subject: '3과목',
+    question: '대금지급 기한 — 검사 완료 후 며칠 이내?',
+    answer: '5일 이내',
+    options: ['3일 이내', '5일 이내', '10일 이내', '14일 이내'],
+    lawReference: '국가계약법 제15조 — 대금 지급',
+    tip: '암기: "대금5일!" — 검사 완료 후 5일 이내 지급 원칙\n지연 시 지연이자 발생 (국가계약법 시행령 제58조의2)',
+  },
+  {
+    id: 'n3-08',
+    subject: '3과목',
+    question: '하도급 적정성 심사 기준 — 도급금액의 몇 % 미달 시 심사?',
+    answer: '82% 미달 시 심사',
+    options: ['60% 미달', '70% 미달', '82% 미달', '90% 미달'],
+    lawReference: '건설산업기본법 제31조·제34조 — 하도급 적정성 심사',
+    tip: '암기: "하도급 82/64 심사"\n도급금액의 82% 미달 → 적정성 심사\n발주자 예정가격의 64% 미달 → 심사 가능',
+  },
+  {
+    id: 'n3-09',
+    subject: '3과목',
+    question: 'PQ(입찰참가자격 사전심사) 적용 기준 공사비는?',
+    answer: '300억원 이상',
+    options: ['100억원 이상', '200억원 이상', '300억원 이상', '500억원 이상'],
+    lawReference: '국가계약법 시행령 제13조 — PQ 사전심사',
+    tip: '암기: "종심제·PQ는 300억 쌍둥이!"\nPQ(사전심사)와 종합심사낙찰제 모두 300억원 이상 공사에 적용',
+  },
+  {
+    id: 'n3-10',
+    subject: '3과목',
+    question: '검사 기한 — 납품 후 며칠 이내 검사 완료?',
+    answer: '10일 이내',
+    options: ['5일 이내', '7일 이내', '10일 이내', '14일 이내'],
+    lawReference: '물품계약 일반조건 — 검사 기한',
+    tip: '암기: "검사10 대금5" — 수령 후 10일 이내 검사, 검사 후 5일 이내 대금지급\n"검10대5" 세트로 기억!',
+  },
 
   // ────────── 4권실무 (4개) ──────────
   {
@@ -290,7 +326,7 @@ const numberData: NumberData[] = [
 const subjectTabs = [
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (9개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (6개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
-  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
+  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (10개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (8개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]
 
@@ -322,7 +358,7 @@ export default function NumbersPage() {
           <div className="flex items-center justify-between mb-3">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">숫자 암기 퀴즈</h1>
-              <p className="text-orange-200 text-sm mt-1">출제기준 100% 반영 — 전 과목 29개 숫자 의미부여암기법 완전 정복</p>
+              <p className="text-orange-200 text-sm mt-1">출제기준 100% 반영 — 전 과목 33개 숫자 의미부여암기법 완전 정복</p>
             </div>
             <Link
               href="/learn"
@@ -435,7 +471,7 @@ export default function NumbersPage() {
           <ul className="space-y-2 text-orange-800 dark:text-orange-300 text-sm">
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">1과목</span><span>소액수의: <strong>물2 공8 용5</strong> / 입찰보증금 5% / 계약보증금 10~15% / 복수예비가격 15개→4개 / 이의신청 15일 / 부정당업자 2년 / 불공정조달 6가지</span></li>
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">2과목</span><span>복수예비가격 ±3% / 공고기간 10일 / 적격심사 95점</span></li>
-            <li className="flex gap-2"><span className="font-bold flex-shrink-0">3과목</span><span>하자보수 2~5% / 물품지체상금 0.25‰ / 종심제 300억↑</span></li>
+            <li className="flex gap-2"><span className="font-bold flex-shrink-0">3과목</span><span>하자보수 2~5% / 물품지체상금 0.25‰ / 종심제·PQ 300억↑ / 대금5일 / 검사10일 / 하도급82%·64%</span></li>
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">4권실무</span><span>등록3년 / 직접생산3년 / MAS 5천만↑ / 90일+3% / 이행보증10~15% / 선급금70% / 인지세1천만↑ / 착공계20일</span></li>
           </ul>
         </motion.div>

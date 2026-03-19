@@ -574,6 +574,180 @@ const comparisonData: ComparisonData[] = [
     ],
   },
 
+  // ────────── 3과목 추가 (3권 공공계약관리 고도화 — 의미부여암기법) ──────────
+  {
+    id: 'c3-06',
+    subject: '3과목',
+    title: '물품/용역/공사 낙찰자결정방법 비교 — "물적용협공종"',
+    description: '계약유형별 낙찰자 결정방법의 차이 — 3권 제2·3·4장 핵심',
+    headers: ['물품계약', '용역계약', '공사계약'],
+    rows: [
+      {
+        label: '주요 낙찰방법',
+        cells: [
+          '적격심사 (최저가 순위자 이행능력 심사)\n95점 이상 합격',
+          '협상계약 (기술+가격 분리평가)\n우선협상대상자와 협상',
+          '종합심사낙찰제 (300억↑)\n적격심사 (300억 미만)',
+        ],
+      },
+      {
+        label: '평가 기준',
+        cells: [
+          '이행실적·기술능력\n재무상태·신용도',
+          '기술제안서 평가\n+ 가격제안서 분리평가',
+          '가격(40~60%)+기술(40~60%)\n+신인도+사회적 책임',
+        ],
+      },
+      {
+        label: '소액수의계약',
+        cells: ['2천만원 이하', '5천만원 이하', '8천만원 이하'],
+      },
+      {
+        label: '외자·특수',
+        cells: ['외자구매: 국제경쟁입찰', 'e-발주: 용역 전자발주', 'PQ: 300억↑ 사전심사'],
+      },
+      {
+        label: '의미부여암기',
+        cells: [
+          '"물적(物適)" — 물품은 적격심사!',
+          '"용협(用協)" — 용역은 협상계약!',
+          '"공종(工綜)" — 공사는 종합심사!',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c3-07',
+    subject: '3과목',
+    title: '일괄입찰/대안입찰/기술제안입찰 비교 — "일대기"',
+    description: '기술형공사 3대 수행방식 비교 — 3권 제4장 핵심',
+    headers: ['일괄입찰(턴키)', '대안입찰', '기술제안입찰'],
+    rows: [
+      {
+        label: '개념',
+        cells: [
+          '설계+시공을 일괄 수행\n(Turn-Key)',
+          '원안 설계 대신\n대안 설계 제출 가능',
+          '시공방법 등\n기술적 제안 제출',
+        ],
+      },
+      {
+        label: '설계 주체',
+        cells: ['수급인(시공사)', '수급인(대안 부분)', '발주기관(실시설계 완료)'],
+      },
+      {
+        label: '설계 범위',
+        cells: [
+          '기본설계→실시설계→시공\n전 과정 수급인 책임',
+          '기본설계 기반\n일부 대안설계 제출',
+          '실시설계 완료 후\n시공방법만 제안',
+        ],
+      },
+      {
+        label: '적용 대상',
+        cells: [
+          '대형공사 (300억↑)\n기술력 요구 높은 사업',
+          '설계 개선 여지 있는 공사\n비용 절감 가능 사업',
+          '시공기술 차별화 가능한 공사\n표준 설계 기반',
+        ],
+      },
+      {
+        label: '비용 절감',
+        cells: [
+          '설계비 포함 (총액계약)',
+          '대안으로 시공비 절감 가능\n절감액 30% 감액',
+          '시공방법 개선으로 절감',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: [
+          '"일(괄)=설계+시공 올인!"',
+          '"대(안)=대안설계 제출!"',
+          '"기(술제안)=시공방법 제안!"',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c3-08',
+    subject: '3과목',
+    title: '품질관리 3대 제도 비교 — "직안품"',
+    description: '직접생산확인·안전관리물자·품질보증조달물품 비교 — 3권 제5장',
+    headers: ['직접생산확인', '안전관리물자 지정', '품질보증조달물품'],
+    rows: [
+      {
+        label: '목적',
+        cells: [
+          '중소기업 핵심부품\n직접 제조 여부 확인',
+          '안전 관련 물자의\n품질·안전 확보',
+          '품질 우수 물품\n인증·등록 우대',
+        ],
+      },
+      {
+        label: '확인/지정 주체',
+        cells: ['중소벤처기업부장관', '조달청장', '조달청장'],
+      },
+      {
+        label: '핵심 기준',
+        cells: [
+          '핵심부품 직접 제조\n3년 연속 생산실적',
+          '안전 관련 품질검사 의무\n정기·수시 점검',
+          '품질경영시스템 인증\n성능·품질 시험 합격',
+        ],
+      },
+      {
+        label: '혜택/효과',
+        cells: [
+          '중소기업자간 경쟁 입찰\n참가자격 부여',
+          '안전사고 예방\n부적합 제품 차단',
+          '나라장터 등록 우대\n우선구매 적용',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: [
+          '"직(접생산)=3년 직접 제조!"',
+          '"안(전관리)=안전검사 의무!"',
+          '"품(질보증)=품질인증 우대!"',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c3-09',
+    subject: '3과목',
+    title: '계약의 5대 기능 비교 — "증관위지동"',
+    description: '효과적 계약관리의 5대 기능 — 3권 제1장 핵심',
+    headers: ['증거기능', '관리기능', '위험전가기능', '지불기능', '동기부여기능'],
+    rows: [
+      {
+        label: '정의',
+        cells: [
+          '계약 내용의\n문서화·입증 수단',
+          '이행점검·품질·\n일정 관리 기준',
+          '보증금·보험으로\n위험 분산·전가',
+          '대가 지급 조건·\n시기·방법 명시',
+          '인센티브·페널티로\n이행 촉진',
+        ],
+      },
+      {
+        label: '핵심 요소',
+        cells: [
+          '계약서·부속서류\n변경기록 보존',
+          'CMP(계약관리계획)\n이행점검 체크리스트',
+          '계약보증금 10%\n이행보증금 10~15%',
+          '선급금·기성금\n잔금 지급 조건',
+          '지체상금(페널티)\n조기완료 보너스',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"증(거)=문서화!"', '"관(리)=CMP!"', '"위(험전가)=보증금!"', '"지(불)=대금지급!"', '"동(기부여)=인센티브!"'],
+      },
+    ],
+  },
+
   // ────────── 4권실무 ──────────
   {
     id: '6',
@@ -839,10 +1013,10 @@ const comparisonData: ComparisonData[] = [
 ]
 
 const subjectTabs: Array<{ id: SubjectFilter; label: string; activeColor: string; inactiveColor: string }> = [
-  { id: '전체', label: '전체 (14개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '전체', label: '전체 (18개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목', label: '1과목 법제도 (6개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목', label: '2과목 조달계획 (4개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
-  { id: '3과목', label: '3과목 계약관리 (5개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
+  { id: '3과목', label: '3과목 계약관리 (9개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무', label: '4권 관리실무 (6개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]
 
@@ -860,7 +1034,7 @@ export default function CompareCardsPage() {
 
   const filteredData =
     selectedSubject === '전체'
-      ? comparisonData.slice(0, 10) // 전체: 핵심 10개 표시 (과목별 균형)
+      ? comparisonData.slice(0, 14) // 전체: 핵심 14개 표시 (과목별 균형)
       : comparisonData.filter((c) => c.subject === selectedSubject)
 
   const toggleExpand = (id: string) => {

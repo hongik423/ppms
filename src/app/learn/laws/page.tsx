@@ -361,6 +361,66 @@ const lawGroups: LawGroup[] = [
     ],
   },
 
+  // ────────── 3과목 추가 (3권 고도화 — 품질·대금·기술형공사 법규) ──────────
+  {
+    category: '대금지급·품질관리 법규 (3권 제1·5장)',
+    subject: '3과목',
+    color: 'bg-emerald-50 border-emerald-200 dark:bg-emerald-900/10 dark:border-emerald-700',
+    laws: [
+      {
+        law: '국가계약법 제15조 (대금지급)',
+        description: '검사 완료 후 5일 이내 대금 지급 원칙',
+        keyPoints: [
+          '검사·검수 완료 후 계약상대자의 청구일부터 5일 이내 지급',
+          '지연 시 지연이자 발생 (시행령 제58조의2)',
+          '선급금: 계약금액의 70% 이내 지급 가능',
+          '암기: "대금5일!" — 검사 후 5일 내 지급!',
+        ],
+        subject: '3과목',
+      },
+      {
+        law: '조달사업법 제9조의2 (품질관리)',
+        description: '공공조달 품질관리 — 직접생산확인·품질검사 근거',
+        keyPoints: [
+          '직접생산확인: 중소벤처기업부장관 확인 (3년 연속 생산실적)',
+          '안전관리물자: 조달청장 지정, 안전검사 의무',
+          '품질보증조달물품: 품질경영시스템 인증 기반 지정',
+          '암기: "직안품" — 직접생산·안전관리·품질보증!',
+        ],
+        subject: '3과목',
+      },
+    ],
+  },
+  {
+    category: '기술형공사·용역계약 법규 (3권 제3·4장)',
+    subject: '3과목',
+    color: 'bg-emerald-50 border-emerald-200 dark:bg-emerald-900/10 dark:border-emerald-700',
+    laws: [
+      {
+        law: '국가계약법 시행령 제80조~제97조 (기술형입찰)',
+        description: '일괄입찰(턴키)·대안입찰·기술제안입찰 근거',
+        keyPoints: [
+          '일괄입찰: 설계+시공 일괄 수행 (300억↑ 대형공사)',
+          '대안입찰: 원안 설계 대신 대안설계 제출 가능',
+          '기술제안입찰: 실시설계 완료 후 시공방법 제안',
+          '암기: "일대기" — 일괄·대안·기술제안!',
+        ],
+        subject: '3과목',
+      },
+      {
+        law: '용역계약 일반조건 (조달청 고시)',
+        description: '용역계약 착수보고·이행점검·e-발주 기준',
+        keyPoints: [
+          '착수보고: 계약 후 14일 이내 제출',
+          '제안서 평가·발표: 기술+가격 분리평가',
+          'e-발주: 나라장터 용역 전자발주 시스템 활용',
+          '암기: "용14" — 용역은 14일 이내 착수보고!',
+        ],
+        subject: '3과목',
+      },
+    ],
+  },
+
   // ────────── 4권실무 법조문 (6개) ──────────
   {
     category: '나라장터 운영 규정 (4권실무)',
@@ -509,10 +569,10 @@ const lawGroups: LawGroup[] = [
 ];
 
 const subjectTabs = [
-  { id: '전체' as SubjectFilter, label: '전체 (37개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '전체' as SubjectFilter, label: '전체 (41개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (13개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (8개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
-  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (8개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
+  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (12개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (12개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ];
 
