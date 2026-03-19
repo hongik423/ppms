@@ -247,7 +247,43 @@ const numberData: NumberData[] = [
     answer: '90일 경과 + 등락률 ±3% 이상',
     options: ['30일 경과 + ±1% 이상', '60일 경과 + ±2% 이상', '90일 경과 + ±3% 이상', '180일 경과 + ±5% 이상'],
     lawReference: '국가계약법 시행령 제64조 — 물가변동 계약금액 조정',
-    tip: '두 가지 요건 동시 충족 필요: ①90일 경과 ②±3% 이상 등락',
+    tip: '암기: "구삼(9·3) 동시!" 두 가지 요건 동시 충족: ①90일 경과 ②±3% 이상 등락',
+  },
+  {
+    id: 'n4-05',
+    subject: '4권실무',
+    question: '계약이행보증금 비율은? (계약금액 대비)',
+    answer: '계약금액의 10~15%',
+    options: ['계약금액의 5%', '계약금액의 10~15%', '계약금액의 20%', '계약금액의 30%'],
+    lawReference: '국가계약법 시행령 제52조 — 이행보증금',
+    tip: '암기: "이계선 10·10·100"\n이(행보증)10~15% → 계(약보증)10% → 선(급금보증)100%\n보증서로 대체 가능 (서울보증보험 등)',
+  },
+  {
+    id: 'n4-06',
+    subject: '4권실무',
+    question: '선급금 지급 한도는? (계약금액 대비 최대 비율)',
+    answer: '계약금액의 70% 이내',
+    options: ['계약금액의 30% 이내', '계약금액의 50% 이내', '계약금액의 70% 이내', '계약금액의 100%'],
+    lawReference: '국가계약법 시행령 제58조 — 선급금 지급',
+    tip: '암기: "선급금 70%, 보증은 100%!"\n선급금은 최대 70%까지 지급 가능\n선급금 받으면 100% 보증서 제출 의무!',
+  },
+  {
+    id: 'n4-07',
+    subject: '4권실무',
+    question: '인지세 납부 기준 — 계약금액 얼마 초과 시 인지세 납부?',
+    answer: '1천만원 초과',
+    options: ['5백만원 초과', '1천만원 초과', '3천만원 초과', '5천만원 초과'],
+    lawReference: '인지세법 제3조 — 과세문서',
+    tip: '암기: "인지세 천만원 넘으면 납부!"\n계약금액별 인지세: 1천만~3천만원(2만원), 3천만~5천만원(4만원), 5천만~1억원(7만원) 등 구간별 차등',
+  },
+  {
+    id: 'n4-08',
+    subject: '4권실무',
+    question: '공사계약 착공계 제출 기한 — 대형공사(10억원 이상)는?',
+    answer: '계약 후 20일 이내',
+    options: ['계약 후 7일 이내', '계약 후 10일 이내', '계약 후 14일 이내', '계약 후 20일 이내'],
+    lawReference: '공사계약 일반조건 제12조 — 착공 및 공정관리',
+    tip: '암기: "용14 공10·20"\n용역 착수보고: 14일\n공사 착공계: 10일(소규모) / 20일(대형공사 10억↑)\n공사장은 준비가 더 오래 걸린다!',
   },
 ]
 
@@ -255,7 +291,7 @@ const subjectTabs = [
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (9개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (6개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
-  { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (4개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
+  { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (8개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]
 
 export default function NumbersPage() {
@@ -286,7 +322,7 @@ export default function NumbersPage() {
           <div className="flex items-center justify-between mb-3">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">숫자 암기 퀴즈</h1>
-              <p className="text-orange-200 text-sm mt-1">3권 의미부여암기법 신규 반영 — 전 과목 18개 숫자 완전 정복</p>
+              <p className="text-orange-200 text-sm mt-1">출제기준 100% 반영 — 전 과목 29개 숫자 의미부여암기법 완전 정복</p>
             </div>
             <Link
               href="/learn"
@@ -348,12 +384,16 @@ export default function NumbersPage() {
             animate={{ opacity: 1, y: 0 }}
             className="mb-6 p-4 bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-700 rounded-xl"
           >
-            <h3 className="font-bold text-rose-800 dark:text-rose-300 mb-1 text-sm">📌 4권 실무 핵심 숫자</h3>
+            <h3 className="font-bold text-rose-800 dark:text-rose-300 mb-1 text-sm">📌 4권 실무 핵심 숫자 8개 — 의미부여암기법</h3>
             <div className="grid grid-cols-2 gap-2 text-xs text-rose-700 dark:text-rose-300">
-              <div>• 입찰참가자격 유효기간: <strong>3년</strong></div>
-              <div>• 직접생산확인 생산실적: <strong>3년 연속</strong></div>
-              <div>• MAS 2단계경쟁 기준: <strong>5천만원 이상</strong></div>
-              <div>• 물가변동 조정요건: <strong>90일 + ±3%</strong></div>
+              <div>• 등록 유효기간: <strong>3년</strong></div>
+              <div>• 직접생산확인: <strong>3년 연속</strong></div>
+              <div>• MAS 2단계경쟁: <strong>5천만원↑</strong></div>
+              <div>• 물가변동: <strong>90일+3%</strong></div>
+              <div>• 이행보증금: <strong>10~15%</strong> "이계선"</div>
+              <div>• 선급금: 최대 <strong>70%</strong>, 보증 100%</div>
+              <div>• 인지세: <strong>1천만원 초과</strong> 시 납부</div>
+              <div>• 착공계(대형): <strong>20일</strong> "용14 공10·20"</div>
             </div>
           </motion.div>
         )}
@@ -396,7 +436,7 @@ export default function NumbersPage() {
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">1과목</span><span>소액수의: <strong>물2 공8 용5</strong> / 입찰보증금 5% / 계약보증금 10~15% / 복수예비가격 15개→4개 / 이의신청 15일 / 부정당업자 2년 / 불공정조달 6가지</span></li>
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">2과목</span><span>복수예비가격 ±3% / 공고기간 10일 / 적격심사 95점</span></li>
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">3과목</span><span>하자보수 2~5% / 물품지체상금 0.25‰ / 종심제 300억↑</span></li>
-            <li className="flex gap-2"><span className="font-bold flex-shrink-0">4권실무</span><span>등록 유효기간 3년 / 직접생산 3년 연속 / MAS 2단계 5천만원↑ / 물가변동 90일+3%</span></li>
+            <li className="flex gap-2"><span className="font-bold flex-shrink-0">4권실무</span><span>등록3년 / 직접생산3년 / MAS 5천만↑ / 90일+3% / 이행보증10~15% / 선급금70% / 인지세1천만↑ / 착공계20일</span></li>
           </ul>
         </motion.div>
       </div>

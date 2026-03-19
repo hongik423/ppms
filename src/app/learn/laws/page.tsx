@@ -408,13 +408,100 @@ const lawGroups: LawGroup[] = [
       {
         law: '우수조달물품 지정관리 규정',
         description: '우수제품 신청 절차와 지정 기준',
-        keyPoints: ['신청→기술평가→현장실태조사→지정심의위원회→지정', '수의계약 가능 등 우대'],
+        keyPoints: ['신청→기술평가→현장실태조사→지정심의위원회→지정', '수의계약 가능 등 우대', '암기: "신기현지지" — 신청→기술→현장→지정심의→지정'],
         subject: '4권실무',
       },
       {
         law: '혁신제품 지정에 관한 규정',
         description: '혁신조달 — 혁신제품 지정·구매 제도',
-        keyPoints: ['기술개발제품 우선구매 연계', '혁신장터 등록 및 공공조달 우선'],
+        keyPoints: ['기술개발제품 우선구매 연계', '혁신장터 등록 및 공공조달 우선', '시범구매 → 본구매 전환 프로세스'],
+        subject: '4권실무',
+      },
+    ],
+  },
+  {
+    category: '계약체결·이행 관련 법규 (4권 제5장)',
+    subject: '4권실무',
+    color: 'bg-rose-50 border-rose-200 dark:bg-rose-900/10 dark:border-rose-700',
+    laws: [
+      {
+        law: '국가계약법 시행령 제50조·제52조 (계약보증금·이행보증금)',
+        description: '계약이행 3대 보증서 — 이행·계약·선급금 보증 실무',
+        keyPoints: [
+          '이행보증금: 계약금액의 10~15% (보증서 대체 가능)',
+          '계약보증금: 계약금액의 10% 이상 현금 납부',
+          '선급금보증: 선급금의 100% (선급금은 계약금액의 70% 이내)',
+          '암기: "이계선 10·10·100" — 이행10%→계약10%→선급금100%',
+        ],
+        subject: '4권실무',
+      },
+      {
+        law: '인지세법 제3조 (과세문서)',
+        description: '계약체결 시 인지세 납부 기준 — 1천만원 초과',
+        keyPoints: [
+          '1천만원 초과 계약 시 인지세 납부 의무',
+          '구간별 차등: 1천만~3천만원(2만원), 3천만~5천만원(4만원)',
+          '5천만~1억원(7만원), 1억~10억원(15만원)',
+          '암기: "인지세 천만원 넘으면!" — 1천만원이 기준선',
+        ],
+        subject: '4권실무',
+      },
+    ],
+  },
+  {
+    category: '유형별 계약일반조건 (4권 제6장)',
+    subject: '4권실무',
+    color: 'bg-rose-50 border-rose-200 dark:bg-rose-900/10 dark:border-rose-700',
+    laws: [
+      {
+        law: '물품계약 일반조건 (조달청 고시)',
+        description: '물품계약 체결·이행·검사·대금지급 일반 기준',
+        keyPoints: [
+          '납품: 계약서에 명시된 기한 내 지정 장소 납품',
+          '검사: 수령 후 10일 이내 검사 완료 원칙',
+          '대금지급: 검사 완료 후 5일 이내 지급',
+          '암기: "물10·5" — 검사10일, 대금5일 이내',
+        ],
+        subject: '4권실무',
+      },
+      {
+        law: '용역계약 일반조건 (조달청 고시)',
+        description: '용역계약 착수보고·이행점검·검수·대금지급 기준',
+        keyPoints: [
+          '착수보고: 계약 후 14일 이내 제출',
+          '이행점검: 월별 진도보고·중간성과물 제출',
+          '검수: 과업 완성 후 검수 → 대금지급',
+          '암기: "용14" — 용역은 14일 착수보고!',
+        ],
+        subject: '4권실무',
+      },
+      {
+        law: '공사계약 일반조건 (조달청 고시)',
+        description: '공사계약 착공계·공정관리·준공검사·하자보수 기준',
+        keyPoints: [
+          '착공계: 10일 이내(일반) / 20일 이내(대형공사)',
+          '공정관리: 월별 기성검사·공정보고',
+          '준공검사: 완공 후 14일 이내 검사 원칙',
+          '암기: "공10·20" — 공사는 10일(소)·20일(대)!',
+        ],
+        subject: '4권실무',
+      },
+    ],
+  },
+  {
+    category: '전략적 우선구매 관련 법규 (4권 제8장)',
+    subject: '4권실무',
+    color: 'bg-rose-50 border-rose-200 dark:bg-rose-900/10 dark:border-rose-700',
+    laws: [
+      {
+        law: '중소기업제품 구매촉진 및 판로지원에 관한 법률 (실무 적용)',
+        description: '중소기업 공공구매 50% 목표 — 실무 적용 기준',
+        keyPoints: [
+          '공공기관별 중소기업 제품 구매 목표비율: 50% 이상',
+          '중소기업자간 경쟁: 해당 품목 독점 방지, 중소기업만 참여',
+          '공사용자재 직접구매: 수요기관이 직접 중소기업에서 구매',
+          '암기: "중50" — 중소기업 50% 구매 목표!',
+        ],
         subject: '4권실무',
       },
     ],
@@ -422,11 +509,11 @@ const lawGroups: LawGroup[] = [
 ];
 
 const subjectTabs = [
-  { id: '전체' as SubjectFilter, label: '전체 (31개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '전체' as SubjectFilter, label: '전체 (37개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (13개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (8개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
-  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (5개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
-  { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (6개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
+  { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (8개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
+  { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (12개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ];
 
 const subjectBadge: Record<string, string> = {
@@ -459,7 +546,7 @@ export default function LawsPage() {
         <div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white">법조문 학습</h1>
           <p className="text-sm text-slate-500">
-            공공조달관리사 시험 관련 핵심 법률·시행령·고시·기준 정리 (4권 실무 포함)
+            출제기준 100% 반영 — 1권·2권·3권·4권 핵심 법률·시행령·고시·기준 정리
           </p>
         </div>
       </div>
@@ -548,13 +635,13 @@ export default function LawsPage() {
       {(selectedSubject === '전체' || selectedSubject === '4권실무') && (
         <div className="p-4 bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-700 rounded-xl">
           <h3 className="font-bold text-rose-800 dark:text-rose-300 mb-2 text-sm">
-            🆕 4권실무 법조문 학습 포인트
+            🆕 4권실무 법조문 12개 — 의미부여암기법 학습 포인트
           </h3>
           <ul className="space-y-1 text-xs text-rose-700 dark:text-rose-300">
-            <li>• <strong>입찰참가자격 등록규정</strong>: 등록절차 7단계와 유효기간(3년) 암기</li>
-            <li>• <strong>직접생산확인 기준</strong>: 핵심부품 직접 제조 + 3년 연속 생산실적</li>
-            <li>• <strong>원가계산 준칙</strong>: 4가지 유형별 구성요소 비교 암기</li>
-            <li>• <strong>MAS 세부기준</strong>: 2단계경쟁 5천만원 기준 필수 암기</li>
+            <li>• <strong>등록규정</strong>: 가약신서현조승(7단계) / <strong>보증금</strong>: 이계선 10·10·100</li>
+            <li>• <strong>원가계산</strong>: 재노경관이 / <strong>인지세</strong>: 1천만원 초과 기준</li>
+            <li>• <strong>물품일반조건</strong>: 물10·5(검사10일, 대금5일) / <strong>용역</strong>: 용14(착수14일)</li>
+            <li>• <strong>공사일반조건</strong>: 공10·20(착공계) / <strong>우선구매</strong>: 중녹혁사(중50%)</li>
           </ul>
         </div>
       )}

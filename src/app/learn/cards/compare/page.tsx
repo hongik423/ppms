@@ -645,6 +645,197 @@ const comparisonData: ComparisonData[] = [
       },
     ],
   },
+  {
+    id: 'c4-03',
+    subject: '4권실무',
+    title: '물품·용역·공사 입찰절차 비교 — "물적용협공종" (4권 제6장)',
+    description: '유형별 입찰절차의 낙찰방법·공고기간·서류 차이 비교',
+    headers: ['물품계약', '용역계약', '공사계약'],
+    rows: [
+      {
+        label: '주요 낙찰방법',
+        cells: [
+          '적격심사 (주로)\n최저가 순위자 이행능력 심사',
+          '협상계약 (주로)\n기술+가격 분리평가',
+          '종합심사낙찰제 (300억↑)\n적격심사 (300억 미만)',
+        ],
+      },
+      {
+        label: '입찰공고 기간',
+        cells: ['7일 이상', '7일 이상', '15일 이상'],
+      },
+      {
+        label: '제출 서류',
+        cells: [
+          '입찰서·사업자등록증\n직접생산확인서(해당 시)',
+          '입찰서·기술제안서\n과업수행계획서',
+          '입찰서·시공능력평가서\nPQ(사전심사) 서류',
+        ],
+      },
+      {
+        label: '착수 절차',
+        cells: [
+          '납품계획서 제출',
+          '착수보고 (14일 이내)',
+          '착공계 제출 (10~20일)',
+        ],
+      },
+      {
+        label: '검사·검수',
+        cells: ['수령 즉시 검사', '과업 완성 후 검수', '완공 검사·준공 검사'],
+      },
+      {
+        label: '의미부여암기',
+        cells: [
+          '"물적(物適)" — 물품은 적격심사!',
+          '"용협(用協)" — 용역은 협상계약!',
+          '"공종(工綜)" — 공사는 종합심사!',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c4-04',
+    subject: '4권실무',
+    title: '착수보고 vs 착공계 비교 — "용14 공10·20" (4권 제5장)',
+    description: '용역계약(착수보고)과 공사계약(착공계)의 제출기한·내용 비교',
+    headers: ['착수보고 (용역)', '착공계 (공사)'],
+    rows: [
+      {
+        label: '적용 계약',
+        cells: ['용역계약 (컨설팅·연구·IT 등)', '공사계약 (건설·시설 등)'],
+      },
+      {
+        label: '제출 기한',
+        cells: ['계약 후 14일 이내', '일반: 10일 이내\n대형공사: 20일 이내'],
+      },
+      {
+        label: '제출 내용',
+        cells: [
+          '①과업수행계획서\n②투입인력 명단·자격\n③수행일정표\n④품질관리계획',
+          '①공사착공신고서\n②현장대리인 배치계획\n③공정예정표\n④안전관리계획서',
+        ],
+      },
+      {
+        label: '승인권자',
+        cells: ['발주기관 계약담당자', '발주기관 공사감독관'],
+      },
+      {
+        label: '미제출 시',
+        cells: ['계약 불이행으로 지체상금 부과 가능', '착공 지연 → 지체상금 부과'],
+      },
+      {
+        label: '의미부여암기',
+        cells: [
+          '"용14" — 용역은 14일!\n(2주 안에 착수보고)',
+          '"공10·20" — 공사는 10일(소규모)·20일(대형)!\n(공사장은 준비가 더 필요)',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c4-05',
+    subject: '4권실무',
+    title: '전략적 우선구매제도 4대 유형 비교 — "중녹혁사" (4권 제8장)',
+    description: '중소기업·녹색제품·혁신제품·사회적가치 우선구매 비교',
+    headers: ['중소기업 구매', '녹색제품 구매', '혁신제품 구매', '사회적가치 구매'],
+    rows: [
+      {
+        label: '근거 법률',
+        cells: [
+          '중소기업제품 구매촉진법',
+          '녹색제품 구매촉진법',
+          '조달사업법 (혁신제품 지정)',
+          '사회적기업 육성법 등',
+        ],
+      },
+      {
+        label: '구매 목표',
+        cells: [
+          '공공조달의 50% 이상',
+          '기관별 녹색제품 의무구매 비율',
+          '혁신제품 지정 후 수의계약 허용',
+          '사회적기업 제품 우선구매',
+        ],
+      },
+      {
+        label: '인증 주체',
+        cells: [
+          '중소벤처기업부\n(직접생산확인)',
+          '환경부\n(환경마크 인증)',
+          '조달청장\n(혁신제품 지정)',
+          '고용노동부 등\n(사회적기업 인증)',
+        ],
+      },
+      {
+        label: '계약 특례',
+        cells: [
+          '중소기업자간 경쟁\n공사용자재 직접구매',
+          '생애주기비용(LCC) 적용\n녹색제품 가산점',
+          '수의계약 허용\n시범구매→본구매 전환',
+          '우선구매 비율 설정\n장애인기업 의무구매',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: [
+          '"중(소기업)=50% 구매"',
+          '"녹(색)=환경마크 인증"',
+          '"혁(신)=수의계약 특례"',
+          '"사(회적)=장애인 의무"',
+        ],
+      },
+    ],
+  },
+  {
+    id: 'c4-06',
+    subject: '4권실무',
+    title: 'RFI·RFP·RFQ·SOW 문서 비교 — "정제견과" (4권 제4장)',
+    description: '입찰 핵심 문서 4종의 목적·내용·활용 시점 비교',
+    headers: ['RFI (정보요청서)', 'RFP (제안요청서)', 'RFQ (견적요청서)', 'SOW (과업명세서)'],
+    rows: [
+      {
+        label: '목적',
+        cells: [
+          '시장조사·공급업체 능력 파악',
+          '기술·가격 분리입찰 시\n평가기준 포함 제안 요청',
+          '특정 물품·서비스의\n가격 견적 요청',
+          '수행해야 할 과업의\n구체적 범위·기준 명시',
+        ],
+      },
+      {
+        label: '활용 단계',
+        cells: [
+          '조달계획 수립 단계\n(사전 시장조사)',
+          '입찰 단계\n(공식 제안 요청)',
+          '입찰 단계\n(가격 비교 목적)',
+          '계약 체결 단계\n(과업 범위 확정)',
+        ],
+      },
+      {
+        label: '주요 내용',
+        cells: [
+          '업체 역량·경험·기술력\n시장 가격 정보',
+          '기술 제안 요구사항\n평가 기준·배점\n제출 기한·형식',
+          '단가·총가 견적\n납품 조건·기간',
+          '과업 범위·목표\n산출물·일정\n품질 기준',
+        ],
+      },
+      {
+        label: '법적 구속력',
+        cells: ['없음 (정보 수집용)', '있음 (입찰 공식 문서)', '조건부 (견적 유효기간)', '있음 (계약 첨부문서)'],
+      },
+      {
+        label: '의미부여암기',
+        cells: [
+          '"정(보)=시장조사용"',
+          '"제(안)=공식 입찰문서"',
+          '"견(적)=가격 비교용"',
+          '"과(업)=계약 첨부 명세"',
+        ],
+      },
+    ],
+  },
 ]
 
 const subjectTabs: Array<{ id: SubjectFilter; label: string; activeColor: string; inactiveColor: string }> = [
@@ -652,7 +843,7 @@ const subjectTabs: Array<{ id: SubjectFilter; label: string; activeColor: string
   { id: '1과목', label: '1과목 법제도 (6개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목', label: '2과목 조달계획 (4개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목', label: '3과목 계약관리 (5개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
-  { id: '4권실무', label: '4권 관리실무 (2개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
+  { id: '4권실무', label: '4권 관리실무 (6개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]
 
 const subjectBadge: Record<string, string> = {
@@ -693,7 +884,7 @@ export default function CompareCardsPage() {
           <div className="flex items-center justify-between mb-3">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">비교표 학습</h1>
-              <p className="text-purple-200 text-sm mt-1">4권 실무 원가계산·MAS 비교표 신규 추가</p>
+              <p className="text-purple-200 text-sm mt-1">출제기준 100% 반영 — 1권·2권·3권·4권 의미부여암기법 비교학습</p>
             </div>
             <Link
               href="/learn"
@@ -813,7 +1004,7 @@ export default function CompareCardsPage() {
             className="mt-6 p-4 bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-700 rounded-xl"
           >
             <p className="text-rose-800 dark:text-rose-300 text-sm font-medium">
-              🆕 <strong>4권실무 탭</strong>에서 원가계산 유형 비교와 MAS vs 일반경쟁입찰 비교표를 확인하세요!
+              🆕 <strong>4권실무 6개 비교표</strong>: 원가계산·MAS·물품/용역/공사 입찰·착수보고/착공계·우선구매제도·RFI/RFP/RFQ/SOW 비교!
             </p>
           </motion.div>
         )}
@@ -832,7 +1023,7 @@ export default function CompareCardsPage() {
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">1.</span><span>먼저 표의 구조를 파악하고 각 항목을 읽어보세요</span></li>
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">2.</span><span>같은 행(row)을 읽어 각 개념의 차이점을 명확히 파악하세요</span></li>
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">3.</span><span>퀴즈 모드로 전환하여 빈칸을 채워보며 이해도를 체크하세요</span></li>
-            <li className="flex gap-2"><span className="font-bold flex-shrink-0">4.</span><span><strong>4권실무</strong>: 원가계산 구성요소(재노경관이)와 MAS 2단계경쟁 기준(5천만원)을 반드시 암기하세요</span></li>
+            <li className="flex gap-2"><span className="font-bold flex-shrink-0">4.</span><span><strong>4권실무</strong>: 재노경관이(원가)·물적용협공종(입찰)·용14공10·20(착수)·중녹혁사(우선구매)·정제견과(문서) 암기!</span></li>
           </ul>
         </motion.div>
       </div>

@@ -326,7 +326,7 @@ const procedures: Procedure[] = [
     title: '우수조달물품(우수제품) 신청 절차 (4권 제7장)',
     category: '4권 실무',
     subject: '4권실무',
-    keyPoint: '신청→평가→지정 / 우수제품 우선구매 혜택',
+    keyPoint: '"신기현지지" — 신청→기술→현장→지정심의→지정',
     steps: [
       { step: 1, name: '우수조달물품 신청서 작성', description: '조달청 우수조달물품 지정 신청서 및 첨부서류 준비' },
       { step: 2, name: '조달청 접수·검토', description: '조달청에서 신청서류 접수 및 형식 검토' },
@@ -336,14 +336,58 @@ const procedures: Procedure[] = [
       { step: 6, name: '우수조달물품 지정 및 등록', description: '지정 통보 → 나라장터 종합쇼핑몰 등록 → 우선구매 적용' },
     ],
   },
+  {
+    id: 'proc-13',
+    title: '공급계획 수립 절차 — "정분선" (4권 제2장)',
+    category: '4권 실무',
+    subject: '4권실무',
+    keyPoint: '"정분선" — 정보수집→분석예측→수요기관선정',
+    steps: [
+      { step: 1, name: '공급정보 수집', description: '나라장터 통계·시장조사보고서·업체 직접문의를 통해 시장동향·공급업체·가격정보 수집' },
+      { step: 2, name: '조달데이터 분석', description: '과거 조달 데이터 기반 ABC분석·파레토분석 수행, 공급리스크 분석' },
+      { step: 3, name: '수요 예측', description: '리드타임 분석, 계절적 수요패턴 분석, 수요량 예측 모델 활용' },
+      { step: 4, name: '수요기관 선정·배분', description: '수요기관별 물량 배분, 공급일정 수립, 비상 공급계획 마련' },
+      { step: 5, name: '공급계획 확정', description: '최종 공급계획서 작성 → 관계기관 협의 → 확정·시행' },
+    ],
+  },
+  {
+    id: 'proc-14',
+    title: '계약체결 절차 — "낙작보인서" (4권 제5장)',
+    category: '4권 실무',
+    subject: '4권실무',
+    keyPoint: '"낙작보인서" — 낙찰→작성→보증→인지세→서명',
+    steps: [
+      { step: 1, name: '낙찰 통보 수령', description: '나라장터에서 낙찰 통보 확인 (낙찰 후 10~15일 이내 계약 체결)' },
+      { step: 2, name: '계약서 작성', description: '표준계약서 활용, 계약조건·과업범위·납품기한 등 확정' },
+      { step: 3, name: '보증서 제출', description: '계약보증금(10%) 현금납부 또는 이행보증보험증권 제출' },
+      { step: 4, name: '인지세 납부', description: '1천만원 초과 계약 시 계약금액 구간별 인지세 납부 (쌍방 각 50%)' },
+      { step: 5, name: '계약서 서명·날인', description: '계약당사자 서명·날인 → 나라장터 전자계약 체결 완료' },
+      { step: 6, name: '착수보고/착공계 제출', description: '용역: 14일 이내 착수보고 / 공사: 10~20일 이내 착공계 제출' },
+    ],
+  },
+  {
+    id: 'proc-15',
+    title: '유형별 입찰절차 — 물품·용역·공사 (4권 제6장)',
+    category: '4권 실무',
+    subject: '4권실무',
+    keyPoint: '"물적용협공종" — 물품=적격심사, 용역=협상, 공사=종합심사',
+    steps: [
+      { step: 1, name: '입찰공고 게시', description: '나라장터 입찰공고: 물품·용역 7일↑ / 공사 15일↑ 공고 기간 확보' },
+      { step: 2, name: '서류 제출 (유형별 차이)', description: '물품: 입찰서+직접생산확인서 / 용역: 기술제안서+가격제안서 / 공사: 시공능력평가서+PQ서류' },
+      { step: 3, name: '입찰서 접수·개찰', description: '전자입찰 마감 후 공개 개찰 — 예정가격 초과 입찰 무효 처리' },
+      { step: 4, name: '낙찰자 결정 (유형별 차이)', description: '물품: 적격심사(95점↑) / 용역: 기술+가격 협상 / 공사: 종합심사(300억↑) 또는 적격심사' },
+      { step: 5, name: '계약체결', description: '낙찰자와 계약서 작성 → 보증금 납부 → 인지세 → 계약체결 완료' },
+      { step: 6, name: '이행관리 착수', description: '물품: 납품계획서 / 용역: 착수보고(14일) / 공사: 착공계(10~20일) 제출' },
+    ],
+  },
 ];
 
 const subjectTabs = [
-  { id: '전체' as SubjectFilter, label: '전체 (21개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '전체' as SubjectFilter, label: '전체 (24개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (5개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (5개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
-  { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (5개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
+  { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (8개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ];
 
 const subjectBadge: Record<string, string> = {
@@ -384,7 +428,7 @@ export default function ProceduresPage() {
         <div>
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white">절차도 학습</h1>
           <p className="text-sm text-slate-500">
-            전 과목 핵심 업무절차 15개 — 3권 의미부여암기법 고몰입 학습 (설계변경·납검대하·하도급)
+            출제기준 100% 반영 — 전 과목 24개 절차도 의미부여암기법 완전 수록
           </p>
         </div>
       </div>
@@ -422,9 +466,9 @@ export default function ProceduresPage() {
       {/* 4권실무 안내 */}
       {(selectedSubject === '전체' || selectedSubject === '4권실무') && (
         <div className="p-4 bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-700 rounded-xl">
-          <h3 className="font-bold text-rose-800 dark:text-rose-300 mb-1 text-sm">🆕 4권실무 절차 5개 신규 추가</h3>
+          <h3 className="font-bold text-rose-800 dark:text-rose-300 mb-1 text-sm">🆕 4권실무 절차 8개 — 의미부여암기법 완전 적용</h3>
           <p className="text-xs text-rose-700 dark:text-rose-300">
-            나라장터 등록 → 물품목록화 → 원가계산 → 기술·가격협상 → 우수제품 신청 절차를 단계별로 학습하세요
+            가약신서현조승(등록) · 정분선(공급계획) · 재노경관이(원가) · 낙작보인서(계약체결) · 물적용협공종(유형별입찰) · 신기현지지(우수제품)
           </p>
         </div>
       )}
@@ -506,7 +550,7 @@ export default function ProceduresPage() {
           <li className="flex gap-2"><span className="font-bold flex-shrink-0">1과목</span><span>예정가격"이오사산"(±2%·15개·4개·산술평균) / 부정당제재5단계 / 분쟁조정(이의신청15일·조정50일) 암기</span></li>
           <li className="flex gap-2"><span className="font-bold flex-shrink-0">2과목</span><span>적격심사 95점 기준, 협상계약의 기술·가격 분리평가 흐름 이해</span></li>
           <li className="flex gap-2"><span className="font-bold flex-shrink-0">3과목</span><span>물가변동 조정요건(90일+3%), MAS 2단계경쟁 기준(5천만원↑) 암기</span></li>
-          <li className="flex gap-2"><span className="font-bold flex-shrink-0">4권실무</span><span>나라장터 등록 7단계·원가계산 순서(재노경→관이)·우수제품 6단계 흐름 파악</span></li>
+          <li className="flex gap-2"><span className="font-bold flex-shrink-0">4권실무</span><span>가약신서현조승(등록) · 정분선(공급계획) · 낙작보인서(계약체결) · 물적용협공종(유형별입찰) · 신기현지지(우수제품)</span></li>
         </ul>
       </div>
     </div>
