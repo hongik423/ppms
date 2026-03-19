@@ -26,22 +26,26 @@
                 {
                   "id": "S1-MT1-ST1-D1",
                   "name": "공공조달의 정의",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST1-D2",
                   "name": "공공조달의 목적",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST1-D3",
                   "name": "공공조달의 범위",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST1-D4",
                   "name": "공공조달의 기능과 역할",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -52,22 +56,26 @@
                 {
                   "id": "S1-MT1-ST2-D1",
                   "name": "수요기관(중앙관서, 지방자치단체, 공공기관)",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST2-D2",
                   "name": "공급업체(조달참여자)",
-                  "predictionScore": 2
+                  "predictionScore": 2,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST2-D3",
                   "name": "조달청의 역할과 기능",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST2-D4",
                   "name": "기타 이해관계자(감사기관, 민간전문가 등)",
-                  "predictionScore": 2
+                  "predictionScore": 2,
+                  "page": 0
                 }
               ]
             },
@@ -78,22 +86,26 @@
                 {
                   "id": "S1-MT1-ST3-D1",
                   "name": "공공성·투명성·경쟁성 원칙",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST3-D2",
                   "name": "상업적 구매행위와의 차이",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST3-D3",
                   "name": "공공조달의 조달행위 특성",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST3-D4",
                   "name": "조달활동의 법적·제도적 제약",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -104,22 +116,26 @@
                 {
                   "id": "S1-MT1-ST4-D1",
                   "name": "조직적 구성체계(조달행정체계)",
-                  "predictionScore": 2
+                  "predictionScore": 2,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST4-D2",
                   "name": "감독 및 기능적 책임",
-                  "predictionScore": 2
+                  "predictionScore": 2,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST4-D3",
                   "name": "조달관리 프로세스 체계",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT1-ST4-D4",
                   "name": "공공조달 관련 주요 기관 역할 분담",
-                  "predictionScore": 2
+                  "predictionScore": 2,
+                  "page": 0
                 }
               ]
             }
@@ -139,27 +155,32 @@
                 {
                   "id": "S1-MT2-ST1-D1",
                   "name": "투명성 원칙",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST1-D2",
                   "name": "공정성 원칙",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST1-D3",
                   "name": "효율성 원칙",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST1-D4",
                   "name": "경제성 원칙",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST1-D5",
                   "name": "공공조달 기본원칙 간 관계",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -170,22 +191,26 @@
                 {
                   "id": "S1-MT2-ST2-D1",
                   "name": "경쟁원칙(일반경쟁 원칙)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST2-D2",
                   "name": "균형배분 원칙",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST2-D3",
                   "name": "품질보증 원칙",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST2-D4",
                   "name": "적시공급 원칙",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -196,22 +221,26 @@
                 {
                   "id": "S1-MT2-ST3-D1",
                   "name": "일반경쟁입찰",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST3-D2",
                   "name": "제한경쟁입찰",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST3-D3",
                   "name": "지명경쟁입찰",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST3-D4",
                   "name": "경쟁입찰 방법 간 비교",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -222,27 +251,32 @@
                 {
                   "id": "S1-MT2-ST4-D1",
                   "name": "수의계약의 의의 및 유형",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST4-D2",
                   "name": "수의계약 허용 사유(국가계약법)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST4-D3",
                   "name": "수의계약 허용 사유(지방계약법)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST4-D4",
                   "name": "공기업·준정부기관 수의계약 규정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST4-D5",
                   "name": "소액수의계약 기준금액",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 }
               ]
             },
@@ -253,17 +287,20 @@
                 {
                   "id": "S1-MT2-ST5-D1",
                   "name": "중앙집중형 조달 vs 분산형 조달",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST5-D2",
                   "name": "직접조달 vs 위탁조달",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST5-D3",
                   "name": "조달 유형별 장단점 비교",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -274,17 +311,20 @@
                 {
                   "id": "S1-MT2-ST6-D1",
                   "name": "소액구매 기준 및 절차",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST6-D2",
                   "name": "소액 수의계약 한도액",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT2-ST6-D3",
                   "name": "소액 다수공급자계약(MAS) 활용",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             }
@@ -304,22 +344,26 @@
                 {
                   "id": "S1-MT3-ST1-D1",
                   "name": "전자조달시스템의 유형",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST1-D2",
                   "name": "전자조달시스템의 운영환경",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST1-D3",
                   "name": "전자조달시스템의 구성요소",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST1-D4",
                   "name": "전자조달 도입성과 및 발전방향",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -330,22 +374,26 @@
                 {
                   "id": "S1-MT3-ST2-D1",
                   "name": "나라장터 시스템 구성 및 기능",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST2-D2",
                   "name": "나라장터 활용 계약절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST2-D3",
                   "name": "전자입찰 절차 및 방법",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST2-D4",
                   "name": "나라장터 이용자 등록 및 인증",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -356,27 +404,32 @@
                 {
                   "id": "S1-MT3-ST3-D1",
                   "name": "조달청 종합쇼핑몰 이용절차",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST3-D2",
                   "name": "혁신장터 운영 및 활용",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST3-D3",
                   "name": "벤처나라 활용",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST3-D4",
                   "name": "디지털서비스몰",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST3-D5",
                   "name": "이음장터(공공판로지원)",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -387,27 +440,32 @@
                 {
                   "id": "S1-MT3-ST4-D1",
                   "name": "목록정보시스템 개요 및 목적",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST4-D2",
                   "name": "목록화 절차(분류·등록·관리)",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST4-D3",
                   "name": "물품분류체계(UNSPSC 등)",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST4-D4",
                   "name": "목록정보 활용방법",
-                  "predictionScore": 2
+                  "predictionScore": 2,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT3-ST4-D5",
                   "name": "식별번호 부여기준 및 관리",
-                  "predictionScore": 2
+                  "predictionScore": 2,
+                  "page": 0
                 }
               ]
             }
@@ -427,27 +485,32 @@
                 {
                   "id": "S1-MT4-ST1-D1",
                   "name": "중소기업자간 경쟁제도",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST1-D2",
                   "name": "직접생산확인제도",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST1-D3",
                   "name": "중소기업 우선구매 제도",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST1-D4",
                   "name": "소기업·소상공인 지원 정책",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST1-D5",
                   "name": "여성기업·장애인기업 우대 조달",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -458,27 +521,32 @@
                 {
                   "id": "S1-MT4-ST2-D1",
                   "name": "환경적 지속가능성 개요",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST2-D2",
                   "name": "녹색제품 우선구매 제도",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST2-D3",
                   "name": "녹색제품 인증 및 환경표지",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST2-D4",
                   "name": "생애주기비용(LCC) 고려",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST2-D5",
                   "name": "탄소중립·순환경제 조달 정책",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -489,27 +557,32 @@
                 {
                   "id": "S1-MT4-ST3-D1",
                   "name": "혁신제품 지정제도",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST3-D2",
                   "name": "기술개발제품 시범구매·우선구매",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST3-D3",
                   "name": "우수조달물품 지정제도",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST3-D4",
                   "name": "혁신조달 종합계획 수립",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST3-D5",
                   "name": "조달연계형 R&D 사업",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -520,27 +593,32 @@
                 {
                   "id": "S1-MT4-ST4-D1",
                   "name": "사회적가치·ESG 반영 조달 개요",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST4-D2",
                   "name": "사회적기업 제품 우선구매",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST4-D3",
                   "name": "장애인직업재활시설 생산품 우선구매",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST4-D4",
                   "name": "사회적 약자 고용 촉진 조달",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT4-ST4-D5",
                   "name": "공정무역 제품 구매 촉진",
-                  "predictionScore": 2
+                  "predictionScore": 2,
+                  "page": 0
                 }
               ]
             }
@@ -560,37 +638,44 @@
                 {
                   "id": "S1-MT5-ST1-D1",
                   "name": "계약의 성립에 관한 규정(청약·승낙)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST1-D2",
                   "name": "계약의 효력(동시이행항변권, 위험부담)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST1-D3",
                   "name": "계약 해제·해지 규정",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST1-D4",
                   "name": "도급계약에 관한 규정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST1-D5",
                   "name": "위임계약에 관한 규정",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST1-D6",
                   "name": "화해에 관한 규정",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST1-D7",
                   "name": "손해배상 및 담보책임 규정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -601,37 +686,44 @@
                 {
                   "id": "S1-MT5-ST2-D1",
                   "name": "국가를 당사자로 하는 계약에 관한 법률 총칙",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST2-D2",
                   "name": "추정가격 및 예정가격 결정",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST2-D3",
                   "name": "입찰·낙찰 절차 및 규정",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST2-D4",
                   "name": "계약보증금·입찰보증금",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST2-D5",
                   "name": "계약의 방법(경쟁계약·수의계약)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST2-D6",
                   "name": "계약의 체결 및 이행에 관한 규정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST2-D7",
                   "name": "이의신청과 분쟁조정(국가계약분쟁조정위원회)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -642,22 +734,26 @@
                 {
                   "id": "S1-MT5-ST3-D1",
                   "name": "지방자치단체를 당사자로 하는 계약에 관한 법률 개요",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST3-D2",
                   "name": "국가계약법과 지방계약법의 주요 차이점",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST3-D3",
                   "name": "지방계약법 고유 규정(지역의무공동도급 등)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST3-D4",
                   "name": "지방계약분쟁조정위원회",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -668,27 +764,32 @@
                 {
                   "id": "S1-MT5-ST4-D1",
                   "name": "조달사업에 관한 법률 총칙 및 목적",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST4-D2",
                   "name": "조달사업법상 조달청장의 권한·의무",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST4-D3",
                   "name": "우수조달물품 지정·관리 규정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST4-D4",
                   "name": "비축물자 관리 규정",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST4-D5",
                   "name": "조달사업법 시행령·시행규칙 주요 내용",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -699,27 +800,32 @@
                 {
                   "id": "S1-MT5-ST5-D1",
                   "name": "전자조달의 이용 및 촉진에 관한 법률 개요",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST5-D2",
                   "name": "전자조달시스템 이용의무·이용절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST5-D3",
                   "name": "전자입찰의 법적 효력",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST5-D4",
                   "name": "전자조달 정보보안·인증 규정",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST5-D5",
                   "name": "전자조달법 시행령 주요 내용",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -730,27 +836,32 @@
                 {
                   "id": "S1-MT5-ST6-D1",
                   "name": "공기업·준정부기관 계약사무규칙 개요 및 적용범위",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST6-D2",
                   "name": "계약심의위원회 구성·운영",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST6-D3",
                   "name": "입찰·계약 절차(국가계약법과의 차이)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST6-D4",
                   "name": "수의계약 특례 규정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT5-ST6-D5",
                   "name": "부정당업자 제재 및 제한 규정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             }
@@ -770,32 +881,38 @@
                 {
                   "id": "S1-MT6-ST1-D1",
                   "name": "분쟁조정 절차(국가·지방 계약분쟁조정위원회)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT6-ST1-D2",
                   "name": "유권해석 기관 및 절차(기획재정부, 행정안전부)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT6-ST1-D3",
                   "name": "주요 유권해석 사례 분석",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT6-ST1-D4",
                   "name": "계약보증금 관련 분쟁 쟁점",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT6-ST1-D5",
                   "name": "부정당제재 처분 관련 법리(판례)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT6-ST1-D6",
                   "name": "허위서류 제출 관련 쟁점",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -806,32 +923,38 @@
                 {
                   "id": "S1-MT6-ST2-D1",
                   "name": "부정당업자 제재 요건 및 사유",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT6-ST2-D2",
                   "name": "제재 절차(통보·청문·처분)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT6-ST2-D3",
                   "name": "제재 효력 및 기간",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT6-ST2-D4",
                   "name": "불공정조달행위 제재",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT6-ST2-D5",
                   "name": "부당이득금 환수 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S1-MT6-ST2-D6",
                   "name": "입찰참가자격 제한 기준표 해석",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             }
@@ -861,22 +984,26 @@
                 {
                   "id": "S2-MT1-ST1-D1",
                   "name": "공급 대상물 수요정보 식별",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT1-ST1-D2",
                   "name": "수요정보 평가와 요구사항 분석",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT1-ST1-D3",
                   "name": "공급계획 및 일정 수립",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT1-ST1-D4",
                   "name": "비상 공급계획 수립",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -887,22 +1014,26 @@
                 {
                   "id": "S2-MT1-ST2-D1",
                   "name": "공급방법 적정성 분석",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT1-ST2-D2",
                   "name": "공급정보 적정성 분석",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT1-ST2-D3",
                   "name": "공급 대상물 조달시장 분석",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT1-ST2-D4",
                   "name": "공급역량분석",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -913,12 +1044,14 @@
                 {
                   "id": "S2-MT1-ST3-D1",
                   "name": "공급 의사결정을 위한 비용 분석",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT1-ST3-D2",
                   "name": "적정 공급비용 산정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -929,17 +1062,20 @@
                 {
                   "id": "S2-MT1-ST4-D1",
                   "name": "공공조달 동향 모니터링을 통한 수요예측",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT1-ST4-D2",
                   "name": "다양한 공급방법의 장단점 분석",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT1-ST4-D3",
                   "name": "공급관리 및 위험분석",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             }
@@ -959,17 +1095,20 @@
                 {
                   "id": "S2-MT2-ST1-D1",
                   "name": "경쟁입찰참가자격 등록",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT2-ST1-D2",
                   "name": "수요기관의 정보요청(규격·과업·예산)에 대한 문서 작성 및 제출",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT2-ST1-D3",
                   "name": "조달관련 입법·행정예고 검색 및 의견제시",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -980,22 +1119,26 @@
                 {
                   "id": "S2-MT2-ST2-D1",
                   "name": "과업내용 적정성 검토",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT2-ST2-D2",
                   "name": "사업예산 적정성 검토",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT2-ST2-D3",
                   "name": "당해 규격공개 관련 법규 준수 및 부합여부 검토",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT2-ST2-D4",
                   "name": "개선보완 필요사항에 대한 의견 제시 및 처리",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -1006,17 +1149,20 @@
                 {
                   "id": "S2-MT2-ST3-D1",
                   "name": "공고 내용 중 오류 및 법령 위반 사안 정정 필요성 검토",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT2-ST3-D2",
                   "name": "입찰공고 내용 검토 및 분석",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT2-ST3-D3",
                   "name": "입찰보증금 제출방법",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1027,12 +1173,14 @@
                 {
                   "id": "S2-MT2-ST4-D1",
                   "name": "입찰설명회 참석",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT2-ST4-D2",
                   "name": "입찰 및 제안준비에 필요한 정보 식별 및 요청",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1043,17 +1191,20 @@
                 {
                   "id": "S2-MT2-ST5-D1",
                   "name": "입찰서 제출 방법",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT2-ST5-D2",
                   "name": "무효입찰 사유",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT2-ST5-D3",
                   "name": "개찰 및 낙찰 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             }
@@ -1073,12 +1224,14 @@
                 {
                   "id": "S2-MT3-ST1-D1",
                   "name": "일반·제한·지명 경쟁입찰 절차",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST1-D2",
                   "name": "수의계약 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1089,17 +1242,20 @@
                 {
                   "id": "S2-MT3-ST2-D1",
                   "name": "입찰·낙찰 방법별 평가위원회 구성에 대한 이해",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST2-D2",
                   "name": "이해상충 평가위원에 대한 회피",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST2-D3",
                   "name": "평가위원 사전접촉 금지 등 공정한 평가를 위한 기준 지침",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 }
               ]
             },
@@ -1110,17 +1266,20 @@
                 {
                   "id": "S2-MT3-ST3-D1",
                   "name": "기술(규격) 적합자 및 우선협상대상자 이해",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST3-D2",
                   "name": "기술협상",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST3-D3",
                   "name": "가격협상",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1131,27 +1290,32 @@
                 {
                   "id": "S2-MT3-ST4-D1",
                   "name": "적격심사 절차 및 낙찰자 결정",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST4-D2",
                   "name": "협상계약 절차 및 낙찰자 결정",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST4-D3",
                   "name": "희망수량경쟁입찰 절차 및 낙찰자 결정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST4-D4",
                   "name": "종합심사낙찰제(시설공사 등) 절차 및 낙찰",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST4-D5",
                   "name": "계약법령상 낙찰요건 부합 여부",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1162,12 +1326,14 @@
                 {
                   "id": "S2-MT3-ST5-D1",
                   "name": "입찰·낙찰 과정 오류 및 문제점 분석",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST5-D2",
                   "name": "분석결과 문제점에 대한 이의제기",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1178,22 +1344,26 @@
                 {
                   "id": "S2-MT3-ST6-D1",
                   "name": "계약서 작성 및 계약 내용 확인",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST6-D2",
                   "name": "계약보증금 납부 및 관리",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST6-D3",
                   "name": "전자계약 체결 절차 및 특례",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT3-ST6-D4",
                   "name": "계약 체결 후 의무·권리 및 하자보증",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             }
@@ -1213,17 +1383,20 @@
                 {
                   "id": "S2-MT4-ST1-D1",
                   "name": "리스크의 정의 및 유형",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT4-ST1-D2",
                   "name": "리스크 관리 프로세스",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT4-ST1-D3",
                   "name": "리스크 관리 원칙 및 조직 역할",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -1234,17 +1407,20 @@
                 {
                   "id": "S2-MT4-ST2-D1",
                   "name": "공급 리스크 식별 및 유형 분류",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT4-ST2-D2",
                   "name": "리스크 평가 및 우선순위 결정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT4-ST2-D3",
                   "name": "리스크 대응계획 수립 및 실행",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1255,17 +1431,20 @@
                 {
                   "id": "S2-MT4-ST3-D1",
                   "name": "계획·조달 단계 리스크 관리",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT4-ST3-D2",
                   "name": "계약 체결 단계 리스크 관리",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S2-MT4-ST3-D3",
                   "name": "계약 이행 단계 리스크 관리",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             }
@@ -1295,27 +1474,32 @@
                 {
                   "id": "S3-MT1-ST1-D1",
                   "name": "계약관리 원칙 및 기본방향",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST1-D2",
                   "name": "계약관리 계획수립 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST1-D3",
                   "name": "착수협의(Kick-off) 실시",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST1-D4",
                   "name": "이행 소요자원 투입계획 수립",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST1-D5",
                   "name": "하도급계약 승인 및 변경 계획",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1326,27 +1510,32 @@
                 {
                   "id": "S3-MT1-ST2-D1",
                   "name": "변경계약 관리 일반절차",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST2-D2",
                   "name": "물가변동에 의한 계약금액 조정(에스컬레이션)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST2-D3",
                   "name": "설계변경에 의한 계약금액 조정",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST2-D4",
                   "name": "손해배상 청구 및 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST2-D5",
                   "name": "분쟁해결 절차(조정·중재·소송)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1357,27 +1546,32 @@
                 {
                   "id": "S3-MT1-ST3-D1",
                   "name": "납품검사·검수 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST3-D2",
                   "name": "대금 지급절차 및 기한",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST3-D3",
                   "name": "선급금·기성금 관리",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST3-D4",
                   "name": "계약조건 이행 점검 및 모니터링",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST3-D5",
                   "name": "계약성과관리(성과측정·평가)",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -1388,32 +1582,38 @@
                 {
                   "id": "S3-MT1-ST4-D1",
                   "name": "계약종결 절차 및 완료확인",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST4-D2",
                   "name": "계약 해제·해지 요건 및 절차",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST4-D3",
                   "name": "지체상금 부과 기준 및 산정",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST4-D4",
                   "name": "입찰보증금·계약보증금 관리",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST4-D5",
                   "name": "하자보수보증금 관리 및 하자보증",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT1-ST4-D6",
                   "name": "매입채권·보험 관련 계약종결 처리",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             }
@@ -1433,27 +1633,32 @@
                 {
                   "id": "S3-MT2-ST1-D1",
                   "name": "물품 입찰참가자격 등록 및 자격요건",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT2-ST1-D2",
                   "name": "물품 입찰공고서 작성 및 규격서 검토",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT2-ST1-D3",
                   "name": "물품구매 낙찰자 결정(적격심사 등)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT2-ST1-D4",
                   "name": "소액수의계약(물품)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT2-ST1-D5",
                   "name": "외자구매 절차 및 특례",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -1464,12 +1669,14 @@
                 {
                   "id": "S3-MT2-ST2-D1",
                   "name": "물품 공정·품질·안전관리",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT2-ST2-D2",
                   "name": "물품 설계변경 및 계약금액 조정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             }
@@ -1489,37 +1696,44 @@
                 {
                   "id": "S3-MT3-ST1-D1",
                   "name": "용역계약 유형 및 일반절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT3-ST1-D2",
                   "name": "제안서 작성 및 제출",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT3-ST1-D3",
                   "name": "제안서 평가 절차 및 기준",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT3-ST1-D4",
                   "name": "용역 낙찰자 결정 방법",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT3-ST1-D5",
                   "name": "협상계약·경쟁적 대화 절차",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT3-ST1-D6",
                   "name": "용역 적격심사 기준 및 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT3-ST1-D7",
                   "name": "디지털서비스계약 및 e-발주시스템",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -1530,32 +1744,38 @@
                 {
                   "id": "S3-MT3-ST2-D1",
                   "name": "MAS 계약 체결 절차 및 요건",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT3-ST2-D2",
                   "name": "2단계경쟁 절차 및 운영",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT3-ST2-D3",
                   "name": "카탈로그계약 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT3-ST2-D4",
                   "name": "적격성 평가 기준 및 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT3-ST2-D5",
                   "name": "나라장터 종합쇼핑몰 활용(MAS)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT3-ST2-D6",
                   "name": "계약이행실적 평가 및 관리",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             }
@@ -1575,17 +1795,20 @@
                 {
                   "id": "S3-MT4-ST1-D1",
                   "name": "건설산업기본법 주요 내용",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT4-ST1-D2",
                   "name": "건설기술진흥법 주요 내용",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT4-ST1-D3",
                   "name": "건설공사 발주 세부기준 및 유형",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1596,27 +1819,32 @@
                 {
                   "id": "S3-MT4-ST2-D1",
                   "name": "입찰참가자격 사전심사(PQ) 기준 및 절차",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT4-ST2-D2",
                   "name": "공사 입찰 및 낙찰 절차",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT4-ST2-D3",
                   "name": "공사계약 이행관리(공정·품질·안전)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT4-ST2-D4",
                   "name": "공사 설계변경 및 계약금액 조정",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT4-ST2-D5",
                   "name": "공사 기성검사 및 준공검사",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1627,32 +1855,38 @@
                 {
                   "id": "S3-MT4-ST3-D1",
                   "name": "종합심사낙찰제(공사) 절차 및 평가기준",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT4-ST3-D2",
                   "name": "하도급 관리 일반(승인·변경·대금지급)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT4-ST3-D3",
                   "name": "하도급지킴이 시스템 운영",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT4-ST3-D4",
                   "name": "공동도급(공동이행·분담이행) 계약관리",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT4-ST3-D5",
                   "name": "대형공사 및 턴키(일괄입찰) 계약관리",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT4-ST3-D6",
                   "name": "대안입찰 및 기본설계 기술제안입찰",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             }
@@ -1672,22 +1906,26 @@
                 {
                   "id": "S3-MT5-ST1-D1",
                   "name": "공공조달 품질관리의 개념 및 필요성",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST1-D2",
                   "name": "품질관리 5단계(진입→계약→이행→완료→사후)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST1-D3",
                   "name": "품질관리 주요 수단(직접생산확인·품질점검·품질보증)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST1-D4",
                   "name": "조달사업법상 품질관리 관련 규정",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -1698,22 +1936,26 @@
                 {
                   "id": "S3-MT5-ST2-D1",
                   "name": "미국 공공조달 품질관리(QPL·QML·QBL, CPARS)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST2-D2",
                   "name": "영국 공공조달 품질관리(Framework Agreement, BS5750)",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST2-D3",
                   "name": "캐나다 공공조달 품질관리(PSPC, 보증정책)",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST2-D4",
                   "name": "해외 품질관리 제도의 국내 시사점",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 }
               ]
             },
@@ -1724,22 +1966,26 @@
                 {
                   "id": "S3-MT5-ST3-D1",
                   "name": "직접생산확인 근거(조달사업법 제18조제3항)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST3-D2",
                   "name": "직접생산확인 신청 서류(10종)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST3-D3",
                   "name": "직접생산 위반 유형 및 제재(4가지)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST3-D4",
                   "name": "품질점검 절차(시료채취→이화학시험→결과조치)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1750,22 +1996,26 @@
                 {
                   "id": "S3-MT5-ST4-D1",
                   "name": "안전관리물자 개요(2016년 7월~, 275개 세부품명)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST4-D2",
                   "name": "안전관리물자 10개 분야(어린이·보건·도로·소방 등)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST4-D3",
                   "name": "1등급(의무인증)·2등급(권고인증) 구분",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST4-D4",
                   "name": "안전관리물자 지정·해제 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1776,22 +2026,26 @@
                 {
                   "id": "S3-MT5-ST5-D1",
                   "name": "품질보증조달물품 개요 및 지정 효과",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST5-D2",
                   "name": "심사 등급별 기준(S/A/B/예비 등급, 1000점 만점)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST5-D3",
                   "name": "4대 심사 범주(기술·품질·경영·사회적가치)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT5-ST5-D4",
                   "name": "지정기간 및 갱신 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             }
@@ -1811,27 +2065,32 @@
                 {
                   "id": "S3-MT6-ST1-D1",
                   "name": "벤처나라 개요 및 운영 목적",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST1-D2",
                   "name": "등록 대상(창업 7년 이내/벤처기업) 및 신청 요건",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST1-D3",
                   "name": "38개 추천기관 및 등록 절차",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST1-D4",
                   "name": "2천만원 이하 수의계약 및 OEM 허용 규정",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST1-D5",
                   "name": "벤처나라 지정업체 지원 혜택(신인도 가점 등)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1842,27 +2101,32 @@
                 {
                   "id": "S3-MT6-ST2-D1",
                   "name": "혁신시제품 개요 및 시범구매 목적",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST2-D2",
                   "name": "유형1(중앙행정기관 R&D)·유형2(조달청 지정) 구분",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST2-D3",
                   "name": "공급자 제안형·수요자 제안형 신청 방식",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST2-D4",
                   "name": "성공 판정 기준(성능만족도 80점 이상) 및 효과",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST2-D5",
                   "name": "시범구매예산(530억, 2025년) 및 최대 6년 수의계약",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             },
@@ -1873,37 +2137,44 @@
                 {
                   "id": "S3-MT6-ST3-D1",
                   "name": "우수제품 개요(1996년~, 915개 업체 531개 품명 4.6조)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST3-D2",
                   "name": "신청 자격(중소기업·초기중견기업) 및 신청 대상 제품",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST3-D3",
                   "name": "9단계 지정 절차(지정계획공고→지정서수여, 약 90일)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST3-D4",
                   "name": "1차 심사 기준(70점 이상 통과, 기술·품질·신인도)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST3-D5",
                   "name": "지정기간(기본 3년, 최대 6년) 및 연장 사유(7가지)",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST3-D6",
                   "name": "수의계약·제3자단가계약 체결 방법 및 종합쇼핑몰 등록",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 },
                 {
                   "id": "S3-MT6-ST3-D7",
                   "name": "지정취소·경고·지정효력정지 등 사후관리 제재",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 0
                 }
               ]
             }
@@ -1933,22 +2204,26 @@
                 {
                   "id": "S4-MT1-ST1-D1",
                   "name": "공공조달 참가를 위한 관련 고유 법령과 일반제도 확인",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 7
                 },
                 {
                   "id": "S4-MT1-ST1-D2",
                   "name": "관련 규정에 따라 경쟁입찰참가자격 요건 검토",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 7
                 },
                 {
                   "id": "S4-MT1-ST1-D3",
                   "name": "관련 규정에 따라 직접생산확인기준 검토",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 17
                 },
                 {
                   "id": "S4-MT1-ST1-D4",
                   "name": "관련 규정에 따라 적합한 업종 검토",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 17
                 }
               ]
             },
@@ -1959,22 +2234,26 @@
                 {
                   "id": "S4-MT1-ST2-D1",
                   "name": "공급대상물 유형별 품명/세부품명 신규 등록",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 17
                 },
                 {
                   "id": "S4-MT1-ST2-D2",
                   "name": "변동사항 발생 시 경쟁입찰참가자격 등록증 정보 갱신",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 7
                 },
                 {
                   "id": "S4-MT1-ST2-D3",
                   "name": "공급 물품에 대한 목록화 작업 수행",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 17
                 },
                 {
                   "id": "S4-MT1-ST2-D4",
                   "name": "입찰 참여를 위한 필요 제출서류 요건별 준비",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 7
                 }
               ]
             },
@@ -1985,17 +2264,20 @@
                 {
                   "id": "S4-MT1-ST3-D1",
                   "name": "경쟁입찰참가자격등록 문서 작성",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 7
                 },
                 {
                   "id": "S4-MT1-ST3-D2",
                   "name": "경쟁입찰참가자격등록증에 세부품명 등록",
-                  "predictionScore": 2
+                  "predictionScore": 2,
+                  "page": 17
                 },
                 {
                   "id": "S4-MT1-ST3-D3",
                   "name": "경쟁입찰참가자격등록증에 입찰대리인 등록",
-                  "predictionScore": 2
+                  "predictionScore": 2,
+                  "page": 7
                 }
               ]
             }
@@ -2015,32 +2297,38 @@
                 {
                   "id": "S4-MT2-ST1-D1",
                   "name": "입찰계획 수립을 위한 공공조달 동향 관련 자료 수집",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 65
                 },
                 {
                   "id": "S4-MT2-ST1-D2",
                   "name": "수집된 자료를 기반으로 공공조달 동향 분석",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 65
                 },
                 {
                   "id": "S4-MT2-ST1-D3",
                   "name": "분석결과를 기반으로 수요기관의 조달계획 정보 식별",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 79
                 },
                 {
                   "id": "S4-MT2-ST1-D4",
                   "name": "분석결과를 기반으로 정책·제도·법률 확인",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 395
                 },
                 {
                   "id": "S4-MT2-ST1-D5",
                   "name": "입찰계획 보고서 기반 입찰정보 분석 및 입찰 적정성 확인",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 71
                 },
                 {
                   "id": "S4-MT2-ST1-D6",
                   "name": "입찰 적정성 결과에 따라 수요정보 예측",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 71
                 }
               ]
             },
@@ -2051,17 +2339,20 @@
                 {
                   "id": "S4-MT2-ST2-D1",
                   "name": "수요기관의 발주계획 정보 수집(공급 가능 수요기관·조달대상물 선정)",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 79
                 },
                 {
                   "id": "S4-MT2-ST2-D2",
                   "name": "전자조달시스템 활용 공급정보·공급계획 수립에 필요한 정보 수집",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 65
                 },
                 {
                   "id": "S4-MT2-ST2-D3",
                   "name": "수요정보 체계적 분류 및 문서화",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 71
                 }
               ]
             },
@@ -2072,17 +2363,20 @@
                 {
                   "id": "S4-MT2-ST3-D1",
                   "name": "분석결과에 따라 유형별 공급대상물의 경제성 분석",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 95
                 },
                 {
                   "id": "S4-MT2-ST3-D2",
                   "name": "품명별 기술적 요구사항에 따른 기술 적합도 검증",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 141
                 },
                 {
                   "id": "S4-MT2-ST3-D3",
                   "name": "환경분석을 바탕으로 공급계획 수립",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 79
                 }
               ]
             }
@@ -2102,27 +2396,32 @@
                 {
                   "id": "S4-MT3-ST1-D1",
                   "name": "공공조달입찰에서 예정가격기준에 따라 견적서 작성",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 95
                 },
                 {
                   "id": "S4-MT3-ST1-D2",
                   "name": "발주기관의 제안요청서에 따라 평가요소를 고려한 기술제안서 작성",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 141
                 },
                 {
                   "id": "S4-MT3-ST1-D3",
                   "name": "발주기관의 제안서 평가기준에 부합되게 제출한 제안서 내용 설명",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 149
                 },
                 {
                   "id": "S4-MT3-ST1-D4",
                   "name": "공공조달 원가계산의 구성요소(재료비·노무비·경비·이윤) 이해 및 계산",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 95
                 },
                 {
                   "id": "S4-MT3-ST1-D5",
                   "name": "유형별(제조·용역·공사) 원가계산 방법 적용",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 104
                 }
               ]
             },
@@ -2133,17 +2432,20 @@
                 {
                   "id": "S4-MT3-ST2-D1",
                   "name": "낙찰방법에 따라 가격평가와 기술평가를 평가기준으로 점수 산정",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 149
                 },
                 {
                   "id": "S4-MT3-ST2-D2",
                   "name": "낙찰자 선정방법별 평가점수 기준과 절차에 따라 예상 평가점수 산정",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 149
                 },
                 {
                   "id": "S4-MT3-ST2-D3",
                   "name": "각종 심사 과정의 관련 규정과 절차에 따라 이해상충 문제점 식별",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 166
                 }
               ]
             },
@@ -2154,17 +2456,20 @@
                 {
                   "id": "S4-MT3-ST3-D1",
                   "name": "입찰공고의 요구 내용을 기준으로 추가·삭제·변경 여부 협상",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 166
                 },
                 {
                   "id": "S4-MT3-ST3-D2",
                   "name": "과업내용과 관련한 기술협상 과정에서 과업 조정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 166
                 },
                 {
                   "id": "S4-MT3-ST3-D3",
                   "name": "조정결과를 기반으로 과업에 대한 가격 증감 조정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 166
                 }
               ]
             }
@@ -2184,22 +2489,26 @@
                 {
                   "id": "S4-MT4-ST1-D1",
                   "name": "입찰 및 관련 법령에 근거한 공공조달 계약서 작성에 필요한 서류 준비",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 177
                 },
                 {
                   "id": "S4-MT4-ST1-D2",
                   "name": "발주처에서 계약의 이행보증을 요구할 경우 필요한 서류 준비",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 188
                 },
                 {
                   "id": "S4-MT4-ST1-D3",
                   "name": "관련 계약법에 따라 계약서 작성",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 177
                 },
                 {
                   "id": "S4-MT4-ST1-D4",
                   "name": "계약서를 근거로 계약의 목적·계약금액·이행기간·계약보증금·지체상금 등 설명",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 177
                 }
               ]
             },
@@ -2210,22 +2519,26 @@
                 {
                   "id": "S4-MT4-ST2-D1",
                   "name": "계약 및 발주자의 요구 등을 검토하여 계약 내용 파악",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 184
                 },
                 {
                   "id": "S4-MT4-ST2-D2",
                   "name": "계약 이행을 위한 수행절차 및 방법 등에 대한 계획 수립",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 184
                 },
                 {
                   "id": "S4-MT4-ST2-D3",
                   "name": "계약 이행에 필요한 선급금을 산정하여 신청",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 201
                 },
                 {
                   "id": "S4-MT4-ST2-D4",
                   "name": "수립된 계획에 따른 수행절차 및 방법에 따라 수행",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 201
                 }
               ]
             },
@@ -2236,27 +2549,32 @@
                 {
                   "id": "S4-MT4-ST3-D1",
                   "name": "계약법령에서 규정한 계약의 조정요건 판단",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 201
                 },
                 {
                   "id": "S4-MT4-ST3-D2",
                   "name": "계약의 조정요건별 처리방법 판단",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 201
                 },
                 {
                   "id": "S4-MT4-ST3-D3",
                   "name": "계약 변경과 관련된 서류 준비",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 201
                 },
                 {
                   "id": "S4-MT4-ST3-D4",
                   "name": "물가변동·설계변경 등에 따라 변경된 내용을 포함한 계약서 작성",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 201
                 },
                 {
                   "id": "S4-MT4-ST3-D5",
                   "name": "변경된 계약서의 내용을 당사자에게 설명",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 201
                 }
               ]
             },
@@ -2267,22 +2585,26 @@
                 {
                   "id": "S4-MT4-ST4-D1",
                   "name": "계약서·설계서 등 관계서류를 확인하여 계약 이행의 완료 판단",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 201
                 },
                 {
                   "id": "S4-MT4-ST4-D2",
                   "name": "계약 이행 완료에 따라 검사·검수 및 대금 청구 등 계약 종결 서류 준비",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 201
                 },
                 {
                   "id": "S4-MT4-ST4-D3",
                   "name": "계약 이행 완료와 관련된 서류 작성",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 201
                 },
                 {
                   "id": "S4-MT4-ST4-D4",
                   "name": "계약 이행 불가할 경우 계약 해제 또는 해지 절차 이해 및 관련 서류 작성",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 201
                 }
               ]
             }
@@ -2302,17 +2624,20 @@
                 {
                   "id": "S4-MT5-ST1-D1",
                   "name": "공사에 특화된 계약조건에 따른 계약 체결",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 296
                 },
                 {
                   "id": "S4-MT5-ST1-D2",
                   "name": "공사에 특화된 계약조건에 따른 계약이행 절차 관리",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 296
                 },
                 {
                   "id": "S4-MT5-ST1-D3",
                   "name": "하도급법에 따른 원수급자와 하수급자인 협력업체 간 계약이행 절차 관리",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 296
                 }
               ]
             },
@@ -2323,32 +2648,38 @@
                 {
                   "id": "S4-MT5-ST2-D1",
                   "name": "물품에 특화된 계약조건에 따른 계약 체결",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 245
                 },
                 {
                   "id": "S4-MT5-ST2-D2",
                   "name": "물품에 특화된 계약조건에 따른 계약이행 절차 관리",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 245
                 },
                 {
                   "id": "S4-MT5-ST2-D3",
                   "name": "다수공급자(MAS) 계약의 특성에 따른 계약이행 절차 관리",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 339
                 },
                 {
                   "id": "S4-MT5-ST2-D4",
                   "name": "단가 계약의 특성에 따른 계약이행 절차 관리",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 245
                 },
                 {
                   "id": "S4-MT5-ST2-D5",
                   "name": "나라장터 종합쇼핑몰 MAS 2단계 경쟁 절차(3천만원 초과) 수행",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 339
                 },
                 {
                   "id": "S4-MT5-ST2-D6",
                   "name": "우수조달물품 및 혁신제품 지정 신청 절차와 혜택 활용",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 370
                 }
               ]
             },
@@ -2359,17 +2690,20 @@
                 {
                   "id": "S4-MT5-ST3-D1",
                   "name": "용역에 특화된 계약조건에 따른 계약 체결",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 282
                 },
                 {
                   "id": "S4-MT5-ST3-D2",
                   "name": "용역에 특화된 계약조건에 따른 계약이행 절차 관리",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 282
                 },
                 {
                   "id": "S4-MT5-ST3-D3",
                   "name": "하도급법에 따른 원수급자와 하수급자인 협력업체 간 계약이행 절차 관리",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 282
                 }
               ]
             }
@@ -2389,17 +2723,20 @@
                 {
                   "id": "S4-MT6-ST1-D1",
                   "name": "입찰계획에 따라 리스크 관리 계획 수립",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 65
                 },
                 {
                   "id": "S4-MT6-ST1-D2",
                   "name": "입찰계획에 따라 영향을 미치는 위험 식별",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 79
                 },
                 {
                   "id": "S4-MT6-ST1-D3",
                   "name": "입찰계획에 따라 리스크를 유형별로 분류",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 71
                 }
               ]
             },
@@ -2410,27 +2747,32 @@
                 {
                   "id": "S4-MT6-ST2-D1",
                   "name": "식별된 리스크의 위험도 평가계획 수립",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 95
                 },
                 {
                   "id": "S4-MT6-ST2-D2",
                   "name": "식별된 리스크의 발생 확률 추정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 71
                 },
                 {
                   "id": "S4-MT6-ST2-D3",
                   "name": "식별된 리스크의 발생에 따른 영향 정도 추정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 95
                 },
                 {
                   "id": "S4-MT6-ST2-D4",
                   "name": "식별된 리스크의 중요도 산정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 95
                 },
                 {
                   "id": "S4-MT6-ST2-D5",
                   "name": "관리 우선순위가 높은 리스크 결정",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 79
                 }
               ]
             },
@@ -2441,17 +2783,20 @@
                 {
                   "id": "S4-MT6-ST3-D1",
                   "name": "리스크 대응계획에 따라 주요 리스크에 대한 대응계획 수립",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 177
                 },
                 {
                   "id": "S4-MT6-ST3-D2",
                   "name": "리스크 대응계획에 따른 대응방안의 적정성 평가",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 188
                 },
                 {
                   "id": "S4-MT6-ST3-D3",
                   "name": "리스크 대응계획에 반영되지 않은 우발적 리스크에 대한 비상 대응계획 수립",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 201
                 }
               ]
             },
@@ -2462,22 +2807,26 @@
                 {
                   "id": "S4-MT6-ST4-D1",
                   "name": "리스크 대응계획의 실행 여부 확인",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 201
                 },
                 {
                   "id": "S4-MT6-ST4-D2",
                   "name": "실행된 리스크 대응방안의 성과 확인",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 201
                 },
                 {
                   "id": "S4-MT6-ST4-D3",
                   "name": "리스크 대응계획에 반영되지 않은 새로운 리스크 식별",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 201
                 },
                 {
                   "id": "S4-MT6-ST4-D4",
                   "name": "리스크 모니터링 결과를 관련 이해관계자와 공유 및 필요한 조치 제안",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 201
                 }
               ]
             }
@@ -2497,17 +2846,20 @@
                 {
                   "id": "S4-MT7-ST1-D1",
                   "name": "공공조달 관련 법령의 구조와 적용범위를 이해하고 설명",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 395
                 },
                 {
                   "id": "S4-MT7-ST1-D2",
                   "name": "공고 및 계약서의 법적 근거를 확인하고 불리한 조건에 대응",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 395
                 },
                 {
                   "id": "S4-MT7-ST1-D3",
                   "name": "유권해석이나 판례를 근거로 쟁점을 정리하고 리스크 예방",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 395
                 }
               ]
             },
@@ -2518,17 +2870,20 @@
                 {
                   "id": "S4-MT7-ST2-D1",
                   "name": "주요 분쟁 원인을 파악하고 선제적 예방관리 방안 수립",
-                  "predictionScore": 5
+                  "predictionScore": 5,
+                  "page": 395
                 },
                 {
                   "id": "S4-MT7-ST2-D2",
                   "name": "분쟁 발생 시 대응 절차를 진행",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 395
                 },
                 {
                   "id": "S4-MT7-ST2-D3",
                   "name": "법무 담당자나 전문가와 협력해 법적 문제에 대응",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 395
                 }
               ]
             },
@@ -2539,17 +2894,20 @@
                 {
                   "id": "S4-MT7-ST3-D1",
                   "name": "우대제도의 종류와 특징을 파악한 후 입찰에 적용",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 401
                 },
                 {
                   "id": "S4-MT7-ST3-D2",
                   "name": "우대제도 자격을 확보하고 관련 서류 준비",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 401
                 },
                 {
                   "id": "S4-MT7-ST3-D3",
                   "name": "우대제도를 입찰 전략과 연계해 수주 기회를 증대",
-                  "predictionScore": 4
+                  "predictionScore": 4,
+                  "page": 401
                 }
               ]
             }
@@ -2569,22 +2927,26 @@
                 {
                   "id": "S4-MT8-ST1-D1",
                   "name": "전자조달시스템에 접속하여 입찰 공고·참가자격 등록·계약 현황 관련 정보 조회",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 7
                 },
                 {
                   "id": "S4-MT8-ST1-D2",
                   "name": "전자조달시스템을 통해 입찰서 제출·계약 체결·대금 청구 절차 수행",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 65
                 },
                 {
                   "id": "S4-MT8-ST1-D3",
                   "name": "전자조달시스템과 연계된 외부 시스템을 연계하여 조달 정보를 통합 활용",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 65
                 },
                 {
                   "id": "S4-MT8-ST1-D4",
                   "name": "전자조달시스템 사용 중 발생하는 오류나 문제에 대해 해결 방법 적용",
-                  "predictionScore": 2
+                  "predictionScore": 2,
+                  "page": 7
                 }
               ]
             },
@@ -2595,22 +2957,26 @@
                 {
                   "id": "S4-MT8-ST2-D1",
                   "name": "조달 관련 데이터를 목적에 따라 분류하고 필요한 정보를 정확하게 추출",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 71
                 },
                 {
                   "id": "S4-MT8-ST2-D2",
                   "name": "입찰 현황·계약 실적·경쟁사 분석 등 조달 데이터를 활용하여 합리적인 의사결정 지원",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 71
                 },
                 {
                   "id": "S4-MT8-ST2-D3",
                   "name": "전자조달시스템 및 통계자료 등에서 제공되는 데이터를 기준에 따라 분석하고 시각화",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 65
                 },
                 {
                   "id": "S4-MT8-ST2-D4",
                   "name": "활용한 데이터의 출처와 신뢰성을 검토하고 결과를 문서나 보고서 형태로 정리",
-                  "predictionScore": 3
+                  "predictionScore": 3,
+                  "page": 71
                 }
               ]
             }

@@ -162,7 +162,7 @@ interface CriteriaData {
   subject: { subjectId: string; subjectName: string; questionCount: number; color: string; book: string };
   meta: { version: string; appliedPeriod: string; totalDetailItems: number };
 }
-type DetailItem = (typeof subjectsData.subjects)[0]['mainTopics'][0]['subTopics'][0]['detailItems'][0];
+type DetailItem = (typeof subjectsData.subjects)[0]['mainTopics'][0]['subTopics'][0]['detailItems'][0] & { page?: number };
 
 // ─────────────────────────────────────────────────────────────
 // PredictionStars
@@ -249,15 +249,15 @@ function DetailItemModal({ item, subTopicId, subjectId, onClose }: {
               <Search className="w-10 h-10 text-gray-300 mb-3"/>
               <p className="text-gray-500 text-sm mb-2">이 항목의 개념카드가 준비 중입니다</p>
               <p className="text-gray-400 text-xs mb-5">{item.name}</p>
-              {SUBTOPIC_PAGES[subTopicId] != null && (
+              {(item.page ?? SUBTOPIC_PAGES[subTopicId]) != null && (
                 <a
-                  href={getTextbookUrl(subjectId, SUBTOPIC_PAGES[subTopicId])}
+                  href={getTextbookUrl(subjectId, item.page ?? SUBTOPIC_PAGES[subTopicId])}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`flex items-center gap-2 px-5 py-2.5 ${theme.primary} text-white text-sm font-semibold rounded-xl hover:opacity-90 transition-opacity`}
                 >
                   <ExternalLink className="w-4 h-4"/>
-                  교재 바로 열기 · p.{SUBTOPIC_PAGES[subTopicId]}
+                  교재 바로 열기 · p.{item.page ?? SUBTOPIC_PAGES[subTopicId]}
                 </a>
               )}
             </div>
@@ -842,9 +842,9 @@ function SubTopicCard({ subTopic, mainTopicId, subjectId }: {
                       <p className="text-xs text-slate-400 mt-0.5 group-hover:text-amber-500 flex items-center gap-1">
                         <BookText className="w-3 h-3"/>
                         교재 페이지 보기
-                        {SUBTOPIC_PAGES[subTopic.id] != null && (
+                        {(item.page ?? SUBTOPIC_PAGES[subTopic.id]) != null && (
                           <span className="text-amber-600 font-semibold group-hover:text-amber-700">
-                            · p.{SUBTOPIC_PAGES[subTopic.id]}
+                            · p.{item.page ?? SUBTOPIC_PAGES[subTopic.id]}
                           </span>
                         )}
                       </p>
