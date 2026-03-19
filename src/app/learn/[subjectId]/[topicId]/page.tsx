@@ -191,15 +191,20 @@ function DetailItemModal({ item, subTopicId, subjectId, onClose }: {
   const theme = SUBJECT_THEME[subjectId] || SUBJECT_THEME.S1;
 
   useEffect(() => {
-    fetch(`/api/learn/concept-cards?topicId=${subTopicId.replace(/-ST\d+$/, '')}&subTopicId=${subTopicId}&limit=20`)
+    const topicId = subTopicId.replace(/-ST\d+$/, '');
+    const detailParam = item.id ? `&detailItemId=${encodeURIComponent(item.id)}` : '';
+    fetch(`/api/learn/concept-cards?topicId=${topicId}&subTopicId=${subTopicId}${detailParam}&limit=20`)
       .then(r => r.json())
       .then(d => {
         if (d.success && d.cards?.length > 0) {
           setIsFallback(!!d.fallback);
-          // 관련도 순 정렬
-          const sorted = [...d.cards].sort((a: ConceptCard, b: ConceptCard) =>
-            scoreCard(b.front, b.back, item.name) - scoreCard(a.front, a.back, item.name)
-          );
+          // detailItemId 정확 매칭 카드 최우선, 나머지는 관련도 순
+          const sorted = [...d.cards].sort((a: ConceptCard & {detailItemId?:string}, b: ConceptCard & {detailItemId?:string}) => {
+            const aExact = a.detailItemId === item.id ? 1000 : 0;
+            const bExact = b.detailItemId === item.id ? 1000 : 0;
+            if (aExact !== bExact) return bExact - aExact;
+            return scoreCard(b.front, b.back, item.name) - scoreCard(a.front, a.back, item.name);
+          });
           setCards(sorted);
           setCardIdx(0);
         }

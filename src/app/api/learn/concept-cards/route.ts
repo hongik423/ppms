@@ -10,6 +10,7 @@ import fs from 'fs';
 
 interface ConceptCard {
   id: string;
+  detailItemId?: string;
   topicId: string;
   subTopicId: string;
   chapter: number;
@@ -72,6 +73,7 @@ export async function GET(req: NextRequest) {
     const { searchParams } = req.nextUrl;
     const topicId = searchParams.get('topicId');       // e.g. S1-MT1 or S2-MT2
     const subTopicId = searchParams.get('subTopicId'); // e.g. S1-MT1-ST1 (optional)
+    const detailItemId = searchParams.get('detailItemId'); // e.g. S4-MT1-ST1-D1 (optional, for exact match)
     const limit = parseInt(searchParams.get('limit') || '50', 10);
 
     if (!topicId) {
@@ -87,12 +89,24 @@ export async function GET(req: NextRequest) {
     let filtered = topicCards;
     let fallback = false;
 
-    if (subTopicId) {
+    // detailItemId가 있으면 세세항목 정확 매칭 우선
+    if (detailItemId) {
+      const byDetail = allCards.filter((c) => c.detailItemId === detailItemId);
+      if (byDetail.length > 0) {
+        filtered = byDetail;
+      } else if (subTopicId) {
+        const bySubTopic = topicCards.filter((c) => c.subTopicId === subTopicId);
+        filtered = bySubTopic.length > 0 ? bySubTopic : topicCards;
+        fallback = true;
+      } else {
+        filtered = topicCards;
+        fallback = true;
+      }
+    } else if (subTopicId) {
       const bySubTopic = topicCards.filter((c) => c.subTopicId === subTopicId);
       if (bySubTopic.length > 0) {
         filtered = bySubTopic;
       } else {
-        // subTopicId에 해당 카드 없음 → 토픽 전체 카드 반환 (관련도 정렬은 프론트에서)
         filtered = topicCards;
         fallback = true;
       }
