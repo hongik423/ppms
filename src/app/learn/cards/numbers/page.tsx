@@ -61,6 +61,43 @@ const numberData: NumberData[] = [
     answer: '계약금액의 10~15%',
     options: ['계약금액의 5~10%', '계약금액의 10~15%', '계약금액의 15~20%', '계약금액의 2~5%'],
     lawReference: '국가계약법 시행령 제50조 — 계약보증금 기준',
+    tip: '암기: "계10 이10~15 하2~5 입5"\n계(약보증금)10%, 이(행보증)10~15%, 하(자보수)2~5%, 입(찰보증)5%',
+  },
+  {
+    id: 'n1-06',
+    subject: '1과목',
+    question: '복수예비가격 — 총 몇 개 작성, 몇 개 추첨하나?',
+    answer: '15개 작성 → 4개 추첨 → 산술평균 = 예정가격',
+    options: ['10개 작성 → 2개 추첨', '15개 작성 → 4개 추첨', '20개 작성 → 6개 추첨', '15개 작성 → 2개 추첨'],
+    lawReference: '국가계약법 시행령 제9조 — 복수예비가격',
+    tip: '암기: "이오사산(15개, 4개 추첨, 산술평균)"\n기초금액 ±2% 범위 내에서 15개 작성 → 입찰자들이 4개 추첨 → 산술평균 = 예정가격',
+  },
+  {
+    id: 'n1-07',
+    subject: '1과목',
+    question: '국가계약 분쟁조정 이의신청 기한은?',
+    answer: '처분이 있음을 안 날부터 15일 이내',
+    options: ['7일 이내', '10일 이내', '15일 이내', '30일 이내'],
+    lawReference: '국가계약법 제28조 — 이의신청',
+    tip: '암기: "이의신청 15일, 분쟁조정 심사 50일!"\n이의신청(15일) → 재심사 요청 → 분쟁조정(50일 이내 심사 결과 통보)',
+  },
+  {
+    id: 'n1-08',
+    subject: '1과목',
+    question: '부정당업자 입찰참가자격 제한 최대 기간은?',
+    answer: '2년',
+    options: ['6개월', '1년', '2년', '3년'],
+    lawReference: '국가계약법 시행령 제76조 — 부정당업자 제재',
+    tip: '암기: "부정당은 최대 2년 퇴장!"\n제재 기간: 1개월 ~ 최대 2년\n처분권자: 조달청장 또는 해당 발주기관 장',
+  },
+  {
+    id: 'n1-09',
+    subject: '1과목',
+    question: '불공정조달행위의 종류는 총 몇 가지?',
+    answer: '6가지',
+    options: ['3가지', '4가지', '5가지', '6가지'],
+    lawReference: '조달사업법 제20조의2 — 불공정조달행위',
+    tip: '암기: "허직원사우우 (6가지)"\n①허위서류제출 ②직접생산기준위반 ③원산지거짓표시\n④사전승인없는납품 ⑤MAS우대가격위반 ⑥우수조달공동상표부정사용',
   },
 
   // ────────── 2과목 (6개) — 의미부여암기법 완전 적용 ──────────
@@ -215,7 +252,7 @@ const numberData: NumberData[] = [
 ]
 
 const subjectTabs = [
-  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (5개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
+  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (9개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (6개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (4개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
@@ -356,7 +393,7 @@ export default function NumbersPage() {
         >
           <h3 className="text-xl font-bold text-orange-900 dark:text-orange-200 mb-3">💡 숫자 암기 전략</h3>
           <ul className="space-y-2 text-orange-800 dark:text-orange-300 text-sm">
-            <li className="flex gap-2"><span className="font-bold flex-shrink-0">1과목</span><span>소액수의: <strong>물2 공8 용5</strong> / 입찰보증금 5% / 계약보증금 10~15%</span></li>
+            <li className="flex gap-2"><span className="font-bold flex-shrink-0">1과목</span><span>소액수의: <strong>물2 공8 용5</strong> / 입찰보증금 5% / 계약보증금 10~15% / 복수예비가격 15개→4개 / 이의신청 15일 / 부정당업자 2년 / 불공정조달 6가지</span></li>
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">2과목</span><span>복수예비가격 ±3% / 공고기간 10일 / 적격심사 95점</span></li>
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">3과목</span><span>하자보수 2~5% / 물품지체상금 0.25‰ / 종심제 300억↑</span></li>
             <li className="flex gap-2"><span className="font-bold flex-shrink-0">4권실무</span><span>등록 유효기간 3년 / 직접생산 3년 연속 / MAS 2단계 5천만원↑ / 물가변동 90일+3%</span></li>

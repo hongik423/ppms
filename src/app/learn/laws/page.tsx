@@ -23,77 +23,139 @@ interface LawGroup {
 const lawGroups: LawGroup[] = [
   // ────────── 1과목 법조문 (8개) ──────────
   {
-    category: '국가계약법',
+    category: '민법 — 계약의 기초 (1과목 항목5)',
+    subject: '1과목',
+    color: 'bg-violet-50 border-violet-200 dark:bg-violet-900/10 dark:border-violet-700',
+    laws: [
+      {
+        law: '민법 제543조 (해제권의 행사)',
+        description: '계약 해제 — 소급효, 원상회복 의무',
+        keyPoints: [
+          '소급효: 계약 처음부터 없었던 것으로 처리',
+          '원상회복: 이미 이행한 부분 반환 의무',
+          '일시적 계약(물품납품·공사)에 주로 적용',
+          '암기: "해제=소급효" — 해(제)하면 제거(소급)!',
+        ],
+        subject: '1과목',
+      },
+      {
+        law: '민법 제550조 (해지와 손해배상)',
+        description: '계약 해지 — 장래효, 이미 이행된 부분 유효',
+        keyPoints: [
+          '장래효: 앞으로의 이행의무만 소멸',
+          '이미 이행된 부분은 유효 유지 (반환 불필요)',
+          '계속적 계약(용역·임대차)에 주로 적용',
+          '암기: "해지=불소급" — 해(지)는 지속(불소급)!',
+        ],
+        subject: '1과목',
+      },
+      {
+        law: '민법 제664조 (도급의 의의)',
+        description: '도급계약 — 일의 완성을 목적으로 하는 계약',
+        keyPoints: [
+          '수급인은 일의 완성을 약정, 도급인은 보수 지급',
+          '완성 후 인도 시 보수 지급 원칙',
+          '공공계약: 물품계약·공사계약에 도급 원칙 적용',
+          '암기: "도급=도(급)로 완성 납품!"',
+        ],
+        subject: '1과목',
+      },
+      {
+        law: '민법 제680조 (위임의 의의)',
+        description: '위임계약 — 사무의 처리를 위탁하는 계약',
+        keyPoints: [
+          '수임인은 위임인의 사무를 처리 약정',
+          '결과가 아닌 과정(사무처리)에 책임',
+          '공공계약: 용역계약·컨설팅에 위임 원칙 적용',
+          '암기: "위임=위(임)탁 사(무)처리!"',
+        ],
+        subject: '1과목',
+      },
+    ],
+  },
+  {
+    category: '국가계약법 — 분쟁·제재 (1과목 항목6)',
     subject: '1과목',
     color: 'bg-violet-50 border-violet-200 dark:bg-violet-900/10 dark:border-violet-700',
     laws: [
       {
         law: '국가를 당사자로 하는 계약에 관한 법률 제7조',
         description: '경쟁입찰 원칙 — 소액수의계약 기준',
-        keyPoints: ['물품 2천만원', '공사 8천만원', '용역 5천만원 이하 수의계약 가능'],
+        keyPoints: [
+          '물품 2천만원, 공사 8천만원, 용역 5천만원 이하 수의계약 가능',
+          '암기: "물2 공8 용5"',
+        ],
         subject: '1과목',
       },
       {
-        law: '국가계약법 시행령 제27조',
-        description: '수의계약 사유 — 특허·천재지변·긴급 등',
-        keyPoints: ['특허 또는 실용신안', '천재지변·긴급복구', '중소기업자간 경쟁제품'],
+        law: '국가계약법 제28조 (이의신청)',
+        description: '계약 처분에 대한 이의신청 — 15일 이내',
+        keyPoints: [
+          '처분이 있음을 안 날부터 15일 이내 이의신청',
+          '해당 기관 장에게 서면으로 신청',
+          '암기: "이의신청 15일!" — 15일 안에 이의!',
+        ],
+        subject: '1과목',
+      },
+      {
+        law: '국가계약법 시행령 제76조 (부정당업자 제재)',
+        description: '부정당업자 입찰참가자격 제한 — 최대 2년',
+        keyPoints: [
+          '제재 기간: 1개월~최대 2년',
+          '허위서류·담합·뇌물 등 위반 행위 대상',
+          '처분: 나라장터 공개, 부당이득금 환수 가능',
+          '암기: "부정당=최대 2년 퇴장!"',
+        ],
         subject: '1과목',
       },
     ],
   },
   {
-    category: '조달사업법',
+    category: '조달사업법·전자조달법 (1과목 항목3·4)',
     subject: '1과목',
     color: 'bg-violet-50 border-violet-200 dark:bg-violet-900/10 dark:border-violet-700',
     laws: [
       {
         law: '조달사업에 관한 법률 제2조',
         description: '조달사업의 정의 및 범위',
-        keyPoints: ['물품·용역·공사의 구매·비축·관리', '조달청의 역할과 권한'],
+        keyPoints: ['물품·용역·공사의 구매·비축·관리', '조달청의 역할과 권한', '수요기관 지원 근거'],
         subject: '1과목',
       },
       {
         law: '조달사업법 제6조',
         description: '수요기관에 대한 지원',
-        keyPoints: ['단가계약 체결 및 공급', '다수공급자계약(MAS) 근거'],
+        keyPoints: ['단가계약 체결 및 공급', '다수공급자계약(MAS) 근거', '나라장터 종합쇼핑몰 운영 근거'],
         subject: '1과목',
       },
-    ],
-  },
-  {
-    category: '전자조달법',
-    subject: '1과목',
-    color: 'bg-violet-50 border-violet-200 dark:bg-violet-900/10 dark:border-violet-700',
-    laws: [
       {
         law: '전자조달의 이용 및 촉진에 관한 법률 제2조',
         description: '나라장터 정의 및 운영 근거',
-        keyPoints: ['국가종합전자조달시스템 정의', '전자입찰·전자계약·전자납품'],
+        keyPoints: ['국가종합전자조달시스템 정의', '전자입찰·전자계약·전자납품', '5대 연계시스템: 종혁벤디이'],
         subject: '1과목',
       },
       {
         law: '전자조달법 제8조',
         description: '전자적 공고 방법 및 시기',
-        keyPoints: ['나라장터를 통한 공고 원칙', '공고기간 준수 의무'],
+        keyPoints: ['나라장터를 통한 공고 원칙', '공고기간 준수 의무 (물품·용역 7일, 공사 15일)', '전자공개수의계약 근거'],
         subject: '1과목',
       },
     ],
   },
   {
-    category: '정책지원 관련법',
+    category: '정책지원 관련법 (1과목 항목4)',
     subject: '1과목',
     color: 'bg-violet-50 border-violet-200 dark:bg-violet-900/10 dark:border-violet-700',
     laws: [
       {
         law: '중소기업제품 구매촉진 및 판로지원에 관한 법률',
         description: '중소기업 공공구매제도 근거',
-        keyPoints: ['중소기업자간 경쟁제품 지정', '우선구매 목표비율 설정'],
+        keyPoints: ['중소기업자간 경쟁제품 지정', '우선구매 목표비율 설정', '직접생산확인 제도'],
         subject: '1과목',
       },
       {
         law: '녹색제품 구매촉진에 관한 법률',
         description: '녹색조달 근거 — 환경적 지속가능성',
-        keyPoints: ['녹색제품 우선구매 의무', '생애주기비용 고려 조달'],
+        keyPoints: ['녹색제품 우선구매 의무', '생애주기비용(LCC) 고려 조달', '환경마크 인증 제품 우선'],
         subject: '1과목',
       },
     ],
@@ -360,8 +422,8 @@ const lawGroups: LawGroup[] = [
 ];
 
 const subjectTabs = [
-  { id: '전체' as SubjectFilter, label: '전체 (20개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
-  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (8개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
+  { id: '전체' as SubjectFilter, label: '전체 (31개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (13개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (8개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (5개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (6개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },

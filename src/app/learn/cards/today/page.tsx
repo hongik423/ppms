@@ -19,7 +19,7 @@ interface ConceptCardData {
   subject: '1과목' | '2과목' | '3과목' | '4권실무'
 }
 
-// ── 1과목: 공공조달과 법제도 이해 (6개) ──────────────────────────────────────
+// ── 1과목: 공공조달과 법제도 이해 (9개) — 의미부여암기법 완전 적용 ──────────────
 const s1Cards: ConceptCardData[] = [
   {
     id: 's1-001',
@@ -34,7 +34,7 @@ const s1Cards: ConceptCardData[] = [
     id: 's1-002',
     subject: '1과목',
     front: '경쟁적 공공조달 방법 3가지',
-    back: '①일반경쟁: 자격요건 없이 모든 사업자 참여 (원칙)\n②제한경쟁: 실적·기술 등 자격요건 충족자만 참여\n③지명경쟁: 2~5개사를 지명하여 입찰 실시\n\n【암기】 일제지(일반·제한·지명)\n\n비경쟁: 수의계약(1개사 직접 계약), 소액구매',
+    back: '①일반경쟁: 자격요건 없이 모든 사업자 참여 (원칙)\n②제한경쟁: 실적·기술 등 자격요건 충족자만 참여\n③지명경쟁: 2~5개사를 지명하여 입찰 실시\n\n【의미부여암기】 "일제지"\n일(반)·제(한)·지(명) — 경쟁성 高→中→低 순서\n\n비경쟁: 수의계약(1개사 직접 계약), 소액구매',
     category: 'compare',
     difficulty: 2,
     lawReference: '국가계약법 시행령 제12조~제14조',
@@ -43,7 +43,7 @@ const s1Cards: ConceptCardData[] = [
     id: 's1-003',
     subject: '1과목',
     front: '전자조달시스템(나라장터) 연계 시스템',
-    back: '나라장터(www.g2b.go.kr) 연계 5대 시스템:\n①종합쇼핑몰: MAS 물품 구매\n②혁신장터: 혁신제품 구매\n③벤처나라: 벤처기업 제품\n④디지털서비스몰: IT서비스·클라우드\n⑤이음장터: 소셜벤처·사회적기업\n\n【암기】 종혁벤디이',
+    back: '나라장터(www.g2b.go.kr) 연계 5대 시스템:\n①종합쇼핑몰: MAS 물품 구매\n②혁신장터: 혁신제품 구매\n③벤처나라: 벤처기업 제품\n④디지털서비스몰: IT서비스·클라우드\n⑤이음장터: 소셜벤처·사회적기업\n\n【의미부여암기】 "종혁벤디이"\n"종합혁신 벤처디지털 이음장터!" 한 줄로 외우기',
     category: 'concept',
     difficulty: 2,
     lawReference: '전자조달의 이용 및 촉진에 관한 법률',
@@ -52,7 +52,7 @@ const s1Cards: ConceptCardData[] = [
     id: 's1-004',
     subject: '1과목',
     front: '전략적 공공조달 — 사회적가치 지원제도',
-    back: '【4대 우선구매제도】\n①장애인기업: 조달물자 우선구매\n②중증장애인생산품: 의무구매 (기관별 비율 설정)\n③여성기업: 물품·용역 우선구매\n④사회적기업: 제품·서비스 우선구매\n\n+ESG: 공공조달에서 환경·사회·지배구조 고려\n\n법근거: 장애인기업법, 중증장애인생산품법',
+    back: '【4대 우선구매제도】\n①장애인기업: 조달물자 우선구매\n②중증장애인생산품: 의무구매 (기관별 비율 설정)\n③여성기업: 물품·용역 우선구매\n④사회적기업: 제품·서비스 우선구매\n\n+ESG: 공공조달에서 환경·사회·지배구조 고려\n\n【의미부여암기】 "장중여사"\n장(애인)·중(증장애인)·여(성기업)·사(회적기업)\n"장중한 여사님!" — 4대 우선구매 기억!',
     category: 'concept',
     difficulty: 2,
     lawReference: '장애인기업활동 촉진법',
@@ -61,7 +61,7 @@ const s1Cards: ConceptCardData[] = [
     id: 's1-005',
     subject: '1과목',
     front: '부정당업자 제재 처분 기준',
-    back: '부정당업자: 담합·허위서류 제출·뇌물 등으로 공정경쟁을 저해한 업체\n\n【제재 내용】\n• 입찰참가자격 제한: 1개월~2년\n• 처분권자: 조달청장 또는 해당 발주기관 장\n• 부당이득금 환수 가능\n\n【절차】 사유 발생 → 사전통보 → 청문 → 처분결정 → 나라장터 공개\n\n법근거: 국가계약법 제27조',
+    back: '부정당업자: 담합·허위서류 제출·뇌물 등으로 공정경쟁을 저해한 업체\n\n【제재 내용】\n• 입찰참가자격 제한: 최대 2년\n• 처분권자: 조달청장 또는 해당 발주기관 장\n• 부당이득금 환수 가능\n\n【절차 5단계 — 의미부여암기】 "사통청결공"\n사(유)→통(보)→청(문)→결(정)→공(개)\n"사유가 통보되면 청문하고 결정 후 공개!"\n\n법근거: 국가계약법 제27조',
     category: 'law',
     difficulty: 3,
     lawReference: '국가계약법 제27조 (부정당업자 제재)',
@@ -70,10 +70,37 @@ const s1Cards: ConceptCardData[] = [
     id: 's1-006',
     subject: '1과목',
     front: '소액수의계약 기준금액 (국가계약법)',
-    back: '【소액수의계약 기준】\n• 물품: 2천만원 이하\n• 공사: 8천만원 이하\n• 용역: 5천만원 이하\n\n【암기】 물2 공8 용5\n"물건(2)은 소파(公8)처럼 용(5)감하게"\n\n이 금액 이하는 경쟁입찰 생략, 수의계약 가능\n\n법근거: 국가계약법 시행령 제7조',
+    back: '【소액수의계약 기준】\n• 물품: 2천만원 이하\n• 공사: 8천만원 이하\n• 용역: 5천만원 이하\n\n【의미부여암기】 "물2 공8 용5"\n스토리: "물건(2천)은 공(共)팔(8천)하고 용(5천)감하게 구매!"\n\n이 금액 이하는 경쟁입찰 생략, 수의계약 가능\n\n법근거: 국가계약법 시행령 제7조',
     category: 'number',
     difficulty: 1,
     lawReference: '국가계약법 시행령 제7조',
+  },
+  {
+    id: 's1-007',
+    subject: '1과목',
+    front: '공공조달 5대 기본원칙',
+    back: '【5대 기본원칙 (1과목 항목2 핵심)】\n①투명성(Transparency): 공개·정보 접근 보장\n②VFM(가치 대비 예산 효율): 최적 비용·가치\n③경쟁(Competition): 공정한 경쟁기회 보장\n④차별금지(Non-discrimination): 동등한 참여기회\n⑤책임성(Accountability): 결과에 대한 책임\n\n【의미부여암기】 "투VFM경차책"\n"투명하게 VFM을 경쟁하여 차별 없이 책임지자!"\n\n실행원칙: 공개성·효율성·공정성·무차별성·책임성',
+    category: 'concept',
+    difficulty: 2,
+    lawReference: '공공조달 기본원칙 (OECD 기준)',
+  },
+  {
+    id: 's1-008',
+    subject: '1과목',
+    front: '추정가격 vs 예정가격 차이',
+    back: '【추정가격 vs 예정가격】\n\n추정가격:\n• VAT 제외\n• 발주 전 미리 추정한 가격\n• 계약방법 결정 기준 (경쟁/수의 판단)\n\n예정가격:\n• VAT 포함\n• 복수예비가격(15개) → 4개 추첨 → 산술평균\n• 낙찰 상한선 (이를 초과하면 무효)\n\n【의미부여암기】 "추미예포"\n추(정가격)=VAT미포함, 예(정가격)=VAT포함\n"추미예포!" — 추는 미포함, 예는 포함!\n\n법근거: 국가계약법 시행령 제7조·제9조',
+    category: 'compare',
+    difficulty: 2,
+    lawReference: '국가계약법 시행령 제7조, 제9조',
+  },
+  {
+    id: 's1-009',
+    subject: '1과목',
+    front: '민법 해제 vs 해지 — 공공계약 적용',
+    back: '【해제 vs 해지 — 핵심 차이】\n\n해제(민법 제543조):\n• 소급효(계약 처음부터 없었던 것으로)\n• 이미 이행된 부분 → 원상회복 의무\n• 일시적 계약(물품·공사 등)\n\n해지(민법 제550조):\n• 장래효(앞으로의 이행의무만 소멸)\n• 이미 이행된 부분은 유효 유지\n• 계속적 계약(용역·임대차 등)\n\n【의미부여암기】 "해제소급 해지불소급"\n해(제)=소급효(되돌아감), 해(지)=불소급(앞으로만)\n"제(제거)하면 소급, 지(지속)는 미래만!"\n\n법근거: 민법 제543조~제550조',
+    category: 'law',
+    difficulty: 3,
+    lawReference: '민법 제543조 (해제), 제550조 (해지)',
   },
 ]
 
@@ -260,7 +287,7 @@ function getFilteredCards(filter: SubjectFilter): ConceptCardData[] {
 
 const subjectTabs = [
   { id: '전체' as SubjectFilter, label: '전체 (15개)', color: 'bg-slate-800 text-white', inactive: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
-  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (6개)', color: 'bg-violet-700 text-white', inactive: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
+  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (9개)', color: 'bg-violet-700 text-white', inactive: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (6개)', color: 'bg-blue-700 text-white', inactive: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', color: 'bg-emerald-700 text-white', inactive: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (5개)', color: 'bg-rose-700 text-white', inactive: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
@@ -341,7 +368,7 @@ export default function TodayReviewPage() {
           <div className="flex items-center justify-between mb-3">
             <div>
               <h1 className="text-3xl md:text-4xl font-bold">오늘의 복습</h1>
-              <p className="text-blue-200 text-sm mt-1">출제기준 100% 반영 — 2권·3권·4권 의미부여암기법 고몰입 학습</p>
+              <p className="text-blue-200 text-sm mt-1">출제기준 100% 반영 — 1권·2권·3권·4권 의미부여암기법 고몰입 학습</p>
             </div>
             <Link
               href="/learn"
@@ -519,7 +546,7 @@ export default function TodayReviewPage() {
             <div className="space-y-1">
               <div className="flex items-start gap-2">
                 <span className="px-1.5 py-0.5 bg-violet-100 text-violet-700 rounded text-xs font-semibold flex-shrink-0">1과목</span>
-                <span className="text-blue-800 dark:text-blue-300">법령 근거와 원칙, 소액기준 암기</span>
+                <span className="text-blue-800 dark:text-blue-300">5대원칙(투VFM경차책)·추미예포·해제/해지·소액기준(물2공8용5) 의미부여암기</span>
               </div>
               <div className="flex items-start gap-2">
                 <span className="px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded text-xs font-semibold flex-shrink-0">2과목</span>

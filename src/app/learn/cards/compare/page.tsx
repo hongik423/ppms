@@ -85,6 +85,159 @@ const comparisonData: ComparisonData[] = [
     ],
   },
 
+  // ────────── 1과목 추가 (1권 — 의미부여암기법) ──────────
+  {
+    id: 'c1-03',
+    subject: '1과목',
+    title: '추정가격 vs 예정가격 비교 — "추미예포"',
+    description: '계약방법 결정(추정)과 낙찰 상한선(예정)의 차이 — 암기: "추미예포"',
+    headers: ['추정가격', '예정가격'],
+    rows: [
+      {
+        label: '정의',
+        cells: [
+          '입찰·계약 전 미리 추산한 가격\n(발주 적정성 판단 기준)',
+          '입찰 시 낙찰가 상한 역할을 하는 가격\n(복수예비가격으로 결정)',
+        ],
+      },
+      {
+        label: 'VAT 포함 여부',
+        cells: ['VAT 제외 (순수 원가 기준)', 'VAT 포함 (부가가치세 포함)'],
+      },
+      {
+        label: '결정 시기',
+        cells: ['계약방법 결정 이전 (발주 준비 단계)', '입찰 공고 이후 (개찰 직전 결정)'],
+      },
+      {
+        label: '활용 목적',
+        cells: [
+          '① 계약방법 결정 (경쟁/수의 여부)\n② 소액수의계약 해당 여부 판단\n③ 2단계경쟁 적용 여부 기준',
+          '① 낙찰 가능 상한가 설정\n② 예정가격 초과 입찰 → 무효\n③ 물가변동 조정의 기준가',
+        ],
+      },
+      {
+        label: '결정 방법',
+        cells: [
+          '원가계산·거래실례가격·유사사례 등으로 산출',
+          '복수예비가격 15개 작성 (기초금액 ±2%)\n→ 4개 추첨 → 산술평균',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"추미(추정=VAT미포함)!" — 추측이니까 부가세 제외', '"예포(예정=VAT포함)!" — 예정은 완성형이라 부가세 포함'],
+      },
+    ],
+  },
+  {
+    id: 'c1-04',
+    subject: '1과목',
+    title: '민법 해제 vs 해지 비교 — "해제소급 해지불소급"',
+    description: '공공계약 분쟁에 직접 적용되는 민법 핵심 개념 — 1과목 항목5',
+    headers: ['해제 (민법 제543조)', '해지 (민법 제550조)'],
+    rows: [
+      {
+        label: '효력 범위',
+        cells: ['소급효 — 계약 처음부터 없었던 것으로', '장래효 — 앞으로의 의무만 소멸'],
+      },
+      {
+        label: '이미 이행된 부분',
+        cells: ['원상회복 의무 발생 (반환해야 함)', '유효 유지 (반환 불필요)'],
+      },
+      {
+        label: '적용 계약 유형',
+        cells: ['일시적 계약 (물품 납품, 공사)', '계속적 계약 (용역, 임대차, 고용)'],
+      },
+      {
+        label: '손해배상',
+        cells: ['해제 + 손해배상 청구 가능', '해지 + 손해배상 청구 가능'],
+      },
+      {
+        label: '공공계약 적용 예',
+        cells: [
+          '물품계약: 납품 하자 중대 시 계약 해제\n공사계약: 시공 불이행 시 해제',
+          '용역계약: 지속적 계약으로 해지 적용\n(위탁계약, 연구용역 등)',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"제(제거)하면 소급!" — 해제는 처음부터 없앰', '"지(지속)는 미래만!" — 해지는 앞으로만 소멸'],
+      },
+    ],
+  },
+  {
+    id: 'c1-05',
+    subject: '1과목',
+    title: '민법 도급 vs 위임 비교 — "도완 위사"',
+    description: '공공계약에서 공사/물품(도급)과 용역(위임)의 구분 — 1과목 항목5',
+    headers: ['도급 (민법 제664조)', '위임 (민법 제680조)'],
+    rows: [
+      {
+        label: '의의',
+        cells: ['일의 완성을 목적으로 하는 계약', '사무의 처리를 위탁하는 계약'],
+      },
+      {
+        label: '핵심 요소',
+        cells: ['결과(완성품) 책임', '과정(사무처리) 책임'],
+      },
+      {
+        label: '보수 지급 시점',
+        cells: ['일의 완성 후 지급 (원칙)', '위임 사무 처리 후 지급'],
+      },
+      {
+        label: '하자담보 책임',
+        cells: ['수급인이 하자에 대한 담보 책임', '위임인이 손해배상 청구 가능'],
+      },
+      {
+        label: '공공계약 적용',
+        cells: [
+          '물품계약·공사계약\n(납품물·완성 건물 인도)',
+          '용역계약·컨설팅\n(연구, 감리, IT서비스)',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"도(급)=완(성)!" — 도급은 결과물 납품 의무', '"위(임)=사(무)!" — 위임은 사무처리 과정 책임'],
+      },
+    ],
+  },
+  {
+    id: 'c1-06',
+    subject: '1과목',
+    title: 'FA·DPS·MAS 전자조달시스템 비교 — "FA고정 DPS수시 MAS2단계"',
+    description: '나라장터 3대 계약방식 비교 — 1과목 항목3 (전자조달시스템)',
+    headers: ['FA (일반단가계약)', 'DPS (디지털서비스계약)', 'MAS (다수공급자계약)'],
+    rows: [
+      {
+        label: '개념',
+        cells: [
+          '단일 공급자와 단가계약\n(고정 거래선)',
+          '디지털서비스 특화 계약\n(클라우드·SaaS 등)',
+          '복수 공급자와 단가계약\n(2단계경쟁 활용)',
+        ],
+      },
+      {
+        label: '계약 방식',
+        cells: ['1개 업체와 고정 계약', '수시(수요 발생 시) 계약', '복수 업체 → 2단계 경쟁'],
+      },
+      {
+        label: '구매 채널',
+        cells: ['나라장터 일반 입찰', '디지털서비스몰', '나라장터 종합쇼핑몰'],
+      },
+      {
+        label: '2단계경쟁',
+        cells: ['해당 없음', '해당 없음', '추정가격 5천만원 이상 시 의무'],
+      },
+      {
+        label: '주요 대상',
+        cells: ['표준 물품·반복구매', 'IT·클라우드·SaaS\n(디지털서비스몰)', '다양한 물품·용역\n(종합쇼핑몰)'],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"FA=고정 1개 업체"', '"DPS=디지털 수시 계약"', '"MAS=복수 2단계 경쟁!"'],
+      },
+    ],
+  },
+
   // ────────── 2과목 ──────────
   {
     id: '3',
@@ -495,8 +648,8 @@ const comparisonData: ComparisonData[] = [
 ]
 
 const subjectTabs: Array<{ id: SubjectFilter; label: string; activeColor: string; inactiveColor: string }> = [
-  { id: '전체', label: '전체 (10개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
-  { id: '1과목', label: '1과목 법제도 (2개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
+  { id: '전체', label: '전체 (14개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '1과목', label: '1과목 법제도 (6개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목', label: '2과목 조달계획 (4개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목', label: '3과목 계약관리 (5개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무', label: '4권 관리실무 (2개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
@@ -516,7 +669,7 @@ export default function CompareCardsPage() {
 
   const filteredData =
     selectedSubject === '전체'
-      ? comparisonData.slice(0, 7) // 전체: 핵심 7개 표시 (과목별 균형)
+      ? comparisonData.slice(0, 10) // 전체: 핵심 10개 표시 (과목별 균형)
       : comparisonData.filter((c) => c.subject === selectedSubject)
 
   const toggleExpand = (id: string) => {

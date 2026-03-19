@@ -52,6 +52,49 @@ const procedures: Procedure[] = [
     ],
   },
 
+  // ────────── 1과목 추가 (1권 — 의미부여암기법) ──────────
+  {
+    id: 'proc-s1-03',
+    title: '예정가격 결정 절차 — "이오사산"',
+    category: '계약준비',
+    subject: '1과목',
+    keyPoint: '"이오사산" — ±2%범위·15개작성·4개추첨·산술평균',
+    steps: [
+      { step: 1, name: '기초금액 산정', description: '원가계산·거래실례가격·유사사례 등으로 기초금액 산출 (VAT 포함)' },
+      { step: 2, name: '복수예비가격 15개 작성', description: '기초금액의 ±2% 범위 내에서 복수예비가격 15개 작성 — "이오사산"의 "이(±2%)오(15개)"' },
+      { step: 3, name: '입찰자 4개 추첨', description: '입찰자들이 나라장터에서 15개 중 4개를 무작위 추첨 — "이오사산"의 "사(4개)"' },
+      { step: 4, name: '산술평균 = 예정가격 결정', description: '추첨된 4개의 산술평균 금액이 예정가격으로 확정 — "이오사산"의 "산(산술평균)"' },
+    ],
+  },
+  {
+    id: 'proc-s1-04',
+    title: '불공정조달행위 조사 및 제재 절차',
+    category: '공정조달',
+    subject: '1과목',
+    keyPoint: '"허직원사우우" 6가지 — 최대 2년 제재',
+    steps: [
+      { step: 1, name: '불공정조달행위 인지·신고', description: '6가지 행위 중 위반 발견: ①허위서류 ②직접생산기준위반 ③원산지거짓 ④사전승인없는납품 ⑤MAS우대가격위반 ⑥우수공동상표부정' },
+      { step: 2, name: '조달청 조사 개시', description: '조달청이 불공정조달행위 해당 여부 조사 착수' },
+      { step: 3, name: '당사자 의견청취', description: '위반업체에 의견진술 기회 부여 (행정절차법 준수)' },
+      { step: 4, name: '제재처분 결정', description: '① 부정당업자 제재 (최대 2년) ② 부당이득금 환수 ③ 계약 해제·해지' },
+      { step: 5, name: '나라장터 공개', description: '처분결과를 나라장터에 공개 → 다른 발주기관도 공유' },
+    ],
+  },
+  {
+    id: 'proc-s1-05',
+    title: '국가계약 분쟁조정 절차 — "신심결통"',
+    category: '공정조달',
+    subject: '1과목',
+    keyPoint: '이의신청 15일 → 분쟁조정 심사 50일 이내',
+    steps: [
+      { step: 1, name: '이의신청 (15일 이내)', description: '처분이 있음을 안 날부터 15일 이내 해당 기관 장에게 서면으로 이의신청 — 암기: "이의15일"' },
+      { step: 2, name: '이의신청 심사', description: '해당 기관에서 이의신청 내용 심사·검토' },
+      { step: 3, name: '분쟁조정 위원회 신청', description: '이의신청 결과에 불복 시 계약분쟁조정위원회에 조정 신청 가능' },
+      { step: 4, name: '분쟁조정 심사 (50일 이내)', description: '조정위원회에서 50일 이내 심사 후 조정 결과 통보 — 암기: "분쟁조정 50일"' },
+      { step: 5, name: '조정 결과 수용 또는 소송', description: '조정 수용 시 합의 완료 / 불수용 시 법원 소송 제기 가능' },
+    ],
+  },
+
   // ────────── 2과목 (2개) ──────────
   {
     id: 'proc-03',
@@ -296,8 +339,8 @@ const procedures: Procedure[] = [
 ];
 
 const subjectTabs = [
-  { id: '전체' as SubjectFilter, label: '전체 (18개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
-  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (2개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
+  { id: '전체' as SubjectFilter, label: '전체 (21개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
+  { id: '1과목' as SubjectFilter, label: '1과목 법제도 (5개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
   { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (5개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (6개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (5개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
@@ -460,7 +503,7 @@ export default function ProceduresPage() {
       <div className="p-5 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-700 rounded-xl">
         <h3 className="font-bold text-green-900 dark:text-green-200 mb-2 text-sm">💡 절차도 학습 전략</h3>
         <ul className="space-y-1.5 text-xs text-green-800 dark:text-green-300">
-          <li className="flex gap-2"><span className="font-bold flex-shrink-0">1과목</span><span>부정당제재 절차의 5단계와 입찰공고 기간(물품7일·공사15일) 암기</span></li>
+          <li className="flex gap-2"><span className="font-bold flex-shrink-0">1과목</span><span>예정가격"이오사산"(±2%·15개·4개·산술평균) / 부정당제재5단계 / 분쟁조정(이의신청15일·조정50일) 암기</span></li>
           <li className="flex gap-2"><span className="font-bold flex-shrink-0">2과목</span><span>적격심사 95점 기준, 협상계약의 기술·가격 분리평가 흐름 이해</span></li>
           <li className="flex gap-2"><span className="font-bold flex-shrink-0">3과목</span><span>물가변동 조정요건(90일+3%), MAS 2단계경쟁 기준(5천만원↑) 암기</span></li>
           <li className="flex gap-2"><span className="font-bold flex-shrink-0">4권실무</span><span>나라장터 등록 7단계·원가계산 순서(재노경→관이)·우수제품 6단계 흐름 파악</span></li>
