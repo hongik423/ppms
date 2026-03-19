@@ -171,6 +171,61 @@ const procedures: Procedure[] = [
       { step: 7, name: '계약 체결', description: '낙찰자와 계약서·부속서류 확인 → 계약보증금 납부 → 계약 체결 (낙찰 후 10~15일 이내)' },
     ],
   },
+  {
+    id: 'proc-s2-06',
+    title: '공급업체 적정성분석 절차 — "법기경" 3단계',
+    category: '조달계획',
+    subject: '2과목',
+    keyPoint: '"법기경" — 법적→기술적→경제적 적정성 순서대로 분석',
+    steps: [
+      { step: 1, name: '법적 적정성 분석', description: '입찰참가자격 등록 확인·면허·인증 보유·세금체납 여부·결격사유 점검 (시행령 제12조)' },
+      { step: 2, name: '기술적 적정성 분석', description: '기술사양 충족 능력·생산설비·기술인력·품질관리체계(ISO)·유사사업 수행실적 검증' },
+      { step: 3, name: '경제적 적정성 분석', description: '원가분석·손익분기점·Make-or-Buy 분석·ROI(투자회수기간)·수익률 검토' },
+      { step: 4, name: '종합 적정성 판단', description: '법적(합격)→기술적(적합)→경제적(타당) 모두 충족 시 입찰 참여 결정' },
+      { step: 5, name: '입찰 참여 의사결정', description: '적정성분석 결과 기반 Go/No-Go 의사결정 → 입찰서 제출 준비 착수' },
+    ],
+  },
+  {
+    id: 'proc-s2-07',
+    title: '포트폴리오 분석 절차 — Kraljic매트릭스 활용',
+    category: '조달계획',
+    subject: '2과목',
+    keyPoint: '"전레병일" — 전략·레버리지·병목·일반 4분류 → 품목별 구매전략',
+    steps: [
+      { step: 1, name: '조달 품목 목록화', description: '전체 조달 품목을 목록화하고 구매금액·공급업체 수·대체가능성 등 데이터 수집' },
+      { step: 2, name: '공급위험도 평가', description: '공급업체 수·대체가능성·리드타임·기술의존도 등으로 공급위험 High/Low 분류' },
+      { step: 3, name: '이익영향도 평가', description: '구매금액·품질영향·수익기여도 등으로 이익영향도 High/Low 분류' },
+      { step: 4, name: 'Kraljic 4사분면 배치', description: '전략품목(高高)·레버리지(低高)·병목(高低)·일반(低低) — "전레병일" 분류' },
+      { step: 5, name: '품목별 구매전략 수립', description: '전략→파트너십 / 레버리지→경쟁입찰 / 병목→안정공급확보 / 일반→효율구매' },
+    ],
+  },
+  {
+    id: 'proc-s2-08',
+    title: '평가위원회 구성·운영 절차 — "회사접" 이해충돌 방지',
+    category: '입찰평가',
+    subject: '2과목',
+    keyPoint: '5인 이상 / 외부 2/3 이상 / "회사접" 이해충돌 방지 3원칙',
+    steps: [
+      { step: 1, name: '위원 후보 풀 구성', description: '기술·법률·경영 분야 외부 전문가 후보 목록 작성 (전문가 풀 DB 활용)' },
+      { step: 2, name: '위원 5인 이상 위촉', description: '외부위원 2/3 이상으로 구성·위원장은 외부위원 중 선임 (시행령 제43조의2)' },
+      { step: 3, name: '이해충돌 사전점검', description: '위원의 이해관계 회피의무 확인·청렴서약서 징구·위원명단 비공개 유지' },
+      { step: 4, name: '평가 실시', description: '기술제안서 평가·가격평가 실시 — 사전접촉금지·접대금지 원칙 준수' },
+      { step: 5, name: '평가결과 확정·통보', description: '평가점수 합산→기술적합자 또는 낙찰자 결정→결과 통보·이의제기 안내' },
+    ],
+  },
+  {
+    id: 'proc-s2-09',
+    title: '리스크관리 4단계 절차 — "식분대모"',
+    category: '리스크관리',
+    subject: '2과목',
+    keyPoint: '"식분대모" — 식별→분석→대응→모니터링 / 대응: "회전완수"',
+    steps: [
+      { step: 1, name: '리스크 식별', description: '공급지연·가격변동·품질부적합·법규변경·공급업체 부도 등 리스크 요인 목록화' },
+      { step: 2, name: '리스크 분석', description: '발생확률×영향도 매트릭스로 정성·정량 분석 → 우선순위 결정 (High/Medium/Low)' },
+      { step: 3, name: '리스크 대응전략 수립', description: '"회전완수" 4대 전략 중 선택: 회피·전가·완화·수용 → 품목별 대응계획 수립' },
+      { step: 4, name: '리스크 모니터링', description: '조기경보체계 운영·정기 리스크 리뷰·리스크등록부 업데이트·잔여리스크 추적' },
+    ],
+  },
 
   // ────────── 3과목 (3개) ──────────
   {
@@ -430,7 +485,7 @@ const procedures: Procedure[] = [
 const subjectTabs = [
   { id: '전체' as SubjectFilter, label: '전체 (27개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (5개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
-  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (5개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
+  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (9개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (9개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (8개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ];

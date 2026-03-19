@@ -378,6 +378,149 @@ const comparisonData: ComparisonData[] = [
       },
     ],
   },
+  {
+    id: 'c2-05',
+    subject: '2과목',
+    title: '공급업체 적정성분석 3대 영역 비교 — "법기경"',
+    description: '법적·기술적·경제적 적정성 분석의 목적·검토항목 비교 (2권 3장)',
+    headers: ['법적 적정성', '기술적 적정성 (내부공급역량)', '경제적 적정성'],
+    rows: [
+      {
+        label: '분석 목적',
+        cells: [
+          '입찰참가 자격요건\n법규 준수 여부 확인',
+          '기술사양 충족 능력\n내부 공급역량 판단',
+          '원가·수익성 분석\n투자 타당성 검증',
+        ],
+      },
+      {
+        label: '주요 검토항목',
+        cells: [
+          '사업자등록·면허·인증\n세금체납여부·결격사유\n입찰참가자격등록 확인',
+          '생산설비·기술인력 보유\n품질관리체계(ISO 등)\n유사사업 수행실적',
+          '원가분석·손익분기점\nMake-or-Buy 분석\nROI·투자회수기간',
+        ],
+      },
+      {
+        label: '판단 기준',
+        cells: ['법정 요건 충족 여부 (합/불)', '기술점수 또는 적합/부적합', '수익률·원가 기준 달성 여부'],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"법=법정자격 체크!"', '"기=기술역량 검증!"', '"경=경제성 따져!"'],
+      },
+    ],
+  },
+  {
+    id: 'c2-06',
+    subject: '2과목',
+    title: '포트폴리오 분석 유형 비교 — BCG vs Kraljic',
+    description: '조달 품목 전략 분류 매트릭스 비교 (2권 3장 5절)',
+    headers: ['BCG매트릭스', 'Kraljic매트릭스'],
+    rows: [
+      {
+        label: '분류 축',
+        cells: [
+          'X축: 상대적 시장점유율\nY축: 시장성장률',
+          'X축: 공급위험도\nY축: 이익영향도 (구매금액)',
+        ],
+      },
+      {
+        label: '4사분면',
+        cells: [
+          '①Star(스타): 高성장·高점유\n②Cash Cow(물소): 低성장·高점유\n③Question Mark: 高성장·低점유\n④Dog: 低성장·低점유',
+          '①전략품목: 高위험·高영향\n②레버리지품목: 低위험·高영향\n③병목품목: 高위험·低영향\n④일반품목: 低위험·低영향',
+        ],
+      },
+      {
+        label: '전략 방향',
+        cells: [
+          'Star→집중투자 / Cow→수익극대화\n?→선택투자 / Dog→철수축소',
+          '전략→파트너십 / 레버리지→경쟁입찰\n병목→안정공급확보 / 일반→효율구매',
+        ],
+      },
+      {
+        label: '공공조달 적용',
+        cells: ['제품·사업 단위 전략 수립', '조달 품목별 구매전략 최적화'],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"스물캐독" — 스타·물소·캐물음·독', '"전레병일" — 전략·레버리지·병목·일반'],
+      },
+    ],
+  },
+  {
+    id: 'c2-07',
+    subject: '2과목',
+    title: '평가위원회 구성·운영 비교 — 적격심사 vs 협상계약',
+    description: '낙찰방법별 평가위원회 구성·운영 차이 (2권 5장 2절)',
+    headers: ['적격심사 평가', '협상계약(기술평가) 위원회', '종합심사 평가위원회'],
+    rows: [
+      {
+        label: '위원 구성',
+        cells: [
+          '발주기관 내부 심사\n(별도 위원회 불필요 가능)',
+          '5인 이상 전문가 위원회\n외부위원 2/3 이상',
+          '5~9인 전문가 위원회\n외부위원 2/3 이상',
+        ],
+      },
+      {
+        label: '평가 방법',
+        cells: [
+          '서류심사 중심\n(이행실적·재무·신용)',
+          '기술제안서 평가 후\n기술적합자 선정',
+          '가격+기술+신인도\n가중치 종합 산정',
+        ],
+      },
+      {
+        label: '이해충돌 방지',
+        cells: [
+          '일반적 공정성 유지',
+          '회피·사전접촉금지·접대금지\n(엄격 적용)',
+          '회피·사전접촉금지·접대금지\n(엄격 적용)',
+        ],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"적격=서류심사 위주"', '"협상=5인↑ 전문가 위원회"', '"종심=5~9인 종합판정단"'],
+      },
+    ],
+  },
+  {
+    id: 'c2-08',
+    subject: '2과목',
+    title: '리스크 대응전략 4가지 비교 — "회전완수"',
+    description: '공공조달 리스크 대응전략 회피·전가·완화·수용 비교 (2권 6장)',
+    headers: ['회피', '전가', '완화', '수용'],
+    rows: [
+      {
+        label: '개념',
+        cells: [
+          '리스크 발생 원인\n자체를 제거',
+          '리스크를 제3자에게\n이전 (보험·보증)',
+          '발생확률 또는\n영향도를 줄임',
+          '리스크를 인정하고\n대응 불필요 판단',
+        ],
+      },
+      {
+        label: '적용 사례',
+        cells: [
+          '위험 품목 조달 포기\n대체품목으로 변경',
+          '이행보증보험 가입\n하도급 업체 분산',
+          '복수 공급원 확보\n품질검사 강화',
+          '소액 손실 감수\n예비비 확보',
+        ],
+      },
+      {
+        label: '비용',
+        cells: ['기회비용 발생', '보험료·보증료 발생', '예방 투자비용 발생', '비용 최소 (수동적)'],
+      },
+      {
+        label: '의미부여암기',
+        cells: ['"회피=원인 제거!"', '"전가=남에게 넘겨!"', '"완화=확률↓ 영향↓"', '"수용=감수하고 GO!"'],
+      },
+    ],
+  },
 
   // ────────── 3과목 ──────────
   {
@@ -1015,7 +1158,7 @@ const comparisonData: ComparisonData[] = [
 const subjectTabs: Array<{ id: SubjectFilter; label: string; activeColor: string; inactiveColor: string }> = [
   { id: '전체', label: '전체 (18개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목', label: '1과목 법제도 (6개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
-  { id: '2과목', label: '2과목 조달계획 (4개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
+  { id: '2과목', label: '2과목 조달계획 (8개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목', label: '3과목 계약관리 (9개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무', label: '4권 관리실무 (6개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]

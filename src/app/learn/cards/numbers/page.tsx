@@ -155,6 +155,42 @@ const numberData: NumberData[] = [
     lawReference: '국가계약법 시행령 제43조 — 협상계약',
     tip: '암기: "낙찰 후 10~15일 계약 완료!"\n기술협상 + 가격협상 완료 후 계약서 작성\n협상 실패 시 → 차순위 우선협상대상자와 협상 진행',
   },
+  {
+    id: 'n2-07',
+    subject: '2과목',
+    question: '협상계약 평가위원회 구성 인원 — 최소 몇 인 이상?',
+    answer: '5인 이상',
+    options: ['3인 이상', '5인 이상', '7인 이상', '9인 이상'],
+    lawReference: '국가계약법 시행령 제43조의2 — 평가위원회 구성',
+    tip: '암기: "평가위원 5인 이상, 외부 2/3 이상!"\n내부위원 1/3 이내 / 외부 전문가(기술·법률·경영) 2/3 이상\n위원장: 외부위원 중 선임',
+  },
+  {
+    id: 'n2-08',
+    subject: '2과목',
+    question: '입찰결과에 대한 이의제기 기한은?',
+    answer: '결과 통보일로부터 15일 이내',
+    options: ['7일 이내', '10일 이내', '15일 이내', '30일 이내'],
+    lawReference: '국가계약법 시행령 제43조 — 이의제기',
+    tip: '암기: "이의제기도 15일! (1과목 이의신청과 동일)"\n입찰결과 오류·법령위반 발견 시 서면으로 이의제기\n이의 인정 시 재평가 또는 재입찰 실시',
+  },
+  {
+    id: 'n2-09',
+    subject: '2과목',
+    question: '종합심사낙찰제·PQ 적용 기준 — 추정가격 몇 억원 이상?',
+    answer: '300억원 이상',
+    options: ['100억원 이상', '200억원 이상', '300억원 이상', '500억원 이상'],
+    lawReference: '국가계약법 시행령 제42조의2 — 종합심사낙찰제',
+    tip: '암기: "종심·PQ는 300억 쌍둥이!"\n종합심사낙찰제: 300억원 이상 공사\nPQ(입찰참가자격 사전심사): 300억원 이상 공사\n가격(40~60%)+기술+신인도 종합평가',
+  },
+  {
+    id: 'n2-10',
+    subject: '2과목',
+    question: '사전규격공개 의무 대상 — 추정가격 몇 억원 이상?',
+    answer: '2억원 이상 (물품·용역)',
+    options: ['1억원 이상', '2억원 이상', '5억원 이상', '10억원 이상'],
+    lawReference: '국가계약법 시행규칙 제35조의2 — 사전규격공개 의무',
+    tip: '암기: "사전규격 2억 이상 의무, 20일 수렴!"\n추정가격 2억원 이상 물품·용역 → 나라장터 사전규격 공개 의무\n의견수렴 기간 20일 이상 → 규격 독점 방지·경쟁 촉진',
+  },
 
   // ────────── 3과목 (6개) — 의미부여암기법 완전 적용 ──────────
   {
@@ -325,7 +361,7 @@ const numberData: NumberData[] = [
 
 const subjectTabs = [
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (9개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
-  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (6개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
+  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (10개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (10개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (8개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]

@@ -155,6 +155,40 @@ const s2Cards: ConceptCardData[] = [
     category: 'concept',
     difficulty: 2,
   },
+  {
+    id: 's2-007',
+    subject: '2과목',
+    front: '공급업체 적정성분석 3대 영역 — 법·기·경',
+    back: '【공급업체 적정성분석 3대 영역 (2권 3장 핵심)】\n①법적 적정성: 입찰참가자격 등록, 법규 준수 여부, 면허·인증 보유\n②기술적 적정성(내부공급역량): 기술사양 충족, 생산설비·인력, 품질관리체계\n③경제적 적정성: 원가분석, Make-or-Buy 분석, 수익률·투자회수(ROI) 검토\n\n【의미부여암기】 "법기경"\n법(적)→기(술적)→경(제적) — "법정에서 기술 경쟁!"\n\n+공급정보 적정성: 공급방법·조달시장 분석, 공급역량분석\n법근거: 국가계약법 시행령 제12조, 조달사업법 시행령',
+    category: 'concept',
+    difficulty: 3,
+    lawReference: '국가계약법 시행령 제12조',
+  },
+  {
+    id: 's2-008',
+    subject: '2과목',
+    front: '평가위원회 구성 및 이해충돌 방지 3원칙',
+    back: '【평가위원회 구성 (2권 5장 핵심)】\n• 위원 수: 5인 이상 (기술·법률·경영 전문가 포함)\n• 내부위원 비율: 1/3 이내 (외부 전문가 중심)\n• 위원장: 외부위원 중 선임\n\n【이해충돌 방지 3원칙 — "회사접"】\n①회피의무: 이해관계자 심사·평가 참여 금지\n②사전접촉금지: 입찰참가자와 사전접촉·정보교류 금지\n③접대금지: 이해관계인으로부터 금품·향응 수수 금지\n\n【의미부여암기】 "회사접"\n회(피)·사(전접촉금지)·접(대금지)\n"회사에서 접대하면 안 돼!"',
+    category: 'concept',
+    difficulty: 3,
+    lawReference: '국가계약법 시행령 제43조의2',
+  },
+  {
+    id: 's2-009',
+    subject: '2과목',
+    front: '공공조달 포트폴리오 분석 — BCG매트릭스 활용',
+    back: '【포트폴리오 분석 (2권 3장 제5절)】\n조달 품목을 전략적으로 분류하여 구매전략 수립\n\n【BCG매트릭스 4사분면 — "스물캐독"】\n①Star(스타): 高성장·高점유 → 집중투자\n②Cash Cow(물소): 低성장·高점유 → 수익 극대화\n③Question Mark(캐물음): 高성장·低점유 → 선택적 투자\n④Dog(독): 低성장·低점유 → 철수·축소\n\n【Kraljic매트릭스 (공급위험×이익영향)】\n전략품목·레버리지품목·병목품목·일반품목 4분류\n\n【의미부여암기】 "스물캐독"\n"스타가 물소를 캐내어 독을 피해!" — BCG 4사분면',
+    category: 'compare',
+    difficulty: 3,
+  },
+  {
+    id: 's2-010',
+    subject: '2과목',
+    front: '공공조달 리스크관리 — 4단계 프로세스',
+    back: '【조달 리스크관리 4단계 (2권 6장)】\n①리스크 식별: 공급지연·가격변동·품질부적합·법규변경 등 목록화\n②리스크 분석: 발생확률×영향도 매트릭스 (정성·정량 분석)\n③리스크 대응: 회피·전가·완화·수용 4대 전략\n④리스크 모니터링: 지속적 추적·조기경보체계 운영\n\n【의미부여암기】 "식분대모"\n식(별)→분(석)→대(응)→모(니터링)\n"식빵 분석해서 대응 모색!"\n\n【대응전략 4가지 — "회전완수"】\n회(피)·전(가)·완(화)·수(용)\n"회전하며 완수하라!" — 리스크 대응 전략',
+    category: 'procedure',
+    difficulty: 3,
+  },
 ]
 
 // ── 3과목: 공공계약관리 (6개) — 의미부여암기법 완전 적용 ─────────────────────
@@ -360,7 +394,7 @@ function getFilteredCards(filter: SubjectFilter): ConceptCardData[] {
 const subjectTabs = [
   { id: '전체' as SubjectFilter, label: '전체 (19개)', color: 'bg-slate-800 text-white', inactive: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (9개)', color: 'bg-violet-700 text-white', inactive: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
-  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (6개)', color: 'bg-blue-700 text-white', inactive: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
+  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (10개)', color: 'bg-blue-700 text-white', inactive: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (10개)', color: 'bg-emerald-700 text-white', inactive: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (9개)', color: 'bg-rose-700 text-white', inactive: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ]

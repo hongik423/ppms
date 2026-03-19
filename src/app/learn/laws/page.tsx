@@ -257,6 +257,57 @@ const lawGroups: LawGroup[] = [
       },
     ],
   },
+  {
+    category: '적정성분석·평가위원회·리스크 관련 법규 (2권 3~6장)',
+    subject: '2과목',
+    color: 'bg-blue-50 border-blue-200 dark:bg-blue-900/10 dark:border-blue-700',
+    laws: [
+      {
+        law: '국가계약법 시행령 제12조',
+        description: '제한경쟁 입찰참가자격 — 공급업체 법적 적정성 기준',
+        keyPoints: [
+          '실적·기술·자본금·신용도 등 자격제한 설정 가능',
+          '입찰참가자격 등록: 나라장터에 사전 등록 의무',
+          '법적 적정성분석의 핵심 법규: 면허·인증·등록 요건 확인',
+          '암기: "제한경쟁 12조=법적 자격 체크!"',
+        ],
+        subject: '2과목',
+      },
+      {
+        law: '국가계약법 시행령 제43조의2',
+        description: '평가위원회 구성·운영 — 이해충돌 방지',
+        keyPoints: [
+          '평가위원 5인 이상 구성 (외부위원 2/3 이상)',
+          '이해관계인 회피의무: 심사·평가 참여 금지',
+          '사전접촉금지: 입찰참가자와 사전 정보교류 금지',
+          '암기: "43조의2=평가위원 이해충돌 방지!"',
+        ],
+        subject: '2과목',
+      },
+      {
+        law: '공공조달 계약 공정성 확보규정',
+        description: '접대금지 및 청렴의무 — 평가위원 행동강령',
+        keyPoints: [
+          '평가위원의 금품·향응 수수 시 형사처벌 가능',
+          '청렴서약서 징구: 위원 위촉 시 서약서 제출 의무',
+          '평가 종료 전까지 위원 명단 비공개 원칙',
+          '암기: "회사접" — 회피·사전접촉금지·접대금지!',
+        ],
+        subject: '2과목',
+      },
+      {
+        law: '조달사업법 제5조의2',
+        description: '공급업체 적정성 심사 — 조달시장 분석·공급역량',
+        keyPoints: [
+          '조달청장의 물품·용역 공급업체 적정성 심사 권한',
+          '공급역량: 기술인력·생산설비·품질관리체계 검증',
+          '경제적 적정성: 원가분석·수익성·Make-or-Buy 검토',
+          '암기: "조달사업법 5조의2=공급업체 적정성 심사!"',
+        ],
+        subject: '2과목',
+      },
+    ],
+  },
 
   // ────────── 3과목 법조문 (8개) — 의미부여암기법 완전 적용 ──────────
   {
@@ -571,7 +622,7 @@ const lawGroups: LawGroup[] = [
 const subjectTabs = [
   { id: '전체' as SubjectFilter, label: '전체 (41개)', activeColor: 'bg-slate-800 text-white', inactiveColor: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300' },
   { id: '1과목' as SubjectFilter, label: '1과목 법제도 (13개)', activeColor: 'bg-violet-700 text-white', inactiveColor: 'bg-violet-50 text-violet-700 dark:bg-violet-900/30 dark:text-violet-300' },
-  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (8개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
+  { id: '2과목' as SubjectFilter, label: '2과목 조달계획 (12개)', activeColor: 'bg-blue-700 text-white', inactiveColor: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300' },
   { id: '3과목' as SubjectFilter, label: '3과목 계약관리 (12개)', activeColor: 'bg-emerald-700 text-white', inactiveColor: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300' },
   { id: '4권실무' as SubjectFilter, label: '4권 관리실무 (12개)', activeColor: 'bg-rose-700 text-white', inactiveColor: 'bg-rose-50 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300' },
 ];
