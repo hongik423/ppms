@@ -20,7 +20,7 @@ import Link from 'next/link';
 interface ExamQuestion {
   id: string;
   number: number;
-  subject: 'procurement' | 'finance' | 'contract';
+  subject: 'procurement' | 'finance' | 'contract' | 'practice';
   content: string;
   options: string[];
   correctAnswer: number;
@@ -38,7 +38,7 @@ interface TextbookRef {
 
 interface EnhancedExplanation {
   originalExplanation: string;
-  textbook: '1권' | '2권' | '3권';
+  textbook: '1권' | '2권' | '3권' | '4권';
   textbookReferences: TextbookRef[];
   enhancedContent: string;
 }
@@ -47,12 +47,14 @@ const SUBJECT_LABELS: Record<string, string> = {
   procurement: '제1과목 공공조달이론',
   finance: '제2과목 공공조달 계획분석',
   contract: '제3과목 계약관리',
+  practice: '4권 실무종합',
 };
 
 const SUBJECT_COLORS: Record<string, string> = {
   procurement: 'bg-violet-100 text-violet-700 border-violet-200',
   finance: 'bg-blue-100 text-blue-700 border-blue-200',
   contract: 'bg-emerald-100 text-emerald-700 border-emerald-200',
+  practice: 'bg-amber-100 text-amber-700 border-amber-200',
 };
 
 const TEXTBOOK_COLORS: Record<string, { bg: string; text: string; border: string; badge: string; bar: string }> = {
@@ -77,18 +79,27 @@ const TEXTBOOK_COLORS: Record<string, { bg: string; text: string; border: string
     badge: 'bg-emerald-100 text-emerald-700',
     bar: '#059669',
   },
+  '4권': {
+    bg: 'bg-amber-50',
+    text: 'text-amber-800',
+    border: 'border-amber-200',
+    badge: 'bg-amber-100 text-amber-700',
+    bar: '#d97706',
+  },
 };
 
 const SUBJECT_TEXTBOOK: Record<string, string> = {
   procurement: '1권 공공조달의 이해',
   finance: '2권 공공조달 계획분석',
   contract: '3권 공공계약관리',
+  practice: '4권 실무종합',
 };
 
-const SUBJECT_TEXTBOOK_KEY: Record<string, '1권' | '2권' | '3권'> = {
+const SUBJECT_TEXTBOOK_KEY: Record<string, '1권' | '2권' | '3권' | '4권'> = {
   procurement: '1권',
   finance: '2권',
   contract: '3권',
+  practice: '4권',
 };
 
 /** 교재 권수 → subject ID 매핑 (PDF URL 생성용) */
@@ -96,6 +107,7 @@ const TEXTBOOK_SUBJECT_ID: Record<string, string> = {
   '1권': 'S1',
   '2권': 'S2',
   '3권': 'S3',
+  '4권': 'S4',
 };
 
 /** pages 문자열에서 시작 페이지 추출 (예: "300-320" → 300) */
@@ -165,9 +177,9 @@ function QuestionStudyCard({
 
   const isCorrect = selectedAnswer !== null && selectedAnswer === question.correctAnswer;
   // Use enhancedData.textbook if available; otherwise fallback to subject default
-  const tbKey: '1권' | '2권' | '3권' = enhancedData?.textbook || SUBJECT_TEXTBOOK_KEY[question.subject] || '2권';
+  const tbKey: '1권' | '2권' | '3권' | '4권' = enhancedData?.textbook || SUBJECT_TEXTBOOK_KEY[question.subject] || '2권';
   const textbookName = enhancedData?.textbook
-    ? { '1권': '1권 공공조달의 이해', '2권': '2권 공공조달 계획분석', '3권': '3권 공공계약관리' }[enhancedData.textbook]
+    ? { '1권': '1권 공공조달의 이해', '2권': '2권 공공조달 계획분석', '3권': '3권 공공계약관리', '4권': '4권 실무종합' }[enhancedData.textbook]
     : (SUBJECT_TEXTBOOK[question.subject] || '교재');
   const tbColors = TEXTBOOK_COLORS[tbKey];
 
@@ -548,6 +560,12 @@ export default function StudyModePage() {
                 label: '제3과목 계약관리',
                 sub: '30문제 · 3권 연계',
                 color: 'bg-emerald-700',
+              },
+              {
+                value: 'practice',
+                label: '4권 실무종합',
+                sub: '실무 응용 · 4권 연계',
+                color: 'bg-amber-700',
               },
             ].map((opt) => (
               <button

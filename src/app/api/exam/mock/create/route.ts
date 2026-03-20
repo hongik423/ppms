@@ -14,7 +14,7 @@ let cachedQuestions: ExamQuestion[] | null = null;
 
 interface ExamQuestion {
   id: number;
-  subject: 'procurement' | 'finance' | 'contract';
+  subject: 'procurement' | 'finance' | 'contract' | 'practice';
   questionText: string;
   options: string[];
   correctAnswer: number;
