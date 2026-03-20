@@ -13,6 +13,7 @@ import {
   Lightbulb,
   BookMarked,
   ArrowLeft,
+  ExternalLink,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -90,6 +91,27 @@ const SUBJECT_TEXTBOOK_KEY: Record<string, '1권' | '2권' | '3권'> = {
   contract: '3권',
 };
 
+/** 교재 권수 → subject ID 매핑 (PDF URL 생성용) */
+const TEXTBOOK_SUBJECT_ID: Record<string, string> = {
+  '1권': 'S1',
+  '2권': 'S2',
+  '3권': 'S3',
+};
+
+/** pages 문자열에서 시작 페이지 추출 (예: "300-320" → 300) */
+function parseStartPage(pages: string): number {
+  const match = pages.match(/^(\d+)/);
+  return match ? parseInt(match[1], 10) : 0;
+}
+
+/** 교재 PDF URL 생성 — /api/textbook?s=S1#page=N */
+function getTextbookPdfUrl(textbookKey: string, pages: string): string {
+  const subjectId = TEXTBOOK_SUBJECT_ID[textbookKey];
+  const startPage = parseStartPage(pages);
+  if (!subjectId || startPage < 1) return '#';
+  return `/api/textbook?s=${subjectId}#page=${startPage}`;
+}
+
 function QuestionStudyCard({
   question,
   index,
@@ -123,7 +145,10 @@ function QuestionStudyCard({
       const res = await fetch(`/api/exam/enhanced-explanation?id=${question.id}`);
       if (res.ok) {
         const data = await res.json();
-        if (data.success) setEnhancedData(data);
+        if (data.success) {
+          setEnhancedData(data);
+          setShowEnhanced(true); // 자동으로 고도화 해설 펼침
+        }
       }
     } catch {
       /* not available */
@@ -135,7 +160,7 @@ function QuestionStudyCard({
   const handleSelectAnswer = (idx: number) => {
     setSelectedAnswer(idx);
     setShowExplanation(true);
-    fetchEnhanced(); // Always prefetch
+    fetchEnhanced(); // Always prefetch → 자동 펼침
   };
 
   const isCorrect = selectedAnswer !== null && selectedAnswer === question.correctAnswer;
@@ -309,17 +334,20 @@ function QuestionStudyCard({
                   </div>
                 ) : enhancedData ? (
                   <>
-                    {/* Textbook references */}
+                    {/* Textbook references — 클릭 시 PDF 해당 페이지로 이동 */}
                     {enhancedData.textbookReferences?.length > 0 && (
                       <div className="mb-4">
                         <p className={`text-xs font-semibold uppercase tracking-wide mb-2 ${tbColors.text}`}>
-                          📚 교재 참조 ({textbookName})
+                          📚 교재 참조 ({textbookName}) — 클릭하면 해당 페이지로 이동
                         </p>
                         <div className="space-y-1">
                           {enhancedData.textbookReferences.map((ref, i) => (
-                            <div
+                            <a
                               key={i}
-                              className="flex items-center gap-2 text-sm bg-white rounded-lg px-3 py-2"
+                              href={getTextbookPdfUrl(tbKey, ref.pages)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2 text-sm bg-white rounded-lg px-3 py-2 hover:bg-gray-50 hover:shadow-sm transition-all cursor-pointer group border border-transparent hover:border-gray-200"
                             >
                               <span className={`font-bold text-sm ${tbColors.text}`}>
                                 제{ref.chapter}장
@@ -330,10 +358,11 @@ function QuestionStudyCard({
                                   · {ref.section}
                                 </span>
                               )}
-                              <span className={`ml-auto font-medium text-xs ${tbColors.text}`}>
+                              <span className={`ml-auto font-medium text-xs ${tbColors.text} flex items-center gap-1`}>
                                 p.{ref.pages}
+                                <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                               </span>
-                            </div>
+                            </a>
                           ))}
                         </div>
                       </div>
