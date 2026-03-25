@@ -105,3 +105,11 @@ npx prisma migrate dev --name add_auth_user_id
 ```bash
 npm run db:seed
 ```
+
+## 8. 행 수준 보안(RLS) — Advisors `rls_disabled_in_public`
+
+Supabase는 PostgREST로 `public` 테이블에 anon 키 접근이 가능하므로, **RLS 미설정 테이블은 치명적**으로 표시됩니다.
+
+- **조치**: [SQL Editor](https://supabase.com/dashboard)에서 프로젝트별로 `prisma/sql/enable-rls-public-tables.sql` 전체를 한 번 실행합니다. (PPMS·PlusPMS 각각 동일 스키마면 동일 스크립트)
+- **동작**: 모든 앱 테이블에 RLS를 켜고, 클라이언트(Realtime)에 필요한 `User` / `UserProgress` SELECT 정책만 `authenticated`에 부여합니다. API·Prisma는 DB 연결 역할이 RLS를 우회하므로 기존 서버 로직은 유지됩니다.
+- Supabase 문서: [Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security)
